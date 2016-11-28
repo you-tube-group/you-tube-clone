@@ -3,4 +3,14 @@ angular.module('you-tube-clone')
 
 this.broken = 'working'
 
+this.getTrending = () => {
+  $http({
+    method:'GET',
+    url: '/trending'
+  }).then((response) => {
+    console.log(response);
+    return response.data;
+  })
+}
+this.getTrending();
 })
