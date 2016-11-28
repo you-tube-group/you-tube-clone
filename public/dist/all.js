@@ -12,4 +12,15 @@ angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainSe
 angular.module('you-tube-clone').service('mainService', function ($http) {
 
   this.broken = 'working';
+
+  this.getTrending = function () {
+    $http({
+      method: 'GET',
+      url: '/trending'
+    }).then(function (response) {
+      console.log(response);
+      return response.data;
+    });
+  };
+  this.getTrending();
 });
