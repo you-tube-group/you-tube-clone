@@ -1,0 +1,20 @@
+<section class='trending-view-dir-outer-wrap'>
+  <div class="trending-vids-wrap">
+    <div class="video-wrap" ng-repeat="video in trendingData.items">
+      <img style='min-width: 196px; height: 110px' ng-src="{{video.snippet.thumbnails.standard.url}}" alt="video thumbnail">
+      <div class="video-info-wrap">
+        <div class="video-title">{{video.snippet.title}}</div>
+        <div class="channel-title-wrap">
+          <div class="channel-title">{{video.snippet.channelTitle}}</div>
+          <div class="checkmark"></div>
+        </div>
+        <div class="views-wrap">
+          <div class="one-day-ago">{{video.snippet.publishedAt}}</div>
+          <div class='views'></div>
+        </div>
+        <div class="description">{{ video.snippet.description | limitTo: 100 }}{{video.snippet.description.length > 20 ? '...' : ''}}</div>
+      </div>
+      <br>
+    </div>
+  </div>
+</section>

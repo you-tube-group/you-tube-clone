@@ -1,0 +1,36 @@
+$tvd-container-bg-color: #F1F1F1;
+$tvd-vid-wrap-bg: #FFFFFF;
+$tvd-title-text: #187BC6;
+
+.trending-view-dir-outer-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $tvd-container-bg-color;
+  .trending-vids-wrap {
+    width: 850px;
+    margin-top: 5px;
+    padding: 22px 18px;
+    background-color: $tvd-vid-wrap-bg;
+    .video-wrap {
+      display: flex;
+      img {}
+      .video-info-wrap {
+        display: flex;
+        flex-direction: column;
+        .video-title {
+          color: $tvd-title-text;
+        }
+        .channel-title-wrap {
+          .channel-title {}
+          .checkmark {}
+        }
+        .views-wrap {
+          .one-day-ago {}
+          .views {}
+        }
+        .description {}
+      }
+    }
+  }
+}

@@ -1,11 +1,23 @@
 'use strict';
 
 angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+<<<<<<< HEAD
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('video', {
     url: "/:videoId",
     templateUrl: './directives/videoPlayer.html'
+=======
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider.state('landing', {
+    url: '/',
+    templateUrl: '<div>HELLO WORLD</div>'
+  }).state('trending', {
+    url: '/trending',
+    templateUrl: './app/views/trendingView.html'
+>>>>>>> master
   });
 });
 'use strict';
@@ -29,8 +41,12 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
       return response.data;
     });
   };
+<<<<<<< HEAD
 
   this.newVideo = '';
+=======
+  // this.getTrending();
+>>>>>>> master
 });
 'use strict';
 
@@ -48,6 +64,7 @@ angular.module('you-tube-clone').directive('searchDir', function () {
 });
 'use strict';
 
+<<<<<<< HEAD
 angular.module('you-tube-clone').directive('videoPlayer', function () {
 
   return {
@@ -64,5 +81,34 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
         $scope.rawData = response;
       });
     }
+=======
+<<<<<<< HEAD
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {}
+=======
+angular.module('you-tube-clone').directive('trendingViewDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/trendingView/trendingViewDir.html',
+    controller: function controller($scope, mainService) {
+      var getTrendingData = function getTrendingData() {
+        mainService.getTrending().then(function (response) {
+          $scope.trendingData = response;
+          console.log('trneing tdatat');
+          console.log($scope.trendingData);
+        });
+      };
+      getTrendingData();
+
+      //END OF CONTROLLER
+    }
+    //END OF RETURN (DIRECTIVE)
+>>>>>>> master
+>>>>>>> master
   };
 });

@@ -3,13 +3,17 @@ angular.module('you-tube-clone', ['ui.router'])
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
-    .state('video', {
-      url:"/:videoId",
-      templateUrl: './directives/videoPlayer.html'
-    })
-
-
-
-
+  .state('landing', {
+    url: '/',
+    templateUrl: '<div>HELLO WORLD</div>'
+  })
+  .state('trending', {
+    url: '/trending',
+    templateUrl: './app/views/trendingView.html'
+  })
+  .state('video', {
+    url:"/:videoId",
+    templateUrl: './directives/videoPlayer.html'
+  })
 
 })
