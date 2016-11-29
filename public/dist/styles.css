@@ -1,0 +1,17 @@
+.trending-view-dir-outer-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #F1F1F1; }
+  .trending-view-dir-outer-wrap .trending-vids-wrap {
+    width: 850px;
+    margin-top: 5px;
+    padding: 22px 18px;
+    background-color: #FFFFFF; }
+    .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap {
+      display: flex; }
+      .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap {
+        display: flex;
+        flex-direction: column; }
+        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .video-title {
+          color: #187BC6; }
