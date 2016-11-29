@@ -21,19 +21,6 @@ app.get('/trending', controller.getTrending);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 const port = 8040;
 app.listen(port, () => {
   console.log('Listening on port: ' + port);

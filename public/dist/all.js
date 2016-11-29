@@ -14,7 +14,7 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
   this.broken = 'working';
 
   this.getTrending = function () {
-    $http({
+    return $http({
       method: 'GET',
       url: '/trending'
     }).then(function (response) {
@@ -23,4 +23,18 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
     });
   };
   this.getTrending();
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('searchDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchDir.html',
+    controller: function controller($scope, mainService) {
+      var vidData = mainService.getTrending().then(function (response) {
+        $scope.rawData = response;
+      });
+    }
+  };
 });
