@@ -1,3 +1,96 @@
+<<<<<<< HEAD
+.search-bar-dir-outer-container {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99999999; }
+  .search-bar-dir-outer-container .sbd-inner-container {
+    height: 34px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+    .search-bar-dir-outer-container .sbd-inner-container .ham-and-logo-container {
+      height: 30px;
+      width: 200px;
+      display: flex;
+      align-items: center; }
+      .search-bar-dir-outer-container .sbd-inner-container .ham-and-logo-container .ham-btn {
+        height: 30px;
+        width: 38px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .search-bar-dir-outer-container .sbd-inner-container .ham-and-logo-container .ham-btn .ham-icon {
+          height: 16px;
+          width: 16px;
+          background-color: gray; }
+      .search-bar-dir-outer-container .sbd-inner-container .ham-and-logo-container .yt-logo {
+        height: 30px;
+        width: 73px;
+        background-color: red; }
+    .search-bar-dir-outer-container .sbd-inner-container .input-and-button-container {
+      height: 28px;
+      width: 650px;
+      margin-left: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .search-bar-dir-outer-container .sbd-inner-container .input-and-button-container .search-input {
+        height: 100%;
+        width: 582px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin: 0;
+        text-indent: 5px;
+        padding: 0; }
+        .search-bar-dir-outer-container .sbd-inner-container .input-and-button-container .search-input :placeholder {
+          color: red; }
+      .search-bar-dir-outer-container .sbd-inner-container .input-and-button-container .search-btn {
+        height: 30px;
+        width: 66px;
+        background-color: #f8f8f8;
+        padding: 0;
+        border: 1px solid #ccc;
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-decoration: 0; }
+    .search-bar-dir-outer-container .sbd-inner-container .upload-and-signin-container {
+      height: 28px;
+      width: 127.078px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .search-bar-dir-outer-container .sbd-inner-container .upload-and-signin-container .upload-btn {
+        height: 28px;
+        width: 56px;
+        border-radius: 2px;
+        border: 1px solid #ccc;
+        background-color: #f8f8f8; }
+      .search-bar-dir-outer-container .sbd-inner-container .upload-and-signin-container .signin-btn {
+        height: 28px;
+        width: 55px;
+        border-radius: 2px;
+        border: none;
+        background-color: #167ac6;
+        color: white; }
+=======
 .trending-view-dir-outer-wrap {
   width: 100%;
   display: flex;
@@ -15,3 +108,4 @@
         flex-direction: column; }
         .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .video-title {
           color: #187BC6; }
+>>>>>>> master

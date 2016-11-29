@@ -51,6 +51,14 @@ angular.module('you-tube-clone').directive('searchDir', function () {
 });
 'use strict';
 
+<<<<<<< HEAD
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {}
+=======
 angular.module('you-tube-clone').directive('trendingViewDir', function () {
 
   return {
@@ -69,5 +77,6 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+>>>>>>> master
   };
 });
