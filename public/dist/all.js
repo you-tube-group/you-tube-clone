@@ -12,4 +12,29 @@ angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainSe
 angular.module('you-tube-clone').service('mainService', function ($http) {
 
   this.broken = 'working';
+
+  this.getTrending = function () {
+    $http({
+      method: 'GET',
+      url: '/trending'
+    }).then(function (response) {
+      return response;
+    });
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('searchDir', function () {
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/search/searchDir.html',
+    controller: function controller($scope, mainService) {
+      $scope.getTrending = mainService.getTrending().then(function (response) {
+        $scope.trendingVids = response.data;
+      });
+
+      $scope.getTrending();
+      $scope.message = 'hello';
+    }
+  };
 });
