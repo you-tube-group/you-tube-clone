@@ -38,3 +38,13 @@ angular.module('you-tube-clone').directive('searchDir', function () {
     }
   };
 });
+'use strict';
+
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {}
+  };
+});
