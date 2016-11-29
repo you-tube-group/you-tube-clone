@@ -1,6 +1,17 @@
 'use strict';
 
-angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {});
+angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+
+  $urlRouterProvider.otherwise('/');
+
+  $stateProvider.state('landing', {
+    url: '/',
+    templateUrl: '<div>HELLO WORLD</div>'
+  }).state('trending', {
+    url: '/trending',
+    templateUrl: './app/views/trendingView.html'
+  });
+});
 'use strict';
 
 angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainService) {
@@ -22,7 +33,7 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
       return response.data;
     });
   };
-  this.getTrending();
+  // this.getTrending();
 });
 'use strict';
 
@@ -36,5 +47,27 @@ angular.module('you-tube-clone').directive('searchDir', function () {
         $scope.rawData = response;
       });
     }
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('trendingViewDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/trendingView/trendingViewDir.html',
+    controller: function controller($scope, mainService) {
+      var getTrendingData = function getTrendingData() {
+        mainService.getTrending().then(function (response) {
+          $scope.trendingData = response;
+          console.log('trneing tdatat');
+          console.log($scope.trendingData);
+        });
+      };
+      getTrendingData();
+
+      //END OF CONTROLLER
+    }
+    //END OF RETURN (DIRECTIVE)
   };
 });

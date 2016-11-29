@@ -12,5 +12,5 @@ this.getTrending = () => {
     return response.data;
   })
 }
-this.getTrending();
+// this.getTrending();
 })
