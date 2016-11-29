@@ -4,7 +4,7 @@ angular.module('you-tube-clone')
   return {
     restrict: 'E',
     templateUrl: './app/directives/videoPlayer.html',
-    controller: ($scope, mainService) => {
+    controller: ($scope, mainService, $interval) => {
 
     //function for changing current video in service
     $scope.changeVideo = (video) => {
@@ -15,6 +15,13 @@ angular.module('you-tube-clone')
       .then((response) => {
         $scope.rawData = response;
       })
+
+
+      $scope.singleVid = mainService.singleVid;
+
+
+
+
     }
   }
 
