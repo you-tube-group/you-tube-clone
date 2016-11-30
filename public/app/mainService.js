@@ -15,7 +15,6 @@ this.broken = 'working'
   this.singleVid = [];
   this.passVideo = (video) => {
     this.singleVid[0] = video;
-    $state.go('video');
   }
 
 })

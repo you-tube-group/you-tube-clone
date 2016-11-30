@@ -9,7 +9,7 @@ angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider,
     url: '/trending',
     templateUrl: './app/views/trendingView.html'
   }).state('video', {
-    url: "/videoId",
+    url: "/:videoId",
     templateUrl: './app/views/videoPlayer.html'
   });
 });
@@ -38,7 +38,6 @@ angular.module('you-tube-clone').service('mainService', function ($http, $state)
   this.singleVid = [];
   this.passVideo = function (video) {
     _this.singleVid[0] = video;
-    $state.go('video');
   };
 });
 'use strict';
@@ -51,22 +50,6 @@ angular.module('you-tube-clone').directive('searchDir', function () {
     controller: function controller($scope, mainService) {
       var vidData = mainService.getTrending().then(function (response) {
         $scope.rawData = response;
-      });
-    }
-  };
-});
-'use strict';
-
-angular.module('you-tube-clone').directive('searchBarDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: function controller($scope) {
-      $('.search-bar-dir-outer-container').hover(function () {
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
-      }, function () {
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
       });
     }
   };
@@ -95,6 +78,22 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {
+      $('.search-bar-dir-outer-container').hover(function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
+      }, function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
+      });
+    }
   };
 });
 'use strict';
