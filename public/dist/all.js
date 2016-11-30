@@ -72,32 +72,6 @@ angular.module('you-tube-clone').directive('searchBarDir', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('trendingViewDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/trendingView/trendingViewDir.html',
-    controller: function controller($scope, mainService) {
-      var getTrendingData = function getTrendingData() {
-        mainService.getTrending().then(function (response) {
-          $scope.trendingData = response;
-          console.log('trending data:');
-          console.log($scope.trendingData);
-        });
-      };
-      getTrendingData();
-
-      $scope.passVideo = function (video) {
-        mainService.passVideo(video);
-      };
-
-      //END OF CONTROLLER
-    }
-    //END OF RETURN (DIRECTIVE)
-  };
-});
-'use strict';
-
 angular.module('you-tube-clone').directive('videoPlayer', function () {
 
   return {
@@ -120,5 +94,31 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
         $scope.vidUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.singleVid.id + '?autoplay=1');
       });
     }
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('trendingViewDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/trendingView/trendingViewDir.html',
+    controller: function controller($scope, mainService) {
+      var getTrendingData = function getTrendingData() {
+        mainService.getTrending().then(function (response) {
+          $scope.trendingData = response;
+          console.log('trending data:');
+          console.log($scope.trendingData);
+        });
+      };
+      getTrendingData();
+
+      $scope.passVideo = function (video) {
+        mainService.passVideo(video);
+      };
+
+      //END OF CONTROLLER
+    }
+    //END OF RETURN (DIRECTIVE)
   };
 });
