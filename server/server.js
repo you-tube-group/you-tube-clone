@@ -14,6 +14,7 @@ app.use(express.static(__dirname + './../public'));
 // ======== Endpoints ========
 app.get('/trending', controller.getTrending);
 app.get('/api/watch', controller.getVideoInfo);
+app.get('/api/comments' ,controller.getVideoComments);
 
 
 

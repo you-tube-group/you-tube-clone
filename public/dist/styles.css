@@ -1,3 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.comments-dir-main-container {
+  width: 100%;
+  font-family: "Roboto", sans-serif; }
+  .comments-dir-main-container .comment-wrap {
+    width: 100%;
+    display: flex;
+    margin: 5px 0px;
+    font-size: 13px; }
+    .comments-dir-main-container .comment-wrap .thumbnail-img {
+      height: 48px;
+      min-width: 48px; }
+    .comments-dir-main-container .comment-wrap .comments-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .comments-dir-main-container .comment-wrap .comments-container .original-comment-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        padding-top: 3px; }
+        .comments-dir-main-container .comment-wrap .comments-container .original-comment-wrap .name-wrap {
+          display: flex;
+          margin: 0 0 5px 0; }
+          .comments-dir-main-container .comment-wrap .comments-container .original-comment-wrap .name-wrap .name {
+            color: #128EE9;
+            margin: 0 5px 0 0; }
+
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;

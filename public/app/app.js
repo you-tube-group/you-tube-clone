@@ -1,4 +1,4 @@
-angular.module('you-tube-clone', ['ui.router'])
+angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
@@ -11,7 +11,7 @@ angular.module('you-tube-clone', ['ui.router'])
     templateUrl: './app/views/trendingView.html'
   })
   .state('video', {
-    url:"/:videoId",
+    url:"/watch/:videoId",
     templateUrl: './app/views/videoPlayer.html'
   })
 

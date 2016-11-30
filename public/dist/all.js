@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('you-tube-clone', ['ui.router', 'ngSanitize']).config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('landing', {
@@ -9,7 +9,7 @@ angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider,
     url: '/trending',
     templateUrl: './app/views/trendingView.html'
   }).state('video', {
-    url: "/:videoId",
+    url: "/watch/:videoId",
     templateUrl: './app/views/videoPlayer.html'
   });
 });
@@ -49,6 +49,17 @@ angular.module('you-tube-clone').service('mainService', function ($http, $state)
       return response.data;
     });
   };
+
+  this.getComments = function (id) {
+
+    return $http({
+      method: 'GET',
+      url: '/api/comments/?id=' + id
+    }).then(function (response) {
+
+      return response.data;
+    });
+  };
 });
 'use strict';
 
@@ -66,16 +77,25 @@ angular.module('you-tube-clone').directive('searchDir', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('searchBarDir', function () {
-
+angular.module('you-tube-clone').directive('commentsDir', function () {
   return {
     restrict: 'E',
-    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: function controller($scope) {
-      $('.search-bar-dir-outer-container').hover(function () {
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
-      }, function () {
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
+    templateUrl: './app/directives/commentsDir/commentsDir.html',
+    scope: {
+      vidId: '='
+    },
+    controller: function controller($scope, mainService, $sce) {
+      $scope.$watch('vidId', function () {
+        var vidId = $scope.vidId;
+
+        if (vidId) {
+          $scope.getComments = function (vidId) {
+            mainService.getComments(vidId).then(function (response) {
+              $scope.comments = response;
+            });
+          };
+          $scope.getComments(vidId);
+        }
       });
     }
   };
@@ -104,6 +124,22 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {
+      $('.search-bar-dir-outer-container').hover(function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
+      }, function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
+      });
+    }
   };
 });
 'use strict';
