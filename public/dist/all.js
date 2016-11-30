@@ -23,6 +23,7 @@ angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainSe
 'use strict';
 
 angular.module('you-tube-clone').service('mainService', function ($http) {
+  var _this = this;
 
   this.broken = 'working';
 
@@ -31,12 +32,14 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
       method: 'GET',
       url: '/trending'
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       return response.data;
     });
   };
-
-  this.newVideo = '';
+  this.singleVid = [];
+  this.passVideo = function (video) {
+    _this.singleVid[0] = video;
+  };
 });
 'use strict';
 
@@ -59,7 +62,7 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
   return {
     restrict: 'E',
     templateUrl: './app/directives/videoPlayer.html',
-    controller: function controller($scope, mainService) {
+    controller: function controller($scope, mainService, $interval) {
 
       //function for changing current video in service
       $scope.changeVideo = function (video) {
@@ -69,6 +72,8 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
       var vidData = mainService.getTrending().then(function (response) {
         $scope.rawData = response;
       });
+
+      $scope.singleVid = mainService.singleVid;
     }
   };
 });
@@ -83,15 +88,20 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       var getTrendingData = function getTrendingData() {
         mainService.getTrending().then(function (response) {
           $scope.trendingData = response;
-          console.log('trneing tdatat');
+          console.log('trending data:');
           console.log($scope.trendingData);
         });
       };
       getTrendingData();
 
+      $scope.passVideo = function (video) {
+        mainService.passVideo(video);
+      };
+
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+
   };
 });
 'use strict';
