@@ -3,10 +3,7 @@ angular.module('you-tube-clone')
 
 this.broken = 'working'
 
-<<<<<<< HEAD
-=======
 
->>>>>>> master
   this.getTrending = () => {
     return $http({
       method:'GET',
@@ -21,9 +18,5 @@ this.broken = 'working'
     this.singleVid[0] = video;
   }
 
-<<<<<<< HEAD
-=======
-  this.newVideo = '';
 
->>>>>>> master
 })

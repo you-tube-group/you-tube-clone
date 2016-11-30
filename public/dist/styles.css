@@ -161,7 +161,7 @@
             background: #095b99;
             box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.5); }
 
-
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 .trending-view-dir-outer-wrap {
   width: 100%;
   display: flex;
