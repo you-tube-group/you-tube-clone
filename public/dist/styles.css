@@ -1,3 +1,113 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+.h-trending-dir-outer-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1F1F1;
+  font-family: "Roboto", sans-serif;
+  margin-top: 89px;
+  /*.trending-title{
+  color: red;
+}*/ }
+  .h-trending-dir-outer-wrap .nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 49px;
+    border: solid 1px #F1F1F1; }
+    .h-trending-dir-outer-wrap .nav-container .links-wrap {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 580;
+      width: 226px; }
+      .h-trending-dir-outer-wrap .nav-container .links-wrap .home {
+        display: flex;
+        align-items: center;
+        border-bottom: solid #CC181E 3px;
+        padding-top: 3px; }
+      .h-trending-dir-outer-wrap .nav-container .links-wrap .trending {
+        display: flex;
+        align-items: center;
+        color: #767676; }
+      .h-trending-dir-outer-wrap .nav-container .links-wrap .subscriptions {
+        display: flex;
+        align-items: center;
+        color: #767676; }
+  .h-trending-dir-outer-wrap .trending-vid-carousel {
+    display: flex;
+    background: #FFFFFF;
+    width: 75%;
+    padding: 35px 8px 15px 15px;
+    border-bottom: 1px solid #C8C8C8; }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .left-arrow-container .left-arrow {
+      background: no-repeat url("../Images/you-tube-icons.webp") -843px -135px;
+      width: 7px;
+      height: 10px;
+      position: absolute;
+      top: 185px;
+      left: 212px;
+      background-size: auto;
+      opacity: .5; }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel {
+      width: 100%;
+      overflow: hidden; }
+      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .thumbnail {
+        max-width: 196px;
+        height: 110px;
+        margin-right: 10px;
+        display: flex;
+        position: relative; }
+        .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .thumbnail .video-duration {
+          color: #FFF;
+          font-size: 11px;
+          background-color: #000;
+          opacity: .75;
+          padding: 0px 4px;
+          line-height: 14px;
+          font-weight: 500;
+          position: absolute;
+          bottom: 2px;
+          right: 2px; }
+      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .trending-video-title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 13px;
+        color: #167AC6;
+        line-height: 17px;
+        max-width: 196px;
+        text-align: left; }
+      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .trending-channel-title {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        color: #767676;
+        line-height: 14px;
+        max-width: 196px;
+        text-align: left; }
+      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .trending-view-count {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        color: #767676;
+        line-height: 14px;
+        max-width: 196px;
+        text-align: left; }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .right-arrow {
+      background: no-repeat url("/Images/you-tube-icons.webp") -676px -198px;
+      background-size: auto;
+      width: 7px;
+      height: 10px;
+      position: absolute;
+      right: 215px;
+      top: 185px;
+      opacity: .5; }
+
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;

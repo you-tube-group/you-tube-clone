@@ -1,0 +1,184 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+$tvd-container-bg-color: #F1F1F1;
+$tvd-vid-wrap-bg: #FFFFFF;
+$tvd-title-text: #187BC6;
+$tvd-subtext-color: #767676;
+$tvd-font-fam: 'Roboto', sans-serif;
+$tvd-red-underline: #CC181E;
+
+
+
+$youtube-logo-red: #E62117;
+$yt-primary-red: #CC181E;
+$yt-selected-gray: #333333;
+$yt-unselected-lightgray: #C8C8C8;
+$left-nav-subcategory-color: #444444;
+$primary-icon-color: #7C7C7C;
+$primary-bg: #FFFFFF;
+$secondary-bg: #F1F1F1;
+$video-main-title: #167AC6;
+$video-sub-title: #767676;
+$search-color: #767676;
+$primary-font-family: 'Roboto', sans-serif;
+
+@mixin search-font {
+  font-family: $primary-font-family;
+  font-size: 16px;
+  color: $search-color;
+}
+
+@mixin center-nav-selected {
+  font-family: $primary-font-family;
+  font-weight: 500;
+  font-size: 13px;
+  color: $yt-selected-gray;
+  line-height: 40px;
+}
+
+@mixin center-nav-default {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 13px;
+  color: $yt-unselected-lightgray;
+  line-height: 40px;
+}
+
+@mixin video-main-title {
+  font-family: $primary-font-family;
+  font-weight: 500;
+  font-size: 13px;
+  color: $video-main-title;
+  line-height: 17px;
+  max-width: 196px;
+  text-align: left;
+}
+
+@mixin video-sub-title-unselected {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 11px;
+  color: $video-sub-title;
+  line-height: 14px;
+  max-width: 196px;
+  text-align: left;
+}
+
+@mixin video-sub-title-selected {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 11px;
+  color: $video-main-title;
+  line-height: 14px;
+}
+
+
+
+.h-trending-dir-outer-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $tvd-container-bg-color;
+  font-family: $tvd-font-fam;
+  margin-top: 89px;
+  .nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background: $tvd-vid-wrap-bg;
+    position: fixed;
+    top: 49px;
+    border: solid 1px $tvd-container-bg-color;
+    .links-wrap{
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 580;
+      width: 226px;
+      .home {
+        display: flex;
+        align-items: center;
+        $yt-selected-gray: #333333;
+        border-bottom: solid $tvd-red-underline 3px;
+        padding-top: 3px;
+      }
+      .trending {
+        display: flex;
+        align-items: center;
+        color: $tvd-subtext-color;
+      }
+      .subscriptions {
+        display: flex;
+        align-items: center;
+        color: $tvd-subtext-color;
+      }
+    }
+  }
+/*.trending-title{
+  color: red;
+}*/
+
+.trending-vid-carousel{
+  display: flex;
+  background: $tvd-vid-wrap-bg;
+  width: 75%;
+  padding: 35px 8px 15px 15px;
+  border-bottom: 1px solid $yt-unselected-lightgray;
+
+  .left-arrow-container {
+    .left-arrow  {
+      background: no-repeat url('../Images/you-tube-icons.webp') -843px -135px;
+      width: 7px;
+      height: 10px;
+      position: absolute;
+      top: 185px;
+      left: 212px;
+      background-size: auto;
+      opacity: .5;
+    }
+  }
+    .h-trending-carousel{
+      width: 100%;
+      overflow: hidden;
+
+  .thumbnail {
+    max-width: 196px;
+    height: 110px;
+    margin-right: 10px;
+    display: flex;
+    position: relative;
+    .video-duration{
+      color: #FFF;
+      font-size: 11px;
+      background-color: #000;
+      opacity: .75;
+      padding: 0px 4px;
+      line-height: 14px;
+      font-weight: 500;
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+    }
+  }
+  .trending-video-title{@include video-main-title}
+  .trending-channel-title{@include video-sub-title-unselected}
+  .trending-view-count{@include video-sub-title-unselected}
+}
+
+.right-arrow{
+  background:  no-repeat url('/Images/you-tube-icons.webp') -676px -198px;
+  background-size: auto;
+  width: 7px;
+  height: 10px;
+  position: absolute;
+  right: 215px;
+  top: 185px;
+  opacity: .5;
+  }
+
+}
+
+} //<-- this is the end of outer-wrap

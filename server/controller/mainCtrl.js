@@ -5,9 +5,9 @@ var client = new Client();
 
 module.exports = {
 
-  getTrending: function(req,res,next) {
-    client.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&chart=mostPopular&regionCode=US&maxResults=25&key=${API_KEY}`, function(data, response) {
-      res.status(200).json(data);
-    });
-  }
+    getTrending: function(req, res, next) {
+        client.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=25&key=${API_KEY}`, function(data, response) {
+            res.status(200).json(data);
+        });
+    }
 }

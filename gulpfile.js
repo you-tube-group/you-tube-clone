@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const sass = require('gulp-sass');
-const sourcemap = require('gulp-sourcemaps');
+// const sourcemap = require('gulp-sourcemaps');
 const nodemon = require('gulp-nodemon');
 // const annotate = require('gulp-ng-annotate');
 
