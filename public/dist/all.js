@@ -39,6 +39,16 @@ angular.module('you-tube-clone').service('mainService', function ($http, $state)
   this.passVideo = function (video) {
     _this.singleVid[0] = video;
   };
+
+  this.getVideoInfo = function (id) {
+    console.log('Id from the service' + id);
+    return $http({
+      method: 'GET',
+      url: '/api/watch/?id=' + id
+    }).then(function (response) {
+      return response.data;
+    });
+  };
 });
 'use strict';
 
@@ -68,6 +78,32 @@ angular.module('you-tube-clone').directive('searchBarDir', function () {
         $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
       });
     }
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('trendingViewDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/trendingView/trendingViewDir.html',
+    controller: function controller($scope, mainService) {
+      var getTrendingData = function getTrendingData() {
+        mainService.getTrending().then(function (response) {
+          $scope.trendingData = response;
+          console.log('trending data:');
+          console.log($scope.trendingData);
+        });
+      };
+      getTrendingData();
+
+      $scope.passVideo = function (video) {
+        mainService.passVideo(video);
+      };
+
+      //END OF CONTROLLER
+    }
+    //END OF RETURN (DIRECTIVE)
   };
 });
 'use strict';
@@ -107,31 +143,5 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
       };
       $scope.getVideoInfo(id);
     }
-  };
-});
-'use strict';
-
-angular.module('you-tube-clone').directive('trendingViewDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/trendingView/trendingViewDir.html',
-    controller: function controller($scope, mainService) {
-      var getTrendingData = function getTrendingData() {
-        mainService.getTrending().then(function (response) {
-          $scope.trendingData = response;
-          console.log('trending data:');
-          console.log($scope.trendingData);
-        });
-      };
-      getTrendingData();
-
-      $scope.passVideo = function (video) {
-        mainService.passVideo(video);
-      };
-
-      //END OF CONTROLLER
-    }
-    //END OF RETURN (DIRECTIVE)
   };
 });
