@@ -79,16 +79,6 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('searchBarDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: function controller($scope) {}
-  };
-});
-'use strict';
-
 angular.module('you-tube-clone').directive('trendingViewDir', function () {
 
   return {
@@ -111,5 +101,23 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {
+      $('.search-bar-dir-outer-container').hover(function () {
+        console.log("hovering");
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
+      }, function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
+      });
+    }
   };
 });
