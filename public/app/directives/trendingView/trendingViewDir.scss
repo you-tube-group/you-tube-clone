@@ -14,12 +14,16 @@ $tvd-red-underline: #CC181E;
   align-items: center;
   background-color: $tvd-container-bg-color;
   font-family: $tvd-font-fam;
+  margin-top: 89px;
   .nav-container {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 40px;
     background: $tvd-vid-wrap-bg;
+    position: fixed;
+    top: 49px;
+    border: solid 1px $tvd-container-bg-color;
     .links-wrap{
       display: flex;
       justify-content: space-between;

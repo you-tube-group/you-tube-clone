@@ -9,7 +9,7 @@
   padding: 0;
   border: 0;
   font-size: 100%;
-  background: transparent;
+  background: #FFFFFF;
   position: fixed;
   top: 0;
   right: 0;
@@ -161,20 +161,24 @@
             background: #095b99;
             box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.5); }
 
-
+@import url("https://fonts.googleapis.com/css?family=Roboto");
 .trending-view-dir-outer-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #F1F1F1;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto", sans-serif;
+  margin-top: 89px; }
   .trending-view-dir-outer-wrap .nav-container {
     display: flex;
     justify-content: center;
     width: 100%;
     height: 40px;
-    background: #FFFFFF; }
+    background: #FFFFFF;
+    position: fixed;
+    top: 49px;
+    border: solid 1px #F1F1F1; }
     .trending-view-dir-outer-wrap .nav-container .links-wrap {
       display: flex;
       justify-content: space-between;

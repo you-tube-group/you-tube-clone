@@ -3,8 +3,8 @@ angular.module('you-tube-clone')
 
   return {
     restrict: 'E',
-    templateUrl: './app/directives/videoPlayer.html',
-    controller: ($scope, mainService, $interval) => {
+    templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
+    controller: ($scope, mainService, $interval, $stateParams, $sce) => {
 
     //function for changing current video in service
     $scope.changeVideo = (video) => {
@@ -17,7 +17,13 @@ angular.module('you-tube-clone')
       })
 
 
-      $scope.singleVid = mainService.singleVid;
+      $scope.singleVid = mainService.singleVid[0];
+
+      $scope.$watch(function () {
+        $scope.vidUrl = $sce.trustAsResourceUrl(`https://www.youtube.com/embed/${$scope.singleVid.id}?autoplay=1`)
+      })
+
+  
 
 
 
