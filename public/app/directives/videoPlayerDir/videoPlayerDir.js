@@ -19,11 +19,24 @@ angular.module('you-tube-clone')
 
       $scope.singleVid = mainService.singleVid[0];
 
-      $scope.$watch(function () {
-        $scope.vidUrl = $sce.trustAsResourceUrl(`https://www.youtube.com/embed/${$scope.singleVid.id}?autoplay=1`)
-      })
+      const id = $stateParams.videoId;
 
-  
+      //get the video data for the clicked video
+      $scope.getVideoInfo = function(id){
+        mainService.getVideoInfo(id).then((response) => {
+          $scope.videoInfo = response;
+
+          $scope.videoId = response.items[0].id;
+          $scope.videoUrl = "https://www.youtube.com/embed/" + $scope.videoId +
+          "?autoplay=1&origin=http://example.com";
+          $scope.thisUrl = $sce.trustAsResourceUrl($scope.videoUrl);
+
+          // this specific variable holds the video info (ie title, and statistics)
+          $scope.videoData = response.items[0];
+        })
+      }
+        $scope.getVideoInfo(id);
+
 
 
 

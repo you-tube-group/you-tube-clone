@@ -39,6 +39,16 @@ angular.module('you-tube-clone').service('mainService', function ($http, $state)
   this.passVideo = function (video) {
     _this.singleVid[0] = video;
   };
+
+  this.getVideoInfo = function (id) {
+    console.log('Id from the service' + id);
+    return $http({
+      method: 'GET',
+      url: '/api/watch/?id=' + id
+    }).then(function (response) {
+      return response.data;
+    });
+  };
 });
 'use strict';
 
@@ -55,6 +65,7 @@ angular.module('you-tube-clone').directive('searchDir', function () {
   };
 });
 'use strict';
+
 
 angular.module('you-tube-clone').directive('footerDir', function () {
   return {
@@ -125,9 +136,22 @@ angular.module('you-tube-clone').directive('videoPlayer', function () {
 
       $scope.singleVid = mainService.singleVid[0];
 
-      $scope.$watch(function () {
-        $scope.vidUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.singleVid.id + '?autoplay=1');
-      });
+      var id = $stateParams.videoId;
+
+      //get the video data for the clicked video
+      $scope.getVideoInfo = function (id) {
+        mainService.getVideoInfo(id).then(function (response) {
+          $scope.videoInfo = response;
+
+          $scope.videoId = response.items[0].id;
+          $scope.videoUrl = "https://www.youtube.com/embed/" + $scope.videoId + "?autoplay=1&origin=http://example.com";
+          $scope.thisUrl = $sce.trustAsResourceUrl($scope.videoUrl);
+
+          // this specific variable holds the video info (ie title, and statistics)
+          $scope.videoData = response.items[0];
+        });
+      };
+      $scope.getVideoInfo(id);
     }
   };
 });
