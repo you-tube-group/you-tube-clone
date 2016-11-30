@@ -1,77 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-.trending-view-dir-outer-wrap {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #F1F1F1;
-  font-family: "Roboto", sans-serif; }
-  .trending-view-dir-outer-wrap .nav-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    background: #FFFFFF; }
-    .trending-view-dir-outer-wrap .nav-container .links-wrap {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 580;
-      width: 226px; }
-      .trending-view-dir-outer-wrap .nav-container .links-wrap .home {
-        display: flex;
-        align-items: center;
-        color: #767676; }
-      .trending-view-dir-outer-wrap .nav-container .links-wrap .trending {
-        display: flex;
-        align-items: center;
-        padding-top: 3px;
-        border-bottom: solid #CC181E 3px; }
-      .trending-view-dir-outer-wrap .nav-container .links-wrap .subscriptions {
-        display: flex;
-        align-items: center;
-        color: #767676; }
-  .trending-view-dir-outer-wrap .trending-vids-wrap {
-    width: 850px;
-    margin-top: 10px;
-    padding: 22px 18px;
-    background-color: #FFFFFF; }
-    .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap {
-      display: flex;
-      margin-bottom: 10px;
-      cursor: pointer; }
-      .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .thumbnail {
-        min-width: 196px;
-        height: 110px;
-        margin-right: 10px; }
-      .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap {
-        display: flex;
-        flex-direction: column;
-        padding-top: 3px;
-        width: 500px; }
-        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .video-title {
-          color: #187BC6;
-          font-size: 14px;
-          font-weight: 600;
-          line-height: 1.3;
-          margin-bottom: 5px; }
-        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .channel-title-wrap {
-          margin-bottom: 5px; }
-          .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .channel-title-wrap .channel-title {
-            font-size: 12px;
-            color: #767676; }
-        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .views-wrap {
-          font-size: 12px;
-          color: #767676;
-          margin-bottom: 5px;
-          display: flex; }
-          .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .views-wrap .dot {
-            margin: 0px 5px; }
-        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .description {
-          font-size: 12px;
-          color: #767676;
-          line-height: 1.3; }
-
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;
@@ -83,7 +9,7 @@
   padding: 0;
   border: 0;
   font-size: 100%;
-  background: transparent;
+  background: #FFFFFF;
   position: fixed;
   top: 0;
   right: 0;
@@ -234,3 +160,81 @@
           .search-bar-dir-outer-container .sbd-inner-container .search-and-button-wrapper .upload-and-signin-container .signin-btn:active {
             background: #095b99;
             box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.5); }
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+.trending-view-dir-outer-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F1F1F1;
+  font-family: "Roboto", sans-serif;
+  margin-top: 89px; }
+  .trending-view-dir-outer-wrap .nav-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 40px;
+    background: #FFFFFF;
+    position: fixed;
+    top: 49px;
+    border: solid 1px #F1F1F1; }
+    .trending-view-dir-outer-wrap .nav-container .links-wrap {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 580;
+      width: 226px; }
+      .trending-view-dir-outer-wrap .nav-container .links-wrap .home {
+        display: flex;
+        align-items: center;
+        color: #767676; }
+      .trending-view-dir-outer-wrap .nav-container .links-wrap .trending {
+        display: flex;
+        align-items: center;
+        padding-top: 3px;
+        border-bottom: solid #CC181E 3px; }
+      .trending-view-dir-outer-wrap .nav-container .links-wrap .subscriptions {
+        display: flex;
+        align-items: center;
+        color: #767676; }
+  .trending-view-dir-outer-wrap .trending-vids-wrap {
+    width: 850px;
+    margin-top: 10px;
+    padding: 22px 18px;
+    background-color: #FFFFFF; }
+    .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap {
+      display: flex;
+      margin-bottom: 10px;
+      cursor: pointer; }
+      .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .thumbnail {
+        min-width: 196px;
+        height: 110px;
+        margin-right: 10px; }
+      .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap {
+        display: flex;
+        flex-direction: column;
+        padding-top: 3px;
+        width: 500px; }
+        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .video-title {
+          color: #187BC6;
+          font-size: 14px;
+          font-weight: 600;
+          line-height: 1.3;
+          margin-bottom: 5px; }
+        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .channel-title-wrap {
+          margin-bottom: 5px; }
+          .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .channel-title-wrap .channel-title {
+            font-size: 12px;
+            color: #767676; }
+        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .views-wrap {
+          font-size: 12px;
+          color: #767676;
+          margin-bottom: 5px;
+          display: flex; }
+          .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .views-wrap .dot {
+            margin: 0px 5px; }
+        .trending-view-dir-outer-wrap .trending-vids-wrap .video-wrap .video-info-wrap .description {
+          font-size: 12px;
+          color: #767676;
+          line-height: 1.3; }

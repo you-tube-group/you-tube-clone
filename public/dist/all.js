@@ -4,14 +4,13 @@ angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider,
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('landing', {
-    url: '/',
-    templateUrl: '<div>HELLO WORLD</div>'
+    url: '/'
   }).state('trending', {
     url: '/trending',
     templateUrl: './app/views/trendingView.html'
   }).state('video', {
-    url: "/:videoId",
-    templateUrl: './directives/videoPlayer.html'
+    url: "/videoId",
+    templateUrl: './app/views/videoPlayer.html'
   });
 });
 'use strict';
@@ -22,7 +21,7 @@ angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainSe
 });
 'use strict';
 
-angular.module('you-tube-clone').service('mainService', function ($http) {
+angular.module('you-tube-clone').service('mainService', function ($http, $state) {
   var _this = this;
 
   this.broken = 'working';
@@ -39,6 +38,7 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
   this.singleVid = [];
   this.passVideo = function (video) {
     _this.singleVid[0] = video;
+    $state.go('video');
   };
 });
 'use strict';
@@ -57,23 +57,17 @@ angular.module('you-tube-clone').directive('searchDir', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('videoPlayer', function () {
+angular.module('you-tube-clone').directive('searchBarDir', function () {
 
   return {
     restrict: 'E',
-    templateUrl: './app/directives/videoPlayer.html',
-    controller: function controller($scope, mainService, $interval) {
-
-      //function for changing current video in service
-      $scope.changeVideo = function (video) {
-        mainService.newVideo = video;
-      };
-
-      var vidData = mainService.getTrending().then(function (response) {
-        $scope.rawData = response;
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {
+      $('.search-bar-dir-outer-container').hover(function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
+      }, function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
       });
-
-      $scope.singleVid = mainService.singleVid;
     }
   };
 });
@@ -105,17 +99,26 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('searchBarDir', function () {
+angular.module('you-tube-clone').directive('videoPlayer', function () {
 
   return {
     restrict: 'E',
-    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: function controller($scope) {
-      $('.search-bar-dir-outer-container').hover(function () {
-        console.log("hovering");
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
-      }, function () {
-        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
+    templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
+    controller: function controller($scope, mainService, $interval, $stateParams, $sce) {
+
+      //function for changing current video in service
+      $scope.changeVideo = function (video) {
+        mainService.newVideo = video;
+      };
+
+      var vidData = mainService.getTrending().then(function (response) {
+        $scope.rawData = response;
+      });
+
+      $scope.singleVid = mainService.singleVid[0];
+
+      $scope.$watch(function () {
+        $scope.vidUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.singleVid.id + '?autoplay=1');
       });
     }
   };

@@ -1,5 +1,5 @@
 angular.module('you-tube-clone')
-.service('mainService', function($http) {
+.service('mainService', function($http, $state) {
 
 this.broken = 'working'
 
@@ -15,6 +15,7 @@ this.broken = 'working'
   this.singleVid = [];
   this.passVideo = (video) => {
     this.singleVid[0] = video;
+    $state.go('video');
   }
 
 })
