@@ -5,16 +5,40 @@
       frameborder="0"></iframe>
   </div>
   <div class="video-title-container">
-    <div class="title">
+    <div class="video-title">
       <h1>{{videoData.snippet.title}}</h1>
     </div>
-    <div class="author-info">
-      <p>{{videoData.snippet.channelTitle}}</p>
+    <div class="author-info-container">
+      <div class="author-info">
+        <div class="author-img">
+          <img src="http://placehold.it/50x50">
+        </div>
+        <div class="author-channel-info">
+          <div class="author-name">
+            <p>{{videoData.snippet.channelTitle}}</p>
+          </div>
+          <div class="author-subscribe">SUBSCRIBE</div>
+        </div>
+      </div>
+      <div class="view-count">
+        <p>{{videoData.statistics.viewCount}} views</p>
+      </div>
     </div>
-    <div class="video-stats">
-      <p>{{videoData.statistics.viewCount}} views</p>
-      <p>Likes{{videoData.statistics.dislikeCount}}</p>
-      <p>Dislike{{videoData.statistics.likeCount}}</p>
+    <div class="video-title-action-buttons">
+      <div class="media-btns">
+        <div class="add-btn"></div>
+        <div class="btn-text">Add to</div>
+        <div class="share-btn"></div>
+        <div class="btn-text">Share</div>
+        <div class="more-btn"> </div>
+        <div class="btn-text">More</div>
+      </div>
+      <div class="video-reactions">
+        <div class="like-btn"></div>
+        <div class="num-likes btn-text">{{videoData.statistics.likeCount}}</div>
+        <div class="dislike-btn"></div>
+        <div class="num-likes btn-text">{{videoData.statistics.dislikeCount}}</div>
+      </div>
     </div>
   </div>
 
