@@ -17,4 +17,14 @@ this.broken = 'working'
     this.singleVid[0] = video;
   }
 
+  this.getVideoInfo = (id) => {
+    console.log('Id from the service' + id);
+    return $http({
+      method: 'GET',
+      url: '/api/watch/?id=' + id
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
 })

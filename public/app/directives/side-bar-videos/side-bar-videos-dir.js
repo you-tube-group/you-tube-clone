@@ -1,25 +1,22 @@
+// sideBarVideosDir
+
+
 angular.module('you-tube-clone')
-.directive('trendingViewDir', () => {
+.directive('sideBarVideosDir', () => {
 
   return {
     restrict: 'E',
-    templateUrl: './app/directives/trendingView/trendingViewDir.html',
+    templateUrl: './app/directives/side-bar-videos/side-bar-videos.html',
     controller: ($scope, mainService) => {
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
-          $scope.trendingData = response;
-
-
+          $scope.trendingData = response.items;
+          console.log('hello from the sideBarVideosDir!');
           console.log($scope.trendingData);
         })
       };
       getTrendingData();
-
-
-      $scope.passVideo = (video) => {
-        mainService.passVideo(video);
-      }
 
     //END OF CONTROLLER
     }
