@@ -1,0 +1,35 @@
+.footer-dir-outer-wrap {
+  width: 100%;
+  height: 50px;
+  background: blue;
+  .top-buttons-wrap {
+    width: 100%;
+    display: flex;
+    .you-tube-icon {
+      background: url('./images/you-tube-sprite.webp') 0 -102px;
+      background-size: 312px 547px;
+    }
+    .language {}
+    .location {}
+    .restricted {}
+    .history {}
+    .help {}
+  }
+  .top-links {
+    .about {}
+    .press {}
+    .copyright {}
+    .creators {}
+    .advertise {}
+    .developers {}
+    .youtube {}
+  }
+  .bottom-links {
+    .terms {}
+    .privacy {}
+    .policy {}
+    .feedback {}
+    .try-something {}
+    .copyright {}
+  }
+}
