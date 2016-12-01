@@ -9,11 +9,17 @@ angular.module('you-tube-clone')
         mainService.getTrending()
         .then((response) => {
           $scope.trendingData = response;
-          console.log('hello from the trendingViewDir!');
+
+
           console.log($scope.trendingData);
         })
       };
       getTrendingData();
+
+
+      $scope.passVideo = (video) => {
+        mainService.passVideo(video);
+      }
 
     //END OF CONTROLLER
     }

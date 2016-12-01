@@ -4,8 +4,7 @@ angular.module('you-tube-clone', ['ui.router'])
 
   $stateProvider
   .state('landing', {
-    url: '/',
-    templateUrl: '<div>HELLO WORLD</div>'
+    url: '/'
   })
   .state('trending', {
     url: '/trending',
@@ -13,7 +12,7 @@ angular.module('you-tube-clone', ['ui.router'])
   })
   .state('video', {
     url:"/:videoId",
-    templateUrl: './directives/videoPlayer/videoPlayer.html'
+    templateUrl: './app/views/videoPlayer.html'
   })
 
 })

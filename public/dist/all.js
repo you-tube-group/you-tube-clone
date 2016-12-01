@@ -4,14 +4,15 @@ angular.module('you-tube-clone', ['ui.router']).config(function ($stateProvider,
   $urlRouterProvider.otherwise('/');
 
   $stateProvider.state('landing', {
-    url: '/',
-    templateUrl: '<div>HELLO WORLD</div>'
+    url: '/'
   }).state('trending', {
     url: '/trending',
     templateUrl: './app/views/trendingView.html'
   }).state('video', {
     url: "/:videoId",
-    templateUrl: './directives/videoPlayer/videoPlayer.html'
+
+    templateUrl: './app/views/videoPlayer.html'
+
   });
 });
 'use strict';
@@ -22,7 +23,8 @@ angular.module('you-tube-clone').controller('mainCtrl', function ($scope, mainSe
 });
 'use strict';
 
-angular.module('you-tube-clone').service('mainService', function ($http) {
+angular.module('you-tube-clone').service('mainService', function ($http, $state) {
+  var _this = this;
 
   this.broken = 'working';
 
@@ -31,14 +33,26 @@ angular.module('you-tube-clone').service('mainService', function ($http) {
       method: 'GET',
       url: '/trending'
     }).then(function (response) {
-      console.log(response);
+      // console.log(response);
       return response.data;
     });
   };
 
-  this.newVideo = '';
+  this.singleVid = [];
+  this.passVideo = function (video) {
+    _this.singleVid[0] = video;
+  };
 
-  // this.getTrending();
+  this.getVideoInfo = function (id) {
+    console.log('Id from the service' + id);
+    return $http({
+      method: 'GET',
+      url: '/api/watch/?id=' + id
+    }).then(function (response) {
+      return response.data;
+    });
+  };
+
 });
 'use strict';
 
@@ -56,35 +70,25 @@ angular.module('you-tube-clone').directive('searchDir', function () {
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('videoPlayer', function () {
+
+angular.module('you-tube-clone').directive('searchBarDir', function () {
+
 
   return {
     restrict: 'E',
-    templateUrl: './app/directives/videoPlayer.html',
-    controller: function controller($scope, mainService) {
-
-      //function for changing current video in service
-      $scope.changeVideo = function (video) {
-        mainService.newVideo = video;
-      };
-
-      var vidData = mainService.getTrending().then(function (response) {
-        $scope.rawData = response;
+    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
+    controller: function controller($scope) {
+      $('.search-bar-dir-outer-container').hover(function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
+      }, function () {
+        $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
       });
     }
   };
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('searchBarDir', function () {
 
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: function controller($scope) {}
-  };
-});
-'use strict';
 
 angular.module('you-tube-clone').directive('trendingViewDir', function () {
 
@@ -95,8 +99,8 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       var getTrendingData = function getTrendingData() {
         mainService.getTrending().then(function (response) {
           $scope.trendingData = response;
-          console.log('hello from the trendingViewDir!');
-          console.log($scope.trendingData);
+<<<<<<< HEAD
+
         });
       };
       getTrendingData();
@@ -121,13 +125,62 @@ angular.module('you-tube-clone').directive('sideBarVideosDir', function () {
         mainService.getTrending().then(function (response) {
           $scope.trendingData = response.items;
           console.log('hello from the sideBarVideosDir!');
+=======
+          console.log('trending data:');
+>>>>>>> master
           console.log($scope.trendingData);
         });
       };
       getTrendingData();
 
+      $scope.passVideo = function (video) {
+        mainService.passVideo(video);
+      };
+
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+<<<<<<< HEAD
+=======
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('videoPlayer', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
+    controller: function controller($scope, mainService, $interval, $stateParams, $sce) {
+
+      //function for changing current video in service
+      $scope.changeVideo = function (video) {
+        mainService.newVideo = video;
+      };
+
+      var vidData = mainService.getTrending().then(function (response) {
+        $scope.rawData = response;
+      });
+
+      $scope.singleVid = mainService.singleVid[0];
+
+      var id = $stateParams.videoId;
+
+      //get the video data for the clicked video
+      $scope.getVideoInfo = function (id) {
+        mainService.getVideoInfo(id).then(function (response) {
+          $scope.videoInfo = response;
+
+          $scope.videoId = response.items[0].id;
+          $scope.videoUrl = "https://www.youtube.com/embed/" + $scope.videoId + "?autoplay=1&origin=http://example.com";
+          $scope.thisUrl = $sce.trustAsResourceUrl($scope.videoUrl);
+
+          // this specific variable holds the video info (ie title, and statistics)
+          $scope.videoData = response.items[0];
+        });
+      };
+      $scope.getVideoInfo(id);
+    }
+>>>>>>> master
   };
 });
