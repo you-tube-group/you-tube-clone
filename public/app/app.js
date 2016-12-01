@@ -15,4 +15,5 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
     templateUrl: './app/views/videoPlayer.html'
   })
 
+
 })
