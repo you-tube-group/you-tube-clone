@@ -10,7 +10,7 @@
       <div class="original-comment-wrap">
         <div class="name-wrap">
           <div class="name">{{comment.snippet.topLevelComment.snippet.authorDisplayName}}</div>
-          <div class="hours">{{comment.snippet.topLevelComment.snippet.publishedAt}}</div>
+          <div class="hours">{{commentTime(comment.snippet.topLevelComment.snippet.publishedAt)}}</div>
         </div>
         <div class="orig-comment" ng-bind-html="comment.snippet.topLevelComment.snippet.textDisplay">{{comment.snippet.topLevelComment.snippet.textDisplay}}</div>
       </div>
@@ -33,11 +33,11 @@
           <div class="reply-comment-wrap">
             <div class="name-wrap">
               <div class="name">{{reply.snippet.authorDisplayName}}</div>
-              <div class="time-stamp">{{reply.snippet.publishedAt}}</div>
+              <div class="time-stamp">{{commentTime(reply.snippet.publishedAt)}}</div>
             </div>
             <div class="comment" ng-bind-html="reply.snippet.textDisplay">{{reply.snippet.textDisplay}}</div>
             <div class="reply-wrap">
-              <div class="reply">Reply</div>
+              <div class="sub-reply">Reply</div>
               <div class="total-likes">{{reply.snippet.likeCount}}</div>
               <div class="likes l-d-size"></div>
               <div class="dislikes l-d-size"></div>
