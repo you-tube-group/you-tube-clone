@@ -90,12 +90,29 @@ angular.module('you-tube-clone').directive('hTrendingDir', function () {
             $scope.passVideo = function (video) {
                 mainService.passVideo(video);
             };
+
+            $scope.publishConverter = function (published) {
+                published = moment(published, "YYYYMMDD").fromNow();
+                console.log(published);
+                return published;
+            };
             // NOTE: jQuery for carousel buttons
-
             $(document).ready(function () {
-
                 $('.right-arrow-container').on('click', function () {
                     $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
+                }).mouseover(function () {
+                    $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
+                }).mouseleave(function () {
+                    $('.right-nav-arrow-container').removeClass('right-nav-arrow-container').addClass("right-arrow-container");
+                });
+                // NOTE: End of the right arrow style effect
+
+                $('.left-arrow-container').on('click', function () {
+                    $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
+                }).mouseover(function () {
+                    $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
+                }).mouseleave(function () {
+                    $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
                 });
             }); //<-- End of jQuery script
 

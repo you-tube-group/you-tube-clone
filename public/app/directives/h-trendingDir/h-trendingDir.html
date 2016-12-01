@@ -21,12 +21,16 @@
             >
                 <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
             </div>
+
             <div class="trending-video-title">{{video.snippet.title}}</div>
             <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
+        <section class="video-count-container">
             <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
-            <div class="dot"></div>
-            <!-- FIXME: figure out momentjs to show the published date normal -->
-            <!-- <div class="trending-publish">{{video.snippet.publishedAt}}</div> -->
+            <div class="dot-style">
+                <i class="fa fa-circle" aria-hidden="true"></i>
+            </div>
+            <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+        </section>
         </aside>
 
         <!-- NOTE: right carousel arrow -->

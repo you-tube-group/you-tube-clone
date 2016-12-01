@@ -61,7 +61,17 @@
       height: 110px;
       margin-left: -5px;
       margin-right: 7px;
-      opacity: .5; }
+      color: #C8C8C8;
+      /*opacity: .5;*/ }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .left-nav-arrow-container {
+      height: 50px;
+      color: black;
+      box-shadow: 1px 0px 1px 1px #888888;
+      background-color: #fff;
+      margin: 28px 0px 0px -35px;
+      font-size: 20px;
+      padding: 13px;
+      font-weight: 500; }
     .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel {
       width: 100%;
       overflow: hidden; }
@@ -98,19 +108,37 @@
         line-height: 14px;
         max-width: 196px;
         text-align: left; }
-      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .trending-view-count {
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        font-size: 11px;
-        color: #767676;
-        line-height: 14px;
-        max-width: 196px;
-        text-align: left; }
+      .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .video-count-container {
+        display: flex; }
+        .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .video-count-container .trending-view-count {
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          font-size: 11px;
+          color: #767676;
+          line-height: 14px;
+          max-width: 196px;
+          text-align: left; }
+        .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .video-count-container .trending-publish {
+          font-family: "Roboto", sans-serif;
+          font-weight: 400;
+          font-size: 11px;
+          color: #767676;
+          line-height: 14px;
+          max-width: 196px;
+          text-align: left; }
+        .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel .video-count-container .dot-style {
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          font-size: 4px;
+          color: #767676;
+          margin: 0px 5px; }
     .h-trending-dir-outer-wrap .trending-vid-carousel .right-arrow-container {
       display: flex;
       height: 110px;
       justify-content: space-around;
       flex-direction: column;
+      color: #C8C8C8;
       /*margin-left: -10px;*/
       /*opacity: .5;*/ }
     .h-trending-dir-outer-wrap .trending-vid-carousel .right-nav-arrow-container {
