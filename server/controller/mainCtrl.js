@@ -25,7 +25,13 @@ module.exports = {
     client.get(`https://www.googleapis.com/youtube/v3/commentThreads?part=replies,snippet&order=relevance&key=${API_KEY}&videoId=${videoId}`, function(data, response) {
       res.status(200).json(data);
     });
+  },
 
-
+  // retrieves videos in a playList based on playList id
+  getPlaylistVideos: function(req,res,next) {
+    var playListId = req.query.id;
+    client.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId=${playListId}&key=${API_KEY}`, function(data, response) {
+      res.status(200).json(data);
+    });
   }
 }
