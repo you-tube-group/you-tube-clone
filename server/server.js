@@ -16,6 +16,7 @@ app.get('/api/trending', controller.getTrending);
 app.get('/api/watch', controller.getVideoInfo);
 app.get('/api/comments' ,controller.getVideoComments);
 app.get('/api/playList', controller.getPlaylistVideos);
+app.get('/api/search', controller.getSearchResults);
 
 
 

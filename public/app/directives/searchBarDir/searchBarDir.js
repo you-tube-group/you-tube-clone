@@ -4,9 +4,17 @@ angular.module('you-tube-clone')
   return {
     restrict: 'E',
     templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: ($scope) => {
+    controller: ($scope, mainService) => {
 
+      $scope.searchTerm = '';
       $scope.hamSlider = false;
+
+      $scope.searchRequest = (searchTerm) => {
+        mainService.getSearchResults(searchTerm)
+        
+        // Erases searchTerm after sending request
+        // $scope.searchTerm = '';
+      }
 
       $scope.openHamSlide = () => {
         if (!$scope.hamSlider) {
