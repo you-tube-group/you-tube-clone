@@ -114,6 +114,7 @@ angular.module('you-tube-clone').directive('hTrendingDir', function () {
                 }).mouseleave(function () {
                     $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
                 });
+                // FIXME: work on the mouseleave for the left carousel
             }); //<-- End of jQuery script
 
         } //<-- end of controller

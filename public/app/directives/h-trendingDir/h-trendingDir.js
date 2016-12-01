@@ -57,7 +57,7 @@ $(document).ready(function (){
     }).mouseleave(() => {
         $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
     });
-
+// FIXME: work on the mouseleave for the left carousel
 }); //<-- End of jQuery script
 
 
