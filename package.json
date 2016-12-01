@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/you-tube-group/you-tube-clone#readme",
   "devDependencies": {
+    "angular-ui-bootstrap": "^2.3.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",

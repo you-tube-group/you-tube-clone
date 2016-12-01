@@ -117,17 +117,31 @@ $primary-font-family: 'Roboto', sans-serif;
       }
     }
   }
-/*.trending-title{
-  color: red;
-}*/
+  .arrow-wrap{
+  margin-right: 23px;
+  position: absolute;
+  left:203px;
+  top: 175px;
 
+  .left-arrow-container{
+    /*background: #fff;*/
+    padding: 10px;
+    /*border: solid 1px black;*/
+  }
+}
+
+.trending-vid-outer-wrap{
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  width: 75%;
+  background: $tvd-vid-wrap-bg;
+  padding: 35px 0px 5px 17px;
+  border-bottom: 1px solid $yt-unselected-lightgray;
 
 .trending-vid-carousel{
   display: flex;
-  width: 75%;
-  background: $tvd-vid-wrap-bg;
-  padding: 35px 8px 15px 15px;
-  border-bottom: 1px solid $yt-unselected-lightgray;
+  width: 100%;
   .trending-title{
     position: absolute;
     color: $yt-selected-gray;
@@ -138,34 +152,10 @@ $primary-font-family: 'Roboto', sans-serif;
     margin-top: -25px;
     margin-left: 8px;
   }
-
-  .left-arrow-container{
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    height: 110px;
-    margin-left: -5px;
-    margin-right: 7px;
-    color: $yt-unselected-lightgray;
-    /*opacity: .5;*/
-  }
-  .left-nav-arrow-container {
-    height: 50px;
-    color: black;
-    box-shadow: 1px 0px 1px 1px #888888;
-    background-color: #fff;
-    margin: 28px 0px 0px -35px;
-    font-size: 20px;
-    padding: 13px;
-    font-weight: 500;
-  }
-
     .h-trending-carousel{
-      width: 100%;
-      overflow: hidden;
-
+      min-width: 196px;
+      margin-right: 12px;
   .thumbnail {
-    max-width: 196px;
     height: 110px;
     margin-right: 10px;
     display: flex;
@@ -197,30 +187,10 @@ $primary-font-family: 'Roboto', sans-serif;
       font-size: 4px;
       color: $tvd-subtext-color;
       margin: 0px 5px;
+      }
     }
   }
-  }
-    .right-arrow-container {
-      display: flex;
-      height: 110px;
-      justify-content: space-around;
-      flex-direction: column;
-      color: $yt-unselected-lightgray;
-      /*margin-left: -10px;*/
-      /*opacity: .5;*/
-    }
-    .right-nav-arrow-container {
-      height: 50px;
-      color: black;
-      box-shadow: 1px 1px 1px #888888;
-      background-color: #fff;
-      margin-top: 28px;
-      margin-right: -30px;
-      margin-left: -11px;
-      font-size: 20px;
-      padding: 13px;
-      font-weight: 500;
-    }
+}
 }
 
 } //<-- this is the end of outer-wrap

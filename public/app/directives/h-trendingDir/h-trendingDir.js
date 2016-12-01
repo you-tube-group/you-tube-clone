@@ -41,25 +41,10 @@ angular.module('you-tube-clone')
           };
 // NOTE: jQuery for carousel buttons
 $(document).ready(function (){
-    $('.right-arrow-container').on('click', () =>{
-        $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
-    }).mouseover(() => {
-        $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
-    }).mouseleave(() =>{
-        $('.right-nav-arrow-container').removeClass('right-nav-arrow-container').addClass("right-arrow-container");
-    });
-// NOTE: End of the right arrow style effect
-    $('.left-arrow-container').on('click', () =>{
-        $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
-    }).mouseover(() =>{
-        $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
-    }).mouseleave(() => {
-        $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
-    });
-// FIXME: work on the mouseleave for the left carousel
-// NOTE: jQuery for carousel slider
-
-}); //<-- End of jQuery script
+    // $('.left-arrow-container').on('click', () => {
+    //   $('trending-vid-carousel').css("margin-left: -1228px");
+    // })
+}); //<-- end of jQuery
 
         } //<-- end of controller
         }
