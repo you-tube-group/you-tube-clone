@@ -48,8 +48,7 @@ $(document).ready(function (){
     }).mouseleave(() =>{
         $('.right-nav-arrow-container').removeClass('right-nav-arrow-container').addClass("right-arrow-container");
     });
-    // NOTE: End of the right arrow style effect
-
+// NOTE: End of the right arrow style effect
     $('.left-arrow-container').on('click', () =>{
         $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
     }).mouseover(() =>{
@@ -58,11 +57,9 @@ $(document).ready(function (){
         $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
     });
 // FIXME: work on the mouseleave for the left carousel
+// NOTE: jQuery for carousel slider
+
 }); //<-- End of jQuery script
-
-
-
-
 
         } //<-- end of controller
         }
