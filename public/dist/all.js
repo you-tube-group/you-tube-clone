@@ -52,21 +52,6 @@ angular.module('you-tube-clone').service('mainService', function ($http, $state)
 });
 'use strict';
 
-angular.module('you-tube-clone').directive('searchDir', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/searchDir.html',
-    controller: function controller($scope, mainService) {
-      var vidData = mainService.getTrending().then(function (response) {
-        $scope.rawData = response;
-      });
-    }
-  };
-});
-'use strict';
-
-
 angular.module('you-tube-clone').directive('footerDir', function () {
   return {
     restrict: 'E',
