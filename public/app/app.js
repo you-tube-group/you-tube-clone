@@ -13,7 +13,7 @@ angular.module('you-tube-clone', ['ui.router'])
   })
   .state('video', {
     url:"/:videoId",
-    templateUrl: './directives/videoPlayer.html'
+    templateUrl: './directives/videoPlayer/videoPlayer.html'
   })
 
 })

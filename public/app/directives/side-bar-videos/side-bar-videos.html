@@ -1,0 +1,26 @@
+<div class="side-bar-videos-dir-container">
+  <div class="list-video-container" ng-repeat="video in trendingData">
+    <div
+      class="thumbnail"
+      alt="video thumbnail"
+      style="background:url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"></div>
+    <div class="list-video-info-container">
+      <!-- {{video.snippet.title.split(" ")[0] }} -->
+
+      <h5 class="title">{{video.snippet.title.split(" ").length > 10 ? video.snippet.title.split(" ")[0] + ' ' + video.snippet.title.split(" ")[1] + ' ' +
+      video.snippet.title.split(" ")[2] + ' ' +
+      video.snippet.title.split(" ")[3] + ' ' +
+      video.snippet.title.split(" ")[4] + ' ' +
+      video.snippet.title.split(" ")[5] + ' ' +
+      video.snippet.title.split(" ")[6] + ' ' +
+      video.snippet.title.split(" ")[7] + ' ' +
+      video.snippet.title.split(" ")[8] + ' ' +
+      video.snippet.title.split(" ")[9] : video.snippet.title}}</h5>
+
+      <p class="small-text">{{video.snippet.channelTitle}}</p>
+      <p class="small-text">{{video.statistics.viewCount | number:0}} views</p>
+    </div>
+
+  </div>
+
+</div>
