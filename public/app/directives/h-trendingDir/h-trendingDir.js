@@ -44,12 +44,12 @@ angular.module('you-tube-clone')
 // NOTE: jQuery for carousel buttons
 $(() =>{
     $('.arrow-wrap').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-left": "-=2400"}, 300);
+        $('.trending-vid-carousel').animate({"margin-left": "-=416px"}, 300);
     });
 
-    // $('arrow-wrap-right').on('click', () => {
-    //     $('.trending-vid-carousel').animate({"margin-right": "+2400"}, 300);
-    // })
+    $('arrow-wrap-right').on('click', () => {
+        $('.trending-vid-carousel').animate({"margin-right": "+=416"}, 300);
+    })
 
 
 
