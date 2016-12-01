@@ -4,8 +4,10 @@
       ng-src="{{thisUrl}}"
       frameborder="0"></iframe>
   </div>
-  <div class="video-title">
-    <h1>{{videoData.snippet.title}}</h1>
+  <div class="video-title-container">
+    <div class="title">
+      <h1>{{videoData.snippet.title}}</h1>
+    </div>
     <div class="author-info">
       <p>{{videoData.snippet.channelTitle}}</p>
     </div>
@@ -15,6 +17,7 @@
       <p>Dislike{{videoData.statistics.likeCount}}</p>
     </div>
   </div>
+
   <div class="video-description">
     <h1>Published On {{videoData.snippet.publishedAt}}</h1>
     <p>{{videoData.snippet.description}}</p>
