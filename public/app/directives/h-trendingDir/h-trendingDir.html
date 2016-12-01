@@ -7,25 +7,17 @@
         </div>
     </div>
 
-    <section class="arrow-wrap">
-        <section class="left-arrow-container">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </section>
-    </section>
-    
-<section class="trending-vid-outer-wrap">
 
+<section class="trending-vid-outer-wrap">
     <section class="trending-vid-carousel">
         <p class="trending-title">Trending</p>
-    <!-- NOTE: left carousel arrow -->
         <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items | limitTo: 24'>
             <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
             ng-click='passVideo(video)'
             ui-sref='video({videoId: video.id})'
             >
-                <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
+            <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
             </div>
-
             <div class="trending-video-title">{{video.snippet.title}}</div>
             <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
         <section class="video-count-container">
@@ -42,5 +34,17 @@
             <i class="fa fa-angle-right" aria-hidden="true"></i>
         </section> -->
     </section>
+    </section>
+
+    <section class="arrow-wrap" ng-mouseover="hoverLeft= true" ng-mouseleave="hoverLeft= false">
+        <section class="left-arrow-container" ng-class="{leftArrowHover: hoverLeft}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </section>
+    </section>
+
+    <section class="arrow-wrap-right" ng-mouseover="hoverRight= true" ng-mouseleave="hoverRight= false">
+        <section class="right-arrow-container" ng-class="{rightArrowHover: hoverRight}">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </section>
     </section>
 </section>

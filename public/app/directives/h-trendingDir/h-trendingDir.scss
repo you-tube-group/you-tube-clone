@@ -73,9 +73,65 @@ $primary-font-family: 'Roboto', sans-serif;
   line-height: 14px;
 }
 
+.arrow-wrap{
+color: $yt-unselected-lightgray;
+height: 75px;
+width: 100px;
+margin-right: 23px;
+position: absolute;
+left:12.7%;
+top: 19%;
+z-index: 100;
+transform: translate(-80%, -50%);
 
+.left-arrow-container{
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  z-index: 100;
+}
+
+.leftArrowHover{
+  background: #fff;
+  padding: 18px;
+  transform: translate(-7%, -20px);
+  box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
+  color: #000;
+  }
+}
+// FIXME: fix the box-shadow from shading inside
+
+.arrow-wrap-right{
+color: $yt-unselected-lightgray;
+height: 75px;
+width: 100px;
+margin-right: 23px;
+position: absolute;
+right:5.8%;
+top: 19%;
+z-index: 100;
+transform: translate(-80%, -50%);
+
+.right-arrow-container{
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translate(0%, -50%);
+  z-index: 100;
+}
+
+.rightArrowHover{
+  background: #fff;
+  padding: 18px;
+  transform: translate(95%, -25px);
+  box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
+  color: #000;
+  }
+}
 
 .h-trending-dir-outer-wrap {
+  position: realative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -83,6 +139,7 @@ $primary-font-family: 'Roboto', sans-serif;
   background-color: $tvd-container-bg-color;
   font-family: $tvd-font-fam;
   margin-top: 89px;
+  z-index: -1;
   .nav-container {
     display: flex;
     justify-content: center;
@@ -117,20 +174,10 @@ $primary-font-family: 'Roboto', sans-serif;
       }
     }
   }
-  .arrow-wrap{
-  margin-right: 23px;
-  position: absolute;
-  left:203px;
-  top: 175px;
 
-  .left-arrow-container{
-    /*background: #fff;*/
-    padding: 10px;
-    /*border: solid 1px black;*/
-  }
-}
 
 .trending-vid-outer-wrap{
+  position: relative;
   overflow-x: hidden;
   display: flex;
   justify-content: center;

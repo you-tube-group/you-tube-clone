@@ -5,6 +5,8 @@ angular.module('you-tube-clone')
             restrict: 'E',
             templateUrl: './app/directives/h-trendingDir/h-trendingDir.html',
             controller: ($scope, mainService) => {
+                $scope.hover = false;
+
                 const getTrendingHome = () => {
                     mainService.getTrending()
                         .then((response) => {
@@ -40,10 +42,17 @@ angular.module('you-tube-clone')
               return published;
           };
 // NOTE: jQuery for carousel buttons
-$(document).ready(function (){
-    // $('.left-arrow-container').on('click', () => {
-    //   $('trending-vid-carousel').css("margin-left: -1228px");
+$(() =>{
+    $('.arrow-wrap').on('click', () => {
+        $('.trending-vid-carousel').animate({"margin-left": "-=2400"}, 300);
+    });
+
+    // $('arrow-wrap-right').on('click', () => {
+    //     $('.trending-vid-carousel').animate({"margin-right": "+2400"}, 300);
     // })
+
+
+
 }); //<-- end of jQuery
 
         } //<-- end of controller
