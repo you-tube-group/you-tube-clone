@@ -6,7 +6,7 @@ this.broken = 'working'
   this.getTrending = () => {
     return $http({
       method:'GET',
-      url: '/trending'
+      url: '/api/trending'
     }).then((response) => {
       // console.log(response);
       return response.data;
@@ -21,8 +21,19 @@ this.broken = 'working'
     console.log('Id from the service' + id);
     return $http({
       method: 'GET',
-      url: '/api/watch/?id=' + id
+      url: `/api/watch/?id=${id}`
     }).then((response) => {
+      return response.data;
+    })
+  }
+
+  this.getComments = (id) => {
+
+    return $http({
+      method: 'GET',
+      url: `/api/comments/?id=${id}`
+    }).then((response) => {
+
       return response.data;
     })
   }
