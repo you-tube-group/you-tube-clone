@@ -41,18 +41,26 @@
         color: #767676; }
   .h-trending-dir-outer-wrap .trending-vid-carousel {
     display: flex;
-    background: #FFFFFF;
     width: 75%;
+    background: #FFFFFF;
     padding: 35px 8px 15px 15px;
     border-bottom: 1px solid #C8C8C8; }
-    .h-trending-dir-outer-wrap .trending-vid-carousel .left-arrow-container .left-arrow {
-      background: no-repeat url("../Images/you-tube-icons.webp") -843px -135px;
-      width: 7px;
-      height: 10px;
+    .h-trending-dir-outer-wrap .trending-vid-carousel .trending-title {
       position: absolute;
-      top: 185px;
-      left: 212px;
-      background-size: auto;
+      color: #333333;
+      font-size: 15px;
+      font-family: "Roboto", sans-serif;
+      line-height: 18px;
+      font-weight: 500;
+      margin-top: -25px;
+      margin-left: 8px; }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .left-arrow-container {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      height: 110px;
+      margin-left: -5px;
+      margin-right: 7px;
       opacity: .5; }
     .h-trending-dir-outer-wrap .trending-vid-carousel .h-trending-carousel {
       width: 100%;
@@ -98,15 +106,24 @@
         line-height: 14px;
         max-width: 196px;
         text-align: left; }
-    .h-trending-dir-outer-wrap .trending-vid-carousel .right-arrow {
-      background: no-repeat url("/Images/you-tube-icons.webp") -676px -198px;
-      background-size: auto;
-      width: 7px;
-      height: 10px;
-      position: absolute;
-      right: 215px;
-      top: 185px;
-      opacity: .5; }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .right-arrow-container {
+      display: flex;
+      height: 110px;
+      justify-content: space-around;
+      flex-direction: column;
+      /*margin-left: -10px;*/
+      /*opacity: .5;*/ }
+    .h-trending-dir-outer-wrap .trending-vid-carousel .right-nav-arrow-container {
+      height: 50px;
+      color: black;
+      box-shadow: 1px 1px 1px #888888;
+      background-color: #fff;
+      margin-top: 28px;
+      margin-right: -30px;
+      margin-left: -11px;
+      font-size: 20px;
+      padding: 13px;
+      font-weight: 500; }
 
 .search-bar-dir-outer-container {
   height: 50px;

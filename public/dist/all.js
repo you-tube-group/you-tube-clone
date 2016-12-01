@@ -70,24 +70,35 @@ angular.module('you-tube-clone').directive('hTrendingDir', function () {
                 });
             };
             getTrendingHome();
-
+            // NOTE: This converts the time for the video duration
             $scope.convertTime = function (time) {
                 time = time.split(/[HMS]/);
                 time[0] = time[0].split('');
                 time[0].splice(0, 2);
                 time[0] = time[0].join('');
                 time.splice(time.length - 1, 1);
+                var i = time.length - 1;
+                if (time[i].length < 2) {
+                    time[i] = '0' + time[i];
+                }
                 time = time.join(':');
                 if (time.length === 2) {
                     time = '0:' + time;
                 }
-                if (time.length) console.log(time);
                 return time;
             };
-
             $scope.passVideo = function (video) {
                 mainService.passVideo(video);
             };
+            // NOTE: jQuery for carousel buttons
+
+            $(document).ready(function () {
+
+                $('.right-arrow-container').on('click', function () {
+                    $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
+                });
+            }); //<-- End of jQuery script
+
         } //<-- end of controller
     };
 });
@@ -104,32 +115,6 @@ angular.module('you-tube-clone').directive('searchBarDir', function () {
         $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto" });
       }, function () {
         $('.ham-icon').css({ "height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto" });
-      });
-    }
-  };
-});
-'use strict';
-
-angular.module('you-tube-clone').directive('videoPlayer', function () {
-
-  return {
-    restrict: 'E',
-    templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
-    controller: function controller($scope, mainService, $interval, $stateParams, $sce) {
-
-      //function for changing current video in service
-      $scope.changeVideo = function (video) {
-        mainService.newVideo = video;
-      };
-
-      var vidData = mainService.getTrending().then(function (response) {
-        $scope.rawData = response;
-      });
-
-      $scope.singleVid = mainService.singleVid[0];
-
-      $scope.$watch(function () {
-        $scope.vidUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.singleVid.id + '?autoplay=1');
       });
     }
   };
@@ -158,5 +143,31 @@ angular.module('you-tube-clone').directive('trendingViewDir', function () {
       //END OF CONTROLLER
     }
     //END OF RETURN (DIRECTIVE)
+  };
+});
+'use strict';
+
+angular.module('you-tube-clone').directive('videoPlayer', function () {
+
+  return {
+    restrict: 'E',
+    templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
+    controller: function controller($scope, mainService, $interval, $stateParams, $sce) {
+
+      //function for changing current video in service
+      $scope.changeVideo = function (video) {
+        mainService.newVideo = video;
+      };
+
+      var vidData = mainService.getTrending().then(function (response) {
+        $scope.rawData = response;
+      });
+
+      $scope.singleVid = mainService.singleVid[0];
+
+      $scope.$watch(function () {
+        $scope.vidUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + $scope.singleVid.id + '?autoplay=1');
+      });
+    }
   };
 });

@@ -7,16 +7,11 @@
         </div>
     </div>
 
-
-
     <section class="trending-vid-carousel">
-        <!-- <p class="trending-title">Trending</p> -->
+        <p class="trending-title">Trending</p>
     <!-- NOTE: left carousel arrow -->
         <section class="left-arrow-container">
-            <div class="left-arrow"></div>
-            <div class="left-arrow-button">
-                <div class="left-arrow-hover"></div>
-            </div>
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
         </section>
 
         <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items | limitTo: 6'>
@@ -30,20 +25,13 @@
             <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
             <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
             <div class="dot"></div>
-
+            <!-- FIXME: figure out momentjs to show the published date normal -->
             <!-- <div class="trending-publish">{{video.snippet.publishedAt}}</div> -->
         </aside>
 
         <!-- NOTE: right carousel arrow -->
-        <section class="right-arrow-containers">
-                <div class="right-arrow"></div>
-            <div class="right-arrow-button">
-                <div class="right-arrow-hover"></div>
-            </div>
+        <section class="right-arrow-container">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
         </section>
-
     </section>
-</section>
-
-</section>
 </section>

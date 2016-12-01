@@ -121,25 +121,34 @@ $primary-font-family: 'Roboto', sans-serif;
   color: red;
 }*/
 
+
 .trending-vid-carousel{
   display: flex;
-  background: $tvd-vid-wrap-bg;
   width: 75%;
+  background: $tvd-vid-wrap-bg;
   padding: 35px 8px 15px 15px;
   border-bottom: 1px solid $yt-unselected-lightgray;
-
-  .left-arrow-container {
-    .left-arrow  {
-      background: no-repeat url('../Images/you-tube-icons.webp') -843px -135px;
-      width: 7px;
-      height: 10px;
-      position: absolute;
-      top: 185px;
-      left: 212px;
-      background-size: auto;
-      opacity: .5;
-    }
+  .trending-title{
+    position: absolute;
+    color: $yt-selected-gray;
+    font-size: 15px;
+    font-family: $primary-font-family;
+    line-height: 18px;
+    font-weight: 500;
+    margin-top: -25px;
+    margin-left: 8px;
   }
+
+  .left-arrow-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 110px;
+    margin-left: -5px;
+    margin-right: 7px;
+    opacity: .5;
+  }
+
     .h-trending-carousel{
       width: 100%;
       overflow: hidden;
@@ -163,22 +172,30 @@ $primary-font-family: 'Roboto', sans-serif;
       right: 2px;
     }
   }
-  .trending-video-title{@include video-main-title}
-  .trending-channel-title{@include video-sub-title-unselected}
-  .trending-view-count{@include video-sub-title-unselected}
-}
-
-.right-arrow{
-  background:  no-repeat url('/Images/you-tube-icons.webp') -676px -198px;
-  background-size: auto;
-  width: 7px;
-  height: 10px;
-  position: absolute;
-  right: 215px;
-  top: 185px;
-  opacity: .5;
+    .trending-video-title{@include video-main-title}
+    .trending-channel-title{@include video-sub-title-unselected}
+    .trending-view-count{@include video-sub-title-unselected}
   }
-
+    .right-arrow-container {
+      display: flex;
+      height: 110px;
+      justify-content: space-around;
+      flex-direction: column;
+      /*margin-left: -10px;*/
+      /*opacity: .5;*/
+    }
+    .right-nav-arrow-container {
+      height: 50px;
+      color: black;
+      box-shadow: 1px 1px 1px #888888;
+      background-color: #fff;
+      margin-top: 28px;
+      margin-right: -30px;
+      margin-left: -11px;
+      font-size: 20px;
+      padding: 13px;
+      font-weight: 500;
+    }
 }
 
 } //<-- this is the end of outer-wrap
