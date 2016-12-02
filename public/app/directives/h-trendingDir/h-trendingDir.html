@@ -28,15 +28,10 @@
             <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
         </section>
         </aside>
-
-        <!-- NOTE: right carousel arrow -->
-        <!-- <section class="right-arrow-container">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </section> -->
     </section>
     </section>
 
-    <section class="arrow-wrap" ng-mouseover="hoverLeft= true" ng-mouseleave="hoverLeft= true">
+    <section class="arrow-wrap" ng-mouseover="hoverLeft= true" ng-mouseleave="hoverLeft= false">
         <section class="left-arrow-container" ng-class="{leftArrowHover: hoverLeft}">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
         </section>

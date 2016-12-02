@@ -42,18 +42,28 @@ angular.module('you-tube-clone')
               return published;
           };
 // NOTE: jQuery for carousel buttons
+    $scope.marginLeft = {
+        "margin-left": 0
+    }
+
+    $scope.scrollRight = () => {
+        if($scope.marginLeft.margin-left){
+
+        }
+    }
+
 $(() =>{
+
     $('.arrow-wrap').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-left": "-=416px"}, 300);
+        $('.trending-vid-carousel').animate({"margin-left": "-=416.5"}, 300);
     });
 
-    $('arrow-wrap-right').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-right": "+=416"}, 300);
-    })
-
-
-
+    $('.arrow-wrap-right').on('click', () => {
+        $('.trending-vid-carousel').animate({"margin-right": "-=416.5"}, 300);
+    });
 }); //<-- end of jQuery
+
+
 
         } //<-- end of controller
         }
