@@ -11,7 +11,7 @@ angular.module('you-tube-clone')
                     mainService.getTrending()
                         .then((response) => {
                             $scope.trendingVideos = response;
-                            console.log($scope.trendingVideos);
+                            // console.log($scope.trendingVideos);
                         })
                 }
                 getTrendingHome();
@@ -38,32 +38,34 @@ angular.module('you-tube-clone')
 
             $scope.publishConverter = (published) => {
              published = moment(published, "YYYYMMDD").fromNow();
-              console.log(published);
+            //   console.log(published);
               return published;
           };
-// NOTE: jQuery for carousel buttons
-    $scope.marginLeft = {
-        "margin-left": 0
-    }
-
-    $scope.scrollRight = () => {
-        if($scope.marginLeft.margin-left){
-
-        }
-    }
 
 $(() =>{
 // NOTE: multiply 427 by the number of slides you want to move right or left
     $('.arrow-wrap-right').on('click', () => {
+
+        var endOfCarousel = -7686;
+        var currentSpotRight = $('.trending-vid-carousel').css("margin-left");
         $('.trending-vid-carousel').animate({"margin-left": "-=854"}, 600);
+        console.log(currentSpotRight);
+
+        // if(currentSpotRight < endOfCarousel){
+        // }
+        // if($('.trending-vid-carousel').css("margin-left") > -8540){
+        //   $('.trending-vid-carousel').animate({"margin-left": "-=854"}, 600);
+        // }
     });
 
     $('.arrow-wrap').on('click', () => {
+        var startOfCarousel = 0;
+        var currentSpotLeft = $('.trending-vid-carousel').animate("margin-right");
+        console.log(currentSpotLeft);
         $('.trending-vid-carousel').animate({"margin-right": "-=854"}, 600);
+        // console.log(currentSpotLeft);
     });
 }); //<-- end of jQuery
-
-
 
         } //<-- end of controller
         }
