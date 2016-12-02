@@ -7,48 +7,15 @@ $tvd-subtext-color: #767676;
 $tvd-font-fam: 'Roboto', sans-serif;
 $tvd-red-underline: #CC181E;
 
-.trending-view-dir-outer-wrap {
+.search-view-dir-outer-wrap {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: $tvd-container-bg-color;
   font-family: $tvd-font-fam;
-  margin-top: 89px;
-  .nav-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 40px;
-    background: $tvd-vid-wrap-bg;
-    position: fixed;
-    top: 49px;
-    border: solid 1px $tvd-container-bg-color;
-    .links-wrap{
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 580;
-      width: 226px;
-      .home {
-        display: flex;
-        align-items: center;
-        color: $tvd-subtext-color;
-      }
-      .trending {
-        display: flex;
-        align-items: center;
-        padding-top: 3px;
-        border-bottom: solid $tvd-red-underline 3px;
-      }
-      .subscriptions {
-        display: flex;
-        align-items: center;
-        color: $tvd-subtext-color;
-      }
-    }
-  }
-  .trending-vids-wrap {
+  margin-top: 50px;
+  .search-vids-wrap {
     width: 850px;
     margin-top: 10px;
     padding: 22px 18px;
