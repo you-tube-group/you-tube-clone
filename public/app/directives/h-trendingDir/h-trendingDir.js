@@ -55,11 +55,11 @@ angular.module('you-tube-clone')
 $(() =>{
 
     $('.arrow-wrap').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-left": "-=416.5"}, 300);
+        $('.trending-vid-carousel').animate({"margin-left": "-=427"}, 300);
     });
 
     $('.arrow-wrap-right').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-right": "-=416.5"}, 300);
+        $('.trending-vid-carousel').animate({"margin-right": "-=427"}, 300);
     });
 }); //<-- end of jQuery
 

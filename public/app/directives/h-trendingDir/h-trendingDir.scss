@@ -51,7 +51,7 @@ $primary-font-family: 'Roboto', sans-serif;
   font-size: 13px;
   color: $video-main-title;
   line-height: 17px;
-  max-width: 196px;
+  max-width: 190px;
   text-align: left;
 }
 
@@ -79,8 +79,8 @@ height: 75px;
 width: 100px;
 margin-right: 23px;
 position: absolute;
-left:12.7%;
-top: 19%;
+left:12.9%;
+top: 23%;
 z-index: 100;
 transform: translate(-80%, -50%);
 
@@ -108,8 +108,8 @@ height: 75px;
 width: 100px;
 margin-right: 23px;
 position: absolute;
-right:5.8%;
-top: 19%;
+right:4.6%;
+top: 23%;
 z-index: 100;
 transform: translate(-80%, -50%);
 
@@ -201,7 +201,7 @@ transform: translate(-80%, -50%);
   }
     .h-trending-carousel{
       min-width: 196px;
-      margin-right: 12px;
+      margin-right: 18px;
   .thumbnail {
     height: 110px;
     margin-right: 10px;
