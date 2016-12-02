@@ -33,6 +33,11 @@ angular.module('you-tube-clone')
 
           // this specific variable holds the video info (ie title, and statistics)
           $scope.videoData = response.items[0];
+
+          const reactionSum = ($scope.videoData.statistics.likeCount * 1) + ($scope.videoData.statistics.dislikeCount * 1);
+          const percent = ($scope.videoData.statistics.likeCount / reactionSum) * 100;
+          console.log(percent);
+          $('.myBar').css('width', percent + '%');
         })
       }
         $scope.getVideoInfo(id);

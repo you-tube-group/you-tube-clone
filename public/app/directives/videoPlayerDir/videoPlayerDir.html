@@ -17,20 +17,29 @@
           <div class="author-name">
             <p>{{videoData.snippet.channelTitle}}</p>
           </div>
-          <div class="author-subscribe">SUBSCRIBE</div>
+          <div class="subscribe-btn-wrap">
+            <div class="subscribe-btn"></div>
+            <div class="subscribe-label">Subscribe</div>
+          </div>
+
         </div>
       </div>
-      <div class="view-count">
-        <p>{{videoData.statistics.viewCount}} views</p>
+      <div class="view-data-wrapper">
+        <div class="view-count">
+          <p>{{videoData.statistics.viewCount}} views</p>
+        </div>
+        <div class="myProgress">
+          <div class="myBar"></div>
+        </div>
       </div>
     </div>
     <div class="video-title-action-buttons">
       <div class="media-btns">
-        <div class="add-btn"></div>
+        <div class="add-btn btn-hover"></div>
         <div class="btn-text">Add to</div>
-        <div class="share-btn"></div>
+        <div class="share-btn btn-hover"></div>
         <div class="btn-text">Share</div>
-        <div class="more-btn"> </div>
+        <div class="more-btn btn-hover"> </div>
         <div class="btn-text">More</div>
       </div>
       <div class="video-reactions">
