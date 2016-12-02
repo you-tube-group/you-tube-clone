@@ -55,11 +55,11 @@ angular.module('you-tube-clone')
 $(() =>{
 // NOTE: multiply 427 by the number of slides you want to move right or left
     $('.arrow-wrap-right').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-left": "-=1281"}, 700);
+        $('.trending-vid-carousel').animate({"margin-left": "-=854"}, 600);
     });
 
     $('.arrow-wrap').on('click', () => {
-        $('.trending-vid-carousel').animate({"margin-right": "-=1281"}, 700);
+        $('.trending-vid-carousel').animate({"margin-right": "-=854"}, 600);
     });
 }); //<-- end of jQuery
 
