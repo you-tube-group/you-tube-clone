@@ -14,6 +14,10 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
     url:"/watch/:videoId",
     templateUrl: './app/views/videoPlayer.html'
   })
+  .state('searchResults', {
+    url:"/searchResults",
+    templateUrl: './app/views/searchResults.html'
+  })
 
 
 })
