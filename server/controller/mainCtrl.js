@@ -38,6 +38,25 @@ module.exports = {
     });
   },
 
+
+  // retrieves info for author of video on video player page. Grabbing subscriber count and user profile specifially
+  getChannelInfoOnVidPlayer: function(req,res,next) {
+    var channelId = req.query.id;
+    client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${API_KEY}`, function(data, response) {
+      res.status(200).json(data);
+    })
+  },
+
+
+//
+// getSearchResults: (req,res,next) => {
+//   var searched = req.query.searched;
+//   client.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searched}&key=${API_KEY}`, function(data, response){
+//     res.status(200).json(data);
+//   });
+// }
+// https://www.googleapis.com/youtube/v3
+
   // retrieves results from user's search bar request
   getSearchResults: (req,res,next) => {
     var videoIdArray = [];
