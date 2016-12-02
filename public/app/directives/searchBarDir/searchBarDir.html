@@ -12,10 +12,10 @@
       </div>
     </div>
     <div class="search-and-button-wrapper">
-      <div class="input-and-button-container">
+      <form class="input-and-button-container" ng-submit="searchRequest(searchTerm)">
         <input class="search-input" type="text" tabindex="1" placeholder="Search" ng-model="searchTerm">
         <button class="search-btn" tabindex="2" type="submit" ng-click="searchRequest(searchTerm)"><span class= "search-icon" ></span></button>
-      </div>
+      </form>
       <div class="upload-and-signin-container">
         <button class="upload-btn"type="button" name="button">Upload</button>
         <button class="signin-btn"type="button" name="button">Sign in</button>

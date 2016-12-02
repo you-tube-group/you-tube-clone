@@ -8,6 +8,11 @@ angular.module('you-tube-clone')
 
       $scope.searchTerm = '';
 
+      $scope.convertTime = (time) => {
+        time = moment(time, "YYYYMMDD").fromNow();
+        return time;
+      };
+
       $scope.searchRequest = (searchTerm) => {
 
         mainService.getSearchResults(searchTerm)
@@ -18,7 +23,7 @@ angular.module('you-tube-clone')
 
         // Erases searchTerm after sending request
         // $scope.searchTerm = '';
-      }
+      };
 
 
     //END OF CONTROLLER

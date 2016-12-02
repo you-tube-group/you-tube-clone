@@ -22,7 +22,7 @@
           <div class="checkmark"></div>
         </div>
         <div class="views-wrap">
-          <div class="one-day-ago">{{video.publishedAt}}</div>
+          <div class="one-day-ago">{{convertTime(video.publishedAt)}}</div>
           <div class="dot"></div>
           <div class='views' ng-show="{{video.viewCount}}">{{video.viewCount | number}} views</div>
         </div>
