@@ -38,4 +38,15 @@ this.broken = 'working'
     })
   }
 
+  this.getSearchResults = (searched) => {
+    searched = searched.replace(/ /g,"%20");
+    return $http({
+      method: 'GET',
+      url: '/api/search?searched=' + searched
+    }).then((response) => {
+
+      return response.data;
+    })
+  }
+
 })
