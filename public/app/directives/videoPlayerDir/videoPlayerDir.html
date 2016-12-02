@@ -11,15 +11,18 @@
     <div class="author-info-container">
       <div class="author-info">
         <div class="author-img">
-          <img src="http://placehold.it/50x50">
+          <img ng-src="{{channelData.snippet.thumbnails.default.url}}">
         </div>
         <div class="author-channel-info">
           <div class="author-name">
             <p>{{videoData.snippet.channelTitle}}</p>
           </div>
-          <div class="subscribe-btn-wrap">
-            <div class="subscribe-btn"></div>
-            <div class="subscribe-label">Subscribe</div>
+          <div class="subscribe-label-main-wrap">
+            <div class="subscribe-btn-wrap">
+              <div class="subscribe-btn"></div>
+              <div class="subscribe-label">Subscribe</div>
+            </div>
+            <div class="subscription-count">{{channelData.statistics.subscriberCount}}</div>
           </div>
 
         </div>

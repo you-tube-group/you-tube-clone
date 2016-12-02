@@ -38,6 +38,13 @@ module.exports = {
     });
   },
 
+  // retrieves info for author of video on video player page. Grabbing subscriber count and user profile specifially
+  getChannelInfoOnVidPlayer: function(req,res,next) {
+    var channelId = req.query.id;
+    client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${API_KEY}`, function(data, response) {
+      res.status(200).json(data);
+    })
+  },
 
 
 //
