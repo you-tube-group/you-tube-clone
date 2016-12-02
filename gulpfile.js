@@ -8,8 +8,8 @@ const nodemon = require('gulp-nodemon');
 
 const paths = {
     jsSource: ['./public/app/app.js', './public/app/**/*.js'],
-    scssSource: ['./public/app/**/*.scss'],
-    server: ['./server/server.js']
+    scssSource: './public/app/**/*.scss',
+    server: './server/server.js'
 };
 
 gulp.task('serve', () => {

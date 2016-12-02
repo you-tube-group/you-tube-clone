@@ -5,6 +5,8 @@ angular.module('you-tube-clone')
             restrict: 'E',
             templateUrl: './app/directives/h-trendingDir/h-trendingDir.html',
             controller: ($scope, mainService) => {
+                $scope.hover = false;
+
                 const getTrendingHome = () => {
                     mainService.getTrending()
                         .then((response) => {
@@ -40,26 +42,28 @@ angular.module('you-tube-clone')
               return published;
           };
 // NOTE: jQuery for carousel buttons
-$(document).ready(function (){
-    $('.right-arrow-container').on('click', () =>{
-        $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
-    }).mouseover(() => {
-        $('.right-arrow-container').removeClass('.right-arrow-container').addClass('right-nav-arrow-container');
-    }).mouseleave(() =>{
-        $('.right-nav-arrow-container').removeClass('right-nav-arrow-container').addClass("right-arrow-container");
-    });
-// NOTE: End of the right arrow style effect
-    $('.left-arrow-container').on('click', () =>{
-        $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
-    }).mouseover(() =>{
-        $('.left-arrow-container').removeClass('.left-arrow-container').addClass('left-nav-arrow-container');
-    }).mouseleave(() => {
-        $('.left-nav-arrow-container').removeClass('.left-nav-arrow-container').addClass('.left-arrow-container');
-    });
-// FIXME: work on the mouseleave for the left carousel
-// NOTE: jQuery for carousel slider
+    $scope.marginLeft = {
+        "margin-left": 0
+    }
 
-}); //<-- End of jQuery script
+    $scope.scrollRight = () => {
+        if($scope.marginLeft.margin-left){
+
+        }
+    }
+
+$(() =>{
+
+    $('.arrow-wrap').on('click', () => {
+        $('.trending-vid-carousel').animate({"margin-left": "-=416.5"}, 300);
+    });
+
+    $('.arrow-wrap-right').on('click', () => {
+        $('.trending-vid-carousel').animate({"margin-right": "-=416.5"}, 300);
+    });
+}); //<-- end of jQuery
+
+
 
         } //<-- end of controller
         }
