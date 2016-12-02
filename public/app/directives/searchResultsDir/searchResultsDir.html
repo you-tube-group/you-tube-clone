@@ -5,21 +5,23 @@
         class='thumbnail'
         ng-click='passVideo(video)'
         ui-sref='video({videoId: video.id})'
-        style="background: url('{{video.thumbnails.high.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
+        style="background: url('{{video.snippet.thumbnails.high.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
         alt="video thumbnail"
         ></div>
       <div class="video-info-wrap">
-        <div class="video-title">{{video.title}}</div>
+        <div class="video-title">{{video.snippet.title}}</div>
         <div class="channel-title-wrap">
           <div class="channel-title">{{video.snippet.channelTitle}}</div>
           <div class="checkmark"></div>
         </div>
         <div class="views-wrap">
-          <div class="one-day-ago">{{convertTime(video.publishedAt)}}</div>
+          <div class="one-day-ago">{{convertTime(video.snippet.publishedAt)}}</div>
           <div class="dot"></div>
           <div class='views' ng-show="{{video.viewCount}}">{{video.viewCount | number}} views</div>
+          <div class='views' ng-show="{{video.videoCount}}">{{video.videoCount | number}} videos</div>
+          <div class='views' ng-show="{{video.videoCount}}">{{video.subscriberCount | number}} subscribers</div>
         </div>
-        <div class="description">{{ video.description | limitTo: 150 }}{{video.snippet.description.length > 150 ? '...' : ''}}</div>
+        <div class="description">{{ video.snippet.description | limitTo: 150 }}{{video.snippet.description.length > 150 ? '...' : ''}}</div>
       </div>
       <br>
     </div>

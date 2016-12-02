@@ -18,7 +18,7 @@ angular.module('you-tube-clone')
         mainService.getSearchResults(searchTerm)
         .then((response) => {
           $scope.searchResults = response;
-          console.log($scope.searchResults);
+          // console.log($scope.searchResults);
         })
 
         // Erases searchTerm after sending request

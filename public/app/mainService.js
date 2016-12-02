@@ -44,7 +44,7 @@ this.broken = 'working'
       method: 'GET',
       url: '/api/search?searched=' + searched
     }).then((response) => {
-
+      console.log("From the mainService: ",response.data);
       return response.data;
     })
   }

@@ -9,12 +9,12 @@ angular.module('you-tube-clone')
       $scope.searchTerm = '';
       $scope.hamSlider = false;
 
-      $scope.searchRequest = (searchTerm) => {
-        mainService.getSearchResults(searchTerm)
-        
-        // Erases searchTerm after sending request
-        // $scope.searchTerm = '';
-      }
+      // $scope.searchRequest = (searchTerm) => {
+      //   mainService.getSearchResults(searchTerm)
+      //
+      //   // Erases searchTerm after sending request
+      //   // $scope.searchTerm = '';
+      // }
 
       $scope.openHamSlide = () => {
         if (!$scope.hamSlider) {
