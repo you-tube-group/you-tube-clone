@@ -49,4 +49,22 @@ this.broken = 'working'
     })
   }
 
+  this.getChannelInfoOnVidPlayer = id => {
+    return $http({
+      method:'GET',
+      url: `/api/channelInfo/?id=${id}`
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
+  this.getHomePlaylist = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/playList/?id=${id}`
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
 })
