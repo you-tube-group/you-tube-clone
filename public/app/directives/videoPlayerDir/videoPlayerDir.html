@@ -26,7 +26,7 @@
       </div>
       <div class="view-data-wrapper">
         <div class="view-count">
-          <p>{{videoData.statistics.viewCount}} views</p>
+          <p>{{videoData.statistics.viewCount | number}} views</p>
         </div>
         <div class="myProgress">
           <div class="myBar"></div>
@@ -44,16 +44,22 @@
       </div>
       <div class="video-reactions">
         <div class="like-btn"></div>
-        <div class="num-likes btn-text">{{videoData.statistics.likeCount}}</div>
+        <div class="num-likes btn-text">{{videoData.statistics.likeCount | number}}</div>
         <div class="dislike-btn"></div>
-        <div class="num-likes btn-text">{{videoData.statistics.dislikeCount}}</div>
+        <div class="num-likes btn-text">{{videoData.statistics.dislikeCount | number}}</div>
       </div>
     </div>
   </div>
 
-  <div class="video-description">
-    <h1>Published On {{videoData.snippet.publishedAt}}</h1>
-    <p>{{videoData.snippet.description}}</p>
+  <div class="main-description-wrapper">
+    <div class="publish-date-label">
+      Published On {{videoData.snippet.publishedAt}}
+    </div>
+    <div class="description-wrapper">
+      <div class="video-description" ng-bind-html="videoData.snippet.description">
+        {{videoData.snippet.description}}
+      </div>
+    </div>
   </div>
   <div class="video-comments">
     <!-- pass video data to comments directive -->
