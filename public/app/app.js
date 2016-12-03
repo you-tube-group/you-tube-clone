@@ -1,5 +1,6 @@
 angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
 .config(function($stateProvider, $urlRouterProvider) {
+
   $urlRouterProvider.otherwise('/');
 
   $stateProvider
