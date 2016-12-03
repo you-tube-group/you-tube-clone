@@ -45,7 +45,7 @@ $(() =>{
 // NOTE: multiply 427 by the number of slides you want to move right or left
     $('.arrow-wrap-right').on('click', () => {
         var rightClick = 1;
-        var rightCount = ++rightClick;
+        var rightCount = rightClick++;
         console.log(rightClick);
         console.log(rightCount);
 
