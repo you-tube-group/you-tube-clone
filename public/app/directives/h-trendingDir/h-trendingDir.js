@@ -43,7 +43,6 @@ angular.module('you-tube-clone')
           };
 
 $(() =>{
-<<<<<<< HEAD
 // NOTE: multiply 427 by the number of slides you want to move right or left
     $('.arrow-wrap-right').on('click', () => {
 
