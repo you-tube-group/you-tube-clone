@@ -13,9 +13,9 @@ const hashPassword = (password) => {
 module.exports = {
   registerUser: (req, res) => {
     const user = req.body;
-    // user.password = hashPassword(user.password);
+    user.password = hashPassword(user.password);
 
-    db.user_create([user.username, user.email, user.password], (err, user) => {
+    db.user_create([user.name, user.email, user.password], (err, user) => {
       if (err) return res.status(500).send(err);
       user = user[0]
       delete user.password;

@@ -3,12 +3,11 @@ angular.module('you-tube-clone')
   return {
     restrict: 'E',
     templateUrl: './app/directives/authDir/authDir.html',
-    controller: ($scope, mainService) => {
+    controller: ($scope, authService) => {
 
-    $scope.user = {};
 
     $scope.register = (user) => {
-      mainService.registerUser(user).then((response) => {
+      authService.registerUser(user).then((response) => {
         if (!response.data) {
           alert('unable to create user');
         } else {
