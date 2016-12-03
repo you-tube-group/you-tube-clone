@@ -38,24 +38,23 @@ angular.module('you-tube-clone')
 
             $scope.publishConverter = (published) => {
              published = moment(published, "YYYYMMDD").fromNow();
-            //   console.log(published);
               return published;
           };
 
 $(() =>{
 // NOTE: multiply 427 by the number of slides you want to move right or left
     $('.arrow-wrap-right').on('click', () => {
+        var rightClick = 1;
+        var rightCount = ++rightClick;
+        console.log(rightClick);
+        console.log(rightCount);
+
+
 
         var endOfCarousel = -7686;
         var currentSpotRight = $('.trending-vid-carousel').css("margin-left");
         $('.trending-vid-carousel').animate({"margin-left": "-=854"}, 600);
         console.log(currentSpotRight);
-
-        // if(currentSpotRight < endOfCarousel){
-        // }
-        // if($('.trending-vid-carousel').css("margin-left") > -8540){
-        //   $('.trending-vid-carousel').animate({"margin-left": "-=854"}, 600);
-        // }
     });
 
     $('.arrow-wrap').on('click', () => {
