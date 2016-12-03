@@ -5,8 +5,8 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
 
   $stateProvider
   .state('landing', {
-    templateUrl: './app/views/homeView.html',
-    url: '/'
+    url: '/',
+    templateUrl: './app/views/homeView.html'
   })
   .state('trending', {
     url: '/trending',
