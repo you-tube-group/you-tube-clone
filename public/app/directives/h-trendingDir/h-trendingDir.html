@@ -11,7 +11,8 @@
 <section class="trending-vid-outer-wrap">
     <section class="trending-vid-carousel">
         <p class="trending-title">Trending</p>
-        <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items | limitTo: 24'>
+
+        <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
             <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
             ng-click='passVideo(video)'
             ui-sref='video({videoId: video.id})'
@@ -28,6 +29,7 @@
             <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
         </section>
         </aside>
+
     </section>
     </section>
 
