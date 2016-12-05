@@ -38,7 +38,6 @@ angular.module('you-tube-clone')
 
             $scope.publishConverter = (published) => {
              published = moment(published, "YYYYMMDD").fromNow();
-              console.log(published);
               return published;
           };
 // NOTE: jQuery for carousel buttons

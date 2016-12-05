@@ -1,0 +1,81 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+$tvd-container-bg-color: #F1F1F1;
+$tvd-vid-wrap-bg: #FFFFFF;
+$tvd-title-text: #187BC6;
+$tvd-subtext-color: #767676;
+$tvd-font-fam: 'Roboto', sans-serif;
+$tvd-red-underline: #CC181E;
+
+
+
+$youtube-logo-red: #E62117;
+$yt-primary-red: #CC181E;
+$yt-selected-gray: #333333;
+$yt-unselected-lightgray: #C8C8C8;
+$left-nav-subcategory-color: #444444;
+$primary-icon-color: #7C7C7C;
+$primary-bg: #FFFFFF;
+$secondary-bg: #F1F1F1;
+$video-main-title: #167AC6;
+$video-sub-title: #767676;
+$search-color: #767676;
+$primary-font-family: 'Roboto', sans-serif;
+
+.landing-playlist-dir-main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $tvd-container-bg-color;
+  font-family: $tvd-font-fam;
+  .videos-outer-wrap{
+    display: flex;
+    width: 75%;
+    background: $tvd-vid-wrap-bg;
+    padding: 35px 8px 15px 7px;
+    border-bottom: 1px solid $yt-unselected-lightgray;
+    .videos-vid-carousel {
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .playlist-title {
+    left: 150px;
+    position: absolute;
+    color: $yt-selected-gray;
+    font-size: 15px;
+    font-family: $primary-font-family;
+    line-height: 18px;
+    font-weight: 500;
+    margin-top: -25px;
+    margin-left: 8px;
+  }
+
+
+  .home-playlist-carousel {
+    min-width: 196px;
+    // margin-right: 18px;
+    .playlist-thumbnail {
+    .thumbnail {
+      max-width: 196px;
+      height: 110px;
+      margin-right: 10px;
+      display: flex;
+      position: relative;
+    }
+    }
+  }
+} // <-- this is the end main-container
+
+
+// position: relative;
+// overflow-x: hidden;
+// display: flex;
+// justify-content: center;
+// width: 75%;
+// background: $tvd-vid-wrap-bg;
+// padding: 35px 0px 5px 17px;
+// border-bottom: 1px solid $yt-unselected-lightgray;

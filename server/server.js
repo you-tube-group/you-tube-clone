@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 
 //===CONNECT TO SERVER=========
-const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth'
-});
-app.set('db', massiveServer);
-const db = app.get('db');
+// const massiveServer = massive.connectSync({
+//   connectionString: 'postgress://localhost/yt-local-auth'
+// });
+// app.set('db', massiveServer);
+// const db = app.get('db');
 
 //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
@@ -28,19 +28,19 @@ const usersCtrl = require('./controller/usersCtrl');
 const passport = require('./passport');
 
 //===POLICIES=================
-const isAuthed = (req,res,next) => {
-  if (!req.isAuthenticated()) return res.status(401).send();
-  return next();
-}
-
-//===SESSION AND PASSPORT===============
-app.use(session({
-  secret: secret.secret,
-  saveUninitialized: false,
-  resave: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// const isAuthed = (req,res,next) => {
+//   if (!req.isAuthenticated()) return res.status(401).send();
+//   return next();
+// }
+//
+// //===SESSION AND PASSPORT===============
+// app.use(session({
+//   secret: secret.secret,
+//   saveUninitialized: false,
+//   resave: false
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 
 // ======== Endpoints ========
@@ -53,7 +53,7 @@ app.get('/api/channelInfo', controller.getChannelInfoOnVidPlayer);
 
 
 //========= AUTH ENDPOINTS ======
-app.post('/register', usersCtrl.registerUser);
+// app.post('/register', usersCtrl.registerUser);
 //=================================
 
 
