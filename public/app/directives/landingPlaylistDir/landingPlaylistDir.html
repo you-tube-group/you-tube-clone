@@ -1,15 +1,24 @@
 <div class="landing-playlist-dir-main-container">
-  <div class="videos-outer-wrap">
-    <div class="videos-vid-carousel">
-      <p class="playlist-title">LOL</p>
-      <div class="home-playlist-carousel" ng-repeat="video in homePlaylistObj.items">
-        <div class="playlist-thumbnail">
-          <div class="thumbnail"  style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
-            ng-click='passVideo(video)'
-            ui-sref='video({videoId: video.snippet.resourceId.videoId})'
-          ></div>
+    <div class="videos-outer-wrap">
+        <div class="videos-vid-carousel">
+            <p class="playlist-title">Music</p>
+            <div class="home-playlist-carousel" ng-repeat="video in homePlaylistObj.items">
+                <div class="playlist-thumbnail">
+                    <div class="thumbnail" style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video' ng-click='passVideo(video)' ui-sref='video({videoId: video.snippet.resourceId.videoId})'>
+                        <p class="home-duration">{{convertTime(video.contentDetails.duration)}}</p>
+                    </div>
+
+                    <div class="trending-video-title">{{video.snippet.title}}</div>
+                    <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
+                    <section class="video-count-container">
+                        <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
+                        <div class="dot-style">
+                            <i class="fa fa-circle" aria-hidden="true"></i>
+                        </div>
+                        <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+                    </section>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

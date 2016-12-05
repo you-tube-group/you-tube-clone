@@ -23,6 +23,56 @@ $video-sub-title: #767676;
 $search-color: #767676;
 $primary-font-family: 'Roboto', sans-serif;
 
+@mixin search-font {
+  font-family: $primary-font-family;
+  font-size: 16px;
+  color: $search-color;
+}
+
+@mixin center-nav-selected {
+  font-family: $primary-font-family;
+  font-weight: 500;
+  font-size: 13px;
+  color: $yt-selected-gray;
+  line-height: 40px;
+}
+
+@mixin center-nav-default {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 13px;
+  color: $yt-unselected-lightgray;
+  line-height: 40px;
+}
+
+@mixin video-main-title {
+  font-family: $primary-font-family;
+  font-weight: 500;
+  font-size: 13px;
+  color: $video-main-title;
+  line-height: 17px;
+  max-width: 190px;
+  text-align: left;
+}
+
+@mixin video-sub-title-unselected {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 11px;
+  color: $video-sub-title;
+  line-height: 14px;
+  max-width: 196px;
+  text-align: left;
+}
+
+@mixin video-sub-title-selected {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 11px;
+  color: $video-main-title;
+  line-height: 14px;
+}
+
 .landing-playlist-dir-main-container {
   width: 100%;
   display: flex;
@@ -31,43 +81,62 @@ $primary-font-family: 'Roboto', sans-serif;
   background: $tvd-container-bg-color;
   font-family: $tvd-font-fam;
   .videos-outer-wrap{
+    position: relative;
+    overflow-x: hidden;
     display: flex;
+    justify-content: center;
     width: 75%;
     background: $tvd-vid-wrap-bg;
-    padding: 35px 8px 15px 7px;
+    padding: 35px 0px 5px 17px;
     border-bottom: 1px solid $yt-unselected-lightgray;
+
     .videos-vid-carousel {
-      overflow: hidden;
       display: flex;
-      justify-content: center;
+      width: 100%;
+      .playlist-title {
+        position: absolute;
+        color: $yt-selected-gray;
+        font-size: 15px;
+        font-family: $primary-font-family;
+        line-height: 18px;
+        font-weight: 500;
+        margin-top: -25px;
+        margin-left: 8px;
+      }
+      .home-playlist-carousel {
+        min-width: 196px;
+        margin-right: 18px;
+        .playlist-thumbnail {
+        .thumbnail {
+          max-width: 196px;
+          height: 110px;
+          margin-right: 10px;
+          display: flex;
+          position: relative;
+          }
+        }
+      }
+      .trending-video-title{@include video-main-title}
+      .trending-channel-title{@include video-sub-title-unselected}
+      .video-count-container{
+        display: flex;
+
+      .trending-view-count{@include video-sub-title-unselected}
+      .trending-publish{@include video-sub-title-unselected}
+      .dot-style{
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 4px;
+        color: $tvd-subtext-color;
+        margin: 0px 5px;
+        }
+      }
     }
-  }
-  .playlist-title {
-    left: 150px;
-    position: absolute;
-    color: $yt-selected-gray;
-    font-size: 15px;
-    font-family: $primary-font-family;
-    line-height: 18px;
-    font-weight: 500;
-    margin-top: -25px;
-    margin-left: 8px;
   }
 
 
-  .home-playlist-carousel {
-    min-width: 196px;
-    // margin-right: 18px;
-    .playlist-thumbnail {
-    .thumbnail {
-      max-width: 196px;
-      height: 110px;
-      margin-right: 10px;
-      display: flex;
-      position: relative;
-    }
-    }
-  }
+
 } // <-- this is the end main-container
 
 
