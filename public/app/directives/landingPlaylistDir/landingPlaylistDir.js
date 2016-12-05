@@ -17,7 +17,20 @@ angular.module('you-tube-clone')
               $scope.getHomePlaylist = (hplaylist) => {
                 mainService.getHomePlaylist(hplaylist).then((response) => {
                   $scope.homePlaylistObj = response;
-                  console.log(response);
+                  console.log($scope.homePlaylistObj.items.length);
+                  for(var i = 0; i < $scope.homePlaylistObj.items.length; i++) {
+                    const vidId = $scope.homePlaylistObj.items[i].snippet.resourceId.videoId;
+                    console.log('are we in the for loop?');
+                    $scope.getVideoInfo = (vidId) => {
+                      console.log('are we here?');
+                      mainService.getVideoInfo(vidId).then((response) => {
+                        $scope.videoInfo = response;
+                        console.log('video info');
+                        console.log(response);
+                      })
+                    }
+                    $scope.getVideoInfo(vidId)
+                  }
                 })
               }
             }
