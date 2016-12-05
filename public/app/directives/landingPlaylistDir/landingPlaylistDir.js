@@ -16,17 +16,21 @@ angular.module('you-tube-clone')
             if(hplaylist) {
               $scope.getHomePlaylist = (hplaylist) => {
                 mainService.getHomePlaylist(hplaylist).then((response) => {
-                  $scope.homePlaylistObj = response;
-                  console.log($scope.homePlaylistObj.items.length);
-                  for(var i = 0; i < $scope.homePlaylistObj.items.length; i++) {
-                    const vidId = $scope.homePlaylistObj.items[i].snippet.resourceId.videoId;
-                    console.log('are we in the for loop?');
+                  $scope.homePlaylistObj = response.items;
+                  // ==== Create empty array to hold stats of all videos in playlist ====
+                  $scope.videoStatsArr = [];
+                  for(var i = 0; i < $scope.homePlaylistObj.length; i++) {
+                    const vidId = $scope.homePlaylistObj[i].snippet.resourceId.videoId;
+
                     $scope.getVideoInfo = (vidId) => {
-                      console.log('are we here?');
+
+                      // ==== call the service to get statistics for each video in the playlist ====
                       mainService.getVideoInfo(vidId).then((response) => {
-                        $scope.videoInfo = response;
-                        console.log('video info');
-                        console.log(response);
+                        $scope.videoInfo = response.items[0];
+                        // ==== If the id of video info matches the ID of the video in the playlist, push all info to videoStatsArr ====
+                        if($scope.videoInfo.id == vidId) {
+                          $scope.videoStatsArr.push($scope.videoInfo);
+                        }
                       })
                     }
                     $scope.getVideoInfo(vidId)
