@@ -66,6 +66,16 @@ this.broken = 'working'
     })
   }
 
+  this.getPlaylistInfo = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/playlistInfo/?playlistId=${id}`
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
+
 
 
 

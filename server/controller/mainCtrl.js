@@ -48,6 +48,13 @@ module.exports = {
         })
     },
 
+    getPlaylistInfo: function(req, res, next) {
+      var playlistId = req.query.playlistId;
+      client.get(`https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&id=${playlistId}&key=${API_KEY}`, function(data, response) {
+          res.status(200).json(data);
+      })
+    },
+
 
     //
     // getSearchResults: (req,res,next) => {
