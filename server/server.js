@@ -13,14 +13,14 @@ const app = module.exports = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 
-//===CONNECT TO SERVER=========
+// //===CONNECT TO SERVER=========
 const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth'
+    connectionString: 'postgress://localhost/yt-local-auth'
 });
 app.set('db', massiveServer);
 const db = app.get('db');
 
-//===REQUIRED CONTROLLERS====
+// //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
 const usersCtrl = require('./controller/usersCtrl');
 
@@ -28,16 +28,16 @@ const usersCtrl = require('./controller/usersCtrl');
 const passport = require('./passport');
 
 //===POLICIES=================
-const isAuthed = (req,res,next) => {
-  if (!req.isAuthenticated()) return res.status(401).send();
-  return next();
+const isAuthed = (req, res, next) => {
+    if (!req.isAuthenticated()) return res.status(401).send();
+    return next();
 }
 
-//===SESSION AND PASSPORT===============
+// //===SESSION AND PASSPORT===============
 app.use(session({
-  secret: secret.secret,
-  saveUninitialized: false,
-  resave: false
+    secret: secret.secret,
+    saveUninitialized: false,
+    resave: false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -46,7 +46,7 @@ app.use(passport.session());
 // ======== Endpoints ========
 app.get('/api/trending', controller.getTrending);
 app.get('/api/watch', controller.getVideoInfo);
-app.get('/api/comments' ,controller.getVideoComments);
+app.get('/api/comments', controller.getVideoComments);
 app.get('/api/playList', controller.getPlaylistVideos);
 app.get('/api/search', controller.getSearchResults);
 app.get('/api/channelInfo', controller.getChannelInfoOnVidPlayer);
@@ -60,5 +60,5 @@ app.post('/register', usersCtrl.registerUser);
 
 const port = 8040;
 app.listen(port, () => {
-  console.log('Listening on port: ' + port);
+    console.log('Listening on port: ' + port);
 })
