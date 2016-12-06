@@ -8,7 +8,7 @@ this.broken = 'working'
       method:'GET',
       url: '/api/trending'
     }).then((response) => {
-      // console.log(response);
+      // console.log('hello from the mainnService',response);
       return response.data;
     })
   }
@@ -18,7 +18,6 @@ this.broken = 'working'
   }
 
   this.getVideoInfo = (id) => {
-    console.log('Id from the service' + id);
     return $http({
       method: 'GET',
       url: `/api/watch/?id=${id}`
@@ -75,5 +74,22 @@ this.broken = 'working'
       return response.data.items[0];
     })
   }
+
+
+  this.getPlaylistInfo = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/playlistInfo/?playlistId=${id}`
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
+
+
+
+
+
+
 
 })

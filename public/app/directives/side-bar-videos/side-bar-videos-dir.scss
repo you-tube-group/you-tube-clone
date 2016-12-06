@@ -21,6 +21,18 @@
       min-width: 196px;
       height: 110px;
       margin-right: 10px;
+      .video-duration{
+        color: #FFF;
+        font-size: 11px;
+        background-color: #000;
+        opacity: .75;
+        padding: 0px 4px;
+        line-height: 14px;
+        font-weight: 500;
+        position: absolute;
+        bottom: 2px;
+        right: 149px;
+      }
     }
 
     .list-video-info-container{
@@ -35,6 +47,7 @@
         margin-bottom: 4px;
         color: #76767A;
       }
+
     }
 
   }

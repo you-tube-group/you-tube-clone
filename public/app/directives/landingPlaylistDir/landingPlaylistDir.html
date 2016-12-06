@@ -1,4 +1,30 @@
-<div >
-    <p>CAN YOU SEE ME?! {{hplaylist}}</p>
+<div class="landing-playlist-dir-main-container">
+    <div class="videos-outer-wrap">
+        <div class="videos-vid-carousel">
+            <playlist-info-dir playlist-id="hplaylist"></playlist-info-dir>
+            <div class="home-playlist-carousel" ng-repeat="video in videoStatsArr">
+                <!-- {{videoInfo[0].contentDetails.duration}} -->
+                <div class="playlist-thumbnail">
+                    <div class="thumbnail" style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video' ng-click='passVideo(video)' ui-sref='video({videoId: video.id})'>
+                        <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
+                    </div>
+                </div>
+                <div class="trending-video-title">{{video.snippet.title}}</div>
+                <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
+                <section class="video-count-container">
+                    <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
+                    <div class="dot-style">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                    </div>
+                    <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <section class="landing-left-arrow-wrap">
+        <section class="landing-left-arrow-container">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </section>
+    </section>
 
 </div>
