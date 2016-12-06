@@ -18,7 +18,6 @@ this.broken = 'working'
   }
 
   this.getVideoInfo = (id) => {
-    console.log('Id from the service' + id);
     return $http({
       method: 'GET',
       url: `/api/watch/?id=${id}`
@@ -66,6 +65,16 @@ this.broken = 'working'
       return response.data;
     })
   }
+
+  this.getPlaylistInfo = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/playlistInfo/?playlistId=${id}`
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
 
 
 
