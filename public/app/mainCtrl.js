@@ -5,7 +5,14 @@ angular.module('you-tube-clone')
 
   $scope.playlistIds = [
      "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI",
-    "PL8fVUTBmJhHJlT40aNl_cX4qcrVqoC5eg"
+    "PL8fVUTBmJhHJlT40aNl_cX4qcrVqoC5eg",
+    "PLiCvVJzBupKnXepW_381ILaaxaxK33vOv",
+    "PLzjFbaFzsmMT_VuMSVQxfkQIw7VNbHyVi",
+    "PLg8RSSmVAw_Gk0qfrDMfOQ8k7gVdfKliP",
+    "PLU12uITxBEPHOJO1FU8qll6gQmKcXp5S7",
+    "PL3ZQ5CpNulQldOL3T8g8k1mgWWysJfE9w",
+    "PLbpi6ZahtOH7vgyGImZ4P-olTT11WLkLk",
+    "PLU8wpH_Lfhmsn0qJmVSyEXB9m3j1OkJWX"
   ]
   // $scope.playlistIds = [
   //    "UC-9-kyTW8ZkZNDHQJ6FgpwQ", //music:
