@@ -5,13 +5,13 @@ angular.module('you-tube-clone')
             replace: true,
             templateUrl: './app/directives/landingPlaylistDir/landingPlaylistDir.html',
             scope: {
-                hplaylist: "=",
-                dirmessage: "="
+                hplaylist: "="
             },
             controller: ($scope, mainService) => {
                 $scope.$watch('hplaylist', () => {
                   // holds the playlist ID
-                  var hplaylist = $scope.hplaylist;
+                  $scope.homePlaylistInfo = $scope.hplaylist
+                  var hplaylist = $scope.hplaylist.id;
 
                   if (hplaylist) {
                     $scope.getHomePlaylist = (hplaylist) => {

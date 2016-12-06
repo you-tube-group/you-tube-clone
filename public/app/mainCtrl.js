@@ -4,26 +4,26 @@ angular.module('you-tube-clone')
   $scope.broken = mainService.broken;
 
   $scope.playlistIds = [
-     "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI",
-    "PL8fVUTBmJhHJlT40aNl_cX4qcrVqoC5eg",
-    "PLiCvVJzBupKnXepW_381ILaaxaxK33vOv",
-    "PLzjFbaFzsmMT_VuMSVQxfkQIw7VNbHyVi",
-    "PLg8RSSmVAw_Gk0qfrDMfOQ8k7gVdfKliP",
-    "PLU12uITxBEPHOJO1FU8qll6gQmKcXp5S7",
-    "PL3ZQ5CpNulQldOL3T8g8k1mgWWysJfE9w",
-    "PLbpi6ZahtOH7vgyGImZ4P-olTT11WLkLk",
-    "PLU8wpH_Lfhmsn0qJmVSyEXB9m3j1OkJWX"
+    {id: "PLFgquLnL59alCl_2TQvOiD5Vgm1hCaGSI", img: "./images/ham-bar-slide-out-images/category-music.jpg"},
+    {id: "PL8fVUTBmJhHJlT40aNl_cX4qcrVqoC5eg", img: "./images/ham-bar-slide-out-images/category-sports.jpg"},
+    {id: "PLiCvVJzBupKnXepW_381ILaaxaxK33vOv", img: "./images/ham-bar-slide-out-images/category-gaming.jpg"},
+    {id: "PLzjFbaFzsmMT_VuMSVQxfkQIw7VNbHyVi", img: "./images/ham-bar-slide-out-images/category-movies.jpg"},
+    {id: "PLg8RSSmVAw_Gk0qfrDMfOQ8k7gVdfKliP", img: "./images/ham-bar-slide-out-images/category-tv.jpg"},
+    {id: "PLU12uITxBEPHOJO1FU8qll6gQmKcXp5S7", img: "./images/ham-bar-slide-out-images/category-live.jpg"},
+    {id: "PL3ZQ5CpNulQldOL3T8g8k1mgWWysJfE9w", img: "./images/ham-bar-slide-out-images/category-news.jpg"},
+    {id: "PLbpi6ZahtOH7vgyGImZ4P-olTT11WLkLk", img: "./images/ham-bar-slide-out-images/category-spotlight.jpg"},
+    {id: "PLU8wpH_Lfhmsn0qJmVSyEXB9m3j1OkJWX", img: "./images/ham-bar-slide-out-images/category-threesixty.jpg"}
   ]
-  // $scope.playlistIds = [
-  //    "UC-9-kyTW8ZkZNDHQJ6FgpwQ", //music:
-  //   "UCEgdi0XIXXZ-qJOFPf4JSKw",  //sports:
-  //    "UCOpNcN46UbXVtpKMrmU4Abg", //gaming:
-  //    "UClgRkhTL3_hImCAmdLfDE4g", //movies:
-  //    "UCl8dMTqDrJQ0c8y23UBu4kQ", //tvShows:
-  //    "UCYfdidRxbB8Qhf0Nx7ioOYw", //news:
-  //    "UC4R8DWoMoI7CAwX8_LjQHig", //live:
-  //    "UCBR8-60-B28hp2BmDPdntcQ", //spotlight:
-  //    "UCzuqhhs6NWbgTzMuM09WKDQ" //360:
+  // $scope.channelImages = [
+  //   "./images/ham-bar-slide-out-images/category-music.jpg" , //music:
+  //   "./images/ham-bar-slide-out-images/category-sports.jpg",  //sports:
+  //    "./images/ham-bar-slide-out-images/category-gaming.jpg", //gaming:
+  //    "./images/ham-bar-slide-out-images/category-movies.jpg", //movies:
+  //    "./images/ham-bar-slide-out-images/category-tv.jpg", //tvShows:
+  //    "./images/ham-bar-slide-out-images/category-news.jpg", //news:
+  //    "./images/ham-bar-slide-out-images/category-live.jpg", //live:
+  //    "./images/ham-bar-slide-out-images/category-spotlight.jpg", //spotlight:
+  //    "./images/ham-bar-slide-out-images/category-threesixty.jpg" //360:
   // ]
   // $scope.landingPlaylists = [];
   // $scope.playLists = () => {
