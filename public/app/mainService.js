@@ -8,7 +8,7 @@ this.broken = 'working'
       method:'GET',
       url: '/api/trending'
     }).then((response) => {
-      // console.log(response);
+      // console.log('hello from the mainnService',response);
       return response.data;
     })
   }
