@@ -67,4 +67,13 @@ this.broken = 'working'
     })
   }
 
+  this.getChannelHoverInfo = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/channelHoverInfo/?id=${id}`
+    }).then((response) => {
+      return response.data.items[0];
+    })
+  }
+
 })

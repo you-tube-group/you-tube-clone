@@ -110,6 +110,13 @@ module.exports = {
         .catch(function (error){
           // console.log("ERROR: ", error);
         });
+    },
+    getChannelHoverInfo: (req,res,next) => {
+      var channelId = req.query.id;
+      client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response) {
+        res.status(200).json(data);
+      })
     }
+
 
 }
