@@ -3,10 +3,16 @@
     <div
       class="thumbnail"
       alt="video thumbnail"
-      style="background:url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"></div>
+      ng-click='passVideo(video)'
+      ui-sref='video({videoId: video.id})'
+      style="background:url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px">
+      <p class="video-duration">
+        {{video.contentDetails.duration}}</p>
+    </div>
     <div class="list-video-info-container">
       <!-- {{video.snippet.title.split(" ")[0] }} -->
 
+      <!-- displays up to 10 words for each title -->
       <h5 class="title">{{video.snippet.title.split(" ").length > 10 ? video.snippet.title.split(" ")[0] + ' ' + video.snippet.title.split(" ")[1] + ' ' +
       video.snippet.title.split(" ")[2] + ' ' +
       video.snippet.title.split(" ")[3] + ' ' +
@@ -19,6 +25,7 @@
 
       <p class="small-text">{{video.snippet.channelTitle}}</p>
       <p class="small-text">{{video.statistics.viewCount | number:0}} views</p>
+
     </div>
 
   </div>

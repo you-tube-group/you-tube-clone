@@ -13,7 +13,7 @@ angular.module('you-tube-clone')
                                 $scope.trendingVideos = response;
                                 console.log($scope.trendingVideos);
                             })
-                    }
+                    } 
                     getTrendingHome();
                     // NOTE: This converts the time for the video duration
                     $scope.convertTime = (time) => {
@@ -42,16 +42,6 @@ angular.module('you-tube-clone')
                     };
                     // NOTE: jQuery for carousel buttons
                     return time;
-                }
-                $scope.passVideo = (video) => {
-              mainService.passVideo(video);
-            }
-
-            $scope.publishConverter = (published) => {
-             published = moment(published, "YYYYMMDD").fromNow();
-              console.log(published);
-              return published;
-          };
 // NOTE: jQuery for carousel buttons
     // $scope.marginLeft = {
     //     "margin-left": 0

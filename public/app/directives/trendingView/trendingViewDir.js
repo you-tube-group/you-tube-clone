@@ -10,7 +10,7 @@ angular.module('you-tube-clone')
         .then((response) => {
           $scope.trendingData = response;
 
-
+ 
           console.log($scope.trendingData);
         })
       };

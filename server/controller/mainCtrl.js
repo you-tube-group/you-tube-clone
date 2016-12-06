@@ -6,11 +6,46 @@ const ytSearch = require('youtube-search');
 
 var client = new Client();
 
+
+convertTime = (time) => {
+    time = time.split(/[HMS]/);
+    time[0] = time[0].split('');
+    time[0].splice(0, 2);
+    time[0] = time[0].join('');
+    time.splice(time.length - 1, 1);
+    var i = time.length - 1;
+    if (time[i].length < 2) {
+        time[i] = '0' + time[i]
+    }
+    time = time.join(':')
+    if (time.length === 2) {
+        time = '0:' + time
+    }
+    return time;
+};
+
+
+
 module.exports = {
 
     getTrending: function(req, res, next) {
-        client.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=25&key=${API_KEY}`, function(data, response) {
-            res.status(200).json(data);
+        Axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=25&key=${API_KEY}`).then((results) => {
+          // Narrows the results down to the 25 video objects
+          results = results.data.items;
+
+          //loops through each object and converts their 'duration' to needed format
+          for(var i = 0; i < results.length; i++)
+          {
+            results[i].contentDetails.duration = convertTime(results[i].contentDetails.duration);
+            // working
+            // console.log('serverCtrl', results[i].contentDetails.duration );
+          }
+          // console.log(results);
+
+          // sends updated results
+          res.send(results);
+        }).catch(function(error) {
+            // console.log("ERROR: ", error);
         });
     },
 
@@ -55,15 +90,6 @@ module.exports = {
       })
     },
 
-
-    //
-    // getSearchResults: (req,res,next) => {
-    //   var searched = req.query.searched;
-    //   client.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${searched}&key=${API_KEY}`, function(data, response){
-    //     res.status(200).json(data);
-    //   });
-    // }
-    // https://www.googleapis.com/youtube/v3
 
     // retrieves results from user's search bar request
     getSearchResults: (req, res, next) => {
