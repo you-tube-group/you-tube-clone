@@ -1,6 +1,37 @@
 <section class='search-view-dir-outer-wrap'>
   <div class="search-vids-wrap">
     <div class="video-wrap" ng-repeat="video in searchResults">
+      <div ng-show="channelHover" class="channel-hover-pop-up">
+        <div class="channel-hover-container" ng-style="hoverPosition" >
+          <div class="banner-div" style="background: url('{{channelInfo.brandingSettings.image.bannerTvImageUrl}}') no-repeat center; background-size: 169%">
+            <a class="channel-logo-a-tag"href="#">
+              <img class="channel-logo-img" style="background: url('{{channelInfo.snippet.thumbnails.high.url}}') no-repeat center; background-size: 100%" />
+            </a>
+          </div>
+          <div class="title-video-container">
+            <div class="inner-title-video-container">
+              <a class="channel-title-a-tag"href="#">{{channelInfo.snippet.title}}</a>
+              <a class="video-count-a-tag"href="#">{{channelInfo.statistics.videoCount}} videos</a>
+            </div>
+            <div class="subscriber-button">
+              <div class="button-text-container">
+                <div class="sprite-subscribe"></div>
+                <div class="text-subscribe">Subscribe</div>
+              </div>
+              <div class="count-container">
+                <p>{{channelInfo.statistics.subscriberCount}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="description-container">
+            <div class="inner-description-container">
+              <div class="description-div">
+                {{channelInfo.snippet.description | limitTo: 157 }}{{video.snippet.description.length > 157 ? '...' : ''}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         class='thumbnail'
         ng-click='passVideo(video)'
@@ -11,7 +42,7 @@
       <div class="video-info-wrap">
         <div class="video-title">{{video.snippet.title}}</div>
         <div class="channel-title-wrap">
-          <div class="channel-title">{{video.snippet.channelTitle}}</div>
+          <div ng-mouseenter="showChannelHover(video.snippet.channelId)" ng-mouseleave="hideChannelHover()" class="channel-title">{{video.snippet.channelTitle}}</div>
           <div class="checkmark"></div>
         </div>
         <div class="views-wrap">

@@ -50,7 +50,9 @@ app.get('/api/comments' ,controller.getVideoComments);
 app.get('/api/playList', controller.getPlaylistVideos);
 app.get('/api/search', controller.getSearchResults);
 app.get('/api/channelInfo', controller.getChannelInfoOnVidPlayer);
+app.get('/api/channelHoverInfo', controller.getChannelHoverInfo);
 app.get('/api/playlistInfo', controller.getPlaylistInfo);
+
 
 
 //========= AUTH ENDPOINTS ======
