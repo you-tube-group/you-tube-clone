@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+$youtube-logo-red: #E62117;
+$yt-primary-red: #CC181E;
+$yt-selected-gray: #333333;
+$yt-unselected-lightgray: #C8C8C8;
+$left-nav-subcategory-color: #444444;
+$primary-icon-color: #7C7C7C;
+$primary-bg: #FFFFFF;
+$secondary-bg: #F1F1F1;
+$video-main-title: #167AC6;
+$video-sub-title: #767676;
+$search-color: #767676;
+$primary-font-family: 'Roboto', sans-serif;
+
+@mixin video-main-title {
+  font-family: $primary-font-family;
+  font-weight: 500;
+  font-size: 13px;
+  color: $video-main-title;
+  line-height: 17px;
+  max-width: 190px;
+  text-align: left;
+}
+
+.main-playlist-title-container {
+  position: absolute;
+  color: #333333;
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  line-height: 18px;
+  font-weight: 500;
+  margin-top: -25px;
+  margin-left: 8px;
+}
