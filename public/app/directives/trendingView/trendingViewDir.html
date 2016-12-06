@@ -14,7 +14,9 @@
         ui-sref='video({videoId: video.id})'
         style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
         alt="video thumbnail"
-        ></div>
+        >
+        <div class="duration">{{convertTime(video.contentDetails.duration)}}</div>
+      </div>
       <div class="video-info-wrap">
         <div class="video-title">{{video.snippet.title}}</div>
         <div class="channel-title-wrap">

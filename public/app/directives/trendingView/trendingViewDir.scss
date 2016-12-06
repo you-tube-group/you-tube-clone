@@ -24,6 +24,7 @@ $tvd-red-underline: #CC181E;
     position: fixed;
     top: 49px;
     border: solid 1px $tvd-container-bg-color;
+    z-index: 1;
     .links-wrap{
       display: flex;
       justify-content: space-between;
@@ -49,7 +50,7 @@ $tvd-red-underline: #CC181E;
     }
   }
   .trending-vids-wrap {
-    width: 850px;
+    width: 950px;
     margin-top: 10px;
     padding: 22px 18px;
     background-color: $tvd-vid-wrap-bg;
@@ -61,6 +62,19 @@ $tvd-red-underline: #CC181E;
         min-width: 196px;
         height: 110px;
         margin-right: 10px;
+        position: relative;
+        .duration {
+          color: #FFF;
+          font-size: 11px;
+          background-color: #000;
+          opacity: .75;
+          padding: 0px 4px;
+          line-height: 14px;
+          font-weight: 500;
+          position: absolute;
+          bottom: 2px;
+          right: 2px;
+        }
       }
       .video-info-wrap {
         display: flex;
