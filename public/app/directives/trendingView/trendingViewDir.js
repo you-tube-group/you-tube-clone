@@ -21,6 +21,11 @@ angular.module('you-tube-clone')
         mainService.passVideo(video);
       }
 
+      $scope.videoTime = (dateObj)=> {
+        dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
+        return dateObj;
+      }
+
     //END OF CONTROLLER
     }
   //END OF RETURN (DIRECTIVE)
