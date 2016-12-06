@@ -13,7 +13,7 @@ angular.module('you-tube-clone')
                                 $scope.trendingVideos = response;
                                 console.log($scope.trendingVideos);
                             })
-                    } 
+                    }
                     getTrendingHome();
                     // NOTE: This converts the time for the video duration
                     $scope.convertTime = (time) => {
@@ -41,6 +41,7 @@ angular.module('you-tube-clone')
                         return published;
                     };
                     // NOTE: jQuery for carousel buttons
+
                     return time;
 // NOTE: jQuery for carousel buttons
     // $scope.marginLeft = {
@@ -52,6 +53,7 @@ angular.module('you-tube-clone')
     //
     //     }
     // }
+
 
                     $(() => {
                         // NOTE: to move slide 1 place = 427 (muliply number of slides you want to move by 427)
