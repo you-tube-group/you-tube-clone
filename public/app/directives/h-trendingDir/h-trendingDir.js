@@ -42,6 +42,18 @@ angular.module('you-tube-clone')
                     };
                     // NOTE: jQuery for carousel buttons
 
+                    return time;
+// NOTE: jQuery for carousel buttons
+    // $scope.marginLeft = {
+    //     "margin-left": 0
+    // }
+    //
+    // $scope.scrollRight = () => {
+    //     if($scope.marginLeft.margin-left){
+    //
+    //     }
+    // }
+
                     $(() => {
                         // NOTE: to move slide 1 place = 427 (muliply number of slides you want to move by 427)
                         $('.arrow-wrap').on('click', () => {
