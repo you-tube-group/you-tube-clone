@@ -8,7 +8,7 @@ angular.module('you-tube-clone')
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
-          $scope.trendingData = response;
+          $scope.trendingData = response.items;
 
 
           console.log($scope.trendingData);
