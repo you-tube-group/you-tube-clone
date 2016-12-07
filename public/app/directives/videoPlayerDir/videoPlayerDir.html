@@ -54,11 +54,19 @@
     </div>
   </div>
 
+  <div class="video-share-main-container">
+    <div class="share-tabs-wrapper">
+      <p class="share-tab">Share</p>
+      <p class="share-tab">Embed</p>
+      <p class="share-tab">Email</p>
+    </div>
+  </div>
+
   <div class="main-description-wrapper">
     <div class="publish-date-label">
       Published On {{videoData.snippet.publishedAt}}
     </div>
-    <div class="description-wrapper">
+    <div class="description-wrapper" >
       <div class="video-description" ng-bind-html="videoData.snippet.description">
         {{videoData.snippet.description}}
       </div>

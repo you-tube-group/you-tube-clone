@@ -11,27 +11,11 @@ angular.module('you-tube-clone')
                         mainService.getTrending()
                             .then((response) => {
                                 $scope.trendingVideos = response;
-                                console.log($scope.trendingVideos);
                             })
                     }
                     getTrendingHome();
                     // NOTE: This converts the time for the video duration
-                    $scope.convertTime = (time) => {
-                        time = time.split(/[HMS]/);
-                        time[0] = time[0].split('');
-                        time[0].splice(0, 2);
-                        time[0] = time[0].join('');
-                        time.splice(time.length - 1, 1);
-                        var i = time.length - 1;
-                        if (time[i].length < 2) {
-                            time[i] = '0' + time[i]
-                        }
-                        time = time.join(':')
-                        if (time.length === 2) {
-                            time = '0:' + time
-                        }
-                        return time;
-                    }
+
                     $scope.passVideo = (video) => {
                         mainService.passVideo(video);
                     }
@@ -42,7 +26,7 @@ angular.module('you-tube-clone')
                     };
                     // NOTE: jQuery for carousel buttons
 
-                    return time;
+                    // return time;
 // NOTE: jQuery for carousel buttons
     // $scope.marginLeft = {
     //     "margin-left": 0
