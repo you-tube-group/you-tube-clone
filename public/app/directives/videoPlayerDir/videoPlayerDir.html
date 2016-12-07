@@ -60,14 +60,13 @@
   <div class="video-share-main-container" ng-show="share" >
     <div class="share-tabs-wrapper">
       <div class="button-options">
-        <p class="share-tab">Share</p>
-        <p class="share-tab">Embed</p>
-        <p class="share-tab">Email</p>
+        <div class="share-tab" ng-click="work=!work; embed=false; email=false">Share</div>
+        <div class="share-tab" ng-click="embed = !embed; work=true;email=false">Embed</div>
+        <div class="share-tab" ng-click="email = !email; work=true; embed=false">Email</div>
       </div>
-      <div class="close-btn"></div>
+      <div class="close-btn" ng-click="share = !share"></div>
     </div>
-    <div class="share-container">
-      <div >
+    <div class="share-container" ng-hide="work">
         <ul class="icon-list">
           <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -180px"></li>
           <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -1385px"></li>
@@ -81,17 +80,16 @@
           <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -492px"></li>
           <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -276px"></li>
         </ul>
-      </div>
       <div class="url-share">
         <input type="text" value="https://youtu.be/{{videoData.id}}">
       </div>
     </div>
 
-    <div class="embed-container">
+    <div class="embed-container" ng-hide="!embed">
       <input type="text" value="<iframe width='560' height='315' src='https://www.youtube.com/embed/{{videoData.id}}' frameborder='0' allowfullscreen></iframe>">
     </div>
 
-    <div class="email-container-main-wrap">
+    <div class="email-container-main-wrap" ng-hide="!email">
       <input type="text" class="to-section" value="To"/>
       <input type="text" class="option-message-section" value="Optional message"/>
       <button type="button" name="button">Send email</button>
