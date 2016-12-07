@@ -24,6 +24,7 @@ $tvd-red-underline: #CC181E;
     position: fixed;
     top: 49px;
     border: solid 1px $tvd-container-bg-color;
+    z-index: 1;
     .links-wrap{
       display: flex;
       justify-content: space-between;
@@ -49,7 +50,7 @@ $tvd-red-underline: #CC181E;
     }
   }
   .trending-vids-wrap {
-    width: 850px;
+    width: 950px;
     margin-top: 10px;
     padding: 22px 18px;
     background-color: $tvd-vid-wrap-bg;

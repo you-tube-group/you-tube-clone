@@ -8,9 +8,9 @@ angular.module('you-tube-clone')
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
-          $scope.trendingData = response;
+          $scope.trendingData = response.items;
 
- 
+
           console.log($scope.trendingData);
         })
       };
@@ -20,6 +20,13 @@ angular.module('you-tube-clone')
       $scope.passVideo = (video) => {
         mainService.passVideo(video);
       }
+
+      $scope.videoTime = (dateObj)=> {
+        dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
+        return dateObj;
+      }
+
+
 
     //END OF CONTROLLER
     }
