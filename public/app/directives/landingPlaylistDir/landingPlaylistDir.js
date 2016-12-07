@@ -42,6 +42,8 @@ angular.module('you-tube-clone')
           }
           $scope.getHomePlaylist(hplaylist);
         })
+
+
             $scope.convertTime = (time) => {
               time = time.split(/[HMS]/);
               time[0] = time[0].split('');
@@ -67,6 +69,7 @@ angular.module('you-tube-clone')
               // NOTE: carousel right and left scrolling animation
               $('.landing-right-arrow-wrap').on('click', function(event) {
                 var selection = $(this).parent()[0].children[0].children[0];
+                console.log(selection);
                 $(selection).animate({
                   "marginRight": "+=854"
                 }, {
@@ -86,27 +89,27 @@ angular.module('you-tube-clone')
                   }
                 });
               });
-              $('.landing-left-arrow-wrap').hide().on('click', function(event) {
-                var selection = $(this).parent()[0].children[0].children[0];
-                $(selection).animate({
-                  "marginLeft": "+=854"
-                }, {
-                  duration: 700,
-                  step: function(now, fx) {
-                    if (now === fx.end) {
-                      // console.log(fx.now);
-                      $(this).stop(true, false);
-                    }
-                  },
-                  start: function(now, fx) {
-                      // console.log("START");
-                    if (now < -2500) {
-                      // console.log("START NOW: ", fx.now);
-                      $(this).stop(true, false);
-                    }
-                  }
-                });
-              })
+              // $('.landing-left-arrow-wrap').hide().on('click', function(event) {
+              //   var selection = $(this).parent()[0].children[0].children[0];
+              //   $(selection).animate({
+              //     "marginLeft": "+=854"
+              //   }, {
+              //     duration: 700,
+              //     step: function(now, fx) {
+              //       if (now === fx.end) {
+              //         // console.log(fx.now);
+              //         $(this).stop(true, false);
+              //       }
+              //     },
+              //     start: function(now, fx) {
+              //         // console.log("START");
+              //       if (now < -2500) {
+              //         // console.log("START NOW: ", fx.now);
+              //         $(this).stop(true, false);
+              //       }
+              //     }
+              //   });
+              // })
 
               // NOTE: Logic for the clicking
               $('#rcount').on('click', () => {

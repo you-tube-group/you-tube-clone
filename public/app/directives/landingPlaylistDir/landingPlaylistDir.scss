@@ -84,39 +84,38 @@ $primary-font-family: 'Roboto', sans-serif;
   transform: translate(-80%, -50%);
 
 .landing-left-arrow-container{
-
   position: absolute;
   height: 75px;
   width: 80px;
   padding-top: 25px;
   padding-left: 30px;
-  bottom: -99%;
-  left: 48%;
-  top: 135%;
+  // bottom: -99%;
+  left: 128px;
+  top: 92px;
   // transform: translate(0%, -50%);
   z-index: 100;
 }
-.landing-left-arrow-container:hover{
-  color: #000;
-  background: #fff;
-  box-shadow: -1px -1px 3.5px $yt-unselected-lightgray;
-  position: absolute;
-  height: 50px;
-  width: 50px;
-  padding-top: 17px;
-  padding-left: 18px;
-  bottom: -99%;
-  left: 41%;
-  top: 159%;
-  // transform: translate(0%, -50%);
-  z-index: 100;
-  }
+// .landing-left-arrow-container:hover{
+//   color: #000;
+//   background: #fff;
+//   box-shadow: -1px -1px 3.5px $yt-unselected-lightgray;
+//   position: absolute;
+//   height: 50px;
+//   width: 50px;
+//   padding-top: 17px;
+//   padding-left: 18px;
+//   bottom: -99%;
+//   left: 41%;
+//   top: 159%;
+//   z-index: 100;
+//   }
 }
 
 .landing-right-arrow-wrap {
   color: $yt-unselected-lightgray;
   position: absolute;
-  right: 9.3%;
+  // right: 9.3%;
+  right: 14.3%;
   height: 75px;
   width: 100px;
   z-index: 100;
@@ -125,19 +124,19 @@ $primary-font-family: 'Roboto', sans-serif;
   margin-top: 52px;
 }
 
-.landing-right-arrow-wrap:hover{
-  background: #fff;
-  color: #000;
-  position: absolute;
-  right: 10.3%;
-  height: 50px;
-  width: 52px;
-  z-index: 100;
-  padding-top: 16px;
-  padding-left: 30px;
-  margin-top: 60px;
-  box-shadow: 1px -1px 3.5px $yt-unselected-lightgray;
-}
+// .landing-right-arrow-wrap:hover{
+//   background: #fff;
+//   color: #000;
+//   position: absolute;
+//   right: 10.3%;
+//   height: 50px;
+//   width: 52px;
+//   z-index: 100;
+//   padding-top: 16px;
+//   padding-left: 30px;
+//   margin-top: 60px;
+//   box-shadow: 1px -1px 3.5px $yt-unselected-lightgray;
+// }
 
 
 .landing-playlist-dir-main-container {
@@ -152,28 +151,18 @@ $primary-font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
-    width: 75%;
+    width: 950px;
     background: $tvd-vid-wrap-bg;
-    padding: 35px 0px 5px 17px;
+    // padding: 35px 0px 5px 17px;
+    padding: 35px 0px 5px 47px;
     border-bottom: 1px solid $yt-unselected-lightgray;
-
     .videos-vid-carousel {
       display: flex;
       width: 100%;
-      .playlist-title {
-        position: absolute;
-        color: $yt-selected-gray;
-        font-size: 15px;
-        font-family: $primary-font-family;
-        line-height: 18px;
-        font-weight: 500;
-        margin-top: -25px;
-        margin-left: 8px;
-      }
       .home-playlist-carousel {
         min-width: 196px;
-        margin-right: 18px;
-
+        // margin-right: 18px;
+        margin-right: 30px;
         .thumbnail {
           max-width: 196px;
           height: 110px;
@@ -212,9 +201,6 @@ $primary-font-family: 'Roboto', sans-serif;
       }
     }
   }
-
-
-
 } // <-- this is the end main-container
 
 
