@@ -2,6 +2,7 @@
 
 // ==== variables
 $com-dir-font: 'Roboto', sans-serif;
+$com-dir-bg-color: #FBFBFB;
 
 
 // ==== mixins
@@ -32,14 +33,14 @@ $com-dir-font: 'Roboto', sans-serif;
 .video-player-main-container{
   font-family: $com-dir-font;
   width: 60vw;
-  
+
   .video-container{
     margin-bottom: 10px;
   }
   .video-title-container{
-    border: 1px solid #555555;
+    background: $com-dir-bg-color;
     @include container-setting;
-    @include container-box-shadow;
+    // @include container-box-shadow;
     // max-height: 150px;
     margin-bottom: 10px;
     .video-title{
@@ -186,9 +187,55 @@ $com-dir-font: 'Roboto', sans-serif;
   .main-description-wrapper{
     @include container-setting;
     font-size: 13px;
-    border: 1px solid black;
     .publish-date-label {
       font-weight: strong;
+    }
+  }
+
+  // ==== styling for when share button is pressed ====
+  .video-share-main-container {
+    height: 184px;
+    padding: 15px 17px 0 15px;
+    width: 642px;
+    background: $com-dir-bg-color;
+    .share-tabs-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #F1F1F1;
+      .button-options {
+        display: flex;
+        .share-tab{margin-right: 42px};
+      }
+      .close-btn {
+        background: url("../../Images/videoPlayerDir-sprite.webp") -863px -139px;
+        background-size: auto;
+        width: 10px;
+        height: 10px;
+        opacity: .5;
+      }
+    }
+    .share-container {
+      .icon-list{
+        display: flex;
+        flex-direction: row;
+        .media-icon{
+          width: 32px;
+          height: 32px;
+          margin-right: 5px;
+          margin-bottom: 10px;
+        }
+      }
+      .url-share{
+        input {
+          width: 385px;
+          font-size: 1.6em;
+        }
+      }
+    }
+    .embed-container {
+      input {width: 100%};
     }
   }
 }

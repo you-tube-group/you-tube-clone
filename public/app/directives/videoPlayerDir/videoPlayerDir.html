@@ -2,7 +2,7 @@
   <div class="video-container">
     <iframe id="ytplayer" type="text/html" width="640" height="360"
       ng-src="{{thisUrl}}"
-      frameborder="0"></iframe>
+      frameborder="0" allowfullscreen></iframe>
   </div>
   <div class="video-title-container">
     <div class="video-title">
@@ -56,9 +56,40 @@
 
   <div class="video-share-main-container">
     <div class="share-tabs-wrapper">
-      <p class="share-tab">Share</p>
-      <p class="share-tab">Embed</p>
-      <p class="share-tab">Email</p>
+      <div class="button-options">
+        <p class="share-tab">Share</p>
+        <p class="share-tab">Embed</p>
+        <p class="share-tab">Email</p>
+      </div>
+      <div class="close-btn"></div>
+    </div>
+    <div class="share-container">
+      <div >
+        <ul class="icon-list">
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -180px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -1385px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -420px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -1112px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -1220px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -384px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -896px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -932px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 0"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -492px"></li>
+          <li class="media-icon" style="background: url('../../Images/you-tube-share-icons.webp') no-repeat 0 -276px"></li>
+        </ul>
+      </div>
+      <div class="url-share">
+        <input type="text" value="https://youtu.be/{{videoData.id}}">
+      </div>
+    </div>
+
+    <div class="embed-container">
+      <input type="text" value="<iframe width='560' height='315' src='https://www.youtube.com/embed/{{videoData.id}}' frameborder='0' allowfullscreen></iframe>">
+    </div>
+
+    <div class="email-container-main-wrap">
+
     </div>
   </div>
 
