@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div class="video-share-main-container">
+  <div class="video-share-main-container" ng-hide="show" ng-click="show != show">
     <div class="share-tabs-wrapper">
       <div class="button-options">
         <p class="share-tab">Share</p>
@@ -89,7 +89,9 @@
     </div>
 
     <div class="email-container-main-wrap">
-
+      <input type="text" class="to-section" value="To"/>
+      <input type="text" class="option-message-section" value="Optional message"/>
+      <button type="button" name="button">Send email</button>
     </div>
   </div>
 
