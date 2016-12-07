@@ -13,21 +13,14 @@ const app = module.exports = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
 
-<<<<<<< HEAD
-// //===CONNECT TO SERVER=========
-const massiveServer = massive.connectSync({
-    connectionString: 'postgress://localhost/yt-local-auth'
-});
-app.set('db', massiveServer);
-const db = app.get('db');
-=======
+
 //===CONNECT TO SERVER=========
 // const massiveServer = massive.connectSync({
 //   connectionString: 'postgress://localhost/yt-local-auth'
 // });
 // app.set('db', massiveServer);
 // const db = app.get('db');
->>>>>>> 04ef3e00b5ac26eb77448d301e4fd9756403e807
+
 
 // //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
@@ -37,21 +30,7 @@ const usersCtrl = require('./controller/usersCtrl');
 const passport = require('./passport');
 
 //===POLICIES=================
-<<<<<<< HEAD
-const isAuthed = (req, res, next) => {
-    if (!req.isAuthenticated()) return res.status(401).send();
-    return next();
-}
 
-// //===SESSION AND PASSPORT===============
-app.use(session({
-    secret: secret.secret,
-    saveUninitialized: false,
-    resave: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
-=======
 // const isAuthed = (req,res,next) => {
 //   if (!req.isAuthenticated()) return res.status(401).send();
 //   return next();
@@ -65,7 +44,7 @@ app.use(passport.session());
 // }));
 // app.use(passport.initialize());
 // app.use(passport.session());
->>>>>>> 04ef3e00b5ac26eb77448d301e4fd9756403e807
+
 
 
 // ======== Endpoints ========
