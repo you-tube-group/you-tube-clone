@@ -16,8 +16,6 @@ angular.module('you-tube-clone')
             $scope.getPlaylistInfo = (playlistId) => {
               mainService.getPlaylistInfo(playlistId).then((response) => {
                 $scope.playlistData = response.items;
-                console.log('playlist data!!!!');
-                console.log($scope.playlistData);
               })
             }
           }
