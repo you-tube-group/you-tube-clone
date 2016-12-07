@@ -244,10 +244,18 @@ $com-dir-bg-color: #FBFBFB;
       }
     }
     .embed-container {
-      input {width: 100%; font-size: 13px;};
+      input {
+        width: 100%;
+        font-size: 13px;
+        height: 28px;
+      };
     }
     .email-container-main-wrap {
-      input {width: 100%};
+      textarea {
+        min-width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
     }
   }
 }
