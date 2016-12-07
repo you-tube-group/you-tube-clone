@@ -25,8 +25,8 @@ $tvd-red-underline: #CC181E;
       margin-bottom: 10px;
       cursor: pointer;
       .thumbnail {
-        min-width: 196px;
-        height: 110px;
+        min-width: 246px;
+        height: 138px;
         margin-right: 10px;
       }
       .video-info-wrap {
@@ -64,6 +64,92 @@ $tvd-red-underline: #CC181E;
           font-size: 12px;
           color: $tvd-subtext-color;
           line-height: 1.3;
+        }
+      }
+    }
+  }
+}
+
+.channel-hover-pop-up {
+
+  .channel-hover-container {
+    position: absolute;
+    height: 236px;
+    width: 350px;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    .banner-div {
+      height: 96px;
+      width: 350px;
+      .channel-logo-a-tag {
+        .channel-logo-img {
+          position: absolute;
+          margin-left: 13px;
+          height: 64px;
+          width: 64px;
+          text-decoration: none;
+          border: none;
+          box-shadow: rgba(0,0,0,.5) 0 4px 5px -1px;
+          cursor: pointer;
+        }
+      }
+    }
+    .title-video-container {
+      padding: 12px 12px 0;
+      .inner-title-video-container {
+        margin-left: 0;
+        max-width: 348px;
+        // padding: 12px 12px 0;
+        font-family: arial,sans-serif;
+        font-size: 12px;
+        // position: absolute;
+        .channel-title-a-tag {
+
+        }
+        .video-count-a-tag {
+
+        }
+      }
+      .subscriber-button {
+        width: 170px;
+        height: 24px;
+        margin: 8px 0;
+        .button-text-container {
+          width: 88.703px;
+          height: 22px;
+          padding: 0 8px 0 5.5px;
+          text-decoration: none;
+          color: #fefefe;
+          border: solid 1px transparent;
+          background-color: #cc181e;
+          font-size: 11px;
+          border-radius: 2px;
+          box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+          .sprite-subscribe {
+            margin-right: 6px;
+            background: no-repeat url('../images/youTube-sprite2.webp') -298px -53px;
+            background-size: auto;
+            width: 16px;
+            height: 12px;
+          }
+          .text-subscribe {
+
+          }
+        }
+        .count-container {
+
+        }
+      }
+    }
+    .description-container {
+      .inner-description-container {
+        height: 56px;
+        width: 322px;
+        padding: 0 12px 8px;
+        .description-div {
+          color: #999;
+
         }
       }
     }
