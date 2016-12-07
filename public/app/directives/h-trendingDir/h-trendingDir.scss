@@ -73,63 +73,6 @@ $primary-font-family: 'Roboto', sans-serif;
   line-height: 14px;
 }
 
-.arrow-wrap{
-color: $yt-unselected-lightgray;
-height: 75px;
-width: 100px;
-margin-right: 23px;
-position: absolute;
-left:12.9%;
-top: 23%;
-z-index: 100;
-transform: translate(-80%, -50%);
-
-.left-arrow-container{
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translate(0%, -50%);
-  z-index: 100;
-}
-
-.leftArrowHover{
-  background: #fff;
-  padding: 18px;
-  transform: translate(-7%, -20px);
-  box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
-  color: #000;
-  }
-}
-// FIXME: fix the box-shadow from shading inside
-
-.arrow-wrap-right{
-color: $yt-unselected-lightgray;
-height: 75px;
-width: 100px;
-margin-right: 23px;
-position: absolute;
-right:4.6%;
-top: 23%;
-z-index: 100;
-transform: translate(-80%, -50%);
-
-.right-arrow-container{
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translate(0%, -50%);
-  z-index: 100;
-}
-
-.rightArrowHover{
-  background: #fff;
-  padding: 18px;
-  transform: translate(95%, -25px);
-  box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
-  color: #000;
-  }
-}
-
 .h-trending-dir-outer-wrap {
   margin-top: 43px;
   position: realative;
@@ -176,15 +119,17 @@ transform: translate(-80%, -50%);
     }
   }
 
-
+  .landing-left-arrow-container{
+    width: 10px;
+  }
 .trending-vid-outer-wrap{
   position: relative;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
-  width: 75%;
+  max-width: 1262px;
   background: $tvd-vid-wrap-bg;
-  padding: 35px 0px 5px 17px;
+  padding: 35px 0px 8px 7px;
   border-bottom: 1px solid $yt-unselected-lightgray;
 
 .trending-vid-carousel{
@@ -202,7 +147,7 @@ transform: translate(-80%, -50%);
   }
     .h-trending-carousel{
       min-width: 196px;
-      margin-right: 18px;
+      margin-right: 13px;
   .thumbnail {
     height: 110px;
     margin-right: 10px;
@@ -242,3 +187,64 @@ transform: translate(-80%, -50%);
 }
 
 } //<-- this is the end of outer-wrap
+
+
+
+//
+//
+// .arrow-wrap{
+// color: $yt-unselected-lightgray;
+// height: 75px;
+// width: 100px;
+// margin-right: 23px;
+// position: absolute;
+// left:12.9%;
+// top: 23%;
+// z-index: 100;
+// transform: translate(-80%, -50%);
+//
+// .left-arrow-container{
+//   position: absolute;
+//   right: 15px;
+//   top: 50%;
+//   transform: translate(0%, -50%);
+//   z-index: 100;
+// }
+//
+// .leftArrowHover{
+//   background: #fff;
+//   padding: 18px;
+//   transform: translate(-7%, -20px);
+//   box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
+//   color: #000;
+//   }
+// }
+// // FIXME: fix the box-shadow from shading inside
+//
+// .arrow-wrap-right{
+// color: $yt-unselected-lightgray;
+// height: 75px;
+// width: 100px;
+// margin-right: 23px;
+// position: absolute;
+// right:4.6%;
+// top: 23%;
+// z-index: 100;
+// transform: translate(-80%, -50%);
+//
+// .right-arrow-container{
+//   position: absolute;
+//   right: 15px;
+//   top: 50%;
+//   transform: translate(0%, -50%);
+//   z-index: 100;
+// }
+//
+// .rightArrowHover{
+//   background: #fff;
+//   padding: 18px;
+//   transform: translate(95%, -25px);
+//   box-shadow: 2px 0px 1.5px 1px $yt-unselected-lightgray;
+//   color: #000;
+//   }
+// }

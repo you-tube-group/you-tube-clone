@@ -10,6 +10,12 @@
 
 <section class="trending-vid-outer-wrap">
     <section class="trending-vid-carousel">
+
+        <section class="arrow-wrap">
+            <section class="left-arrow-container">
+                <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </section>
+        </section>
         <p class="trending-title">Trending</p>
 
         <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
@@ -33,11 +39,6 @@
     </section>
     </section>
 
-    <section class="arrow-wrap" ng-mouseover="hoverLeft= true" ng-mouseleave="hoverLeft= false">
-        <section class="left-arrow-container" ng-class="{leftArrowHover: hoverLeft}">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </section>
-    </section>
 
     <section class="arrow-wrap-right" ng-mouseover="hoverRight= true" ng-mouseleave="hoverRight= false">
         <section class="right-arrow-container" ng-class="{rightArrowHover: hoverRight}">
@@ -45,3 +46,18 @@
         </section>
     </section>
 </section>
+
+
+
+<!-- NOTE: working buttons -->
+<!-- <section class="arrow-wrap" ng-mouseover="hoverLeft= true" ng-mouseleave="hoverLeft= false">
+    <section class="left-arrow-container" ng-class="{leftArrowHover: hoverLeft}">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+    </section>
+</section>
+
+<section class="arrow-wrap-right" ng-mouseover="hoverRight= true" ng-mouseleave="hoverRight= false">
+    <section class="right-arrow-container" ng-class="{rightArrowHover: hoverRight}">
+        <i class="fa fa-angle-right" aria-hidden="true"></i>
+    </section>
+</section> -->
