@@ -36,8 +36,10 @@ module.exports = {
           for(var i = 0; i < results.items.length; i++)
           {
             results.items[i].contentDetails.duration = convertTime(results.items[i].contentDetails.duration);
+            // console.log('serverCtrl', results.items[i].contentDetails.duration );
           }
           // console.log(results);
+          // console.log('outside the loop');
           // sends updated results
           res.send(results);
         }).catch(function(error) {
