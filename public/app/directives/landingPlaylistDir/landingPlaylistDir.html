@@ -1,7 +1,7 @@
 <div class="landing-playlist-dir-main-container">
     <div class="videos-outer-wrap">
         <div class="videos-vid-carousel">
-            <playlist-info-dir playlist-id="hplaylist"></playlist-info-dir>
+            <playlist-info-dir playlist-id="hplaylist.id" thepic="homePlaylistInfo.img"></playlist-info-dir>
             <div class="home-playlist-carousel" ng-repeat="video in videoStatsArr">
                 <!-- {{videoInfo[0].contentDetails.duration}} -->
                 <div class="playlist-thumbnail">
@@ -21,9 +21,15 @@
             </div>
         </div>
     </div>
-    <section class="landing-left-arrow-wrap">
+    <section class="landing-left-arrow-wrap" id="lcount">
         <section class="landing-left-arrow-container">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </section>
+    </section>
+
+    <section class="landing-right-arrow-wrap" id="rcount">
+        <section class="landing-right-arrow-container">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
         </section>
     </section>
 
