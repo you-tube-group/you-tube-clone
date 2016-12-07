@@ -119,8 +119,12 @@ $primary-font-family: 'Roboto', sans-serif;
     }
   }
 
-  .landing-left-arrow-container{
-    width: 10px;
+  .arrow-wrap{
+
+    .left-arrow-container{
+      width: 10px;
+      margin-top: 40px;
+    }
   }
 .trending-vid-outer-wrap{
   position: relative;
