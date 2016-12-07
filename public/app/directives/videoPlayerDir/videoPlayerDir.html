@@ -40,8 +40,11 @@
       <div class="media-btns">
         <div class="add-btn btn-hover"></div>
         <div class="btn-text">Add to</div>
-        <div class="share-btn btn-hover"></div>
-        <div class="btn-text">Share</div>
+        <div class="share-button-container" ng-click="share = !share">
+          <div class="share-btn btn-hover"></div>
+          <div class="btn-text">Share</div>
+        </div>
+
         <div class="more-btn btn-hover"> </div>
         <div class="btn-text">More</div>
       </div>
@@ -54,7 +57,7 @@
     </div>
   </div>
 
-  <div class="video-share-main-container" ng-hide="show" ng-click="show != show">
+  <div class="video-share-main-container" ng-show="share" >
     <div class="share-tabs-wrapper">
       <div class="button-options">
         <p class="share-tab">Share</p>
