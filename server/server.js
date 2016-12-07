@@ -27,6 +27,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 //===CONNECT TO SERVER=========
 // const massiveServer = massive.connectSync({
 //   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
@@ -34,11 +35,13 @@ app.use(passport.session());
 // app.set('db', massiveServer);
 // const db = app.get('db');
 
-//===REQUIRED CONTROLLERS====
+
+// //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
 const usersCtrl = require('./controller/usersCtrl');
 
 //===POLICIES=================
+
 // const isAuthed = (req,res,next) => {
 //   if (!req.isAuthenticated()) return res.status(401).send();
 //   return next();
@@ -86,6 +89,7 @@ passport.use(new YouTubeStrategy({
         });
     }
 ));
+
 
 
 // ======== Endpoints ========
