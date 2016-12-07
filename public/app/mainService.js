@@ -38,6 +38,8 @@ this.broken = 'working'
   }
 
   this.getSearchResults = (searched) => {
+    // console.log("searched: ", searched);
+    // searched = searched + '';
     searched = searched.replace(/ /g,"%20");
     return $http({
       method: 'GET',

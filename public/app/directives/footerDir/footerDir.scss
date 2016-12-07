@@ -1,21 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$footer-font: 'Roboto', sans-serif;
+
 .footer-dir-outer-wrap {
   width: 100%;
   height: 50px;
-  background: blue;
+  font-family: $footer-font;
   .top-buttons-wrap {
     width: 100%;
     display: flex;
-    .you-tube-icon {
-      background: url('./images/you-tube-sprite.webp') 0 -102px;
-      background-size: 312px 547px;
+    .mr {
+      margin-right: 14px;
     }
-    .language {}
+    .you-tube-icon {
+      width: 73.5px;
+      height: 30px;
+      background: url('./../../../Images/footer-dir-icons.webp') -337px -369px;
+      background-size: 435px 425px;
+      background-repeat: no-repeat;
+    }
+    .language-wrap {
+      display: flex;
+      .language-icon {
+        background: url("'./../../../Images/footer-dir-icons.webp'") -96px -148px no-repeat;
+        background-size: 435px 425px;
+        width: 25.5px;
+        height: 15px;
+        opacity: .5;
+      }
+      .language {}
+    }
     .location {}
     .restricted {}
     .history {}
     .help {}
   }
   .top-links {
+    display: flex;
+    .mr {
+      margin-right: 15px;
+    }
     .about {}
     .press {}
     .copyright {}
@@ -25,6 +49,7 @@
     .youtube {}
   }
   .bottom-links {
+    display: flex;
     .terms {}
     .privacy {}
     .policy {}
