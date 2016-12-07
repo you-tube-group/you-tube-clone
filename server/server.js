@@ -28,11 +28,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //===CONNECT TO SERVER=========
-const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-});
-app.set('db', massiveServer);
-const db = app.get('db');
+// const massiveServer = massive.connectSync({
+//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+// });
+// app.set('db', massiveServer);
+// const db = app.get('db');
 
 //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
@@ -61,7 +61,7 @@ passport.use(new YouTubeStrategy({
         scope: ['https://www.googleapis.com/auth/youtube.readonly']
     },
     function(accessToken, refreshToken, profile, done) {
-
+        console.log('profile: ', profile);
         if (profile === false) {
             return done(null, {
                 profile: profile
@@ -72,11 +72,13 @@ passport.use(new YouTubeStrategy({
             access_token: accessToken,
             refresh_token: refreshToken
         });
-
-        db.users.findOne({youtube_id: profile.id}, (err, user) => {
+        // db.users.findOne({youtube_id: profile.id}, (err, user) => {
+        db.findOne([profile.id], (err, user) => {
             console.log("USER FOUND: ", user);
             if (!user) {
-              db.users.insert({youtube_id: profile.id}, (error, newUser) => {
+              // db.users.insert({youtube_id: profile.id}, (error, newUser) => {
+              console.log('joe it is working. BRIAN');
+              db.insert([profile.id, profile.displayName], (error, newUser) => {
                 return done(null, newUser);
               });
             }
@@ -94,8 +96,10 @@ app.get('/auth/callback', passport.authenticate('youtube', {
 
 app.get('/login', (req, res, next) => {
     if (req.isAuthenticated()) {
+      console.log('is authed');
         return res.redirect('/#/dashboard')
     }
+    console.log('is not authed');
     return res.redirect('/auth'); //redirects user to app.get('/login')
 });
 
@@ -120,6 +124,7 @@ app.get('/logout', (req, res) => {
 
 passport.serializeUser((user, done) => {
     done(null, user); // put the whole user object from YouTube on the sesssion;
+    console.log('user on passport session: ', user);
 });
 
 passport.deserializeUser((obj, done) => {
