@@ -67,8 +67,8 @@ angular.module('you-tube-clone')
             // NOTE: start of jQuery for carousel functionality
             $(() => {
               // NOTE: carousel right and left scrolling animation
-              $('.landing-right-arrow-wrap').on('click', function(event) {
-                var selection = $(this).parent()[0].children[0].children[0];
+              $('.landing-right-arrow-wrap').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].children[1].children[1];
                 console.log(selection);
                 $(selection).animate({
                   "marginRight": "+=839.3"
@@ -89,8 +89,8 @@ angular.module('you-tube-clone')
                   }
                 });
               });
-              $('.landing-left-arrow-wrap').on('click', function(event) {
-                var selection = $(this).parent()[0].children[0].children[0];
+              $('.landing-left-arrow-wrap').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].children[1].children[1];
                 $(selection).animate({
                   "marginLeft": "+=839.3"
                 }, {
@@ -112,7 +112,8 @@ angular.module('you-tube-clone')
               })
 
               // NOTE: Logic for the clicking
-              $('#rcount').on('click', () => {
+              $('#rcount').on('click', (e) => {
+                console.log(e);
                 $scope.rightCount++;
                 $scope.leftCount--;
 
@@ -122,11 +123,11 @@ angular.module('you-tube-clone')
                   $('.landing-left-arrow-wrap').show();
                 }
                 if ($scope.rightCount === 3) {
-                  $('.landing-right-arrow-wrap').hide();
+                  $(e.currentTarget).hide();
                 }
               })
 
-              $('#lcount').on('click', () => {
+              $('#lcount').on('click', (e) => {
                 $scope.rightCount++;
                 $scope.leftCount--;
                 console.log("right", $scope.rightCount);
