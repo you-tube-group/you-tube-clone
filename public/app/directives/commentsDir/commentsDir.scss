@@ -2,12 +2,11 @@
 
 $com-dir-font: 'Roboto', sans-serif;
 $com-dir-name-color: #128EE9;
-$com-dir-bg-color: #FBFBFB;
+$com-dir-bg-color: #FFFFFF;
 
 .comments-dir-main-container {
   width: 642px;
   font-family: $com-dir-font;
-  margin-left: 15px;
   background: $com-dir-bg-color;
   .add-comment {}
   .comment-wrap {
