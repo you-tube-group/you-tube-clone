@@ -101,7 +101,8 @@
       Published On {{videoData.snippet.publishedAt}}
     </div>
     <div class="description-wrapper">
-      <div class="video-description"  ng-bind-html="description | linky"></div>
+      <div class="video-description"  ng-bind-html="description | linky" ng-class="{show: show}"></div>
+      <div class="show-more-btn" ng-click="show = !show; more=!more; less=!less">SHOW <span ng-hide="more">MORE</span><span ng-hide="!less">LESS</span></div>
     </div>
   </div>
   <div class="video-comments">

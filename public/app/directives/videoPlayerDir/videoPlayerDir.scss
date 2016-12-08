@@ -204,6 +204,20 @@ $com-dir-bg-color: #FFFFFF;
     .description-wrapper {
       .video-description {
         white-space: pre-wrap;
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #F1F1F1;
+      }
+      .show-more-btn{
+        text-align: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+      .show {
+        overflow: visible;
+        height: auto;
       }
       .video-description a {
         color: black;
