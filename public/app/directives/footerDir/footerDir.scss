@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 $footer-font: 'Roboto', sans-serif;
+$link-bg: #F0F0F0;
+$link-border: #C6C6C6;
 
 .footer-dir-outer-wrap {
+  position: relative;
   width: 100%;
-  height: 50px;
   font-family: $footer-font;
+  margin: 15px 30px;
   .top-buttons-wrap {
     width: 100%;
     display: flex;
+    align-items: center;
+    font-size: 12px;
     .mr {
       margin-right: 14px;
     }
@@ -19,21 +24,72 @@ $footer-font: 'Roboto', sans-serif;
       background-size: 435px 425px;
       background-repeat: no-repeat;
     }
+    .border {
+      border: solid 1px $link-border;
+      border-radius: 2px;
+      padding: 5px 7px;
+    }
     .language-wrap {
       display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 28px;
+      background-color: $link-bg;
       .language-icon {
-        background: url("'./../../../Images/footer-dir-icons.webp'") -96px -148px no-repeat;
+        background: url('./../../../Images/footer-dir-icons.webp') -96px -148px no-repeat;
         background-size: 435px 425px;
         width: 25.5px;
         height: 15px;
         opacity: .5;
+        margin-right: 5px;
       }
       .language {}
     }
-    .location {}
-    .restricted {}
-    .history {}
-    .help {}
+    .location-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 28px;
+      background-color: $link-bg;
+      .location {}
+    }
+    .restricted {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 28px;
+      background-color: $link-bg;
+    }
+    .history-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $link-bg;
+      .history-icon {
+        background: no-repeat url('./../../../Images/footer-dir-icons.webp') -423px 0;
+        background-size: auto;
+        width: 12px;
+        height: 15px;
+        opacity: .5;
+        margin-right: 5px;
+      }
+      .history {}
+    }
+    .help-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $link-bg;
+      .help-icon {
+        background: url('./../../../Images/footer-hourglass-icon.webp') -547px -132px no-repeat;
+        background-size: auto;
+        width: 15px;
+        height: 16px;
+        opacity: .5;
+        margin-right: 5px;
+      }
+      .help {}
+    }
   }
   .top-links {
     display: flex;
