@@ -2,7 +2,7 @@
 
 // ==== variables
 $com-dir-font: 'Roboto', sans-serif;
-$com-dir-bg-color: #FBFBFB;
+$com-dir-bg-color: #FFFFFF;
 
 
 // ==== mixins
@@ -26,13 +26,13 @@ $com-dir-bg-color: #FBFBFB;
 }
 
 @mixin container-setting{
-  padding: 15px 17px 0 15px;
-  width: 642px;
+  padding: 15px 17px 15px 15px;
+  width: 100%;
 }
 
 .video-player-main-container{
   font-family: $com-dir-font;
-  width: 60vw;
+  width: 642px;
 
   .video-container{
     margin-bottom: 10px;
@@ -193,9 +193,40 @@ $com-dir-bg-color: #FBFBFB;
   }
   .main-description-wrapper{
     @include container-setting;
+    background: $com-dir-bg-color;
     font-size: 13px;
+    margin-bottom: 10px;
     .publish-date-label {
-      font-weight: strong;
+      font-weight: bold;
+      font-size: 13px;
+      padding-bottom: 10px;
+    }
+    .description-wrapper {
+      .video-description {
+        white-space: pre-wrap;
+        height: 100px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #F1F1F1;
+      }
+      .show-more-btn{
+        text-align: center;
+        font-size: 11px;
+        font-weight: bold;
+      }
+      .show {
+        overflow: visible;
+        height: auto;
+      }
+      .video-description a {
+        color: black;
+        text-decoration: none;
+      }
+      .video-description a:hover {
+        color: #167ac6;
+        text-decoration: underline;
+      }
     }
   }
 
@@ -213,8 +244,16 @@ $com-dir-bg-color: #FBFBFB;
         display: flex;
         .share-tab{
           margin-right: 42px;
-          border-bottom: 2px solid #CC181E;
           padding-bottom: 10px;
+        }
+        .share-tab:focus{
+          border-bottom: 2px solid #CC181E;
+        }
+        .share-tab-border{
+          border-bottom: 2px solid #CC181E;
+        }
+        .share-tab:first-child{
+          border-bottom: 2px solid #CC181E;
         }
       }
       .close-btn {
@@ -255,6 +294,17 @@ $com-dir-bg-color: #FBFBFB;
         min-width: 100%;
         max-width: 100%;
         margin-bottom: 10px;
+      }
+      .send-btn{
+        background: #167ac6;
+        border: none;
+        font-size: 11px;
+        color: white;
+        padding: 10px;
+        border-radius: 2px;
+      }
+      .send-btn:hover {
+        background: #126db3;
       }
     }
   }
