@@ -103,7 +103,14 @@ $primary-font-family: 'Roboto', sans-serif;
   box-shadow: 1px 0px 1.5px 1px $yt-unselected-lightgray;
 }
 
+.landing-playlist-title{
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
+
   .videos-outer-wrap{
+    position: relative;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
@@ -116,9 +123,11 @@ $primary-font-family: 'Roboto', sans-serif;
       display: flex;
       width: 100%;
 
-      .landing-playlist-title{
-        position: absolute;
-      }
+      // .landing-playlist-title{
+      //   display: flex;
+      //   position: absolute;
+      //   width: 100%;
+      // }
       .home-playlist-carousel {
         min-width: 196px;
         margin-right: 13px;
