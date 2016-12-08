@@ -14,17 +14,7 @@ angular.module('you-tube-clone')
     {id: "PLbpi6ZahtOH7vgyGImZ4P-olTT11WLkLk", img: "./images/ham-bar-slide-out-images/category-spotlight.jpg"},
     {id: "PLU8wpH_Lfhmsn0qJmVSyEXB9m3j1OkJWX", img: "./images/ham-bar-slide-out-images/category-threesixty.jpg"}
   ]
-  // $scope.channelImages = [
-  //   "./images/ham-bar-slide-out-images/category-music.jpg" , //music:
-  //   "./images/ham-bar-slide-out-images/category-sports.jpg",  //sports:
-  //    "./images/ham-bar-slide-out-images/category-gaming.jpg", //gaming:
-  //    "./images/ham-bar-slide-out-images/category-movies.jpg", //movies:
-  //    "./images/ham-bar-slide-out-images/category-tv.jpg", //tvShows:
-  //    "./images/ham-bar-slide-out-images/category-news.jpg", //news:
-  //    "./images/ham-bar-slide-out-images/category-live.jpg", //live:
-  //    "./images/ham-bar-slide-out-images/category-spotlight.jpg", //spotlight:
-  //    "./images/ham-bar-slide-out-images/category-threesixty.jpg" //360:
-  // ]
+
   // $scope.landingPlaylists = [];
   // $scope.playLists = () => {
   //   mainService.getPlaylist($scope.channelIds.music).then((response) => {
