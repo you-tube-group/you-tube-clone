@@ -1,39 +1,41 @@
-<div class="landing-playlist-dir-main-container">
-    <div class="videos-outer-wrap">
+<section class="landing-playlist-dir-main-container">
+    <section class="landing-main-container">
+        <aside class="landing-arrow-responsive-container">
 
-         <div class="videos-vid-carousel">
-             
-             <playlist-info-dir playlist-id="hplaylist.id" thepic="homePlaylistInfo.img"></playlist-info-dir>
-
-            <div class="home-playlist-carousel" ng-repeat="video in videoStatsArr">
-                {{videoInfo[0].contentDetails.duration}}
-                <div class="playlist-thumbnail">
-                    <div class="thumbnail" style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video' ng-click='passVideo(video)' ui-sref='video({videoId: video.id})'>
-                        <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
-                    </div>
-                </div>
-                <div class="trending-video-title">{{video.snippet.title}}</div>
-                <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
-                <section class="video-count-container">
-                    <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
-                    <div class="dot-style">
-                        <i class="fa fa-circle" aria-hidden="true"></i>
-                    </div>
-                    <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+            <section class="landing-left-arrow-wrap" id="lcount">
+                <section class="landing-left-arrow-container">
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
                 </section>
-            </div>
-        </div>
-    </div>
-    <section class="landing-left-arrow-wrap" id="lcount">
-        <section class="landing-left-arrow-container">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </section>
+
+            <section class="landing-right-arrow-wrap" id="rcount">
+                <section class="landing-right-arrow-container">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </section>
+            </section>
+
+        </aside>
+    <section class="videos-outer-wrap">
+        <p class="landing-playlist-title"><playlist-info-dir playlist-id="hplaylist.id" thepic="homePlaylistInfo.img"></playlist-info-dir></p>
+         <section class="videos-vid-carousel">
+            <section class="home-playlist-carousel" ng-repeat="video in videoStatsArr">
+                {{videoInfo[0].contentDetails.duration}}
+                <section class="playlist-thumbnail">
+                    <section class="thumbnail" style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video' ng-click='passVideo(video)' ui-sref='video({videoId: video.id})'>
+                        <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
+                    </section>
+                </section>
+                <section class="trending-video-title">{{video.snippet.title}}</section>
+                <section class="trending-channel-title">{{video.snippet.channelTitle}}</section>
+                <section class="video-count-container">
+                    <section class="trending-view-count">{{video.statistics.viewCount | number}}</section>
+                    <section class="dot-style">
+                        <i class="fa fa-circle" aria-hidden="true"></i>
+                    </section>
+                    <section class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</section>
+                </section>
+            </section>
         </section>
     </section>
-
-    <section class="landing-right-arrow-wrap" id="rcount">
-        <section class="landing-right-arrow-container">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </section>
-    </section>
-
-</div>
+</section>
+</section>
