@@ -31,17 +31,15 @@ module.exports = {
     getTrending: function(req, res, next) {
         Axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&chart=mostPopular&regionCode=US&maxResults=25&key=${API_KEY}`).then((results) => {
           // Narrows the results down to the 25 video objects
-          results = results.data.items;
-
+          results = results.data;
           //loops through each object and converts their 'duration' to needed format
-          for(var i = 0; i < results.length; i++)
+          for(var i = 0; i < results.items.length; i++)
           {
-            results[i].contentDetails.duration = convertTime(results[i].contentDetails.duration);
-            // working
-            // console.log('serverCtrl', results[i].contentDetails.duration );
+            results.items[i].contentDetails.duration = convertTime(results.items[i].contentDetails.duration);
+            // console.log('serverCtrl', results.items[i].contentDetails.duration );
           }
           // console.log(results);
-
+          // console.log('outside the loop');
           // sends updated results
           res.send(results);
         }).catch(function(error) {

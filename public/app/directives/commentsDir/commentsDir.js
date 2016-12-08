@@ -13,8 +13,6 @@ angular.module('you-tube-clone')
           if(vidId) {
             $scope.getComments = (vidId) => {
               mainService.getComments(vidId).then((response) => {
-                console.log('comments obj');
-                console.log(response);
                 $scope.comments = response;
               })
             }

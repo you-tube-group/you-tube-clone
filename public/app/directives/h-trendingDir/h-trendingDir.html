@@ -11,13 +11,13 @@
 <section class="trending-vid-outer-wrap">
     <section class="trending-vid-carousel">
         <p class="trending-title">Trending</p>
- 
+
         <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
             <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
             ng-click='passVideo(video)'
             ui-sref='video({videoId: video.id})'
             >
-            <p class="video-duration">{{convertTime(video.contentDetails.duration)}}</p>
+            <p class="video-duration">{{video.contentDetails.duration}}</p>
             </div>
             <div class="trending-video-title">{{video.snippet.title}}</div>
             <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>

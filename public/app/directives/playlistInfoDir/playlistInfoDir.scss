@@ -13,18 +13,11 @@ $video-sub-title: #767676;
 $search-color: #767676;
 $primary-font-family: 'Roboto', sans-serif;
 
-@mixin video-main-title {
-  font-family: $primary-font-family;
-  font-weight: 500;
-  font-size: 13px;
-  color: $video-main-title;
-  line-height: 17px;
-  max-width: 190px;
-  text-align: left;
-}
 
 .main-playlist-title-container {
   position: absolute;
+  left:47px;
+  width: 100%;
   color: #333333;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
@@ -43,6 +36,7 @@ $primary-font-family: 'Roboto', sans-serif;
     .comment-text{
       color: #767676;
       font-size: 12px;
+      margin-left: 3px;
     }
   }
 }

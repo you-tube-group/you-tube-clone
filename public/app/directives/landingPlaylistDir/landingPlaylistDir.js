@@ -42,6 +42,8 @@ angular.module('you-tube-clone')
           }
           $scope.getHomePlaylist(hplaylist);
         })
+
+
             $scope.convertTime = (time) => {
               time = time.split(/[HMS]/);
               time[0] = time[0].split('');
@@ -67,8 +69,9 @@ angular.module('you-tube-clone')
               // NOTE: carousel right and left scrolling animation
               $('.landing-right-arrow-wrap').on('click', function(event) {
                 var selection = $(this).parent()[0].children[0].children[0];
+                console.log(selection);
                 $(selection).animate({
-                  "marginRight": "+=854"
+                  "marginRight": "+=839.3"
                 }, {
                   duration: 700,
                   step: function(now, fx) {
@@ -86,10 +89,10 @@ angular.module('you-tube-clone')
                   }
                 });
               });
-              $('.landing-left-arrow-wrap').hide().on('click', function(event) {
+              $('.landing-left-arrow-wrap').on('click', function(event) {
                 var selection = $(this).parent()[0].children[0].children[0];
                 $(selection).animate({
-                  "marginLeft": "+=854"
+                  "marginLeft": "+=839.3"
                 }, {
                   duration: 700,
                   step: function(now, fx) {
