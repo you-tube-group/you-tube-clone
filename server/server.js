@@ -64,6 +64,8 @@ passport.use(new YouTubeStrategy({
         scope: ['https://www.googleapis.com/auth/youtube.readonly']
     },
     function(accessToken, refreshToken, profile, done) {
+        console.log('access token: ', accessToken);
+        sessionStorage.setItem('accessToken', accessToken);
         console.log('profile: ', profile);
         if (profile === false) {
             return done(null, {
