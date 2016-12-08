@@ -24,6 +24,10 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
     url: '/sign-in',
     templateUrl: './app/views/signInView.html'
   })
+  .state('channel', {
+    url: '/channel',
+    templateUrl: './app/views/channel.html'
+  })
 
 
 })

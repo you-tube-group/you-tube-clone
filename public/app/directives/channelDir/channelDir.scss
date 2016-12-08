@@ -1,0 +1,143 @@
+.channel-brand-container {
+  display: flex;
+  justify-content: center;
+  .banner-container {
+    height: 288px;
+    width: 1056px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background: transparent;
+    border-bottom: 1px solid #e2e2e2;
+    border: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    .banner-image {
+      height: 176px;
+      width: 1056px;
+      background-color: orange;
+      position: relative;
+      .header-links {
+        position: absolute;
+        bottom: 0;
+        right: 15px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .channel-link {
+          height: 36px;
+          width: 99px;
+          padding: 10px;
+          background-color: rgba(102,102,102,0.5);
+        }
+        .social-links {
+          height: 36px;
+          width: 99px;
+          margin-left: 2px;
+          padding: 10px;
+          background-color: rgba(102,102,102,0.5);
+        }
+      }
+      .logo-a-tag {
+        .logo-img {
+          top: 0;
+          left: 15px;
+          height: 100px;
+          width: 100px;
+          position: absolute;
+          background-color: blue;
+        }
+      }
+    }
+    .channel-title-container {
+      height: 55px;
+      width: 1056px;
+      position: relative;
+      padding: 15px 0 10px;
+      line-height: 13px;
+      .inner-title-container {
+        height: 55px;
+        width: 1056px;
+        padding: 0 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        .title-content-container {
+          height: 33px;
+          width: 1026px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          .title-container {
+            height: 33px;
+            width: 640px;
+            .channel-title {
+              padding-right: 20px;
+              line-height: 24px;
+              font-size: 15px;
+            }
+          }
+        }
+        .subscribe-btn-container {
+          height: 33px;
+          width: 386px;
+          line-height: 13px;
+          .inner-btn-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .subscriber-button {
+              width: 170px;
+              height: 24px;
+              margin: 8px 0;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: nowrap;
+              align-items: center;
+              .button-text-container {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                width: 88.703px;
+                height: 22px;
+                padding: 0 8px 0 5.5px;
+                text-decoration: none;
+                color: #fefefe;
+                border: solid 1px transparent;
+                background-color: #e62117;
+                font-size: 11px;
+                border-radius: 2px 0 0 2px;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+                &:hover {
+                  background-color: #cc181e;
+                }
+                .sprite-subscribe {
+                  margin-right: 6px;
+                  background: no-repeat url('../images/youTube-sprite2.webp') -298px -53px;
+                  background-size: auto;
+                  width: 16px;
+                  height: 12px;
+                }
+                .text-subscribe {
+                }
+              }
+              .count-container {
+                height: 22px;
+                border: 1px solid #ccc;
+                border-left: none;
+                border-radius: 0 2px 2px 0;
+                display: flex;
+                align-items: center;
+                padding-left: 7px;
+                padding: 0 6px;
+                color: #737373;
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
