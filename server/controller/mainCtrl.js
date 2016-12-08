@@ -111,12 +111,13 @@ module.exports = {
                 videoIdArray = videoIdArray.join(',');
                 // console.log("This is the Channel Array: ",channelIdArray);
                 channelIdArray = channelIdArray.join(',');
-                Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${API_KEY}&part=statistics,snippet`).then(function(response) {
+                Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${API_KEY}&part=statistics,snippet,contentDetails`).then(function(response) {
                         var j = 0;
                         for (var i = 0; i < results.length; i++) {
                             // For Video specific info
                             if (results[i].id.kind === "youtube#video") {
                                 results[i].viewCount = response.data.items[j].statistics.viewCount;
+                                results[i].duration = convertTime(response.data.items[j].contentDetails.duration);
                                 j++;
                             }
                         };
@@ -145,7 +146,7 @@ module.exports = {
                 // console.log("ERROR: ", error);
             });
 
-          
+
 
     },
 

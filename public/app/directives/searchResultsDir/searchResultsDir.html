@@ -37,8 +37,10 @@
         ng-click='passVideo(video)'
         ui-sref='video({videoId: video.id.videoId})'
         style="background: url('{{video.snippet.thumbnails.high.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
-        alt="video thumbnail"
-        ></div>
+        alt="video thumbnail">
+        <p class="video-duration">
+          {{video.duration}}</p>
+      </div>
       <div class="video-info-wrap">
         <div class="video-title">{{video.snippet.title}}</div>
         <div class="channel-title-wrap">
@@ -47,7 +49,7 @@
         </div>
         <div class="views-wrap">
           <div class="one-day-ago">{{convertTime(video.snippet.publishedAt)}}</div>
-          <div class="dot"></div>
+          <div class="dot">&#8226;</div>
           <div class='views' ng-show="{{video.viewCount}}">{{video.viewCount | number}} views</div>
           <div class='views' ng-show="{{video.videoCount}}">{{video.videoCount | number}} videos</div>
           <div class='views' ng-show="{{video.videoCount}}">{{video.subscriberCount | number}} subscribers</div>
