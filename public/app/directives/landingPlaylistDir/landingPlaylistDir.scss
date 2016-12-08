@@ -88,6 +88,7 @@ $primary-font-family: 'Roboto', sans-serif;
   box-shadow: -1px 0px 1.5px 1px  $yt-unselected-lightgray;
 }
 .landing-left-arrow-container {
+  visibility: hidden; // HACK: so when page loads the arrow isn't visible
   height: 50px;
   width: 50px;
 }

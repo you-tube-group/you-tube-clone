@@ -80,6 +80,7 @@ $primary-font-family: 'Roboto', sans-serif;
     font-family: "Roboto", sans-serif;
     margin-top: 89px;
   .nav-container {
+    z-index: 1000;
     display: flex;
     justify-content: center;
     width: 100%;

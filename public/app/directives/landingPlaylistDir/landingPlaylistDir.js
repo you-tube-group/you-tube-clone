@@ -9,7 +9,7 @@ angular.module('you-tube-clone')
       },
       controller: ($scope, mainService) => {
         $scope.rightCount = 0;
-        $scope.leftCount = 3;
+        $scope.leftCount = 1;
 
         $scope.$watch('hplaylist', () => {
           // holds the playlist ID
@@ -69,11 +69,11 @@ angular.module('you-tube-clone')
               // NOTE: carousel right and left scrolling animation
               $('.landing-right-arrow-wrap').on('click', function(e) {
                 var selection = $(this).parent().parent()[0].children[1].children[1];
-                console.log(selection);
+                // console.log(selection);
                 $(selection).animate({
-                  "marginRight": "+=839.3"
+                  "marginRight": "+=2086px"
                 }, {
-                  duration: 700,
+                  duration: 300,
                   step: function(now, fx) {
                     if (now === fx.end) {
                       // console.log(fx.now);
@@ -92,9 +92,9 @@ angular.module('you-tube-clone')
               $('.landing-left-arrow-wrap').on('click', function(e) {
                 var selection = $(this).parent().parent()[0].children[1].children[1];
                 $(selection).animate({
-                  "marginLeft": "+=839.3"
+                  "marginLeft": "+=2086px"
                 }, {
-                  duration: 700,
+                  duration: 300,
                   step: function(now, fx) {
                     if (now === fx.end) {
                       // console.log(fx.now);
@@ -111,35 +111,34 @@ angular.module('you-tube-clone')
                 });
               })
 
-              // NOTE: Logic for the clicking
+              // NOTE: Logic for the clicking right and left on carousel
               $('#rcount').on('click', (e) => {
-                console.log(e);
-                $scope.rightCount++;
                 $scope.leftCount--;
-
-                // console.log("right", $scope.rightCount);
-                // console.log("left", $scope.leftCount);
-                if ($scope.rightCount >= 0) {
-                  $('.landing-left-arrow-wrap').show();
-                }
-                if ($scope.rightCount === 3) {
-                  $(e.currentTarget).hide();
+                $scope.rightCount++;
+                if ($scope.leftCount === 0){
+                console.log('rcount-left', $scope.leftCount);
+                console.log('rcount-right', $scope.rightCount);
+                  $(e.currentTarget).css('visibility', 'hidden');
+                  $('.landing-left-arrow-container').css('visibility', 'visible');
                 }
               })
+
 
               $('#lcount').on('click', (e) => {
                 $scope.rightCount++;
                 $scope.leftCount--;
-                console.log("right", $scope.rightCount);
-                console.log("left", $scope.leftCount);
-                if ($scope.leftCount <= -3) {
-                  $('.landing-left-arrow-wrap').hide();
-                  $('landing-right-arrow-wrap').show();
+                // console.log('insideLeft', $scope.rightCount);
+
+                if ($scope.rightCount === 2) {
+                  console.log('lcount-left', $scope.leftCount);
+                  console.log('lcount-right', $scope.rightCount);
+                  $(e.currentTarget.firstElementChild).css('visibility', 'hidden');
+                  $(e.currentTarget).css('visibility', 'hidden');
+                  $('#rcount').css('visibility', 'visible');
+
+
                 }
-                // if ($scope.rightCount === 6) {
-                //     $('landing-right-arrow-wrap').show();
-                // }
-              })
+              });
             }) // <-- end of jQuery
 
       } // <-- end of controller
