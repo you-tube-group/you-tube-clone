@@ -31,13 +31,13 @@ angular.module('you-tube-clone')
                         $('.arrow-wrap-right').on('click', () => {
                             $('.trending-vid-carousel').animate({
                                 "margin-left": "-=854"
-                            }, 700);
+                            }, 400);
                         });
 
                         $('.arrow-wrap').on('click', () => {
                             $('.trending-vid-carousel').animate({
                                 "margin-right": "-=854"
-                            }, 700);
+                            }, 400);
                         });
                     }); //<-- end of jQuery
                 } //<-- end of controller

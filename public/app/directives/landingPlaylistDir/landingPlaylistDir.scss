@@ -59,25 +59,24 @@ $primary-font-family: 'Roboto', sans-serif;
   font-family: "Roboto", sans-serif;
   background: $tvd-container-bg-color;
 
-
-
   .landing-main-container  {
     display: flex;
     justify-content: center;
+    // min-width: 1262px;
   }
   .landing-arrow-responsive-container{
+  min-width: 1058px;
   color: $yt-unselected-lightgray;
   margin-top: 84px;
   margin-left: -1px;
   margin-right: 15px;
-  max-width: 1262px;
-  width: 72.5%;
   z-index: 500;
   position: absolute;
   display: flex;
   justify-content: space-between;
 }
 .landing-left-arrow-wrap:hover{
+  visibility: hidden;
   background: white;
   width: 50px;
   height: 50px;
@@ -115,8 +114,9 @@ $primary-font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
-    max-width: 1262px;
-    width: 73%;
+    // max-width: 1262px;
+    max-width: 1058px;
+    // width: 73%;
     background: $tvd-vid-wrap-bg;
     padding: 35px 0px 8px 14px;
     border-bottom: 1px solid $yt-unselected-lightgray;

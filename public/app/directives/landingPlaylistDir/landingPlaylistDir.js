@@ -8,8 +8,8 @@ angular.module('you-tube-clone')
         hplaylist: "="
       },
       controller: ($scope, mainService) => {
-        $scope.rightCount = 0;
-        $scope.leftCount = 1;
+// NOTE: counter is for the carousel right and left logic
+        $scope.counter = 0;
 
         $scope.$watch('hplaylist', () => {
           // holds the playlist ID
@@ -73,7 +73,7 @@ angular.module('you-tube-clone')
                 $(selection).animate({
                   "marginRight": "+=2086px"
                 }, {
-                  duration: 300,
+                  duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
                       // console.log(fx.now);
@@ -94,7 +94,7 @@ angular.module('you-tube-clone')
                 $(selection).animate({
                   "marginLeft": "+=2086px"
                 }, {
-                  duration: 300,
+                  duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
                       // console.log(fx.now);
@@ -113,30 +113,23 @@ angular.module('you-tube-clone')
 
               // NOTE: Logic for the clicking right and left on carousel
               $('#rcount').on('click', (e) => {
-                $scope.leftCount--;
-                $scope.rightCount++;
-                if ($scope.leftCount === 0){
-                console.log('rcount-left', $scope.leftCount);
-                console.log('rcount-right', $scope.rightCount);
+                $scope.counter++;
+
+                if ($scope.counter >= 1 ){
                   $(e.currentTarget).css('visibility', 'hidden');
-                  $('.landing-left-arrow-container').css('visibility', 'visible');
+                  $(e.currentTarget.nextSibling.parentNode.firstElementChild).css('visibility', 'visible');
+                  $(e.currentTarget.nextSibling.parentNode.firstElementChild.firstElementChild).css('visibility', 'visible');
                 }
               })
 
 
               $('#lcount').on('click', (e) => {
-                $scope.rightCount++;
-                $scope.leftCount--;
-                // console.log('insideLeft', $scope.rightCount);
+                $scope.counter--;
 
-                if ($scope.rightCount === 2) {
-                  console.log('lcount-left', $scope.leftCount);
-                  console.log('lcount-right', $scope.rightCount);
+                if ($scope.counter <= 0) {
                   $(e.currentTarget.firstElementChild).css('visibility', 'hidden');
                   $(e.currentTarget).css('visibility', 'hidden');
-                  $('#rcount').css('visibility', 'visible');
-
-
+                  $(e.currentTarget.nextElementSibling).css('visibility', 'visible');
                 }
               });
             }) // <-- end of jQuery
