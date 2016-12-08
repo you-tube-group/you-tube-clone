@@ -193,6 +193,7 @@ $com-dir-bg-color: #FBFBFB;
   }
   .main-description-wrapper{
     @include container-setting;
+    background: $com-dir-bg-color;
     font-size: 13px;
     .publish-date-label {
       font-weight: strong;
@@ -213,8 +214,16 @@ $com-dir-bg-color: #FBFBFB;
         display: flex;
         .share-tab{
           margin-right: 42px;
-          border-bottom: 2px solid #CC181E;
           padding-bottom: 10px;
+        }
+        .share-tab:focus{
+          border-bottom: 2px solid #CC181E;
+        }
+        .share-tab-border{
+          border-bottom: 2px solid #CC181E;
+        }
+        .share-tab:first-child{
+          border-bottom: 2px solid #CC181E;
         }
       }
       .close-btn {
@@ -255,6 +264,17 @@ $com-dir-bg-color: #FBFBFB;
         min-width: 100%;
         max-width: 100%;
         margin-bottom: 10px;
+      }
+      .send-btn{
+        background: #167ac6;
+        border: none;
+        font-size: 11px;
+        color: white;
+        padding: 10px;
+        border-radius: 2px;
+      }
+      .send-btn:hover {
+        background: #126db3;
       }
     }
   }

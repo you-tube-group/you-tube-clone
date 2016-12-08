@@ -52,6 +52,12 @@ angular.module('you-tube-clone')
         })
       }
         $scope.getVideoInfo(id);
+        $('.share-tab').on("click", function(){
+          $(this).toggleClass('share-tab-border');
+        });
+        // $('.share-tab').on("click", function(){
+        //   $(this).removeClass('share-tab-border');
+        // })
     }
   }
 
