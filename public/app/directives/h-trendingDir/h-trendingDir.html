@@ -1,4 +1,5 @@
 <section class="h-trending-dir-outer-wrap">
+  <!-- NOTE: Navigation -->
     <div class="nav-container">
         <div class="links-wrap">
             <div class="home">Home</div>
@@ -7,10 +8,10 @@
         </div>
     </div>
 
-
-
 <section class="trending-main-container">
+  <!-- NOTE: full wrapper around carousel & nav arrows -->
     <aside class="arrow-responsive-container">
+      <!-- NOTE: container to make right & left arrow responsive -->
         <section class="arrow-wrap">
             <section class="left-arrow-container">
                 <i class="fa fa-angle-left" aria-hidden="true"></i>
@@ -24,10 +25,10 @@
         </section>
     </aside>
 
+<!-- NOTE: carousel container -->
 <section class="trending-vid-outer-wrap">
     <section class="trending-vid-carousel">
         <p class="trending-title">Trending</p>
-
         <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
             <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
             ng-click='passVideo(video)'
@@ -45,7 +46,6 @@
             <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
         </section>
         </aside>
-
     </section>
     </section>
 </section>
