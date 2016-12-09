@@ -1,3 +1,3 @@
-select *
-from youtube_profiles
-where id = $1;
+-- select *
+-- from youtube_profiles
+-- where id = $1;
