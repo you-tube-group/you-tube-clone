@@ -7,6 +7,8 @@ $tvd-subtext-color: #767676;
 $tvd-font-fam: 'Roboto', sans-serif;
 $tvd-red-underline: #CC181E;
 
+
+
 .trending-view-dir-outer-wrap {
   width: 100%;
   display: flex;
@@ -78,6 +80,33 @@ $tvd-red-underline: #CC181E;
           bottom: 2px;
           right: 2px;
 
+        }
+        .watch-later {
+          display: none;
+          width: 22px;
+          height: 22px;
+          background: url('./../../../Images/footer-dir-icons.webp') no-repeat;
+          background-color: white;
+          background-position: -21.5px -371.5px;
+          background-size: 2000%;
+          border-radius: 4px;
+          position: absolute;
+          right: 3px;
+          bottom: 3px;
+        }
+        .watchLater {
+          display: inline;
+          display: none;
+          width: 22px;
+          height: 22px;
+          background: url('./../../../Images/footer-dir-icons.webp') no-repeat;
+          background-color: white;
+          background-position: -21.5px -371.5px;
+          background-size: 2000%;
+          border-radius: 4px;
+          position: absolute;
+          right: 3px;
+          bottom: 3px;
         }
       }
       .video-info-wrap {

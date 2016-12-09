@@ -1,10 +1,19 @@
 angular.module('you-tube-clone')
-.directive('trendingViewDir', () => {
+.directive('trendingViewDir', function() {
 
   return {
-    restrict: 'E',
+    restrict: 'EC',
     templateUrl: './app/directives/trendingView/trendingViewDir.html',
-    controller: ($scope, mainService) => {
+    // link: function(scope, element, attrs) {
+    //   $(document).ready(function() {
+    //     $('.thumbnail').hover(function() {
+    //       $('.thumbnail').css({
+    //         "width": "10px"
+    //       })
+    //     })
+    //   })
+    // },
+    controller: ($scope, mainService, $timeout) => {
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
@@ -28,8 +37,10 @@ angular.module('you-tube-clone')
 
 
 
+
+
     //END OF CONTROLLER
-    }
+  }
   //END OF RETURN (DIRECTIVE)
   }
 })

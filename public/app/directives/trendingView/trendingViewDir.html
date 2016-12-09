@@ -10,11 +10,17 @@
     <div class="video-wrap" ng-repeat="video in trendingData">
       <div
         class='thumbnail'
+        ng-mouseover='hover = true'
+        ng-mouseleave='hover = false'
         ng-click='passVideo(video)'
         ui-sref='video({videoId: video.id})'
         style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
         alt="video thumbnail">
-          <p class="video-duration">{{video.contentDetails.duration}}</p>
+          <p class="video-duration"
+          >{{video.contentDetails.duration}}</p>
+          <div class="watch-later"
+              ng-class='{watchLater: hover}'
+          ></div>
       </div>
       <div class="video-info-wrap">
         <div class="video-title">{{video.snippet.title}}</div>
