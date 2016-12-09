@@ -20,7 +20,6 @@ body {
     .banner-image {
       height: 176px;
       width: 1056px;
-      background-color: orange;
       position: relative;
       .header-links {
         position: absolute;
@@ -168,7 +167,6 @@ body {
           display: flex;
           flex-direction: row;
           .video-container {
-            background-color: red;
           }
           .video-detail-container {
             height: 171px;
