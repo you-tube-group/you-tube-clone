@@ -45,7 +45,7 @@ this.broken = 'working'
       method: 'GET',
       url: '/api/search?searched=' + searched
     }).then((response) => {
-      console.log("From the mainService: ",response.data);
+      // console.log("From the mainService: ",response.data);
       return response.data;
     })
   }
@@ -98,6 +98,14 @@ this.broken = 'working'
   }
 
 
+  this.getChannelData = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/channelData/?id=${id}`
+    }).then((response) => {
+      return response.data.items[0];
+    })
+  }
 
 
 
