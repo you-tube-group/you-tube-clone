@@ -54,6 +54,9 @@ $tvd-red-underline: #CC181E;
     margin-top: 10px;
     padding: 22px 18px;
     background-color: $tvd-vid-wrap-bg;
+    margin-bottom: 50px;
+    box-shadow: 1px 1px 1px rgba(148,148,148,.2);
+
     .video-wrap {
       display: flex;
       margin-bottom: 10px;
