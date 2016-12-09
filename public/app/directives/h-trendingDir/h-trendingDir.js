@@ -30,15 +30,20 @@ angular.module('you-tube-clone')
                         // NOTE: to move slide 1 place = 427 (muliply number of slides you want to move by 427)
                         $('.arrow-wrap-right').on('click', () => {
                             $('.trending-vid-carousel').animate({
-                                "margin-left": "-=854"
+                                "marginLeft": "-=2086"
                             }, 400);
                         });
 
                         $('.arrow-wrap').on('click', () => {
                             $('.trending-vid-carousel').animate({
-                                "margin-right": "-=854"
+                                "marginRight": "-=2086"
                             }, 400);
                         });
+
+
+
+
+
                     }); //<-- end of jQuery
                 } //<-- end of controller
         }

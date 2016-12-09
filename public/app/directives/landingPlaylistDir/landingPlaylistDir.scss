@@ -62,7 +62,8 @@ $primary-font-family: 'Roboto', sans-serif;
   .landing-main-container  {
     display: flex;
     justify-content: center;
-    // min-width: 1262px;
+    min-width: 1058px;
+
   }
   .landing-arrow-responsive-container{
   min-width: 1058px;
@@ -114,21 +115,13 @@ $primary-font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
     display: flex;
     justify-content: center;
-    // max-width: 1262px;
     max-width: 1058px;
-    // width: 73%;
     background: $tvd-vid-wrap-bg;
     padding: 35px 0px 8px 14px;
     border-bottom: 1px solid $yt-unselected-lightgray;
     .videos-vid-carousel {
       display: flex;
       width: 100%;
-
-      // .landing-playlist-title{
-      //   display: flex;
-      //   position: absolute;
-      //   width: 100%;
-      // }
       .home-playlist-carousel {
         min-width: 196px;
         margin-right: 13px;
