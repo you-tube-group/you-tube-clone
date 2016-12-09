@@ -28,6 +28,19 @@ $tvd-red-underline: #CC181E;
         min-width: 246px;
         height: 138px;
         margin-right: 10px;
+        position: relative;
+        .video-duration{
+          color: #FFF;
+          font-size: 11px;
+          background-color: #000;
+          opacity: .75;
+          padding: 0px 4px;
+          line-height: 14px;
+          font-weight: 500;
+          position: absolute;
+          bottom: 2px;
+          right: 2px;
+        }
       }
       .video-info-wrap {
         display: flex;
@@ -44,6 +57,7 @@ $tvd-red-underline: #CC181E;
         .channel-title-wrap {
           margin-bottom: 5px;
           .channel-title {
+            width: 100%;
             font-size: 12px;
             color: $tvd-subtext-color;
           }
@@ -71,11 +85,13 @@ $tvd-red-underline: #CC181E;
 }
 
 .channel-hover-pop-up {
-
   .channel-hover-container {
     position: absolute;
-    height: 236px;
     width: 350px;
+    max-width: 350px;
+    min-height: 90px;
+    min-width: 220px;
+    overflow: hidden;
     border-radius: 3px;
     background-color: #fff;
     box-shadow: 0 2px 8px rgba(0,0,0,0.02);
@@ -88,8 +104,9 @@ $tvd-red-underline: #CC181E;
           margin-left: 13px;
           height: 64px;
           width: 64px;
-          text-decoration: none;
-          border: none;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
           box-shadow: rgba(0,0,0,.5) 0 4px 5px -1px;
           cursor: pointer;
         }
@@ -100,32 +117,48 @@ $tvd-red-underline: #CC181E;
       .inner-title-video-container {
         margin-left: 0;
         max-width: 348px;
-        // padding: 12px 12px 0;
         font-family: arial,sans-serif;
         font-size: 12px;
-        // position: absolute;
+        a {
+          cursor: pointer;
+          text-decoration: none;
+          font-family: arial,sans-serif;
+        }
         .channel-title-a-tag {
+          color: #333;
 
         }
         .video-count-a-tag {
-
+          color: #999;
+          font-size: 11px;
         }
       }
       .subscriber-button {
         width: 170px;
         height: 24px;
         margin: 8px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
         .button-text-container {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-items: center;
           width: 88.703px;
           height: 22px;
           padding: 0 8px 0 5.5px;
           text-decoration: none;
           color: #fefefe;
           border: solid 1px transparent;
-          background-color: #cc181e;
+          background-color: #e62117;
           font-size: 11px;
-          border-radius: 2px;
+          border-radius: 2px 0 0 2px;
           box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+          &:hover {
+            background-color: #cc181e;
+          }
           .sprite-subscribe {
             margin-right: 6px;
             background: no-repeat url('../images/youTube-sprite2.webp') -298px -53px;
@@ -138,7 +171,16 @@ $tvd-red-underline: #CC181E;
           }
         }
         .count-container {
-
+          height: 22px;
+          border: 1px solid #ccc;
+          border-left: none;
+          border-radius: 0 2px 2px 0;
+          display: flex;
+          align-items: center;
+          padding-left: 7px;
+          padding: 0 6px;
+          color: #737373;
+          font-size: 11px;
         }
       }
     }
@@ -149,6 +191,8 @@ $tvd-red-underline: #CC181E;
         padding: 0 12px 8px;
         .description-div {
           color: #999;
+          font-size: 12px;
+          font-family: arial, sans-serif;
 
         }
       }

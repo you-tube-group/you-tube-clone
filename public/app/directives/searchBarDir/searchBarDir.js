@@ -4,23 +4,18 @@ angular.module('you-tube-clone')
   return {
     restrict: 'E',
     templateUrl: './app/directives/searchBarDir/searchBarDir.html',
-    controller: ($scope, $state, mainService) => {
+    controller: ($scope, $state, $stateParams, mainService) => {
 
-      $scope.searchTerm = '';
+      $scope.searchTerm = $stateParams.search_query;
       $scope.hamSlider = false;
 
       $scope.searchRequest = (searchTerm) => {
-        $scope.searchTerm = searchTerm;
-        $state.go('searchResults')
-        .then(() => {
-          mainService.getSearchResults($scope.searchTerm)
-          .then((response) => {
-            $scope.searchResults = response;
-            // console.log($scope.searchResults);
-          })
-        })
-        // Erases searchTerm after sending request
-        // $scope.searchTerm = '';
+        // mainService.getSearchResults(searchTerm)
+        // .then((response) => {
+        //   $scope.searchResults = response;
+        //   // console.log($scope.searchResults);
+        // })
+        $state.go('searchResults', {search_query: searchTerm});
       }
 
       $scope.openHamSlide = () => {
@@ -40,13 +35,9 @@ angular.module('you-tube-clone')
 
 
 
-
+      //END OF CONTROLLER
     }
+    //END OF RETURN OBJECT
   }
-
-
-
-
-
-
+  //END OF DIRECTIVE
 })
