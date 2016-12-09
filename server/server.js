@@ -10,7 +10,7 @@ const passport = require('passport');
 const YouTubeStrategy = require('passport-youtube-v3').Strategy;
 const base = 'https://www.googleapis.com/youtube/v3';
 const google = require('googleapis');
-const youtube = google.youtubeAnalytics('v1');
+const youtube = google.youtube('v3');
 const OAuth2 = google.auth.OAuth2;
 const oauth2Client = new OAuth2(config.GOOGLE_CLIENT_ID, config.GOOGLE_CLIENT_SECRET, config.callbackURL);
 // const port = 3000;
@@ -28,12 +28,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-//===CONNECT TO SERVER=========
-const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-});
-app.set('db', massiveServer);
-const db = app.get('db');
+// //===CONNECT TO SERVER=========
+// const massiveServer = massive.connectSync({
+//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+// });
+// app.set('db', massiveServer);
+// const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
@@ -61,7 +61,7 @@ passport.use(new YouTubeStrategy({
         clientID: config.GOOGLE_CLIENT_ID,
         clientSecret: config.GOOGLE_CLIENT_SECRET,
         callbackURL: config.callbackURL,
-        scope: ['https://www.googleapis.com/auth/youtube.readonly']
+        scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
     },
     function(accessToken, refreshToken, profile, done) {
         console.log('access token: ', accessToken);
@@ -76,14 +76,32 @@ passport.use(new YouTubeStrategy({
             access_token: accessToken,
             refresh_token: refreshToken
         });
+
+
+        youtube.commentThreads.insert({
+          "part": "snippet",
+          "resource": {
+            "snippet": {
+              "videoId": "SwNHiY-SyAs",
+              "channelId": "UCQiwj66_JFcOgz55DdC-TPQ",
+              "topLevelComment": {
+               "snippet": {
+                "textOriginal": "comment from clone baby"
+               }
+              }
+            }
+          },
+          "auth": oauth2Client
+        });
+
         // db.users.findOne({youtube_id: profile.id}, (err, user) => {
         db.findOne([profile.id], (err, user) => {
             console.log("USER FOUND: ", user);
             if (!user) {
               // db.users.insert({youtube_id: profile.id}, (error, newUser) => {
-              console.log('joe it is working. BRIAN');
               db.insert([profile.id, profile.displayName], (error, newUser) => {
                 console.log('newUser: ', newUser);
+
                 return done(null, newUser);
               });
             }
