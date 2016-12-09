@@ -88,6 +88,14 @@ this.broken = 'working'
   }
 
 
+  this.getChannelData = (id) => {
+    return $http({
+      method: 'GET',
+      url: `/api/channelData/?id=${id}`
+    }).then((response) => {
+      return response.data.items[0];
+    })
+  }
 
 
 

@@ -144,6 +144,7 @@ app.get('/api/search', controller.getSearchResults);
 app.get('/api/channelInfo', controller.getChannelInfoOnVidPlayer);
 app.get('/api/channelHoverInfo', controller.getChannelHoverInfo);
 app.get('/api/playlistInfo', controller.getPlaylistInfo);
+app.get('/api/channelData', controller.getChannelData);
 
 
 

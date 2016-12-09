@@ -57,6 +57,7 @@ $tvd-red-underline: #CC181E;
         .channel-title-wrap {
           margin-bottom: 5px;
           .channel-title {
+            width: 100%;
             font-size: 12px;
             color: $tvd-subtext-color;
           }
@@ -103,8 +104,9 @@ $tvd-red-underline: #CC181E;
           margin-left: 13px;
           height: 64px;
           width: 64px;
-          text-decoration: none;
-          border: none;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
           box-shadow: rgba(0,0,0,.5) 0 4px 5px -1px;
           cursor: pointer;
         }

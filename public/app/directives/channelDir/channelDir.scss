@@ -1,6 +1,12 @@
+body {
+  background-color: #f1f1f1;
+}
 .channel-brand-container {
+  width: 1056px;
+  margin: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   .banner-container {
     height: 288px;
     width: 1056px;
@@ -43,8 +49,12 @@
           left: 15px;
           height: 100px;
           width: 100px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
           position: absolute;
-          background-color: blue;
+          box-shadow: rgba(0,0,0,.5) 0 4px 5px -1px;
+          cursor: pointer;
         }
       }
     }
@@ -137,6 +147,100 @@
             }
           }
         }
+      }
+    }
+  }
+  .channel-video-feature-container {
+    display: flex;
+    flex-direction: row;
+    .channel-video-container {
+      width: 850px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(0,0,0,.1);
+      .video-content-container {
+        // height: 171px;
+        width: 850px;
+        padding: 15px;
+        border-bottom: 1px solid #e2e2e2;
+        // display: flex;
+        // justify-content: flex-end;
+        .video-inner-container {
+          display: flex;
+          flex-direction: row;
+          .video-container {
+            background-color: red;
+          }
+          .video-detail-container {
+            height: 171px;
+            width: 820px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+            .video-title {
+              width: 316px;
+              height: 18px;
+              max-height: 2.6em;
+              margin-bottom: 3px;
+              font-size: 14px;
+              line-height: 1.3em;
+              overflow: hidden;
+              position: relative;
+              .video-title-a-tag {
+                color: #167ac6;
+                cursor: pointer;
+                text-decoration: none;
+                line-height: 1.3em;
+              }
+            }
+            .view-count-div {
+              width: 820px;
+              height: 15px;
+              .view-count {
+                color: #555;
+              }
+              .published-at {
+                color: #555;
+                margin-left: 3px;
+              }
+            }
+            .description-div {
+              width: 820px;
+              height: 128px;
+              margin-top: 7px;
+              line-height: 1.3em;
+            }
+            .read-more {
+              color: #167ac6;
+              cursor: pointer;
+              text-decoration: none;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+    .channel-side-bar {
+      width: 206px;
+      max-width: 206px;
+      vertical-align: top;
+      padding-bottom: 5px;
+      .featured-channels {
+        margin-left: 10px;
+        padding: 15px;
+        font-size: 11px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0,0,0,.1);
+        margin-bottom: 10px;
+      }
+      .related-channels {
+        margin-left: 10px;
+        padding: 15px;
+        font-size: 11px;
+        background: #fff;
+        box-shadow: 0 1px 2px rgba(0,0,0,.1);
       }
     }
   }

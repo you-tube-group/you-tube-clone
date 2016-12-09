@@ -4,9 +4,11 @@ angular.module('you-tube-clone')
   return {
     restrict: 'E',
     templateUrl: './app/directives/searchResultsDir/searchResultsDir.html',
-    controller: ($scope, $timeout, mainService) => {
+    scope: {
+      searchResults: '='
+    },
+    controller: ($scope, $timeout, mainService, $stateParams) => {
 
-      $scope.searchTerm = '';
       $scope.channelHover = false;
 
       $scope.convertTime = (time) => {
@@ -28,12 +30,13 @@ angular.module('you-tube-clone')
       }
 
       $scope.showChannelHover = (id) => {
+        $scope.hovering = true;
         if (!id) {
           return false
         } else {
           mainService.getChannelHoverInfo(id)
           .then((response) => {
-            console.log(response);
+            // console.log(response);
             response.statistics.subscriberCount = $scope.roundSubs(response.statistics.subscriberCount);
             $scope.channelInfo = response;
           })
@@ -42,18 +45,25 @@ angular.module('you-tube-clone')
           var y = event.pageY;
           // console.log(x,y);
           $scope.hoverPosition = {
-            "top" : y + 15 + "px",
-            "left" : x + 10 + "px",
+            "top" : y + "px",
+            "left" : x + "px",
           }
           $timeout(function () {
-            $scope.channelHover = true;
+            if ($scope.hovering === true) {
+              $scope.channelHover = true;
+            }
           }, 1000);
         }
       }
 
-      $scope.hideChannelHover = () => {
-        $scope.channelHover = false;
+      $scope.keepHovering = () => {
+        $scope.hovering = true
+        $scope.channelHover = true;
+      }
 
+      $scope.hideChannelHover = function() {
+        $scope.hovering = false;
+        $scope.channelHover = false;
       }
 
 

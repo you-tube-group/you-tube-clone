@@ -1,6 +1,6 @@
 <div class="channel-brand-container">
   <div class="banner-container">
-    <div class="banner-image">
+    <div class="banner-image" style="background: url('{{channelData.brandingSettings.image.bannerTvImageUrl}}') no-repeat center; background-size: 100%">
       <div class="header-links">
         <ul class="channel-link">
 
@@ -9,15 +9,15 @@
 
         </ul>
       </div>
-      <a class="logo-a-tag" href="#">
-        <img class="logo-img" src="" alt="" />
+      <a class="logo-a-tag">
+        <img class="logo-img" ng-src="{{channelData.snippet.thumbnails.high.url}}"/>
       </a>
     </div>
     <div class="channel-title-container">
       <div class="inner-title-container">
         <div class="title-content-container">
           <div class="title-container">
-            <h1 class="channel-title">Channel Name Here</h1>
+            <h1 class="channel-title">{{channelData.snippet.title}}</h1>
           </div>
         </div>
         <div class="subscribe-btn-container">
@@ -28,11 +28,92 @@
                 <div class="text-subscribe">Subscribe</div>
               </div>
               <div class="count-container">
-                <p>{{channelInfo.statistics.subscriberCount}}</p>
+                <p>{{channelData.statistics.subscriberCount}}</p>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="channel-video-feature-container">
+    <div class="channel-video-container">
+      <div class="video-content-container">
+        <div class="video-inner-container">
+          <div class="video-container">
+            <iframe id="ytplayer" type="text/html" width="492" height="277"
+              ng-src="{{channelTrailer}}"
+              frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="video-detail-container">
+            <h3 class="video-title">
+              <a class="video-title-a-tag">{{channelData.channelTrailer.snippet.localized.title}}</a>
+            </h3>
+            <div class="view-count-div">
+              <span class="view-count">{{channelData.channelTrailer.statistics.viewCount}}</span>
+              <span class="published-at">{{channelData.channelTrailer.snippet.publishedAt}}</span>
+            </div>
+            <div class="description-div">
+
+            </div>
+            <a class="read-more">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="channel-side-bar">
+      <div class="featured-channels">
+        <h2>
+          <a href="#"></a>
+        </h2>
+        <ul>
+          <li>
+            <span>
+              <div class="">
+                <a href="#">
+                  <span></span>
+                </a>
+              </div>
+              <div class="">
+                <h3>
+                  <a href="#"></a>
+                </h3>
+                <div class="">
+                  <span>
+                    <button></button>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </li>
+        </ul>
+        <p>See all</p>
+      </div>
+      <div class="related-channels">
+        <h2>
+          <a href="#"></a>
+        </h2>
+        <ul>
+          <li>
+            <span>
+              <div class="">
+                <a href="#">
+                  <span></span>
+                </a>
+              </div>
+              <div class="">
+                <h3>
+                  <a href="#"></a>
+                </h3>
+                <div class="">
+                  <span>
+                    <button></button>
+                  </span>
+                </div>
+              </div>
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
