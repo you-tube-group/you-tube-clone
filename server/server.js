@@ -28,7 +28,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// //===CONNECT TO SERVER=========
+
+//===CONNECT TO SERVER=========
+
 // const massiveServer = massive.connectSync({
 //   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
 // });
@@ -78,21 +80,21 @@ passport.use(new YouTubeStrategy({
         });
 
 
-        youtube.commentThreads.insert({
-          "part": "snippet",
-          "resource": {
-            "snippet": {
-              "videoId": "SwNHiY-SyAs",
-              "channelId": "UCQiwj66_JFcOgz55DdC-TPQ",
-              "topLevelComment": {
-               "snippet": {
-                "textOriginal": "comment from clone baby"
-               }
-              }
-            }
-          },
-          "auth": oauth2Client
-        });
+        // youtube.commentThreads.insert({
+        //   "part": "snippet",
+        //   "resource": {
+        //     "snippet": {
+        //       "videoId": "xqom3NzagBk",
+        //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+        //       "topLevelComment": {
+        //        "snippet": {
+        //         "textOriginal": "dm 14 youtube group represent, bro"
+        //        }
+        //       }
+        //     }
+        //   },
+        //   "auth": oauth2Client
+        // });
 
         // db.users.findOne({youtube_id: profile.id}, (err, user) => {
         db.findOne([profile.id], (err, user) => {
