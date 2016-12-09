@@ -156,9 +156,16 @@ module.exports = {
       var channelId = req.query.id;
       client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,contentDetails,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response){
         var videoTrailerId = data.items[0].brandingSettings.channel.unsubscribedTrailer;
-        client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
-          data.items[0].channelTrailer = results.items[0];
-          res.status(200).json(data);
+        if (data.items[0].brandingSettings.channel.featuredChannelsUrls) {
+          var featuredChannels = data.items[0].brandingSettings.channel.featuredChannelsUrls.join(',');
+        }
+
+        client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${featuredChannels}&key=${API_KEY}`, function(data2, response){
+          data.items[0].featuredChannelsData = data2.items;
+          client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
+            data.items[0].channelTrailer = results.items[0];
+            res.status(200).json(data);
+          })
         })
       })
     }

@@ -18,6 +18,7 @@
         <div class="title-content-container">
           <div class="title-container">
             <h1 class="channel-title">{{channelData.snippet.title}}</h1>
+
           </div>
         </div>
         <div class="subscribe-btn-container">
@@ -28,7 +29,7 @@
                 <div class="text-subscribe">Subscribe</div>
               </div>
               <div class="count-container">
-                <p>{{channelData.statistics.subscriberCount}}</p>
+                <p>{{channelData.statistics.subscriberCount | number:0}}</p>
               </div>
             </div>
           </div>
@@ -39,48 +40,47 @@
   <div class="channel-video-feature-container">
     <div class="channel-video-container">
       <div class="video-content-container">
-        <div class="video-inner-container">
           <div class="video-container">
             <iframe id="ytplayer" type="text/html" width="492" height="277"
               ng-src="{{channelTrailer}}"
               frameborder="0" allowfullscreen></iframe>
           </div>
-          <div class="video-detail-container">
+          <!-- <div class="video-detail-container"> -->
             <h3 class="video-title">
               <a class="video-title-a-tag">{{channelData.channelTrailer.snippet.localized.title}}</a>
             </h3>
             <div class="view-count-div">
-              <span class="view-count">{{channelData.channelTrailer.statistics.viewCount}}</span>
-              <span class="published-at">{{channelData.channelTrailer.snippet.publishedAt}}</span>
+              <span class="view-count">{{channelData.channelTrailer.statistics.viewCount | number:0}} views</span>
+              <span class="published-at">{{convertTime(channelData.channelTrailer.snippet.publishedAt)}}</span>
             </div>
-            <div class="description-div">
-              {{channelData.channelTrailer.snippet.description}}
-            </div>
+            <p class="description-div" ng-bind-html="channelData.channelTrailer.snippet.description | linky">
+            </p>
             <a class="read-more">Read More</a>
-          </div>
-        </div>
+          <!-- </div> -->
       </div>
     </div>
     <div class="channel-side-bar">
       <div class="featured-channels">
         <h2>
-          <a href="#"></a>
+          <a>{{channelData.brandingSettings.channel.featuredChannelsTitle}}</a>
         </h2>
         <ul>
-          <li>
+          <li ng-repeat="feature in channelData.featuredChannelsData">
             <span>
               <div class="">
                 <a href="#">
-                  <span></span>
+                  <img class="featured-logo" ng-src="{{feature.snippet.thumbnails.high.url}}"></img>
                 </a>
               </div>
               <div class="">
                 <h3>
-                  <a href="#"></a>
+                  <a>{{feature.snippet.title}}</a>
                 </h3>
                 <div class="">
                   <span>
-                    <button></button>
+                    <button class="feature-subscribe">
+                      <span class="feature-btn-text">Subscribe</span>
+                    </button>
                   </span>
                 </div>
               </div>

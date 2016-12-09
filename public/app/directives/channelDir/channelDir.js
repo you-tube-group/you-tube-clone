@@ -15,6 +15,11 @@ angular.module('you-tube-clone')
       "?autoplay=1&origin=http://example.com";
 
       $scope.channelTrailer = $sce.trustAsResourceUrl($scope.videoUrl);
+      
+      $scope.convertTime = (time) => {
+        time = moment(time, "YYYYMMDD").fromNow();
+        return time;
+      };
 
 
 

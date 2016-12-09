@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+
+$Robo: 'Roboto', sans-serif;
+
 body {
   background-color: #f1f1f1;
 }
@@ -58,14 +62,14 @@ body {
       }
     }
     .channel-title-container {
-      height: 55px;
+      height: 80px;
       width: 1056px;
       position: relative;
       padding: 15px 0 10px;
-      line-height: 13px;
       .inner-title-container {
         height: 55px;
         width: 1056px;
+        line-height: 13px;
         padding: 0 15px;
         display: flex;
         justify-content: space-between;
@@ -80,26 +84,33 @@ body {
           .title-container {
             height: 33px;
             width: 640px;
+            display: flex;
+            align-items: flex-end;
             .channel-title {
               padding-right: 20px;
               line-height: 24px;
-              font-size: 15px;
+              font-size: 20px;
+              font-family: $Robo;
+              color: #333;
+              font-weight: 500;
+              cursor: pointer;
             }
           }
         }
         .subscribe-btn-container {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
           height: 33px;
           width: 386px;
           line-height: 13px;
           .inner-btn-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
             .subscriber-button {
               width: 170px;
               height: 24px;
-              margin: 8px 0;
+              // margin: 8px 0;
               display: flex;
+              justify-content: flex-end;
               flex-direction: row;
               flex-wrap: nowrap;
               align-items: center;
@@ -109,7 +120,7 @@ body {
                 flex-wrap: nowrap;
                 align-items: center;
                 width: 88.703px;
-                height: 22px;
+                height: 24px;
                 padding: 0 8px 0 5.5px;
                 text-decoration: none;
                 color: #fefefe;
@@ -127,12 +138,16 @@ body {
                   background-size: auto;
                   width: 16px;
                   height: 12px;
+                  z-index: 1999;
                 }
                 .text-subscribe {
+                  background: transparent;
+                  font-family: $Robo;
+                  font-size: 12px;
                 }
               }
               .count-container {
-                height: 22px;
+                height: 24px;
                 border: 1px solid #ccc;
                 border-left: none;
                 border-radius: 0 2px 2px 0;
@@ -140,6 +155,7 @@ body {
                 align-items: center;
                 padding-left: 7px;
                 padding: 0 6px;
+                font-family: $Robo;
                 color: #737373;
                 font-size: 11px;
               }
@@ -157,27 +173,30 @@ body {
       background: #fff;
       box-shadow: 0 1px 2px rgba(0,0,0,.1);
       .video-content-container {
-        // height: 171px;
         width: 850px;
         padding: 15px;
         border-bottom: 1px solid #e2e2e2;
-        // display: flex;
-        // justify-content: flex-end;
-        .video-inner-container {
-          display: flex;
-          flex-direction: row;
+        margin-left: 13px;
+        font-family: $Robo;
+        // .video-inner-container {
+        //   display: flex;
+        //   flex-direction: row;
           .video-container {
+            height: 100%;
+            float: left;
+            margin-right: 12px;
           }
-          .video-detail-container {
-            height: 171px;
-            width: 820px;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
+          // .video-detail-container {
+            // width: 316px;
+            // display: flex;
+            // flex-direction: column;
+            // flex-wrap: nowrap;
+            // margin-left: 13px;
+            // font-family: $Robo;
             .video-title {
               width: 316px;
               height: 18px;
+              font-weight: 500;
               max-height: 2.6em;
               margin-bottom: 3px;
               font-size: 14px;
@@ -192,32 +211,55 @@ body {
               }
             }
             .view-count-div {
-              width: 820px;
               height: 15px;
+              font-weight: 400;
               .view-count {
                 color: #555;
+                font-weight: 400;
+                font-size: 13px;
               }
               .published-at {
                 color: #555;
                 margin-left: 3px;
+                font-weight: 400;
+                font-size: 13px;
               }
             }
             .description-div {
-              width: 820px;
-              height: 128px;
-              margin-top: 7px;
+              padding: 20px;
+              -webkit-line-clamp: 10;
+              float: none;
+              height: auto;
+              white-space: pre-wrap;
+              font-weight: 400;
               line-height: 1.3em;
+              color: #555;
+              font-size: 13px;
+              a {
+                color: #167ac6;
+                text-decoration: none;
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
+              .box-red {
+                height: 20px;
+                width: 20px;
+                background-color: red;
+              }
             }
             .read-more {
               color: #167ac6;
+              font-weight: 400;
+              font-size: 13px;
               cursor: pointer;
               text-decoration: none;
               &:hover {
                 text-decoration: underline;
               }
             }
-          }
-        }
+          // }
+        // }
       }
     }
     .channel-side-bar {
@@ -232,6 +274,38 @@ body {
         background: #fff;
         box-shadow: 0 1px 2px rgba(0,0,0,.1);
         margin-bottom: 10px;
+        .featured-logo {
+          height: 34px;
+          width: 34px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+        }
+        .feature-subscribe {
+          // padding: 0 8px 0 2px;
+          height: 20px;
+          max-width: 100%;
+          border: 1px solid #ccc;
+          background-color: #f8f8f8;
+          outline: 0;
+          color: #333;
+          font-weight: 500;
+          font-size: 11px;
+          text-decoration: none;
+          border-radius: 2px;
+          box-shadow: 0 1px 0 rgba(0,0,0,0.05);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &:hover {
+            border-color: #bfbfbf;
+            background-color: #f6f6f6;
+          }
+          .feature-btn-text {
+
+          }
+        }
       }
       .related-channels {
         margin-left: 10px;
