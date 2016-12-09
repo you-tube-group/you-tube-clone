@@ -22,7 +22,7 @@
               <div class="subscribe-btn"></div>
               <div class="subscribe-label">Subscribe</div>
             </div>
-            <div class="subscription-count">{{channelData.statistics.subscriberCount}}</div>
+            <div class="subscription-count">{{channelData.statistics.subscriberCount | number}}</div>
           </div>
 
         </div>
@@ -90,20 +90,19 @@
     </div>
 
     <div class="email-container-main-wrap" ng-hide="!email">
-      <textarea type="text" class="to-section" value="To"></textarea>
-      <textarea type="text" class="option-message-section" value="Optional message"></textarea>
-      <button type="button" name="button">Send email</button>
+      <textarea type="text" class="to-section" placeholder="To"></textarea>
+      <textarea type="text" class="option-message-section" placeholder="Optional message"></textarea>
+      <button type="button" class="send-btn">Send email</button>
     </div>
   </div>
 
   <div class="main-description-wrapper">
     <div class="publish-date-label">
-      Published On {{videoData.snippet.publishedAt}}
+      Published On {{videoData.snippet.publishedAt | date: shortDate}}
     </div>
-    <div class="description-wrapper" >
-      <div class="video-description" ng-bind-html="videoData.snippet.description">
-        {{videoData.snippet.description}}
-      </div>
+    <div class="description-wrapper">
+      <div class="video-description"  ng-bind-html="description | linky" ng-class="{show: show}"></div>
+      <div class="show-more-btn" ng-click="show = !show; more=!more; less=!less">SHOW <span ng-hide="more">MORE</span><span ng-hide="!less">LESS</span></div>
     </div>
   </div>
   <div class="video-comments">

@@ -29,11 +29,11 @@ app.use(passport.session());
 
 
 //===CONNECT TO SERVER=========
-// const massiveServer = massive.connectSync({
-//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-// });
-// app.set('db', massiveServer);
-// const db = app.get('db');
+const massiveServer = massive.connectSync({
+  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+});
+app.set('db', massiveServer);
+const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
@@ -64,6 +64,7 @@ passport.use(new YouTubeStrategy({
         scope: ['https://www.googleapis.com/auth/youtube.readonly']
     },
     function(accessToken, refreshToken, profile, done) {
+        console.log('access token: ', accessToken);
         console.log('profile: ', profile);
         if (profile === false) {
             return done(null, {
@@ -82,6 +83,7 @@ passport.use(new YouTubeStrategy({
               // db.users.insert({youtube_id: profile.id}, (error, newUser) => {
               console.log('joe it is working. BRIAN');
               db.insert([profile.id, profile.displayName], (error, newUser) => {
+                console.log('newUser: ', newUser);
                 return done(null, newUser);
               });
             }

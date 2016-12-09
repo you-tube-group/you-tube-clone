@@ -34,6 +34,7 @@ angular.module('you-tube-clone')
           // this specific variable holds the video info (ie title, and statistics)
           $scope.videoData = response.items[0];
           const reactionSum = ($scope.videoData.statistics.likeCount * 1) + ($scope.videoData.statistics.dislikeCount * 1);
+          $scope.description = $scope.videoData.snippet.description;
 
           // get percent to adjust bar to show like/dislike ratio
           const percent = ($scope.videoData.statistics.likeCount / reactionSum) * 100;
@@ -52,6 +53,12 @@ angular.module('you-tube-clone')
         })
       }
         $scope.getVideoInfo(id);
+        $('.share-tab').on("click", function(){
+          $(this).toggleClass('share-tab-border');
+        });
+        // $('.share-tab').on("click", function(){
+        //   $(this).removeClass('share-tab-border');
+        // })
     }
   }
 
