@@ -60,55 +60,51 @@ const usersCtrl = require('./controller/usersCtrl');
 
 //YOUTUBE PASSPORT STUFF
 passport.use(new YouTubeStrategy({
-        clientID: config.GOOGLE_CLIENT_ID,
-        clientSecret: config.GOOGLE_CLIENT_SECRET,
-        callbackURL: config.callbackURL,
-        scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
-    },
+    clientID: config.GOOGLE_CLIENT_ID,
+    clientSecret: config.GOOGLE_CLIENT_SECRET,
+    callbackURL: config.callbackURL,
+    scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
+},
     function(accessToken, refreshToken, profile, done) {
-        console.log('access token: ', accessToken);
-        console.log('profile: ', profile);
-        if (profile === false) {
-            return done(null, {
-                profile: profile
-            });
+      console.log('access token: ', accessToken);
+      console.log('profile: ', profile);
+      if (profile === false) {
+        return done(null, {
+          profile: profile
+        });
+      }
+
+      oauth2Client.setCredentials({
+        access_token: accessToken,
+        refresh_token: refreshToken
+      });
+
+      // youtube.commentThreads.insert({
+      //   "part": "snippet",
+      //   "resource": {
+      //     "snippet": {
+      //       "videoId": "xqom3NzagBk",
+      //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+      //       "topLevelComment": {
+      //        "snippet": {
+      //         "textOriginal": "dm 14 youtube group represent, bro"
+      //        }
+      //       }
+      //     }
+      //   },
+      //   "auth": oauth2Client
+      // });
+
+      db.findOne([profile.id], (err, user) => {
+        console.log("USER FOUND: ", user);
+        if (!user) {
+          db.insert([profile.id, profile.displayName], (error, newUser) => {
+            console.log('newUser: ', newUser);
+            return done(null, newUser);
+          });
         }
-
-        oauth2Client.setCredentials({
-            access_token: accessToken,
-            refresh_token: refreshToken
-        });
-
-
-        // youtube.commentThreads.insert({
-        //   "part": "snippet",
-        //   "resource": {
-        //     "snippet": {
-        //       "videoId": "xqom3NzagBk",
-        //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
-        //       "topLevelComment": {
-        //        "snippet": {
-        //         "textOriginal": "dm 14 youtube group represent, bro"
-        //        }
-        //       }
-        //     }
-        //   },
-        //   "auth": oauth2Client
-        // });
-
-        // db.users.findOne({youtube_id: profile.id}, (err, user) => {
-        db.findOne([profile.id], (err, user) => {
-            console.log("USER FOUND: ", user);
-            if (!user) {
-              // db.users.insert({youtube_id: profile.id}, (error, newUser) => {
-              db.insert([profile.id, profile.displayName], (error, newUser) => {
-                console.log('newUser: ', newUser);
-
-                return done(null, newUser);
-              });
-            }
-            return done(null, user);
-        });
+        return done(null, user);
+      });
     }
 ));
 
@@ -172,7 +168,23 @@ app.get('/api/playlistInfo', controller.getPlaylistInfo);
 //========= AUTH ENDPOINTS ======
 // app.post('/register', usersCtrl.registerUser);
 
-
+app.post('/api/comments', function(req,res) {
+  youtube.commentThreads.insert({
+    "part": "snippet",
+    "resource": {
+      "snippet": {
+        "videoId": "xqom3NzagBk",
+        "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+        "topLevelComment": {
+         "snippet": {
+          "textOriginal": "dm 14 youtube group represent, bro"
+         }
+        }
+      }
+    },
+    "auth": oauth2Client
+  });
+})
 //=================================
 
 

@@ -87,6 +87,16 @@ this.broken = 'working'
     })
   }
 
+  this.postComment = (comment) => {
+
+    return $http({
+      method: 'POST',
+      url: '/api/comments'
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
 
 
 
