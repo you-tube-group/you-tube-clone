@@ -1,5 +1,4 @@
-<section class="h-trending-dir-outer-wrap">
-  <!-- NOTE: Navigation -->
+<!-- <section class="h-trending-dir-outer-wrap">
     <div class="nav-container">
         <div class="links-wrap">
             <div class="home">Home</div>
@@ -8,45 +7,81 @@
         </div>
     </div>
 
+<section class="trending-outside-container"></section>
 <section class="trending-main-container">
-  <!-- NOTE: full wrapper around carousel & nav arrows -->
+    <section class="trending-vid-outer-wrap">
+
     <aside class="arrow-responsive-container">
-      <!-- NOTE: container to make right & left arrow responsive -->
         <section class="arrow-wrap">
             <section class="left-arrow-container">
                 <i class="fa fa-angle-left" aria-hidden="true"></i>
             </section>
         </section>
+    </aside>
 
+    <aside class="arrow-responsive-container2">
         <section class="arrow-wrap-right" >
             <section class="right-arrow-container">
                 <i class="fa fa-angle-right" aria-hidden="true"></i>
             </section>
         </section>
     </aside>
-
-<!-- NOTE: carousel container -->
-<section class="trending-vid-outer-wrap">
+<section class="trending-carousel-wrapper">
     <section class="trending-vid-carousel">
         <p class="trending-title">Trending</p>
-        <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
-            <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
-            ng-click='passVideo(video)'
-            ui-sref='video({videoId: video.id})'
-            >
-            <p class="video-duration">{{video.contentDetails.duration}}</p>
-            </div>
-            <div class="trending-video-title">{{video.snippet.title}}</div>
-            <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
-        <section class="video-count-container">
-            <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
-            <div class="dot-style">
-                <i class="fa fa-circle" aria-hidden="true"></i>
-            </div>
-            <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+            <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
+                <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
+                ng-click='passVideo(video)'
+                ui-sref='video({videoId: video.id})'
+                >
+                <p class="video-duration">{{video.contentDetails.duration}}</p>
+                </div>
+                <div class="trending-video-title">{{video.snippet.title}}</div>
+                <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
+                    <section class="video-count-container">
+                <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
+                <div class="dot-style">
+                    <i class="fa fa-circle" aria-hidden="true"></i>
+                </div>
+                <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+            </section>
+            </aside>
         </section>
-        </aside>
-    </section>
+        </section>
     </section>
 </section>
+</section> -->
+
+
+<section class="landing-main-wrapper">
+  <section class="landing-psuedo-container">
+    <aside class="trending-title">Trending</aside>
+
+        <aside class="left-arrow-container" id="lcount">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </aside>
+        <aside class="right-arrow-container" id="rcount">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </aside>
+  </section>
+
+  <section class="trending-video-wrapper">
+    <section class="carousel-wrapper">
+    <aside class="h-trending-carousel" ng-repeat='video in trendingVideos.items'>
+        <div class='thumbnail' style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video'
+        ng-click='passVideo(video)'
+        ui-sref='video({videoId: video.id})'>
+        <p class="video-duration">{{video.contentDetails.duration}}</p>
+        </div>
+        <div class="trending-video-title">{{video.snippet.title}}</div>
+        <div class="trending-channel-title">{{video.snippet.channelTitle}}</div>
+            <section class="video-count-container">
+        <div class="trending-view-count">{{video.statistics.viewCount | number}}</div>
+        <div class="dot-style">
+            <i class="fa fa-circle" aria-hidden="true"></i>
+        </div>
+        <div class="trending-publish">{{publishConverter(video.snippet.publishedAt)}}</div>
+    </section>
+    </aside>
+  </section>
 </section>

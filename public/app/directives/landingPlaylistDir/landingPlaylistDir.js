@@ -43,7 +43,6 @@ angular.module('you-tube-clone')
           $scope.getHomePlaylist(hplaylist);
         })
 
-
             $scope.convertTime = (time) => {
               time = time.split(/[HMS]/);
               time[0] = time[0].split('');
@@ -121,7 +120,6 @@ angular.module('you-tube-clone')
                   $(e.currentTarget.nextSibling.parentNode.firstElementChild.firstElementChild).css('visibility', 'visible');
                 }
               })
-
 
               $('#lcount').on('click', (e) => {
                 $scope.counter--;

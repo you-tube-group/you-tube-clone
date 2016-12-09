@@ -1,176 +1,176 @@
-/*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
-
-$tvd-container-bg-color: #F1F1F1;
-$tvd-vid-wrap-bg: #FFFFFF;
-$tvd-title-text: #187BC6;
-$tvd-subtext-color: #767676;
-$tvd-font-fam: 'Roboto', sans-serif;
-$tvd-red-underline: #CC181E;
-
-
-
-$youtube-logo-red: #E62117;
-$yt-primary-red: #CC181E;
-$yt-selected-gray: #333333;
-$yt-unselected-lightgray: #C8C8C8;
-$left-nav-subcategory-color: #444444;
-$primary-icon-color: #7C7C7C;
-$primary-bg: #FFFFFF;
-$secondary-bg: #F1F1F1;
-$video-main-title: #167AC6;
-$video-sub-title: #767676;
-$search-color: #767676;
-$primary-font-family: 'Roboto', sans-serif;
-
-
-
-@mixin video-main-title {
-  font-family: $primary-font-family;
-  font-weight: 500;
-  font-size: 13px;
-  color: $video-main-title;
-  line-height: 17px;
-  max-width: 190px;
-  text-align: left;
-}
-
-@mixin video-sub-title-unselected {
-  font-family: $primary-font-family;
-  font-weight: 400;
-  font-size: 11px;
-  color: $video-sub-title;
-  line-height: 14px;
-  max-width: 196px;
-  text-align: left;
-}
-
-@mixin video-sub-title-selected {
-  font-family: $primary-font-family;
-  font-weight: 400;
-  font-size: 11px;
-  color: $video-main-title;
-  line-height: 14px;
-}
-
-
-
-.landing-playlist-dir-main-container {
-  font-family: "Roboto", sans-serif;
-  background: $tvd-container-bg-color;
-
-  .landing-main-container  {
-    display: flex;
-    justify-content: center;
-    min-width: 1058px;
-
-  }
-  .landing-arrow-responsive-container{
-  min-width: 1058px;
-  color: $yt-unselected-lightgray;
-  margin-top: 84px;
-  margin-left: -1px;
-  margin-right: 15px;
-  z-index: 500;
-  position: absolute;
-  display: flex;
-  justify-content: space-between;
-}
-.landing-left-arrow-wrap:hover{
-  visibility: hidden;
-  background: white;
-  width: 50px;
-  height: 50px;
-  margin-left: -36px;
-  color: black;
-  padding: 16px;
-  margin-top: -10px;
-  box-shadow: -1px 0px 1.5px 1px  $yt-unselected-lightgray;
-}
-.landing-left-arrow-container {
-  visibility: hidden; // HACK: so when page loads the arrow isn't visible
-  height: 50px;
-  width: 50px;
-}
-.landing-right-arrow-wrap:hover{
-  background: white;
-  width: 50px;
-  height: 50px;
-  margin-right: -35px;
-  color: black;
-  padding-top: 16px;
-  padding-left: 31px;
-  margin-top: -21px;
-  box-shadow: 1px 0px 1.5px 1px $yt-unselected-lightgray;
-}
-
-.landing-playlist-title{
-  display: flex;
-  position: absolute;
-  width: 100%;
-}
-
-  .videos-outer-wrap{
-    position: relative;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
-    max-width: 1058px;
-    background: $tvd-vid-wrap-bg;
-    padding: 35px 0px 8px 14px;
-    border-bottom: 1px solid $yt-unselected-lightgray;
-    .videos-vid-carousel {
-      display: flex;
-      width: 100%;
-      .home-playlist-carousel {
-        min-width: 196px;
-        margin-right: 13px;
-        .thumbnail {
-          max-width: 196px;
-          height: 110px;
-          margin-right: 10px;
-          display: flex;
-          position: relative;
-          }
-          .video-duration{
-            color: #FFF;
-            font-size: 11px;
-            background-color: #000;
-            opacity: .75;
-            padding: 0px 4px;
-            line-height: 14px;
-            font-weight: 500;
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            }
-      }
-      .trending-video-title{@include video-main-title}
-      .trending-channel-title{@include video-sub-title-unselected}
-      .video-count-container{
-        display: flex;
-
-      .trending-view-count{@include video-sub-title-unselected}
-      .trending-publish{@include video-sub-title-unselected}
-      .dot-style{
-        display:flex;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 4px;
-        color: $tvd-subtext-color;
-        margin: 0px 5px;
-        }
-      }
-    }
-  }
-} // <-- this is the end main-container
-
-
-// position: relative;
-// overflow-x: hidden;
-// display: flex;
-// justify-content: center;
-// width: 75%;
-// background: $tvd-vid-wrap-bg;
-// padding: 35px 0px 5px 17px;
-// border-bottom: 1px solid $yt-unselected-lightgray;
+// /*@import url('https://fonts.googleapis.com/css?family=Roboto');*/
+// @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+//
+// $tvd-container-bg-color: #F1F1F1;
+// $tvd-vid-wrap-bg: #FFFFFF;
+// $tvd-title-text: #187BC6;
+// $tvd-subtext-color: #767676;
+// $tvd-font-fam: 'Roboto', sans-serif;
+// $tvd-red-underline: #CC181E;
+//
+//
+//
+// $youtube-logo-red: #E62117;
+// $yt-primary-red: #CC181E;
+// $yt-selected-gray: #333333;
+// $yt-unselected-lightgray: #C8C8C8;
+// $left-nav-subcategory-color: #444444;
+// $primary-icon-color: #7C7C7C;
+// $primary-bg: #FFFFFF;
+// $secondary-bg: #F1F1F1;
+// $video-main-title: #167AC6;
+// $video-sub-title: #767676;
+// $search-color: #767676;
+// $primary-font-family: 'Roboto', sans-serif;
+//
+//
+//
+// @mixin video-main-title {
+//   font-family: $primary-font-family;
+//   font-weight: 500;
+//   font-size: 13px;
+//   color: $video-main-title;
+//   line-height: 17px;
+//   max-width: 190px;
+//   text-align: left;
+// }
+//
+// @mixin video-sub-title-unselected {
+//   font-family: $primary-font-family;
+//   font-weight: 400;
+//   font-size: 11px;
+//   color: $video-sub-title;
+//   line-height: 14px;
+//   max-width: 196px;
+//   text-align: left;
+// }
+//
+// @mixin video-sub-title-selected {
+//   font-family: $primary-font-family;
+//   font-weight: 400;
+//   font-size: 11px;
+//   color: $video-main-title;
+//   line-height: 14px;
+// }
+//
+//
+//
+// .landing-playlist-dir-main-container {
+//   font-family: "Roboto", sans-serif;
+//   background: $tvd-container-bg-color;
+//
+//   .landing-main-container  {
+//     display: flex;
+//     justify-content: center;
+//     min-width: 1058px;
+//
+//   }
+//   .landing-arrow-responsive-container{
+//   min-width: 1058px;
+//   color: $yt-unselected-lightgray;
+//   margin-top: 84px;
+//   margin-left: -1px;
+//   margin-right: 15px;
+//   z-index: 500;
+//   position: absolute;
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .landing-left-arrow-wrap:hover{
+//   visibility: hidden;
+//   background: white;
+//   width: 50px;
+//   height: 50px;
+//   margin-left: -36px;
+//   color: black;
+//   padding: 16px;
+//   margin-top: -10px;
+//   box-shadow: -1px 0px 1.5px 1px  $yt-unselected-lightgray;
+// }
+// .landing-left-arrow-container {
+//   visibility: hidden; // HACK: so when page loads the arrow isn't visible
+//   height: 50px;
+//   width: 50px;
+// }
+// .landing-right-arrow-wrap:hover{
+//   background: white;
+//   width: 50px;
+//   height: 50px;
+//   margin-right: -35px;
+//   color: black;
+//   padding-top: 16px;
+//   padding-left: 31px;
+//   margin-top: -21px;
+//   box-shadow: 1px 0px 1.5px 1px $yt-unselected-lightgray;
+// }
+//
+// .landing-playlist-title{
+//   display: flex;
+//   position: absolute;
+//   width: 100%;
+// }
+//
+//   .videos-outer-wrap{
+//     position: relative;
+//     overflow-x: hidden;
+//     display: flex;
+//     justify-content: center;
+//     max-width: 1058px;
+//     background: $tvd-vid-wrap-bg;
+//     padding: 35px 0px 8px 14px;
+//     border-bottom: 1px solid $yt-unselected-lightgray;
+//     .videos-vid-carousel {
+//       display: flex;
+//       width: 100%;
+//       .home-playlist-carousel {
+//         min-width: 196px;
+//         margin-right: 13px;
+//         .thumbnail {
+//           max-width: 196px;
+//           height: 110px;
+//           margin-right: 10px;
+//           display: flex;
+//           position: relative;
+//           }
+//           .video-duration{
+//             color: #FFF;
+//             font-size: 11px;
+//             background-color: #000;
+//             opacity: .75;
+//             padding: 0px 4px;
+//             line-height: 14px;
+//             font-weight: 500;
+//             position: absolute;
+//             bottom: 2px;
+//             right: 2px;
+//             }
+//       }
+//       .trending-video-title{@include video-main-title}
+//       .trending-channel-title{@include video-sub-title-unselected}
+//       .video-count-container{
+//         display: flex;
+//
+//       .trending-view-count{@include video-sub-title-unselected}
+//       .trending-publish{@include video-sub-title-unselected}
+//       .dot-style{
+//         display:flex;
+//         justify-content: center;
+//         flex-direction: column;
+//         font-size: 4px;
+//         color: $tvd-subtext-color;
+//         margin: 0px 5px;
+//         }
+//       }
+//     }
+//   }
+// } // <-- this is the end main-container
+//
+//
+// // position: relative;
+// // overflow-x: hidden;
+// // display: flex;
+// // justify-content: center;
+// // width: 75%;
+// // background: $tvd-vid-wrap-bg;
+// // padding: 35px 0px 5px 17px;
+// // border-bottom: 1px solid $yt-unselected-lightgray;
