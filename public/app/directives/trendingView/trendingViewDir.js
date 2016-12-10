@@ -13,7 +13,7 @@ angular.module('you-tube-clone')
     //     })
     //   })
     // },
-    controller: ($scope, mainService, $timeout) => {
+    controller: ($scope, mainService, $timeout, authService) => {
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
@@ -35,7 +35,67 @@ angular.module('you-tube-clone')
         return dateObj;
       }
 
+      $scope.hover = true;
+      $scope.hidden = false;
+      $scope.watchLaterPopup = true;
 
+      $scope.modal = true;
+      $scope.addToPlaylist = (video) => {
+        const currentUser = $scope.currentUser;
+        if (!$scope.currentUser) {
+          console.log('no user on session');
+          $scope.modal = false;
+          return;
+        }
+
+
+        console.log("watch later vid", video);
+        mainService.addToPlaylist(video, currentUser);
+
+      }
+
+      $scope.getCurrentUser = () => {
+        mainService.getCurrentUser().then((response) => {
+          console.log('User on session?');
+          console.log(response);
+          $scope.currentUser = response.data;
+        }).catch((err) => {
+          $scope.currentUser = null;
+        })
+      }
+      $scope.getCurrentUser();
+
+      // $scope.register = (user) => {
+      //   console.log('controller user: ', user);
+      //   authService.registerUser(user).then((response) => {
+      //     if (!response.data) {
+      //       alert('unable to create user');
+      //     } else {
+      //       alert('user created');
+      //       console.log('user that was created and put on current user:', response.data);
+      //       $scope.currentUser = response.data;
+      //       $scope.modal = true;
+      //       $scope.newUser = {};
+      //     }
+      //   }).catch((err) => {
+      //     alert('unable to create user');
+      //   });
+      // };
+      //
+      // $scope.login = (user) => {
+      //   authService.login(user).then((response) => {
+      //     console.log(response.data);
+      //     $scope.currentUser = response.data;
+      //     if (!response.data) {
+      //       alert('User cannot be found.');
+      //       $scope.user.password = '';
+      //     } else {
+      //       $scope.addToCart($scope.pencil);
+      //     }
+      //   }).catch((err) => {
+      //     alert('Username and password do not match.')
+      //   })
+      // }
 
 
 

@@ -10,17 +10,23 @@
     <div class="video-wrap" ng-repeat="video in trendingData">
       <div
         class='thumbnail'
-        ng-mouseover='hover = true'
-        ng-mouseleave='hover = false'
+        ng-mouseover='hover = false; hidden = true'
+        ng-mouseleave='hover = true; hidden = false'
         ng-click='passVideo(video)'
         ui-sref='video({videoId: video.id})'
         style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px"
         alt="video thumbnail">
           <p class="video-duration"
+            ng-hide='hidden'
           >{{video.contentDetails.duration}}</p>
           <div class="watch-later"
               ng-class='{watchLater: hover}'
+              ng-mouseover='watchLaterPopup = false'
+              ng-mouseleave='watchLaterPopup = true'
+              ng-click="$event.stopPropagation(); addToPlaylist(video)"
           ></div>
+          <div ng-hide='watchLaterPopup' class="watchLaterPopup">Watch Later</div>
+          <div ng-hide="watchLaterPopup" id="triangle"></div>
       </div>
       <div class="video-info-wrap">
         <div class="video-title">{{video.snippet.title}}</div>
@@ -39,3 +45,25 @@
     </div>
   </div>
 </section>
+
+<!-- <section ng-click="modal=true" ng-hide="modal" class="modal-container">
+  <div
+  ng-click="$event.stopPropagation()"
+  class="modal-wrap">
+    <form ng-submit="register(newUser)">
+      sign-up: <br>
+      email: <input ng-model="newUser.email" type="text">
+      <br>
+      password: <input ng-model='newUser.password' type="text">
+
+      <button type="submit" name="button">create new user</button>
+    </form>
+    <form ng-submit="login(user)">
+      sign-in:<br>
+      email: <input ng-model="user.email" type="text">
+      <br>
+      password: <input ng-model="user.password" type="text">
+      <button type="submit" name="button">sign in</button>
+    </form>
+  </div>
+</section> -->

@@ -3,7 +3,7 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
 
   $urlRouterProvider.otherwise('/');
 
-  $stateProvider 
+  $stateProvider
   .state('landing', {
     url: '/',
     templateUrl: './app/views/homeView.html'
@@ -23,6 +23,10 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
   .state('auth', {
     url: '/sign-in',
     templateUrl: './app/views/signInView.html'
+  })
+  .state('playlist', {
+    url: '/playlist',
+    templateUrl: './app/views/playlist.html'
   })
 
 
