@@ -95,7 +95,7 @@ passport.use(new YouTubeStrategy({
 app.get('/auth/', passport.authenticate('youtube'));
 app.get('/auth/callback', passport.authenticate('youtube', {
     failureRedirect: '/auth',
-    successRedirect: '/#/'
+    successRedirect: '/#/trending'
 }));
 
 app.get('/login', (req, res, next) => {
@@ -145,16 +145,28 @@ app.get('/api/channelInfo', controller.getChannelInfoOnVidPlayer);
 app.get('/api/channelHoverInfo', controller.getChannelHoverInfo);
 app.get('/api/playlistInfo', controller.getPlaylistInfo);
 
+
 //===ADD VIDEO TO PLAYLIST TABLE========
 app.post('/api/addVideo', (req, res) => {
-  console.log('incoming vid: ');
-  console.log(req.body.video);
-  console.log(req.body.user);
+  // console.log('incoming vid: ');
+  // console.log(req.body.video);
+  console.log('user obj before db',req.body.user);
   db.add_to_playlist([req.body.video, req.body.user.id], (err, response) => {
-    console.log('after db', response);
+    // console.log('after db', response);
   })
   res.status(200).send('nice');
 })
+
+//===GET playlist========
+
+app.get('/api/user/playlist/:id', (req, res) => {
+  console.log('heres the dang number', req.params.id);
+  db.get_user_playlist([req.params.id], (err, response) => {
+    res.status(200).send(response)
+  })
+})
+
+
 
 //=========LOCAL AUTH ENDPOINTS ======
 app.post('/register', usersCtrl.registerUser);

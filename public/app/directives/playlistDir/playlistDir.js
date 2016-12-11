@@ -5,12 +5,30 @@ angular.module('you-tube-clone')
    templateUrl: './app/directives/playlistDir/playlistDir.html',
    controller: ($scope, mainService) => {
 
-     const getPlaylist = ()=> {
-       mainService.getPlaylist()
-       .then((response) => {
-         $scope.playlist = response
+     $scope.getCurrentUser = () => {
+       mainService.getCurrentUser().then((response) => {
+         console.log('User on session (playlistDir)?: ');
+         console.log(response);
+         $scope.currentUser = response.data;
+         const userInfo = $scope.currentUser;
+         mainService.getCurrentUserPlaylist(userInfo).then((response) => {
+           console.log("playlist array for user",response);
+           $scope.userPlaylistVideos = response;
+         })
+       }).catch((err) => {
+         $scope.currentUser = null;
        })
      }
+     $scope.getCurrentUser();
+
+
+
+    // $scope.getCurrentUserPlaylist = () => {
+    //   var userInfo = $scope.currentUser;
+    //   mainService.getCurrentUserPlaylist(userInfo).then((response) => {
+    //     alert('im getting a response')
+    //   })
+    // }
 
 
      //END OF CONTROLLER

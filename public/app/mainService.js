@@ -90,7 +90,10 @@ this.broken = 'working'
   this.getPlaylist = () => {
     return $http({
       method: 'GET',
-      url: "/api/user-playlist"
+      url: "/api/user-playlist/",
+      data: {
+        user: user
+      }
     }).then((response) => {
       return response.data;
     })
@@ -112,7 +115,6 @@ this.broken = 'working'
       url: '/me'
     })
   };
-
   this.addToPlaylist = (video, user) => {
     console.log('authService video and user: ', video, user);
     return $http({
@@ -122,6 +124,21 @@ this.broken = 'working'
         video: video,
         user: user
       }
+    })
+  }
+
+  this.getCurrentUserPlaylist = (user) => {
+    return $http({
+      method: 'GET',
+      url: `/api/user/playlist/${user.id}`
+    }).then((response) => {
+      const vidArr = response.data;
+      var newVidArr = [];
+      for (var i = 0; i < vidArr.length; i++) {
+        newVidArr.push(JSON.parse(vidArr[i].video));
+      }
+
+      return newVidArr;
     })
   }
 
