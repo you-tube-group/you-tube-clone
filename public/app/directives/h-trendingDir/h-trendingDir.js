@@ -27,7 +27,6 @@ angular.module('you-tube-clone')
 
                     // NOTE: jQuery trending carousel
                     $(() => {
-
                         // NOTE: to move slide 1 place = 427 (muliply number of slides you want to move by 427)
                         $('.right-arrow-container').on('click', () => {
                             $('.carousel-wrapper').animate({
