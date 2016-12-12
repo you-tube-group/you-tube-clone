@@ -10,7 +10,12 @@ $com-dir-bg-color: #FFFFFF;
   background: $com-dir-bg-color;
   margin-bottom: 50px;
   box-shadow: 1px 1px 1px rgba(148,148,148,.2);
-  .add-comment {}
+  .add-comment-wrap {
+    .comment-count {}
+    .add-comment {
+      
+    }
+  }
   .comment-wrap {
     padding: 10px;
     width: 100%;

@@ -4,7 +4,8 @@ angular.module('you-tube-clone')
       restrict: 'E',
       templateUrl: './app/directives/commentsDir/commentsDir.html',
       scope: {
-        vidId: '='
+        vidId: '=',
+        commentCount: '='
       },
       controller: ($scope, mainService, $sce) => {
         $scope.$watch('vidId', () => {

@@ -1,8 +1,18 @@
 <div class="comments-dir-main-container">
-  <div class="add-comment">
-    <input type="text" name="" placeholder="Add a public comment" ng-model="addComent" >
-    <button type="button" name="button" ng-click="postComment(addComent)">Add</button>
+  <div class="add-comment-container">
+    <div class="comment-count">
+      <span>COMMENTS</span> <li>{{commentCount}}</li>
+
+    </div>
+    <div class="add-comment">
+      <div class="user-thumbnail-container">
+        <img class="user-thumbnail" src="../../Images/user-default.png" alt="">
+      </div>
+      <input type="text" name="" placeholder="Add a public comment" ng-model="addComent" >
+      <button type="button" name="button" ng-click="postComment(addComent)">Add</button>
+    </div>
   </div>
+
   <div class="comment-wrap" ng-repeat="comment in comments.items">
     <div
     class="thumbnail-img"
