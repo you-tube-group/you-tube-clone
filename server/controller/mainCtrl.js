@@ -118,12 +118,13 @@ module.exports = {
                 videoIdArray = videoIdArray.join(',');
                 // console.log("This is the Channel Array: ",channelIdArray);
                 channelIdArray = channelIdArray.join(',');
-                Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${API_KEY}&part=statistics,snippet`).then(function(response) {
+                Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoIdArray}&key=${API_KEY}&part=statistics,snippet,contentDetails`).then(function(response) {
                         var j = 0;
                         for (var i = 0; i < results.length; i++) {
                             // For Video specific info
                             if (results[i].id.kind === "youtube#video") {
                                 results[i].viewCount = response.data.items[j].statistics.viewCount;
+                                results[i].duration = convertTime(response.data.items[j].contentDetails.duration);
                                 j++;
                             }
                         };
@@ -151,9 +152,6 @@ module.exports = {
             .catch(function(error) {
                 // console.log("ERROR: ", error);
             });
-
-
-
     },
 
     getChannelHoverInfo: (req,res,next) => {
@@ -161,7 +159,38 @@ module.exports = {
       client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response) {
         res.status(200).json(data);
       })
-    }
+    },
 
+    getChannelData: (req,res,next) => {
+      var channelId = req.query.id;
+      client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,contentDetails,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response){
+        var videoTrailerId = data.items[0].brandingSettings.channel.unsubscribedTrailer;
+        if (data.items[0].brandingSettings.channel.featuredChannelsUrls) {
+          var featuredChannels = data.items[0].brandingSettings.channel.featuredChannelsUrls.join(',');
+        }
+
+        client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${featuredChannels}&key=${API_KEY}`, function(data2, response){
+          data.items[0].featuredChannelsData = data2.items;
+          client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
+            data.items[0].channelTrailer = results.items[0];
+            res.status(200).json(data);
+          })
+        })
+      })
+    }
+      //   .then((results) => {
+      //     var videoTrailerId = results.brandingSettings.channel.unsubscribedTrailer;  Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(data, response) {
+      //       results.channelTrailer = data;
+      //       res.status(200).json(results);
+      //     })
+      //   })
+      // }
 
 }
+
+// getPlaylistVideos: function(req, res, next) {
+//     var playListId = req.query.id;
+//     client.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=10&playlistId=${playListId}&key=${API_KEY}`, function(data, response) {
+//         res.status(200).json(data);
+//     });
+// },

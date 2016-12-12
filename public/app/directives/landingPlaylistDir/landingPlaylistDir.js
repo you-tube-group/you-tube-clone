@@ -8,8 +8,8 @@ angular.module('you-tube-clone')
         hplaylist: "="
       },
       controller: ($scope, mainService) => {
-        $scope.rightCount = 0;
-        $scope.leftCount = 3;
+// NOTE: counter is for the carousel right and left logic
+        $scope.counter = 0;
 
         $scope.$watch('hplaylist', () => {
           // holds the playlist ID
@@ -43,7 +43,6 @@ angular.module('you-tube-clone')
           $scope.getHomePlaylist(hplaylist);
         })
 
-
             $scope.convertTime = (time) => {
               time = time.split(/[HMS]/);
               time[0] = time[0].split('');
@@ -64,80 +63,56 @@ angular.module('you-tube-clone')
               published = moment(published, "YYYYMMDD").fromNow();
               return published;
             };
+            
             // NOTE: start of jQuery for carousel functionality
-            $(() => {
-              // NOTE: carousel right and left scrolling animation
-              $('.landing-right-arrow-wrap').on('click', function(event) {
-                var selection = $(this).parent()[0].children[0].children[0];
-                console.log(selection);
+            $(document).ready(function(){
+              $('.h-right-arrow-container').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].lastElementChild.children[0];
                 $(selection).animate({
-                  "marginRight": "+=839.3"
+                  "right": "+=1044"
                 }, {
-                  duration: 700,
+                  duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
-                      // console.log(fx.now);
                       $(this).stop(true, false);
                     }
                   },
                   start: function(now) {
-                    // console.log("START", now.tweens[0].now);
                     if (now.tweens[0].now > -2500) {
-                      // console.log("STOP BEFORE.");
                       $(this).stop(true, false);
                     }
                   }
                 });
+
+                $scope.counter++;
+                if ($scope.counter >= 1 ){
+                  $(e.currentTarget).css('visibility', 'hidden');
+                  $(e.currentTarget.offsetParent.children[1]).css('visibility', 'visible');
+                }
               });
-              $('.landing-left-arrow-wrap').on('click', function(event) {
-                var selection = $(this).parent()[0].children[0].children[0];
+
+              $('.h-left-arrow-container').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].lastElementChild.children[0];
                 $(selection).animate({
-                  "marginLeft": "+=839.3"
+                  "right": "-=1044"
                 }, {
-                  duration: 700,
+                  duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
-                      // console.log(fx.now);
                       $(this).stop(true, false);
                     }
                   },
                   start: function(now, fx) {
-                      // console.log("START");
                     if (now < -2500) {
-                      // console.log("START NOW: ", fx.now);
                       $(this).stop(true, false);
                     }
                   }
                 });
-              })
-
-              // NOTE: Logic for the clicking
-              $('#rcount').on('click', () => {
-                $scope.rightCount++;
-                $scope.leftCount--;
-
-                // console.log("right", $scope.rightCount);
-                // console.log("left", $scope.leftCount);
-                if ($scope.rightCount >= 0) {
-                  $('.landing-left-arrow-wrap').show();
+                $scope.counter--;
+                if ($scope.counter <= 0) {
+                  $(e.currentTarget).css('visibility', 'hidden');
+                  $(e.currentTarget.nextElementSibling).css('visibility', 'visible');
                 }
-                if ($scope.rightCount === 3) {
-                  $('.landing-right-arrow-wrap').hide();
-                }
-              })
-
-              $('#lcount').on('click', () => {
-                $scope.rightCount++;
-                $scope.leftCount--;
-                console.log("right", $scope.rightCount);
-                console.log("left", $scope.leftCount);
-                if ($scope.leftCount <= -3) {
-                  $('.landing-left-arrow-wrap').hide();
-                  $('landing-right-arrow-wrap').show();
-                }
-                // if ($scope.rightCount === 6) {
-                //     $('landing-right-arrow-wrap').show();
-                // }
               })
             }) // <-- end of jQuery
 
