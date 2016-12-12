@@ -34,7 +34,6 @@ angular.module('you-tube-clone')
                     "left": "-=2090"
                 }, 500);
             });
-
             $('.left-arrow-container').on('click', () => {
                 $('.carousel-wrapper').animate({
                     "left": "+=2090"
