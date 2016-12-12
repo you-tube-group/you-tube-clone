@@ -32,6 +32,10 @@ angular.module('you-tube-clone')
         $('.ham-icon').css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto"});
       });
 
+      $('.night-mode-container').hover(function (e) {
+        $(e.currentTarget).css('color', 'yellow');
+      })
+
 
 
 

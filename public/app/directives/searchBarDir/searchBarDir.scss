@@ -141,12 +141,24 @@ $sbd-font-fam: 'Roboto', sans-serif;
       }
       .upload-and-signin-container {
         height: 28px;
-        width: 127.078px;
+        // width: 127.078px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 25px;
+        // justify-content: space-between;
+        // align-items: center;
+        // margin-left: 25px;
+        .night-mode-container{
+        font-size: 1.5em;
+        color: #ccc;
+        background: #f1f1f1;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        }
         .upload-btn {
+          margin-left: 10px;
           height: 28px;
           width: 56px;
           border-radius: 2px;
@@ -167,6 +179,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
           }
         }
         .signin-btn {
+          margin-left: 10px;
           height: 28px;
           width: 55px;
           border-radius: 2px;
