@@ -79,7 +79,7 @@ $primary-font-family: 'Roboto', sans-serif;
   position: fixed;
   top: 49px;
   border: solid 1px $tvd-container-bg-color;
-  z-index: 1;
+  z-index: 5000;
   font-weight: 400;
   letter-spacing: 0.5px;
   .h-links-wrap{
