@@ -1,5 +1,26 @@
-<section ng-repeat="video in userPlaylistVideos">
-  <div class="">
-    {{video.snippet.channelTitle}}
+<section class="playlist-outer-container">
+  <div class="playlist-wrapper">
+    <div class="top-vid-wrapper">
+      <div
+      class="thumbnail"
+      style="background: url('{{userPlaylistVideos[0].snippet.thumbnails.high.url}}') no-repeat; background-size: cover; background-position: 0px"
+      ></div>
+      <div class="video-options-wrapper">
+        <div class="watch-later">Watch Later</div>
+        <div class="lock-wrapper">
+          <div class="lock">lock</div>
+          <div class="videos">8 videos</div>
+          <div class="updated">updated 2 days ago</div>
+        </div>
+        <div class="play-all-wrapper">
+          <div class="links-wrap">
+            <div class="play-all">Play all</div>
+            <div class="playlist-settings">playlist settings</div>
+            <div class="remove-watched">remove watched</div>
+          </div>
+          <div class="add-videos">add videos</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

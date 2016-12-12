@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$pl-font: 'Roboto', sans-serif;
+$pl-outer-bg-color: #F1F1F1;
+$pl-wrap-bg-color: #FFFFFF;
+
+.playlist-outer-container {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: $pl-outer-bg-color;
+  font-family: $pl-font;
+  .playlist-wrapper {
+    margin-top: 25px;
+    width: 950px;
+    background-color: $pl-wrap-bg-color;
+    .top-vid-wrapper {
+      display: flex;
+      .thumbnail {
+        margin: 15px 15px;
+        min-height: 126px;
+        min-width: 225px;
+      }
+      .video-options-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 25px;
+        .watch-later {}
+        .lock-wrapper {
+          display: flex;
+          .lock {}
+          .videos {}
+          .updated {}
+        }
+        .play-all-wrapper {
+          display: flex;
+          justify-content: space-between;
+          .links-wrap {
+            display: flex;
+            .play-all {}
+            .playlist-settings {}
+            .remove-watched {}
+          }
+          .add-videos {}
+        }
+      }
+    }
+  }
+}
