@@ -87,6 +87,22 @@ this.broken = 'working'
     })
   }
 
+  this.postComment = (comment, vidId, channelId) => {
+    console.log('COMMENT!!!!');
+    console.log('comment', comment, vidId, channelId);
+    return $http({
+      method: 'POST',
+      url: '/api/comments',
+      data: {
+        comment: comment,
+        vidId: vidId,
+        channelId: channelId
+      }
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
 
   this.getChannelData = (id) => {
     return $http({

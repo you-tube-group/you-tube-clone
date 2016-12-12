@@ -11,6 +11,10 @@ $com-dir-bg-color: #FFFFFF;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 
+@mixin border-prop {
+  border-bottom: 1px solid #f1f1f1;
+}
+
 @mixin btn-options{
   background-size: auto;
   width: 20px;
@@ -48,7 +52,7 @@ $com-dir-bg-color: #FFFFFF;
       margin-bottom: 15px;
     }
     .author-info-container{
-      border-bottom: 1px solid #F1F1F1;
+      @include border-prop;
       padding-bottom: 10px;
       display: flex;
       justify-content: space-between;
@@ -208,7 +212,7 @@ $com-dir-bg-color: #FFFFFF;
         overflow: hidden;
         margin-bottom: 10px;
         padding-bottom: 10px;
-        border-bottom: 1px solid #F1F1F1;
+        @include border-prop;
       }
       .show-more-btn{
         text-align: center;
@@ -235,11 +239,12 @@ $com-dir-bg-color: #FFFFFF;
     padding: 15px 17px 10px 15px;
     width: 642px;
     background: $com-dir-bg-color;
+    margin-bottom: 10px;
     .share-tabs-wrapper {
       display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
-      border-bottom: 1px solid #F1F1F1;
+      @include border-prop;
       .button-options {
         display: flex;
         .share-tab{
