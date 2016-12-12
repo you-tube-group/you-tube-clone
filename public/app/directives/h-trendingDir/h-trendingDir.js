@@ -53,6 +53,20 @@ angular.module('you-tube-clone')
                   $(e.currentTarget.nextElementSibling).css('visibility', 'visible');
                 }
                 });
+                
+                $('.trending').mouseenter(function(e) {
+                    $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
+                    $(e.currentTarget).mouseleave(function(event) {
+                    $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
+                    });
+                });
+
+                $('.subscriptions').mouseenter(function(e) {
+                  $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
+                  $(e.currentTarget).mouseleave(function(e) {
+                    $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
+                  });
+                });
             }); //<-- end of jQuery
           } //<-- end of controller
         }
