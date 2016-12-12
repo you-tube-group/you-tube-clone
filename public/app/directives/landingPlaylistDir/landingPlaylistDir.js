@@ -63,73 +63,57 @@ angular.module('you-tube-clone')
               published = moment(published, "YYYYMMDD").fromNow();
               return published;
             };
+            
             // NOTE: start of jQuery for carousel functionality
-            $(() => {
-              // NOTE: carousel right and left scrolling animation
-              $('.landing-right-arrow-wrap').on('click', function(e) {
-                var selection = $(this).parent().parent()[0].children[1].children[1];
-                // console.log(selection);
+            $(document).ready(function(){
+              $('.h-right-arrow-container').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].lastElementChild.children[0];
                 $(selection).animate({
-                  "marginRight": "+=2086px"
+                  "right": "+=1044"
                 }, {
                   duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
-                      // console.log(fx.now);
                       $(this).stop(true, false);
                     }
                   },
                   start: function(now) {
-                    // console.log("START", now.tweens[0].now);
                     if (now.tweens[0].now > -2500) {
-                      // console.log("STOP BEFORE.");
                       $(this).stop(true, false);
                     }
                   }
                 });
+
+                $scope.counter++;
+                if ($scope.counter >= 1 ){
+                  $(e.currentTarget).css('visibility', 'hidden');
+                  $(e.currentTarget.offsetParent.children[1]).css('visibility', 'visible');
+                }
               });
-              $('.landing-left-arrow-wrap').on('click', function(e) {
-                var selection = $(this).parent().parent()[0].children[1].children[1];
+
+              $('.h-left-arrow-container').on('click', function(e) {
+                var selection = $(this).parent().parent()[0].lastElementChild.children[0];
                 $(selection).animate({
-                  "marginLeft": "+=2086px"
+                  "right": "-=1044"
                 }, {
                   duration: 400,
                   step: function(now, fx) {
                     if (now === fx.end) {
-                      // console.log(fx.now);
                       $(this).stop(true, false);
                     }
                   },
                   start: function(now, fx) {
-                      // console.log("START");
                     if (now < -2500) {
-                      // console.log("START NOW: ", fx.now);
                       $(this).stop(true, false);
                     }
                   }
                 });
-              })
-
-              // NOTE: Logic for the clicking right and left on carousel
-              $('#rcount').on('click', (e) => {
-                $scope.counter++;
-
-                if ($scope.counter >= 1 ){
-                  $(e.currentTarget).css('visibility', 'hidden');
-                  $(e.currentTarget.nextSibling.parentNode.firstElementChild).css('visibility', 'visible');
-                  $(e.currentTarget.nextSibling.parentNode.firstElementChild.firstElementChild).css('visibility', 'visible');
-                }
-              })
-
-              $('#lcount').on('click', (e) => {
                 $scope.counter--;
-
                 if ($scope.counter <= 0) {
-                  $(e.currentTarget.firstElementChild).css('visibility', 'hidden');
                   $(e.currentTarget).css('visibility', 'hidden');
                   $(e.currentTarget.nextElementSibling).css('visibility', 'visible');
                 }
-              });
+              })
             }) // <-- end of jQuery
 
       } // <-- end of controller
