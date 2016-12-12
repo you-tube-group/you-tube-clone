@@ -70,7 +70,7 @@ $primary-font-family: 'Roboto', sans-serif;
   color: $video-main-title;
   line-height: 14px;
 }
-.nav-container {
+.h-nav-container {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -82,25 +82,25 @@ $primary-font-family: 'Roboto', sans-serif;
   z-index: 1;
   font-weight: 400;
   letter-spacing: 0.5px;
-  .links-wrap{
+  .h-links-wrap{
     display: flex;
     justify-content: space-between;
     font-size: 13px;
     width: 226px;
-    .home {
+    .h-home {
       cursor: pointer;
       display: flex;
       align-items: center;
       border-bottom: solid $tvd-red-underline 3px;
     }
-    .trending {
+    .h-trending {
       cursor: pointer;
       display: flex;
       align-items: center;
       padding-top: 3px;
       color: $tvd-subtext-color;
     }
-    .subscriptions {
+    .h-subscriptions {
       cursor: pointer;
       display: flex;
       align-items: center;

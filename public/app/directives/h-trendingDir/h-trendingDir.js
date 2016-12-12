@@ -53,15 +53,15 @@ angular.module('you-tube-clone')
                   $(e.currentTarget.nextElementSibling).css('visibility', 'visible');
                 }
                 });
-                
-                $('.trending').mouseenter(function(e) {
+// NOTE: sub-nav hover effect
+                $('.h-trending').mouseenter(function(e) {
                     $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
                     $(e.currentTarget).mouseleave(function(event) {
                     $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
                     });
                 });
 
-                $('.subscriptions').mouseenter(function(e) {
+                $('.h-subscriptions').mouseenter(function(e) {
                   $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
                   $(e.currentTarget).mouseleave(function(e) {
                     $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
