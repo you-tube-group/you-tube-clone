@@ -18,18 +18,14 @@ angular.module('you-tube-clone')
         mainService.getTrending()
         .then((response) => {
           $scope.trendingData = response.items;
-
-
-          console.log($scope.trendingData);
+          // console.log($scope.trendingData);
         })
       };
       getTrendingData();
 
-
       $scope.passVideo = (video) => {
         mainService.passVideo(video);
       }
-
       $scope.videoTime = (dateObj)=> {
         dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
         return dateObj;
@@ -97,6 +93,24 @@ angular.module('you-tube-clone')
       //   })
       // }
 
+    $(document).ready(function(e) {
+
+      $('.home').mouseenter(function(e) {
+          $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
+          $(e.currentTarget).mouseleave(function(event) {
+          $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
+          });
+      });
+
+      $('.subscriptions').mouseenter(function(e) {
+        $(e.currentTarget).css('border-bottom', 'solid #CC181E 3px');
+        $(e.currentTarget).mouseleave(function(e) {
+          $(e.currentTarget).css('border-bottom', 'solid #fff 0px');
+        });
+      });
+
+
+    });
 
 
     //END OF CONTROLLER

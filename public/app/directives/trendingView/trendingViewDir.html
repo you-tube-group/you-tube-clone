@@ -1,11 +1,14 @@
+
+
 <section class='trending-view-dir-outer-wrap'>
-  <div class="nav-container">
-    <div class="links-wrap">
-      <div class="home">Home</div>
-      <div class="trending">Trending</div>
-      <div class="subscriptions">Subscriptions</div>
-    </div>
-  </div>
+  <nav class="nav-container">
+    <section class="links-wrap">
+      <nav class="home" ui-sref="landing">Home</nav>
+      <nav class="trending" ui-sref="#">Trending</nav>
+      <nav class="subscriptions">Subscriptions</nav>
+    </section>
+  </nav>
+
   <div class="trending-vids-wrap">
     <div class="video-wrap" ng-repeat="video in trendingData">
       <div

@@ -27,24 +27,30 @@ $tvd-red-underline: #CC181E;
     top: 49px;
     border: solid 1px $tvd-container-bg-color;
     z-index: 1;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    // font-weight: 700;
     .links-wrap{
       display: flex;
       justify-content: space-between;
       font-size: 13px;
-      font-weight: 580;
+      // font-weight: 580;
       width: 226px;
       .home {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: $tvd-subtext-color;
       }
       .trending {
+        cursor: pointer;
         display: flex;
         align-items: center;
         padding-top: 3px;
         border-bottom: solid $tvd-red-underline 3px;
       }
       .subscriptions {
+        cursor: pointer;
         display: flex;
         align-items: center;
         color: $tvd-subtext-color;
@@ -140,7 +146,7 @@ $tvd-red-underline: #CC181E;
         .video-title {
           color: $tvd-title-text;
           font-size: 14px;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 1.3;
           margin-bottom: 5px;
         }
