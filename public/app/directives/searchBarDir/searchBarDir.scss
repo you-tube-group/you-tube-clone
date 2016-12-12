@@ -2,6 +2,7 @@
 
 $sbd-font-fam: 'Roboto', sans-serif;
 
+
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;
@@ -139,6 +140,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
           }
         }
       }
+
       .upload-and-signin-container {
         height: 28px;
         // width: 127.078px;
@@ -149,7 +151,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
         .night-mode-container{
         font-size: 1.5em;
         color: #ccc;
-        background: #f1f1f1;
+        background: #f8f8f8;
         width: 32px;
         display: flex;
         justify-content: center;
