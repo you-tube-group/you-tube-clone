@@ -170,15 +170,16 @@ app.get('/api/channelData', controller.getChannelData);
 // app.post('/register', usersCtrl.registerUser);
 
 app.post('/api/comments', function(req,res) {
+  var body = req.body;
   youtube.commentThreads.insert({
     "part": "snippet",
     "resource": {
       "snippet": {
-        "videoId": "xqom3NzagBk",
-        "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+        "videoId": body.vidId,
+        "channelId": body.channelId,
         "topLevelComment": {
          "snippet": {
-          "textOriginal": "dm 14 youtube group represent, bro"
+          "textOriginal": body.comment
          }
         }
       }

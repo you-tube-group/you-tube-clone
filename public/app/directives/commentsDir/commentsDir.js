@@ -5,7 +5,8 @@ angular.module('you-tube-clone')
       templateUrl: './app/directives/commentsDir/commentsDir.html',
       scope: {
         vidId: '=',
-        commentCount: '='
+        commentCount: '=',
+        channelId: '='
       },
       controller: ($scope, mainService, $sce) => {
         $scope.$watch('vidId', () => {
@@ -20,20 +21,20 @@ angular.module('you-tube-clone')
             $scope.getComments(vidId);
           }
 
-          $scope.postComment = (comment) => {
-            console.log(comment);
+
+
+          $scope.postComment = (comment, vidId, channelId) => {
+            mainService.postComment(comment, vidId, channelId).then((response) => {
+              $scope.data = response;
+            })
           }
+
         })
 
         $scope.commentTime = (dateObj)=> {
           dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
           return dateObj;
         }
-
-        $scope.postComment = (comment) => {
-          console.log(comment);
-        }
-
 
 
 
