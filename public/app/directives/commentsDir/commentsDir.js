@@ -18,6 +18,10 @@ angular.module('you-tube-clone')
             }
             $scope.getComments(vidId);
           }
+
+          $scope.postComment = (comment) => {
+            console.log(comment);
+          }
         })
 
         $scope.commentTime = (dateObj)=> {
@@ -25,7 +29,11 @@ angular.module('you-tube-clone')
           return dateObj;
         }
 
-      
+        $scope.postComment = (comment) => {
+          console.log(comment);
+        }
+
+
 
 
 
