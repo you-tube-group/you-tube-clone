@@ -46,7 +46,6 @@ angular.module('you-tube-clone')
               $scope.channelInfo = response;
 
               $scope.channelData = response.items[0];
-              console.log($scope.channelData);
             })
           }
           $scope.getChannelInfoOnVidPlayer(channelId);
