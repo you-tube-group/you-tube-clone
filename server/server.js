@@ -30,11 +30,11 @@ app.use(passport.session());
 
 
 //===CONNECT TO SERVER=========
-// const massiveServer = massive.connectSync({
-//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-// });
-// app.set('db', massiveServer);
-// const db = app.get('db');
+const massiveServer = massive.connectSync({
+  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+});
+app.set('db', massiveServer);
+const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
@@ -90,10 +90,6 @@ passport.use(new YouTubeStrategy({
         });
       }
 
-      oauth2Client.setCredentials({
-        access_token: accessToken,
-        refresh_token: refreshToken
-      });
 
       // youtube.commentThreads.insert({
       //   "part": "snippet",
@@ -111,17 +107,17 @@ passport.use(new YouTubeStrategy({
       //   "auth": oauth2Client
       // });
 
-      db.findOne([profile.id], (err, user) => {
-        console.log("USER FOUND: ", user);
-        if (!user) {
-          db.insert([profile.id, profile.displayName], (error, newUser) => {
-            console.log('newUser: ', newUser);
-            return done(null, newUser);
-          });
-        }
-        return done(null, user);
-      });
-    }
+//       db.findOne([profile.id], (err, user) => {
+//         console.log("USER FOUND: ", user);
+//         if (!user) {
+//           db.insert([profile.id, profile.displayName], (error, newUser) => {
+//             console.log('newUser: ', newUser);
+//             return done(null, newUser);
+//           });
+//         }
+//         return done(null, user);
+//       });
+//     }
 ));
 
 
