@@ -10,7 +10,7 @@ angular.module('you-tube-clone')
     controller: ($scope, $timeout, mainService, $stateParams) => {
 
       $scope.channelHover = false;
-
+      
       $scope.convertTime = (time) => {
         time = moment(time, "YYYYMMDD").fromNow();
         return time;
@@ -65,20 +65,6 @@ angular.module('you-tube-clone')
         $scope.hovering = false;
         $scope.channelHover = false;
       }
-
-
-
-      // $scope.searchRequest = (searchTerm) => {
-      //   mainService.getSearchResults(searchTerm)
-      //   .then((response) => {
-      //     $scope.searchResults = response;
-      //     // console.log($scope.searchResults);
-      //   })
-      //
-      //   // Erases searchTerm after sending request
-      //   // $scope.searchTerm = '';
-      // };
-
 
     //END OF CONTROLLER
     }

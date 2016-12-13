@@ -5,6 +5,7 @@ $Robo: 'Roboto', sans-serif;
 
 .channel-page-background {
   background-color: #f1f1f1;
+  padding-bottom: 50px;
   .channel-brand-container {
     width: 1056px;
     margin: auto;
@@ -109,6 +110,7 @@ $Robo: 'Roboto', sans-serif;
                 width: 170px;
                 height: 24px;
                 display: flex;
+                cursor: pointer;
                 justify-content: flex-end;
                 flex-direction: row;
                 flex-wrap: nowrap;
@@ -158,6 +160,63 @@ $Robo: 'Roboto', sans-serif;
                   color: #737373;
                   font-size: 11px;
                 }
+              }
+            }
+          }
+        }
+      }
+      .channel-nav-wrap {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 480px;
+        .channel-nav-items {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: row;
+          .home-border {
+            padding: 0 3px 3px;
+            height: 32px;
+            font-family: $Robo;
+            font-size: 13px;
+            line-height: 29px;
+            cursor: pointer;
+            border-bottom: 3px solid;
+            border-color: #cc181e;
+            color: #333;
+            font-weight: 500;
+          }
+          .nav-items {
+            padding: 0 3px 3px;
+            height: 32px;
+            line-height: 29px;
+            cursor: pointer;
+            color: #666;
+            font-family: $Robo;
+            font-size: 13px;
+            &:hover {
+              border-bottom: 3px solid;
+              border-color: #cc181e;
+            }
+            &:active {
+              color: #333;
+              font-weight: 500;
+            }
+          }
+          .nav-search-item {
+            padding: 0 3px 3px;
+            height: 32px;
+            line-height: 29px;
+            cursor: pointer;
+            .channel-nav-search {
+              opacity: .7;
+              background: no-repeat url('../images/youTube-sprite2.webp') -647px -24px;
+              background-size: auto;
+              width: 15px;
+              height: 15px;
+              margin-top: 6px;
+              &:hover {
+                opacity: 1;
               }
             }
           }
