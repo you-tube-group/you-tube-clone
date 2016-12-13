@@ -7,21 +7,30 @@ const ytSearch = require('youtube-search');
 var client = new Client();
 
 
-convertTime = (time) => {
-    time = time.split(/[HMS]/);
-    time[0] = time[0].split('');
-    time[0].splice(0, 2);
-    time[0] = time[0].join('');
-    time.splice(time.length - 1, 1);
-    var i = time.length - 1;
-    if (time[i].length < 2) {
-        time[i] = '0' + time[i]
-    }
-    time = time.join(':')
-    if (time.length === 2) {
-        time = '0:' + time
-    }
-    return time;
+const convertTime = (time) => {
+ time = time.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+ var hours = (parseInt(time[1]) || 0);
+ var minutes = (parseInt(time[2]) || 0);
+ var seconds = (parseInt(time[3]) || 0);
+ if(minutes === 0) {
+   if(hours !== 0) {
+     minutes += "0";
+   }
+ }
+ if(seconds < 10) {
+   if(seconds === 0) {
+   seconds += "0";
+   }
+   else {
+     seconds = "0" + seconds;
+   }
+ }
+ if(hours === 0) {
+   return minutes + ":" + seconds;
+ }
+ else {
+   return hours + ":" + minutes + ":" + seconds;
+ }
 };
 
 
