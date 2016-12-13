@@ -10,7 +10,7 @@ const passport = require('passport');
 const YouTubeStrategy = require('passport-youtube-v3').Strategy;
 const base = 'https://www.googleapis.com/youtube/v3';
 const google = require('googleapis');
-const youtube = google.youtubeAnalytics('v1');
+const youtube = google.youtube('v3');
 const OAuth2 = google.auth.OAuth2;
 const oauth2Client = new OAuth2(config.GOOGLE_CLIENT_ID, config.GOOGLE_CLIENT_SECRET, config.callbackURL);
 // const port = 3000;
@@ -28,6 +28,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+
 //===CONNECT TO SERVER=========
 // const massiveServer = massive.connectSync({
 //   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
@@ -42,27 +43,27 @@ const usersCtrl = require('./controller/usersCtrl');
 
 //===POLICIES=================
 
-// const isAuthed = (req,res,next) => {
-//   if (!req.isAuthenticated()) return res.status(401).send();
-//   return next();
-// }
-//
-// //===SESSION AND PASSPORT===============
-// app.use(session({
-//   secret: secret.secret,
-//   saveUninitialized: false,
-//   resave: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+const isAuthed = (req,res,next) => {
+  if (!req.isAuthenticated()) return res.status(401).send();
+  return next();
+}
+
+//===SESSION AND PASSPORT===============
+app.use(session({
+  secret: secret.secret,
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 //YOUTUBE PASSPORT STUFF
 passport.use(new YouTubeStrategy({
-        clientID: config.GOOGLE_CLIENT_ID,
-        clientSecret: config.GOOGLE_CLIENT_SECRET,
-        callbackURL: config.callbackURL,
-        scope: ['https://www.googleapis.com/auth/youtube.readonly']
-    },
+    clientID: config.GOOGLE_CLIENT_ID,
+    clientSecret: config.GOOGLE_CLIENT_SECRET,
+    callbackURL: config.callbackURL,
+    scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
+},
     function(accessToken, refreshToken, profile, done) {
         console.log('access token: ', accessToken);
         console.log('profile: ', profile);
@@ -76,28 +77,59 @@ passport.use(new YouTubeStrategy({
             access_token: accessToken,
             refresh_token: refreshToken
         });
-        // db.users.findOne({youtube_id: profile.id}, (err, user) => {
-        db.findOne([profile.id], (err, user) => {
+        db.youtube_profiles.findOne({profile_id: profile.id}, (err, user) => {
             console.log("USER FOUND: ", user);
             if (!user) {
-              // db.users.insert({youtube_id: profile.id}, (error, newUser) => {
+              db.youtube_profiles.insert({profile_id: profile.id, display_name: profile.displayName}, (error, newUser) => {
               console.log('joe it is working. BRIAN');
-              db.insert([profile.id, profile.displayName], (error, newUser) => {
                 console.log('newUser: ', newUser);
                 return done(null, newUser);
               });
             }
             return done(null, user);
         });
+      }
+
+      oauth2Client.setCredentials({
+        access_token: accessToken,
+        refresh_token: refreshToken
+      });
+
+      // youtube.commentThreads.insert({
+      //   "part": "snippet",
+      //   "resource": {
+      //     "snippet": {
+      //       "videoId": "xqom3NzagBk",
+      //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+      //       "topLevelComment": {
+      //        "snippet": {
+      //         "textOriginal": "dm 14 youtube group represent, bro"
+      //        }
+      //       }
+      //     }
+      //   },
+      //   "auth": oauth2Client
+      // });
+
+      db.findOne([profile.id], (err, user) => {
+        console.log("USER FOUND: ", user);
+        if (!user) {
+          db.insert([profile.id, profile.displayName], (error, newUser) => {
+            console.log('newUser: ', newUser);
+            return done(null, newUser);
+          });
+        }
+        return done(null, user);
+      });
     }
 ));
-
 
 
 // ======== Endpoints ========
 app.get('/auth/', passport.authenticate('youtube'));
 app.get('/auth/callback', passport.authenticate('youtube', {
-    failureRedirect: '/auth'
+    failureRedirect: '/auth',
+    successRedirect: '/#/trending'
 }));
 
 app.get('/login', (req, res, next) => {
@@ -149,11 +181,50 @@ app.get('/api/playlistInfo', controller.getPlaylistInfo);
 app.get('/api/channelData', controller.getChannelData);
 
 
+//===ADD VIDEO TO PLAYLIST TABLE========
+app.post('/api/addVideo', (req, res) => {
+  // console.log('incoming vid: ');
+  // console.log(req.body.video);
+  console.log('user obj before db',req.body.user);
+  db.add_to_playlist([req.body.video, req.body.user.id], (err, response) => {
+    // console.log('after db', response);
+  })
+  res.status(200).send('nice');
+})
 
-//========= AUTH ENDPOINTS ======
-// app.post('/register', usersCtrl.registerUser);
+//===GET playlist========
+
+app.get('/api/user/playlist/:id', (req, res) => {
+  console.log('heres the dang number', req.params.id);
+  db.get_user_playlist([req.params.id], (err, response) => {
+    res.status(200).send(response)
+  })
+})
 
 
+
+//=========LOCAL AUTH ENDPOINTS ======
+app.post('/register', usersCtrl.registerUser);
+app.get('/me', isAuthed, usersCtrl.me);
+
+app.post('/api/comments', function(req,res) {
+  var body = req.body;
+  youtube.commentThreads.insert({
+    "part": "snippet",
+    "resource": {
+      "snippet": {
+        "videoId": body.vidId,
+        "channelId": body.channelId,
+        "topLevelComment": {
+         "snippet": {
+          "textOriginal": body.comment
+         }
+        }
+      }
+    },
+    "auth": oauth2Client
+  });
+})
 //=================================
 
 

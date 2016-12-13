@@ -7,7 +7,7 @@ angular.module('you-tube-clone')
 
 
     $scope.register = (user) => {
-      authService.registerUser(user).then((response) => {
+      mainService.registerUser(user).then((response) => {
         if (!response.data) {
           alert('unable to create user');
         } else {

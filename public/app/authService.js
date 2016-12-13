@@ -11,8 +11,24 @@ angular.module('you-tube-clone')
     });
   };
 
+  this.getCurrentUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/me'
+    })
+  };
 
-
+  this.addToPlaylist = (video, user) => {
+    console.log('authService video and user: ', video, user);
+    return $http({
+      method: "POST",
+      url: "/api/addVideo",
+      data: {
+        video: video,
+        user: user
+      }
+    })
+  }
 
 
 })
