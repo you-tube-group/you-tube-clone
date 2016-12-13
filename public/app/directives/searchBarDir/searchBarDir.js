@@ -61,13 +61,7 @@ angular.module('you-tube-clone')
 // NOTE: option for NEVER night mode
 // NOTE: night mode for home view: BLUE
       $('.night-mode-container').on('click', function(e){
-        $(this).css('color', 'yellow');
-        $(this).css('background', 'rgba(22, 122, 198, 0.6)');
-        $(this).css('border', '0px #fff solid');
-
-        $('.you-tube-icons').css('background', 'url("./../../../Images/yt-logo-white.svg"');
-
-
+        $('.yt-logo').css('background', 'url(../Images/yt-logo-white.svg');
         $('body').css('background', 'rgb(23, 38, 52)');
         $(".search-bar-dir-outer-container").css('background', 'rgb(23, 38, 52)');
         $(".search-bar-dir-outer-container").css('border-bottom', 'solid 1px rgb(74, 81, 82)');
@@ -79,29 +73,28 @@ angular.module('you-tube-clone')
         $('.h-home').css('color', '#fff');
         $('.h-home').css('border-bottom', 'solid #9A1318 3px');
         $('.search-input').css('background', '#363C3F');
-        $('.search-input').css('box-shadow', 'inset 0 0px 0px')
+        $('.search-input').css('box-shadow', 'inset 0 0px 0px');
         $('.search-btn').css('background', '#7E8889');
         $('.search-icon').css('opacity', '100');
         $('.trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
-        $('.trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
+        $('.trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)');
         $('.trending-video-title').css('color', 'rgb(64, 111, 152)');
         $('.h-trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
-        $('.h-trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
+        $('.h-trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)');
         $('.trending-title').css('color', '#BDC6C1');
         $('.trending-channel-title').css('color', '#BDC6C1');
-        $('.trending-view-count').css('color', 'rgba(21, 38, 52, 0.67)');
-        $('.dot-style').css('color', 'rgba(21, 38, 52, 0.67)');
-        $('.trending-publish').css('color', 'rgba(21, 38, 52, 0.67)');
+        $('.trending-view-count').css('color', 'rgba(91, 128, 159, 0.670588)');
+        $('.dot-style').css('color', 'rgba(91, 128, 159, 0.670588)');
+        $('.trending-publish').css('color', 'rgba(91, 128, 159, 0.670588)');
         $('.h-trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
         $('.h-trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
         $('.h-trending-video-title').css('color', 'rgb(64, 111, 152)');
         $('.h-trending-title').css('color', '#BDC6C1');
         $('.h-trending-channel-title').css('color', '#BDC6C1');
-        $('.h-trending-view-count').css('color', 'rgba(21, 38, 52, 0.67)');
-        $('.h-dot-style').css('color', 'rgba(21, 38, 52, 0.67)');
-        $('.h-trending-publish').css('color', 'rgba(21, 38, 52, 0.67)');
-        $('.channel-img').css('filter', 'grayscale(60%)');
-        // $('.yt-logo').css('filter', 'grayscale(60%)');
+        $('.h-trending-view-count').css('color', 'rgba(91, 128, 159, 0.670588)');
+        $('.h-dot-style').css('color', 'rgba(91, 128, 159, 0.670588)');
+        $('.h-trending-publish').css('color', 'rgba(91, 128, 159, 0.670588)');
+        $('.channel-img').css('filter', 'grayscale(40%)');
         $('.upload-btn').css('color', '#fff');
         $('.upload-btn').css('background', '#152634')
         $('upload-btn').css('border', '1px solid #152634');
