@@ -87,6 +87,62 @@ this.broken = 'working'
     })
   }
 
+  this.getPlaylist = () => {
+    return $http({
+      method: 'GET',
+      url: "/api/user-playlist/",
+      data: {
+        user: user
+      }
+    }).then((response) => {
+      return response.data;
+    })
+  }
+
+  this.registerUser = (user) => {
+    return $http({
+      method: 'POST',
+      url: '/register',
+      data: user
+    }).then((response) => {
+      return response;
+    });
+  };
+
+  this.getCurrentUser = () => {
+    return $http({
+      method: 'GET',
+      url: '/me'
+    })
+  };
+  this.addToPlaylist = (video, user) => {
+    console.log('authService video and user: ', video, user);
+    return $http({
+      method: "POST",
+      url: "/api/addVideo",
+      data: {
+        video: video,
+        user: user
+      }
+    })
+  }
+
+  this.getCurrentUserPlaylist = (user) => {
+    return $http({
+      method: 'GET',
+      url: `/api/user/playlist/${user.id}`
+    }).then((response) => {
+      const vidArr = response.data;
+      var newVidArr = [];
+      for (var i = 0; i < vidArr.length; i++) {
+        newVidArr.push(JSON.parse(vidArr[i].video));
+      }
+
+      return newVidArr;
+    })
+  }
+
+
   this.postComment = (comment, vidId, channelId) => {
     console.log('COMMENT!!!!');
     console.log('comment', comment, vidId, channelId);
