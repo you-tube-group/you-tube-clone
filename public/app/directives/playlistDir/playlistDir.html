@@ -1,0 +1,45 @@
+<section class="playlist-outer-container">
+  <div class="playlist-wrapper">
+    <div class="top-vid-wrapper">
+      <div
+      style="background-size: auto; background: url('./../../Images/playlistView.webp') no-repeat -86px -329px"
+      class="dot-menu"></div>
+      <div
+      class="thumbnail"
+      style="background: url('{{userPlaylistVideos[0].snippet.thumbnails.high.url}}') no-repeat; background-size: cover; background-position: 0px;"
+      ></div>
+      <div class="video-options-wrapper">
+        <div class="watch-later">Watch Later</div>
+        <div class="lock-wrapper">
+          <div class="lock"></div>
+          <!-- <div class="line">|</div> -->
+          <div class="videos"> {{userPlaylistVideos.length}} {{userPlaylistVideos.length > 1 ? "videos" : "video"}}</div>
+          <!-- <div class="updated">updated 2 days ago</div> -->
+        </div>
+        <div class="play-all-wrapper">
+          <div class="links-wrap">
+            <div class="play-all-wrap">
+              <div class="arrow"></div>
+              <div class="play-all">Play all</div>
+            </div>
+            <div class="playlist-settings">Playlist settings</div>
+            <div class="remove-watched">Remove watched</div>
+          </div>
+          <div class="add-videos">Add videos</div>
+        </div>
+      </div>
+    </div>
+    <div class="single-video-wrapper" ng-repeat='video in userPlaylistVideos'>
+      <div class="number">{{$index + 1}}</div>
+      <div
+      style="background: url('{{video.snippet.thumbnails.high.url}}') no-repeat; background-size: cover; background-position: 0px"
+      class="thumbnail"
+      ></div>
+      <div class="info-wrap">
+        <div class="title">{{video.snippet.title}}</div>
+        <div class="channel">by {{video.snippet.channelTitle}}</div>
+      </div>
+      <div class="duration">{{video.contentDetails.duration}}</div>
+    </div>
+  </div>
+</section>
