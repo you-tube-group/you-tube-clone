@@ -51,12 +51,21 @@ angular.module('you-tube-clone')
           $(e.currentTarget).css('border','1px solid #ccc' );
         });
       })
+// NOTE: Work on the loading progress bar!!!!
 
-// NOTE: night mode for home view
+// NOTE: Add time feature to turn on the night mode a certain time.
+// NOTE: make the night mode button into a toggle switch
+// NOTE: create 6 color options for night mode, look at atom themes
+// NOTE: Create a function that is an "if" statment for wheather night mode is on or off.
+// NOTE: a warning in advance about when night mode will turn on.
+// NOTE: option for NEVER night mode
+// NOTE: night mode for home view: BLUE
       $('.night-mode-container').on('click', function(e){
-        $('.night-mode-container').css('color', 'yello');
-        $('.night-mode-container').css('background', 'rgba(22, 122, 198, 0.6)');
-        $('.night-mode-container').css('border', '0px #fff solid');
+        $(this).css('color', 'yellow');
+        $(this).css('background', 'rgba(22, 122, 198, 0.6)');
+        $(this).css('border', '0px #fff solid');
+
+        $('.you-tube-icons').css('background', 'url("./../../../Images/yt-logo-white.svg"');
 
 
         $('body').css('background', 'rgb(23, 38, 52)');
@@ -75,7 +84,7 @@ angular.module('you-tube-clone')
         $('.search-icon').css('opacity', '100');
         $('.trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
         $('.trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
-        $('.trending-video-title').css('color', 'rgb(112, 151, 185)');
+        $('.trending-video-title').css('color', 'rgb(64, 111, 152)');
         $('.h-trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
         $('.h-trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
         $('.trending-title').css('color', '#BDC6C1');
@@ -85,14 +94,14 @@ angular.module('you-tube-clone')
         $('.trending-publish').css('color', 'rgba(21, 38, 52, 0.67)');
         $('.h-trending-video-wrapper').css('background', 'rgb(54, 60, 63)');
         $('.h-trending-video-wrapper').css('border-bottom', 'solid 1px rgb(74, 81, 82)')
-        $('.h-trending-video-title').css('color', 'rgb(112, 151, 185)');
+        $('.h-trending-video-title').css('color', 'rgb(64, 111, 152)');
         $('.h-trending-title').css('color', '#BDC6C1');
         $('.h-trending-channel-title').css('color', '#BDC6C1');
         $('.h-trending-view-count').css('color', 'rgba(21, 38, 52, 0.67)');
         $('.h-dot-style').css('color', 'rgba(21, 38, 52, 0.67)');
         $('.h-trending-publish').css('color', 'rgba(21, 38, 52, 0.67)');
         $('.channel-img').css('filter', 'grayscale(60%)');
-        $('.yt-logo').css('filter', 'grayscale(60%)');
+        // $('.yt-logo').css('filter', 'grayscale(60%)');
         $('.upload-btn').css('color', '#fff');
         $('.upload-btn').css('background', '#152634')
         $('upload-btn').css('border', '1px solid #152634');
