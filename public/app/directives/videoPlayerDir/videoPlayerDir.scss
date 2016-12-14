@@ -3,8 +3,8 @@
 // ==== variables
 $com-dir-font: 'Roboto', sans-serif;
 $com-dir-bg-color: #FFFFFF;
-
-
+$com-dir-font-color: #767676;
+$com-dir-border-red: #CC181E;
 // ==== mixins
 @mixin container-box-shadow {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -75,7 +75,7 @@ $com-dir-bg-color: #FFFFFF;
             text-decoration: underline;
           }
           .subscribe-btn-wrap:hover{
-            background-color: #cc181e;
+            background-color: $com-dir-border-red;
           }
           .subscribe-label-main-wrap{
             display: flex;
@@ -218,6 +218,7 @@ $com-dir-bg-color: #FFFFFF;
         text-align: center;
         font-size: 11px;
         font-weight: bold;
+        color: $com-dir-font-color;
       }
       .show {
         overflow: visible;
@@ -250,15 +251,20 @@ $com-dir-bg-color: #FFFFFF;
         .share-tab{
           margin-right: 42px;
           padding-bottom: 10px;
+          color: $com-dir-font-color;
         }
         .share-tab:focus{
-          border-bottom: 2px solid #CC181E;
+          border-bottom: 2px solid $com-dir-border-red;
+          color: black;
         }
         .share-tab-border{
-          border-bottom: 2px solid #CC181E;
+          border-bottom: 2px solid $com-dir-border-red;
         }
         .share-tab:first-child{
-          border-bottom: 2px solid #CC181E;
+          border-bottom: 2px solid $com-dir-border-red;
+        }
+        .share-tab:hover {
+          color: black;
         }
       }
       .close-btn {
