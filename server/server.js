@@ -50,13 +50,13 @@ const isAuthed = (req,res,next) => {
 }
 
 //===SESSION AND PASSPORT===============
-// app.use(session({
-//   secret: secret.secret,
-//   saveUninitialized: false,
-//   resave: false
-// }));
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(session({
+  secret: secret.secret,
+  saveUninitialized: false,
+  resave: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 // YOUTUBE PASSPORT STUFF
