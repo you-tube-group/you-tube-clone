@@ -7,7 +7,7 @@
     <div class="add-comment">
       <div class="user-input">
         <img class="user-thumbnail" src="../../Images/user-default.png" alt="" />
-        <input type="text" name="" placeholder="Add a public comment" ng-model="addComent" ng-click="cancel = !cancel">
+        <textarea type="text" class="comment-area" name="" placeholder="Add a public comment" ng-model="addComent" ng-click="cancel = !cancel"></textarea>
       </div>
       <div class="comment-btn" ng-show="cancel">
         <button class="cancel-comment" type="button" name="button" >Cancel</button>

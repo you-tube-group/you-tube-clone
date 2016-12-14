@@ -21,7 +21,11 @@ $com-dir-bg-color: #FFFFFF;
     padding: 10px 0;
     @include border-prop;
 
-    .comment-count {}
+    .comment-count {
+      font-size: 13px;
+      color: #555555;
+      margin-bottom: 10px;
+    }
     .add-comment {
       .user-input {
         display: flex;
@@ -32,10 +36,11 @@ $com-dir-bg-color: #FFFFFF;
           height: 48px;
         }
       }
-      .user-input input {
+      .comment-area {
         width: 90%;
+        resize: none;
       }
-      .user-input input:focus{
+      .comment-area:focus{
         outline: none;
         border: 1px solid #126db3;
       }
