@@ -35,7 +35,7 @@ angular.module('you-tube-clone')
       });
 
 
-// NOTE: Work on the loading progress bar!!!!
+
 // NOTE: Add time feature to turn on the night mode a certain time.
 // NOTE: make the night mode button into a toggle switch
 // NOTE: create 6 color options for night mode, look at atom themes
@@ -50,6 +50,8 @@ angular.module('you-tube-clone')
         if ($scope.night === true) {
 
           $('.home-view-main-wrapper').css('background', '#101010');
+          // $('.home-view-main-wrapper').animate({"background": "#101010"}, 300);
+          $('.home-view-main-wrapper').
           $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').css('background', '#1E1E1E');
           $('.trending-video-title, .h-trending-video-title').css('color', 'rgb(103, 131, 171)');
           $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').css('color', '#909090');

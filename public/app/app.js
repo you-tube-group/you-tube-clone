@@ -55,14 +55,7 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.lo
     controller: ($scope, channelData)=>{
       $scope.channelData = channelData;
       console.log("channelData RESULTS: ", channelData);
-
-
-      $scope.start = function() {
-        cfpLoadingBar.start();
-      };
-      $scope.start();
     }
   })
-
 
 })
