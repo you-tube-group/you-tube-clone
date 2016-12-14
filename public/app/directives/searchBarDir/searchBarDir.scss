@@ -159,6 +159,16 @@ $sbd-font-fam: 'Roboto', sans-serif;
         border: 1px solid #ccc;
         cursor: pointer;
         }
+        .night-mode-detail{
+          color: rgba(255, 255, 0, 0.58);
+          position: absolute;
+          right: 208px;
+          padding: 6px;
+          background: #c8c8c8;
+        }
+        .night-arrow{
+          color: red;
+        }
         .upload-btn {
           margin-left: 10px;
           height: 28px;
