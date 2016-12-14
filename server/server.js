@@ -30,11 +30,11 @@ app.use(passport.session());
 
 
 //===CONNECT TO SERVER=========
-// const massiveServer = massive.connectSync({
-//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-// });
-// app.set('db', massiveServer);
-// const db = app.get('db');
+const massiveServer = massive.connectSync({
+  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+});
+app.set('db', massiveServer);
+const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
@@ -111,6 +111,55 @@ app.use(passport.session());
 //       //   "auth": oauth2Client
 //       // });
 //
+passport.use(new YouTubeStrategy({
+    clientID: config.GOOGLE_CLIENT_ID,
+    clientSecret: config.GOOGLE_CLIENT_SECRET,
+    callbackURL: config.callbackURL,
+    scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
+},
+    function(accessToken, refreshToken, profile, done) {
+        console.log('access token: ', accessToken);
+        console.log('profile: ', profile);
+        if (profile === false) {
+            return done(null, {
+                profile: profile
+            });
+        }
+
+        oauth2Client.setCredentials({
+            access_token: accessToken,
+            refresh_token: refreshToken
+        });
+        db.youtube_profiles.findOne({profile_id: profile.id}, (err, user) => {
+            console.log("USER FOUND: ", user);
+            if (!user) {
+              db.youtube_profiles.insert({profile_id: profile.id, display_name: profile.displayName}, (error, newUser) => {
+              console.log('joe it is working. BRIAN');
+                console.log('newUser: ', newUser);
+                return done(null, newUser);
+              });
+            }
+            return done(null, user);
+        });
+      }
+
+
+      // youtube.commentThreads.insert({
+      //   "part": "snippet",
+      //   "resource": {
+      //     "snippet": {
+      //       "videoId": "xqom3NzagBk",
+      //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
+      //       "topLevelComment": {
+      //        "snippet": {
+      //         "textOriginal": "dm 14 youtube group represent, bro"
+      //        }
+      //       }
+      //     }
+      //   },
+      //   "auth": oauth2Client
+      // });
+
 //       db.findOne([profile.id], (err, user) => {
 //         console.log("USER FOUND: ", user);
 //         if (!user) {
@@ -123,6 +172,7 @@ app.use(passport.session());
 //       });
 //     }
 // ));
+
 
 
 // ======== Endpoints ========
