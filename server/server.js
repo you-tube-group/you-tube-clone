@@ -7,6 +7,7 @@ const secret = require('./secret');
 const config = require('./config');
 const passport = require('passport');
 
+
 const YouTubeStrategy = require('passport-youtube-v3').Strategy;
 const base = 'https://www.googleapis.com/youtube/v3';
 const google = require('googleapis');
@@ -49,68 +50,16 @@ const isAuthed = (req,res,next) => {
 }
 
 //===SESSION AND PASSPORT===============
-app.use(session({
-  secret: secret.secret,
-  saveUninitialized: false,
-  resave: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({
+//   secret: secret.secret,
+//   saveUninitialized: false,
+//   resave: false
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-//YOUTUBE PASSPORT STUFF
-// passport.use(new YouTubeStrategy({
-//     clientID: config.GOOGLE_CLIENT_ID,
-//     clientSecret: config.GOOGLE_CLIENT_SECRET,
-//     callbackURL: config.callbackURL,
-//     scope: ['https://www.googleapis.com/auth/youtube.readonly', 'https://www.googleapis.com/auth/youtube.force-ssl']
-// },
-//     function(accessToken, refreshToken, profile, done) {
-//         console.log('access token: ', accessToken);
-//         console.log('profile: ', profile);
-//         if (profile === false) {
-//             return done(null, {
-//                 profile: profile
-//             });
-//         }
-//
-//         oauth2Client.setCredentials({
-//             access_token: accessToken,
-//             refresh_token: refreshToken
-//         });
-//         db.youtube_profiles.findOne({profile_id: profile.id}, (err, user) => {
-//             console.log("USER FOUND: ", user);
-//             if (!user) {
-//               db.youtube_profiles.insert({profile_id: profile.id, display_name: profile.displayName}, (error, newUser) => {
-//               console.log('joe it is working. BRIAN');
-//                 console.log('newUser: ', newUser);
-//                 return done(null, newUser);
-//               });
-//             }
-//             return done(null, user);
-//         });
-//       }
-//
-//       oauth2Client.setCredentials({
-//         access_token: accessToken,
-//         refresh_token: refreshToken
-//       });
-//
-//       // youtube.commentThreads.insert({
-//       //   "part": "snippet",
-//       //   "resource": {
-//       //     "snippet": {
-//       //       "videoId": "xqom3NzagBk",
-//       //       "channelId": "UCOPoX2q4VJ2PBOk-tlhaJMw",
-//       //       "topLevelComment": {
-//       //        "snippet": {
-//       //         "textOriginal": "dm 14 youtube group represent, bro"
-//       //        }
-//       //       }
-//       //     }
-//       //   },
-//       //   "auth": oauth2Client
-//       // });
-//
+
+// YOUTUBE PASSPORT STUFF
 passport.use(new YouTubeStrategy({
     clientID: config.GOOGLE_CLIENT_ID,
     clientSecret: config.GOOGLE_CLIENT_SECRET,
@@ -160,6 +109,7 @@ passport.use(new YouTubeStrategy({
       //   "auth": oauth2Client
       // });
 
+
 //       db.findOne([profile.id], (err, user) => {
 //         console.log("USER FOUND: ", user);
 //         if (!user) {
@@ -171,7 +121,8 @@ passport.use(new YouTubeStrategy({
 //         return done(null, user);
 //       });
 //     }
-// ));
+
+));
 
 
 

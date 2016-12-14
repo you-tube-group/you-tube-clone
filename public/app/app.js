@@ -1,4 +1,4 @@
-angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
+angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.loadingBar', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -29,7 +29,7 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
     },
     controller: function($scope, searchResults){
       $scope.searchResults = searchResults;
-      // console.log("SearchResults RESULTS: ", searchResults);
+      console.log("SearchResults RESULTS: ", searchResults);
     }
   })
   .state('auth', {
@@ -57,6 +57,5 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
       console.log("channelData RESULTS: ", channelData);
     }
   })
-
 
 })

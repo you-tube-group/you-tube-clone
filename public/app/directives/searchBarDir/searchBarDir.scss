@@ -3,6 +3,8 @@
 $sbd-font-fam: 'Roboto', sans-serif;
 
 
+
+
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;
@@ -19,7 +21,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
   top: 0;
   right: 0;
   left: 0;
-  z-index: 99999999;
+  z-index: 10000;
   border-bottom: 1px solid #e8e8e8;
   .sbd-inner-container {
     height: 34px;

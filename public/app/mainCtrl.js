@@ -13,7 +13,8 @@ angular.module('you-tube-clone')
     {id: "PL3ZQ5CpNulQldOL3T8g8k1mgWWysJfE9w", img: "./images/ham-bar-slide-out-images/category-news.jpg"},
     {id: "PLbpi6ZahtOH7vgyGImZ4P-olTT11WLkLk", img: "./images/ham-bar-slide-out-images/category-spotlight.jpg"},
     {id: "PLU8wpH_Lfhmsn0qJmVSyEXB9m3j1OkJWX", img: "./images/ham-bar-slide-out-images/category-threesixty.jpg"}
-  ]
+  ];
+
 
   // $scope.landingPlaylists = [];
   // $scope.playLists = () => {
