@@ -277,10 +277,18 @@ $pl-text-color: #B5B5B5;
         align-items: center;
         background: #FBFBFB;
         border: 1px solid rgba(226,226,226, 1);
-        font-size: 13px;
         padding: 3px 8px;
         margin-bottom: -1px;
         cursor: pointer;
+        color: #CC181E;
+        .remove-x {
+          font-size: 15px;
+          color: #CC181E;
+          margin-right: 7px;
+        }
+        .remove-video{
+          font-size: 13px;
+        }
       }
     }
   }

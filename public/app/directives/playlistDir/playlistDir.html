@@ -68,6 +68,7 @@
         ng-class="{linkColor: showVideoOptions, underline: underlineTitle}"
         ng-mouseover="underlineTitle = true"
         ng-mouseleave="underlineTitle = false"
+        ui-sref="video({videoId: video.video.id})"
         class="title">{{video.video.snippet.title}}</div>
         <div class="channel">by
           <span
@@ -84,9 +85,15 @@
         <div class="dots"></div>
       </div>
       <div
-      ng-click="removeVideo(video.id)"
       ng-show="showVideoOptions"
-      class="remove-video-wrap">Remove</div>
+      ng-click="removeVideo(video.id)"
+      class="remove-video-wrap">
+        <i
+        style='margin-top: -1px'
+        class="fa fa-times remove-x"
+        aria-hidden="true"></i>
+        <div class="remove-video">Remove</div>
+      </div>
     </div>
   </div>
 </section>
