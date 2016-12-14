@@ -196,7 +196,12 @@ app.get('/api/user/playlist/:id', (req, res) => {
     res.status(200).send(response)
   })
 })
-
+//====DELETE FROM PLAYLIST=======
+app.delete('/api/remove/playlist-video/:id', (req,res) => {
+  db.delete_from_playlist([req.params.id], (err, response) => {
+    res.status(200).send('deleted');
+  })
+})
 
 
 //=========LOCAL AUTH ENDPOINTS ======
