@@ -30,11 +30,11 @@ app.use(passport.session());
 
 
 //===CONNECT TO SERVER=========
-const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-});
-app.set('db', massiveServer);
-const db = app.get('db');
+// const massiveServer = massive.connectSync({
+//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+// });
+// app.set('db', massiveServer);
+// const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
@@ -57,7 +57,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//YOUTUBE PASSPORT STUFF
+// YOUTUBE PASSPORT STUFF
 passport.use(new YouTubeStrategy({
     clientID: config.GOOGLE_CLIENT_ID,
     clientSecret: config.GOOGLE_CLIENT_SECRET,
