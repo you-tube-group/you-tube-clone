@@ -13,10 +13,20 @@
     </div>
     <div class="search-and-button-wrapper">
       <form class="input-and-button-container" ng-submit="searchRequest(searchTerm)">
-        <input class="search-input" type="text" tabindex="1" placeholder="Search" ng-model="searchTerm">
+        <input class="search-input" type="text" tabindex="1" placeholder="Search" ng-model="searchTerm" >
         <button class="search-btn" tabindex="2" type="submit"><span class= "search-icon" ></span></button>
       </form>
       <div class="upload-and-signin-container">
+<!-- 
+        <aside class="night-mode-detail">
+          <i class="fa fa-caret-right" aria-hidden="true" class="night-arrow"></i>
+          <p class="night-mode-content">This is night mode</p>
+        </aside> -->
+
+        <aside class="night-mode-container">
+          <i class="fa fa-moon-o" aria-hidden="true"></i>
+        </aside>
+
         <button class="upload-btn"type="button" name="button">Upload</button>
         <a href='/login'><button class="signin-btn"type="button" name="button">Sign in</button></a>
       </div>

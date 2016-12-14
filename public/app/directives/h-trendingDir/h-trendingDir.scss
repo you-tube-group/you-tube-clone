@@ -113,7 +113,7 @@ $primary-font-family: 'Roboto', sans-serif;
   font-family: "Roboto", sans-serif;
   width: 100%;
   margin: 0px auto;
-  margin-top: 114px;
+  // margin-top: 114px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -136,14 +136,14 @@ $primary-font-family: 'Roboto', sans-serif;
     font-family: $primary-font-family;
     line-height: 18px;
     font-weight: 500;
-    margin-top: 10px;
-    margin-left: 27px;
+    margin-top: 119px;
+    margin-left: 31px;
   }
   .left-arrow-container {
     visibility: hidden;
     color: $yt-unselected-lightgray;
     position: absolute;
-    top: 79px;
+    top: 185px;
     left: 25px;
   }
   .left-arrow-container:hover {
@@ -165,7 +165,7 @@ $primary-font-family: 'Roboto', sans-serif;
     color: $yt-unselected-lightgray;
     position: absolute;
     right: 0;
-    margin-top: 79px;
+    margin-top: 185px;
     margin-right: 25px;
   }
 .right-arrow-container:hover{
@@ -178,7 +178,7 @@ $primary-font-family: 'Roboto', sans-serif;
     padding-top: 14px;
     position: absolute;
     right: -22px;
-    margin-top: 57px;
+    margin-top: 166px;
     margin-right: 25px;
     box-shadow: 1px 0px 1.5px 1px $yt-unselected-lightgray;
   }
@@ -192,6 +192,7 @@ $primary-font-family: 'Roboto', sans-serif;
     background: $tvd-vid-wrap-bg;
     padding: 35px 0px 8px 19px;
     border-bottom: 1px solid $yt-unselected-lightgray;
+    margin-top: 110px;
   .h-trending-carousel {
     min-width: 196px;
     margin-right: 13px;

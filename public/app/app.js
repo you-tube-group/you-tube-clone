@@ -1,4 +1,4 @@
-angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
+angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.loadingBar', 'ngAnimate'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
@@ -55,6 +55,12 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize'])
     controller: ($scope, channelData)=>{
       $scope.channelData = channelData;
       console.log("channelData RESULTS: ", channelData);
+
+
+      $scope.start = function() {
+        cfpLoadingBar.start();
+      };
+      $scope.start();
     }
   })
 
