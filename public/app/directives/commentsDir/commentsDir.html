@@ -1,13 +1,19 @@
 <div class="comments-dir-main-container">
   <div class="add-comment-container">
     <div class="comment-count">
-      <span>COMMENTS</span> <li>{{commentCount}}</li>
+      <span>COMMENTS • {{commentCount}}</span>
 
     </div>
     <div class="add-comment">
-      <img class="user-thumbnail" src="../../Images/user-default.png" alt="" />
-      <input type="text" name="" placeholder="Add a public comment" ng-model="addComent" >
-      <button type="button" name="button" ng-click="postComment(addComent, vidId, channelId)">Add</button>
+      <div class="user-input">
+        <img class="user-thumbnail" src="../../Images/user-default.png" alt="" />
+        <input type="text" name="" placeholder="Add a public comment" ng-model="addComent" ng-click="cancel = !cancel">
+      </div>
+      <div class="comment-btn" ng-show="cancel">
+        <button class="cancel-comment" type="button" name="button" >Cancel</button>
+        <button class="submit-comment" type="button" name="button" ng-click="postComment(addComent, vidId, channelId)">Comment</button>
+      </div>
+
     </div>
   </div>
 
