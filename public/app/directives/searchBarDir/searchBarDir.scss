@@ -2,6 +2,7 @@
 
 $sbd-font-fam: 'Roboto', sans-serif;
 
+
 .search-bar-dir-outer-container {
   height: 50px;
   display: flex;
@@ -139,14 +140,37 @@ $sbd-font-fam: 'Roboto', sans-serif;
           }
         }
       }
+
       .upload-and-signin-container {
         height: 28px;
-        width: 127.078px;
+        // width: 127.078px;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 25px;
+        // justify-content: space-between;
+        // align-items: center;
+        // margin-left: 25px;
+        .night-mode-container{
+        font-size: 1.5em;
+        color: #ccc;
+        background: #f8f8f8;
+        width: 32px;
+        display: flex;
+        justify-content: center;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        }
+        .night-mode-detail{
+          color: rgba(255, 255, 0, 0.58);
+          position: absolute;
+          right: 208px;
+          padding: 6px;
+          background: #c8c8c8;
+        }
+        .night-arrow{
+          color: red;
+        }
         .upload-btn {
+          margin-left: 10px;
           height: 28px;
           width: 56px;
           border-radius: 2px;
@@ -167,6 +191,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
           }
         }
         .signin-btn {
+          margin-left: 10px;
           height: 28px;
           width: 55px;
           border-radius: 2px;
