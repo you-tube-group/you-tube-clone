@@ -66,20 +66,6 @@ angular.module('you-tube-clone')
         $scope.channelHover = false;
       }
 
-
-
-      // $scope.searchRequest = (searchTerm) => {
-      //   mainService.getSearchResults(searchTerm)
-      //   .then((response) => {
-      //     $scope.searchResults = response;
-      //     // console.log($scope.searchResults);
-      //   })
-      //
-      //   // Erases searchTerm after sending request
-      //   // $scope.searchTerm = '';
-      // };
-
-
     //END OF CONTROLLER
     }
   //END OF RETURN (DIRECTIVE)

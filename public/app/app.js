@@ -29,7 +29,7 @@ angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.lo
     },
     controller: function($scope, searchResults){
       $scope.searchResults = searchResults;
-      // console.log("SearchResults RESULTS: ", searchResults);
+      console.log("SearchResults RESULTS: ", searchResults);
     }
   })
   .state('auth', {

@@ -49,13 +49,14 @@ const isAuthed = (req,res,next) => {
 }
 
 //===SESSION AND PASSPORT===============
-app.use(session({
-  secret: secret.secret,
-  saveUninitialized: false,
-  resave: false
-}));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(session({
+//   secret: secret.secret,
+//   saveUninitialized: false,
+//   resave: false
+// }));
+// app.use(passport.initialize());
+// app.use(passport.session());
+
 
 // YOUTUBE PASSPORT STUFF
 passport.use(new YouTubeStrategy({
@@ -107,6 +108,7 @@ passport.use(new YouTubeStrategy({
       //   "auth": oauth2Client
       // });
 
+
 //       db.findOne([profile.id], (err, user) => {
 //         console.log("USER FOUND: ", user);
 //         if (!user) {
@@ -118,7 +120,9 @@ passport.use(new YouTubeStrategy({
 //         return done(null, user);
 //       });
 //     }
+
 ));
+
 
 
 // ======== Endpoints ========
