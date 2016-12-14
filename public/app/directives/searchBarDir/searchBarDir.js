@@ -50,8 +50,6 @@ angular.module('you-tube-clone')
         if ($scope.night === true) {
 
           $('.home-view-main-wrapper').css('background', '#101010');
-          // $('.home-view-main-wrapper').animate({"background": "#101010"}, 300);
-          $('.home-view-main-wrapper').
           $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').css('background', '#1E1E1E');
           $('.trending-video-title, .h-trending-video-title').css('color', 'rgb(103, 131, 171)');
           $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').css('color', '#909090');
