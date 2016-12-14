@@ -164,33 +164,26 @@ module.exports = {
     getChannelData: (req,res,next) => {
       var channelId = req.query.id;
       client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,contentDetails,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response){
-        var videoTrailerId = data.items[0].brandingSettings.channel.unsubscribedTrailer;
-        if (data.items[0].brandingSettings.channel.featuredChannelsUrls) {
-          var featuredChannels = data.items[0].brandingSettings.channel.featuredChannelsUrls.join(',');
-        }
-
-        client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${featuredChannels}&key=${API_KEY}`, function(data2, response){
-          data.items[0].featuredChannelsData = data2.items;
-          client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
-            data.items[0].channelTrailer = results.items[0];
-            res.status(200).json(data);
+        // console.log(channelId);
+        client.get(`https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=${channelId}&key=${API_KEY}`, function(data1, response){
+          data.items[0].playlistData = data1.items;
+          var videoTrailerId = data.items[0].brandingSettings.channel.unsubscribedTrailer;
+          if (data.items[0].brandingSettings.channel.featuredChannelsUrls) {
+            var featuredChannels = data.items[0].brandingSettings.channel.featuredChannelsUrls.join(',');
+          }
+          client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${featuredChannels}&key=${API_KEY}`, function(data3, response){
+            data.items[0].featuredChannelsData = data3.items;
+            client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
+              data.items[0].channelTrailer = results.items[0];
+              res.status(200).json(data);
+            })
           })
         })
       })
     }
-      //   .then((results) => {
-      //     var videoTrailerId = results.brandingSettings.channel.unsubscribedTrailer;  Axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(data, response) {
-      //       results.channelTrailer = data;
-      //       res.status(200).json(results);
-      //     })
-      //   })
-      // }
 
+
+
+
+    
 }
-
-// getPlaylistVideos: function(req, res, next) {
-//     var playListId = req.query.id;
-//     client.get(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=10&playlistId=${playListId}&key=${API_KEY}`, function(data, response) {
-//         res.status(200).json(data);
-//     });
-// },
