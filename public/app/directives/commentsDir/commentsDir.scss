@@ -2,6 +2,8 @@
 
 $com-dir-font: 'Roboto', sans-serif;
 $com-dir-name-color: #128EE9;
+$com-dir-comment-hover: #126db3;
+$com-dir-comment-bg: #167ac6;
 $com-dir-bg-color: #FFFFFF;
 
 @mixin border-prop {
@@ -19,11 +21,55 @@ $com-dir-bg-color: #FFFFFF;
     padding: 10px 0;
     @include border-prop;
 
-    .comment-count {}
+    .comment-count {
+      font-size: 13px;
+      color: #555555;
+      margin-bottom: 10px;
+    }
     .add-comment {
-      .user-thumbnail{
-        width: 48px;
-        height: 48px;
+      .user-input {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        .user-thumbnail{
+          width: 48px;
+          height: 48px;
+        }
+      }
+      .comment-area {
+        width: 90%;
+        resize: none;
+      }
+      .comment-area:focus{
+        outline: none;
+        border: 1px solid #126db3;
+      }
+      .comment-btn {
+        display: flex;
+        justify-content: flex-end;
+        .submit-comment{
+          background: $com-dir-comment-bg;
+          border: none;
+          font-size: 11px;
+          color: white;
+          padding: 10px;
+          border-radius: 2px;
+        }
+        .submit-comment:hover{
+          background: $com-dir-comment-hover;
+        }
+        .cancel-comment {
+          border: 1px solid #c6c6c6;
+          font-size: 11px;
+          color: black;
+          padding: 6px;
+          border-radius: 2px;
+          margin-right:4px;
+          background: white;
+        }
+        .cancel-comment:hover {
+          background: #f0f0f0;
+        }
       }
     }
   }
