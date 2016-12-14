@@ -10,7 +10,7 @@ angular.module('you-tube-clone')
     controller: ($scope, $timeout, mainService, $stateParams) => {
 
       $scope.channelHover = false;
-      
+
       $scope.convertTime = (time) => {
         time = moment(time, "YYYYMMDD").fromNow();
         return time;
