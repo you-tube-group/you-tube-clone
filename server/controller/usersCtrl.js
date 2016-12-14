@@ -32,8 +32,6 @@ module.exports = {
 
     //return user object without passwordreturn
     return res.status(200).json(req.user);
-=======
->>>>>>> master
   }
 
 
