@@ -7,7 +7,7 @@ const nodemon = require('gulp-nodemon');
 // const annotate = require('gulp-ng-annotate');
 
 const paths = {
-    jsSource: ['./public/app/app.js', './public/app/**/*.js'],
+    jsSource: ['./public/app/app.js', './public/app/**/*.js', './public/Images/angular-loading-bar/**/*.js'],
     scssSource: './public/app/**/**/*.scss',
     server: './server/server.js'
 };
