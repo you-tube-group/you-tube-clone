@@ -133,6 +133,7 @@ angular.module('you-tube-clone')
           } else if ($scope.night === false) {
             $('.home-view-main-wrapper').css('background', '#f1f1f1');
             $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').css('background', '#fff');
+            $('.trending-title, .channel-title').css('color', '#333333');
             $('.trending-video-title, .h-trending-video-title').css('color', 'rgb(22, 122, 198)');
             $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').css('color', '#767676');
             $('.search-input').css('background', '#fff');
