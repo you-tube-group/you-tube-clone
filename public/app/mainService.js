@@ -75,7 +75,7 @@ this.broken = 'working'
       url: `/api/channelHoverInfo/?id=${id}`
     }).then((response) => {
       // console.log("response: ", response);
-      console.log("Hover Array",response.data.items[0]);
+      // console.log("Hover Array",response.data.items[0]);
       return response.data.items[0];
 
     })
