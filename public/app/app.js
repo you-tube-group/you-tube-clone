@@ -1,4 +1,4 @@
-angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.loadingBar', 'ngAnimate'])
+angular.module('you-tube-clone', ['ui.router', 'ngSanitize', 'chieffancypants.loadingBar', 'ngAnimate', 'ui.sortable'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $urlRouterProvider.otherwise('/');
