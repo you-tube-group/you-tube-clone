@@ -217,7 +217,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
 }
 
 .ham-bar-slide-outer-container {
-  height: 596px;
+  min-height: 596px;
   top: 0px;
   box-shadow: 5px 10px 15px 5px rgba(0,0,0,.1);
   overflow: hidden;
@@ -243,13 +243,13 @@ $sbd-font-fam: 'Roboto', sans-serif;
         height: 570px;
         width: 186px;
         .li-home-trend-hist {
-          height: 93px;
+          min-height: 93px;
           width: 186px;
           .home-trend-hist-container {
-            height: 84px;
+            min-height: 84px;
             width: 186px;
             .ul-home-trend-hist {
-              height: 84px;
+              min-height: 84px;
               width: 186px;
               .li-home {
                 height: 28px;
@@ -298,6 +298,9 @@ $sbd-font-fam: 'Roboto', sans-serif;
               }
               #history-icon {
                 background: no-repeat url('../images/you-tube-icons.webp') -58px -285px;
+              }
+              #watch-later-icon {
+                background: no-repeat url('../images/youTube-sprite2.webp') -579px -108px;
               }
               //
               // background: no-repeat url('../images/you-tube-icons.webp') -812px -14px; HOME
@@ -559,6 +562,11 @@ $sbd-font-fam: 'Roboto', sans-serif;
 #history-option:hover{
   #history-icon {
     background: no-repeat url('../images/you-tube-icons.webp') -189px -108px;
+  }
+}
+#watch-later-option:hover{
+  #watch-later-icon {
+    background: no-repeat url('../images/youTube-sprite2.webp') -158px -72px;
   }
 }
 #browse-option:hover{

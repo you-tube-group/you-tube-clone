@@ -20,13 +20,16 @@ angular.module('you-tube-clone')
         var newNum;
         if (displaySubs > 1000000) {
           newNum = Math.floor(displaySubs/1000000) + "M";
+          // console.log(newNum);
           return newNum;
         } else if (displaySubs > 1000 && displaySubs < 1000000) {
           newNum = Math.floor(displaySubs/1000) + "K";
+          // console.log(newNum);
           return newNum;
         } else {
           return displaySubs;
         }
+
       }
 
       $scope.showChannelHover = (id) => {
