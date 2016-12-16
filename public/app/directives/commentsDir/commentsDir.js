@@ -24,11 +24,25 @@ angular.module('you-tube-clone')
 
 
           $scope.postComment = (comment, vidId, channelId) => {
+            // $scope.comments.items[snippet][topLevelComment][snippet][textDisplay].unshift(comment);
             mainService.postComment(comment, vidId, channelId).then((response) => {
-              $scope.data = response;
+              $scope.newComment = response;
+              $scope.$watch('newComment', () => {
+                var newComm = $scope.newComment;
+
+                if (newComm) {
+                  $scope.getComments = (vidId) => {
+                    mainService.getComments(vidId).then((response) => {
+                      console.log('response inside newComm watch');
+                      console.log(response);
+                      $scope.comments = response;
+                    })
+                  }
+                  $scope.getComments(newComm.vidId);
+                }
+              })
             })
           }
-
         })
 
         $scope.commentTime = (dateObj)=> {
