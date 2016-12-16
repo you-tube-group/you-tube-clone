@@ -8,6 +8,10 @@ angular.module('you-tube-clone')
 
       $scope.night = false;
       $scope.loggedIn = false;
+      $scope.signOutModal = false;
+      $scope.showModal = () => {
+        $scope.signOutModal = false;
+      }
 
       $scope.getCurrentUser = () => {
         mainService.getCurrentUser().then((response) => {
@@ -46,6 +50,8 @@ angular.module('you-tube-clone')
           $('.video-player-main-container').animate({left: ''}, 500);
         };
       };
+
+
   $(document).ready(function(){
 
       $('.ham-icon').hover(function() {
