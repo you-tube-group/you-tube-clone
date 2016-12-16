@@ -56,14 +56,14 @@ angular.module('you-tube-clone')
           $('.right-arrow-container, .h-right-arrow-container').animate({color: '#B0B0B0'}, 700);
           $('.right-arrow-container, .left-arrow-container, .h-left-arrow-container, .h-right-arrow-container').animate({backgroundColor: '#1e1e1e'}, 700);
           $(e.currentTarget).mouseenter(function(e) {
-            $(e.currentTarget).animate({color:'#ccc'}, 200);
-            $(e.currentTarget).animate({backgroundColor: '#f8f8f8'}, 200);
-            $(e.currentTarget).animate({border:'1px solid #ccc'}, 200);
+            $(e.currentTarget).animate({color:'#ccc'}, 500);
+            $(e.currentTarget).animate({backgroundColor: '#f8f8f8'}, 500);
+            $(e.currentTarget).animate({border:'1px solid #ccc'}, 500);
           });
           $('.night-mode-container').mouseleave(function (e) {
-            $(e.currentTarget).animate({backgroundColor: '#343434'}, 200);
-            $(e.currentTarget).css('border', '1px solid #343434').animate({}, 200);
-            $(e.currentTarget).animate({color: 'rgba(255, 255, 0, 0.58)'}, 200);
+            $(e.currentTarget).animate({backgroundColor: '#343434'}, 500);
+            $(e.currentTarget).css('border', '1px solid #343434').animate({}, 500);
+            $(e.currentTarget).animate({color: 'rgba(255, 255, 0, 0.58)'}, 500);
           });
           $('.right-arrow-container').mouseenter(function(event) {
               $(this).css({
@@ -136,14 +136,14 @@ angular.module('you-tube-clone')
             $('.h-home').animate({color:'#000'}, 700);
             $('.right-arrow-container, .left-arrow-container, .h-left-arrow-container, .h-right-arrow-container').css('background', '#fff');
           $('.night-mode-container').mouseenter(function (e) {
-            $(e.currentTarget).animate({backgroundColor: '#343434'}, 200);
+            $(e.currentTarget).animate({backgroundColor: '#343434'}, 500);
             $(e.currentTarget).css('border', '1px solid #343434');
-            $(e.currentTarget).animate({color:'rgba(255, 255, 0, 0.58)'}, 200);
+            $(e.currentTarget).animate({color:'rgba(255, 255, 0, 0.58)'}, 500);
           });
 
           $(e.currentTarget).mouseleave(function(e) {
-            $(e.currentTarget).animate({color:'#ccc'}, 200);
-            $(e.currentTarget).animate({backgroundColor:'#f8f8f8'}, 200);
+            $(e.currentTarget).animate({color:'#ccc'}, 500);
+            $(e.currentTarget).animate({backgroundColor:'#f8f8f8'}, 500);
             $(e.currentTarget).css('border','1px solid #ccc' );
           });
           $('.right-arrow-container').mouseenter(function(event) {
