@@ -7,6 +7,20 @@ angular.module('you-tube-clone')
     controller: ($scope, $state, $stateParams, mainService) => {
 
       $scope.night = false;
+      $scope.loggedIn = false;
+
+      $scope.getCurrentUser = () => {
+        mainService.getCurrentUser().then((response) => {
+          console.log('User on session?');
+          console.log(response);
+          $scope.currentUser = response.data;
+          $scope.loggedIn = true;
+        }).catch((err) => {
+          $scope.currentUser = null;
+          $scope.loggedIn = false;
+        })
+      }
+      $scope.getCurrentUser();
 
       $scope.searchTerm = $stateParams.search_query;
       $scope.hamSlider = false;
