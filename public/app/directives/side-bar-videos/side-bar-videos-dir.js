@@ -9,7 +9,7 @@ angular.module('you-tube-clone')
     templateUrl: './app/directives/side-bar-videos/side-bar-videos.html',
     controller: ($scope, mainService, $timeout) => {
 
-
+      $scope.loadCount = 0;
       $scope.channelHover = false;
 
       $scope.convertTime = (time) => {
@@ -73,19 +73,6 @@ angular.module('you-tube-clone')
       }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
@@ -98,6 +85,20 @@ angular.module('you-tube-clone')
         })
       };
       getTrendingData();
+
+
+      $(document).ready(function() {
+        $('.load-more-container').on('click', function(e) {
+          $scope.loadCount++
+          if ($scope.loadCount <= 4) {
+            $(this).animate({top: '+=80.5vh'}, 1900)
+              $('.side-bar-videos').animate({height: '+=80.5vh'}, 2000);
+          } else if ($scope.loadCount === 4) {
+            $('.load-more-container').css('background', 'red');
+          }
+
+        })
+      });
 
     //END OF CONTROLLER
     }
