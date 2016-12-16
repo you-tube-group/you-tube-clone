@@ -41,11 +41,35 @@ angular.module('you-tube-clone')
 
         $scope.commentTime = (dateObj)=> {
           dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
-          console.log(dateObj);
           return dateObj;
         }
 
+        $scope.isDisabled = true;
+      $(document).ready(function(){
+        const commentArea = $('.comment-area');
+        const submitComment = $('.submit-comment');
 
+
+        commentArea.on('click', function(){
+          $('.comment-btn').css('display','flex');
+          // submitComment.setEnabled(false);
+        })
+
+        commentArea.keydown(function(){
+          var count = commentArea.val().length;
+          if(count > 0) {
+            $scope.isDisabled = false;
+            submitComment.css('opacity','1');
+          } else {
+            $scope.isDisabled = true;
+            submitComment.css('opacity','.3');
+          }
+        })
+
+        $('.cancel-comment').on('click', function() {
+          $('.comment-btn').css('display','none');
+        })
+      })
 
 
       //end of controller
