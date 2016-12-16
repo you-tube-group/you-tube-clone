@@ -41,6 +41,7 @@ angular.module('you-tube-clone')
 
         $scope.commentTime = (dateObj)=> {
           dateObj = moment(dateObj, 'YYYYMMDD').fromNow();
+          console.log(dateObj);
           return dateObj;
         }
 
