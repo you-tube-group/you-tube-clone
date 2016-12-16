@@ -6,6 +6,7 @@ angular.module('you-tube-clone')
     templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
     controller: ($scope, mainService, $interval, $stateParams, $sce) => {
       $scope.shareOn = false;
+      $scope.nightMode = false;
     //function for changing current video in service
     $scope.changeVideo = (video) => {
       mainService.newVideo = video;
@@ -59,6 +60,7 @@ angular.module('you-tube-clone')
 
         $(document).ready(function(e) {
             $('#share-button').on("click", function(e){
+
               $(this).css({
                 borderBottom: '2px solid #CC181E',
                 color: '#000'
@@ -88,8 +90,40 @@ angular.module('you-tube-clone')
 
 
             $('.night-mode-container').on('click', function(e){
+              $scope.nightMode = !$scope.nightMode;
+              console.log($scope.nightMode);
 
+              if($scope.nightMode === true){
+                $('.video-player-container').animate({backgroundColor: 'rgb(15, 15, 15)'}, 1000);
+                $('.video-title-container, .side-bar-videos-dir-container, .main-description-wrapper, .comments-dir-main-container, .side-bar-videos').animate({backgroundColor: 'rgb(30, 30, 30)'}, 1000);
+                $('.video-title').animate({color: '#898989'}, 1000);
+                $('.view-count, .main-description-wrapper, .title').animate({color: '#909090'}, 1000);
+                $('.subscription-count').animate({backgroundColor:'rgb(85, 85, 85)', color: '#bbb'}, 1000);
+                $('.subscription-count').css('border', '1px solid rgb(85, 85, 85)');
+                $('.video-description a, .name-wrap, .name, .author-name').animate({color: '#6783ab'}, 1000);
+                $('.small-text, .small-view-text, .orig-comment, .reply, .reply-comment-wrap, .ot-anchor').animate({color: '#646464'}, 1000)
+                $('.video-description, .author-info-container').css('border-bottom', '1px solid rgb(85, 85, 85)');
+                $('.proflink').animate({color: '#128EE9'}, 1000)
+                $('.title').hover(function() {
+                  $(this).css('color', '#6783ab');
+                }, function() {
+                  $(this).css('color', '#909090');
+                });
+              } else if ($scope.nightMode === false){
+                $('.video-player-container').removeAttr('style');
+                $('.video-title-container, .side-bar-videos-dir-container, .main-description-wrapper, .comments-dir-main-container, .side-bar-videos').removeAttr('style');
+                $('.video-title').removeAttr('style');
+                $('.view-count, .main-description-wrapper, .title').removeAttr('style');
+                $('.subscription-count').removeAttr('style');
+                $('.subscription-count').css('border-bottom', '#f1f1f1');
+                $('.video-description a, .name-wrap, .name, .author-name').removeAttr('style');
+                $('.small-text, .small-view-text, .orig-comment, .reply, .reply-comment-wrap, .ot-anchor').removeAttr('style');
+                $('.video-description, .author-info-container').css('border-bottom', '1px solid rgb(85, 85, 85)');
+                $('.proflink').removeAttr('style')
+              }
             })
+
+
         });
 
     }
