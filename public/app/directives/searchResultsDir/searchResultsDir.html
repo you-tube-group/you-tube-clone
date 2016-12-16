@@ -1,6 +1,6 @@
 <section class='search-view-dir-outer-wrap'>
   <div class="search-vids-wrap">
-    <div class="video-wrap" ng-repeat="video in searchResults">
+    <div class="video-wrap" ng-repeat="video in searchResults track by $index">
       <div ng-show="channelHover" class="channel-hover-pop-up" ng-mouseenter="keepHovering()" ng-mouseleave="hideChannelHover()">
         <div class="channel-hover-container" ng-style="hoverPosition" >
           <div class="banner-div" style="background: url('{{channelInfo.brandingSettings.image.bannerTvImageUrl}}') no-repeat center; background-size: 169%">
@@ -44,8 +44,8 @@
         </div>
       </div>
       <div class="video-info-wrap">
-        <div class="video-title" ng-click='passVideo(video)'
-        ui-sref='video({videoId: video.id.videoId})'>{{video.snippet.title}}</div>
+        <div class="video-title" ng-click='goToState(video.id.videoId, video.id.channelId)'
+        >{{video.snippet.title}}</div>
         <div class="channel-title-wrap" ng-class="{channelTitleOpt: video.id.channelId}">
           <div ui-sref='channel({channelId: video.snippet.channelId})'  ng-mouseenter="showChannelHover(video.snippet.channelId)" ng-mouseleave="hideChannelHover()" class="channel-title">{{video.snippet.channelTitle}}</div>
           <div class="checkmark"></div>
