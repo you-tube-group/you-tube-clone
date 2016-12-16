@@ -60,9 +60,9 @@
   <div class="video-share-main-container" ng-show="share" >
     <div class="share-tabs-wrapper">
       <div class="button-options">
-        <div class="share-tab" ng-click="work=!work; embed=false; email=false">Share</div>
-        <div class="share-tab" ng-click="embed = !embed; work=true;email=false">Embed</div>
-        <div class="share-tab" ng-click="email = !email; work=true; embed=false">Email</div>
+        <div class="share-tab" id="share-button"ng-click="work=!work; embed=false; email=false">Share</div>
+        <div class="share-tab" id="embed-button" ng-click="embed = !embed; work=true;email=false">Embed</div>
+        <div class="share-tab" id="email-button" ng-click="email = !email; work=true; embed=false">Email</div>
       </div>
       <div class="close-btn" ng-click="share = !share"></div>
     </div>
