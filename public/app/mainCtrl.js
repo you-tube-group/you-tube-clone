@@ -1,5 +1,5 @@
 angular.module('you-tube-clone')
-.controller('mainCtrl', function($scope, mainService) {
+.controller('mainCtrl', function($scope, mainService, $filter, $timeout) {
 
   $scope.broken = mainService.broken;
 
@@ -30,5 +30,42 @@ angular.module('you-tube-clone')
   //     })
   //   })
   // }
+
+
+  //SOCKET IO
+
+  $scope.chatBox = false;
+  $scope.chatIcon = true;
+
+  $timeout(() => {
+    $('.chat-outer-container').css({
+      "display": "inline-block"
+    })
+  }, 1000)
+
+
+  var socket = io();
+  $('form').submit(function(){
+    if(!$scope.userChatName) {
+      return;
+    }
+    $scope.date = $filter('date', new Date(), "h:mm a");
+    console.log($scope.date);
+    socket.emit('chat message', $scope.userChatName + ": " + $('#m').val());
+    $('#m').val('');
+    return false;
+  });
+  socket.on('chat message', function(msg){
+    $('#messages').append($('<li ng-model="text" class="singleChat" ng-bind-html="text | linky">').text(msg));
+  });
+
+  $scope.userChatName;
+  $scope.hideChat = true;
+  $scope.createChatName = (name) => {
+    $scope.userChatName = name;
+    $scope.hideChat = false;
+  }
+
+
 
 })

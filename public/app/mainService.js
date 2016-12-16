@@ -137,12 +137,12 @@ this.broken = 'working'
       url: `/api/user/playlist/${user.id}`
     }).then((response) => {
       const vidArr = response.data;
-      var newVidArr = [];
+      // var newVidArr = [];
       for (var i = 0; i < vidArr.length; i++) {
-        newVidArr.push(JSON.parse(vidArr[i].video));
+        vidArr[i].video = JSON.parse(vidArr[i].video);
       }
 
-      return newVidArr;
+      return vidArr;
     })
   }
 
@@ -168,6 +168,16 @@ this.broken = 'working'
       url: `/api/channelData/?id=${id}`
     }).then((response) => {
       return response.data.items[0];
+    })
+  }
+
+  this.removeVideo = (id) => {
+    return $http({
+      method: 'DELETE',
+      url: `/api/remove/playlist-video/${id}`
+    }).then((response) => {
+      console.log('did vid delete?', response.data);
+      return response.data;
     })
   }
 

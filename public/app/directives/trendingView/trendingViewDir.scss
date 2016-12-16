@@ -127,6 +127,21 @@ $tvd-red-underline: #CC181E;
           right: -21px;
           border-radius: 5px;
         }
+        .signInPopup {
+          width: 70px;
+          height: 23px;
+          font-size: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: black;
+          color: white;
+          position: absolute;
+          bottom: 30px;
+          right: -21px;
+          border-radius: 5px;
+          z-index: 1;
+        }
         #triangle {
           width: 0;
           height: 0;
@@ -137,6 +152,31 @@ $tvd-red-underline: #CC181E;
           bottom: 26px;
           right: 4px;
         }
+        .checkmark-wrap {
+          width: 22px;
+          height: 22px;
+          background: white;
+          border-radius: 100%;
+          position: absolute;
+          bottom: 5px;
+          right: 4px;
+        }
+        // .vid-added-wrap{
+        //   width: 22px;
+        //   height: 22px;
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        //   background: rgb(85,128,52);
+        //   .vid-added {
+        //     width: 22px;
+        //     height: 22px;
+        //     background: no-repeat url('./../../../Images/playlistView.webp');
+        //     background-position: 16.65% 30.5%;
+        //     background-size: 4424%;
+        //     opacity: .6;
+        //   }
+        // }
       }
       .video-info-wrap {
         display: flex;
