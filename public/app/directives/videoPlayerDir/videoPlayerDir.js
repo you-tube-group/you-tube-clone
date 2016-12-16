@@ -5,7 +5,7 @@ angular.module('you-tube-clone')
     restrict: 'E',
     templateUrl: './app/directives/videoPlayerDir/videoPlayerDir.html',
     controller: ($scope, mainService, $interval, $stateParams, $sce) => {
-
+      $scope.shareOn = false;
     //function for changing current video in service
     $scope.changeVideo = (video) => {
       mainService.newVideo = video;
@@ -55,9 +55,37 @@ angular.module('you-tube-clone')
         $('.share-tab').on("click", function(){
           $(this).toggleClass('share-tab-border');
         });
-        // $('.share-tab').on("click", function(){
-        //   $(this).removeClass('share-tab-border');
-        // })
+
+
+        $(document).ready(function(e) {
+            $('#share-button').on("click", function(e){
+              $(this).css({
+                borderBottom: '2px solid #CC181E',
+                color: '#000'
+              });
+              $('#embed-button').css('border-bottom', '0 solid #fff');
+              $('#email-button').css('border-bottom', '0 solid #fff');
+            });
+
+            $('#embed-button').on("click", function(e){
+              $(this).css({
+                borderBottom: '2px solid #CC181E',
+                color: '#000'
+              });
+              $('#share-button').css('border-bottom', '0 solid #fff');
+              $('#email-button').css('border-bottom', '0 solid #fff');
+            });
+
+            $('#email-button').on("click", function(e){
+              $(this).css({
+                borderBottom: '2px solid #CC181E',
+                color: '#000'
+              });
+              $('#embed-button').css('border-bottom', '0 solid #fff');
+              $('#share-button').css('border-bottom', '0 solid #fff');
+            });
+        });
+
     }
   }
 

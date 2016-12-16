@@ -12,6 +12,8 @@ angular.module('you-tube-clone')
                         mainService.getTrending()
                             .then((response) => {
                                 $scope.trendingVideos = response;
+                                console.log ('trending vids');
+                                console.log ($scope.trendingVideos);
                             })
                     }
                     getTrendingHome();
@@ -24,6 +26,10 @@ angular.module('you-tube-clone')
                         published = moment(published, "YYYYMMDD").fromNow();
                         return published;
                     };
+$scope.channel = function (id) {
+    console.log(id);
+}
+
 
                     // NOTE: jQuery trending carousel
     $(document).ready(function(){

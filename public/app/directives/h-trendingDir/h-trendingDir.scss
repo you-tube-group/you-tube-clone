@@ -51,6 +51,7 @@ $primary-font-family: 'Roboto', sans-serif;
   line-height: 17px;
   max-width: 190px;
   text-align: left;
+
 }
 
 @mixin video-sub-title-unselected {
@@ -201,6 +202,7 @@ $primary-font-family: 'Roboto', sans-serif;
         margin-right: 10px;
         display: flex;
         position: relative;
+        cursor: pointer;
         .video-duration{
           color: #FFF;
           font-size: 11px;
@@ -215,7 +217,16 @@ $primary-font-family: 'Roboto', sans-serif;
         }
       }
     .trending-video-title{@include video-main-title}
+    .trending-video-title:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
     .trending-channel-title{@include video-sub-title-unselected}
+    .trending-channel-title:hover {
+      cursor: pointer;
+      text-decoration: underline;
+      color: $video-main-title;
+    }
     .video-count-container{
       display: flex;
 
