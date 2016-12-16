@@ -240,6 +240,7 @@ app.post('/api/comments', function(req,res) {
     },
     "auth": oauth2Client
   });
+  res.status(200).json(body);
 })
 //=================================
 

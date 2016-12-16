@@ -45,10 +45,11 @@ $com-dir-bg-color: #FFFFFF;
         border: 1px solid #126db3;
       }
       .comment-btn {
-        display: flex;
+        display: none;
         justify-content: flex-end;
         .submit-comment{
           background: $com-dir-comment-bg;
+          opacity: .3;
           border: none;
           font-size: 11px;
           color: white;
