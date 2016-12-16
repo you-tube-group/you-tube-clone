@@ -41,11 +41,11 @@ app.use(passport.session());
 
 
 //===CONNECT TO SERVER=========
-// const massiveServer = massive.connectSync({
-//   connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
-// });
-// app.set('db', massiveServer);
-// const db = app.get('db');
+const massiveServer = massive.connectSync({
+  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+});
+app.set('db', massiveServer);
+const db = app.get('db');
 
 
 // //===REQUIRED CONTROLLERS====
