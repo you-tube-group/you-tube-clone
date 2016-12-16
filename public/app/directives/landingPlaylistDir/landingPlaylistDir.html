@@ -26,7 +26,7 @@
         <p class="h-video-duration">{{videoInfo[0].contentDetails.duration}}</p>
         </div>
         <div ui-sref='video({videoId: video.id})' class="h-trending-video-title">{{video.snippet.title}}</div>
-        <div ui-sref='channel({channel: video.snippet.channelId})' class="h-trending-channel-title">{{video.snippet.channelTitle}}</div>
+        <div ui-sref='channel({channelId: video.snippet.channelId})' class="h-trending-channel-title">{{video.snippet.channelTitle}}</div>
             <section class="h-video-count-container">
         <div class="h-trending-view-count">{{video.statistics.viewCount | number}}</div>
           <div class="h-dot-style">
