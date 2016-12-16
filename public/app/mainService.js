@@ -23,7 +23,7 @@ this.broken = 'working'
       url: `/api/watch/?id=${id}`
     }).then((response) => {
       return response.data;
-    })
+    }) 
   }
 
   this.getComments = (id) => {
