@@ -1,13 +1,13 @@
 .side-bar-videos-dir-container{
   width: 363px;
-  height: 2115px;
+  // height: 2115px;
   padding-top: 15px;
   padding-left: 5px;
   padding-right: 15px;
   padding-bottom: 15px;
   margin-bottom: 10px;
   float: right;
-  overflow: scroll;
+  // overflow: scroll;
   font-family: 'Roboto';
 
   .list-video-container {
@@ -21,6 +21,7 @@
       min-width: 196px;
       height: 110px;
       margin-right: 10px;
+      cursor: pointer;
       .video-duration{
         color: #FFF;
         font-size: 11px;
@@ -41,8 +42,23 @@
       .title{
         font-size: 14px;
         margin-bottom: 5px;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+          color: #167AC6;
+        }
       }
       .small-text{
+        cursor: pointer;
+        font-size: 12px;
+        margin-bottom: 4px;
+        color: #76767A;
+        &:hover {
+          text-decoration: underline;
+          color: #167AC6;
+        }
+      }
+      .small-view-text {
         font-size: 12px;
         margin-bottom: 4px;
         color: #76767A;

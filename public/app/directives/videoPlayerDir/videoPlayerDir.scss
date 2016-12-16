@@ -61,12 +61,14 @@ $com-dir-border-red: #CC181E;
         .author-img{
           margin-right: 10px;
           img{
+            cursor: pointer;
             width: 50px;
             height: 50px;
           }
         }
         .author-channel-info{
           .author-name{
+            cursor: pointer;
             margin-bottom: 10px;
             font-size: 12px;
             font-weight: bold;
@@ -253,16 +255,19 @@ $com-dir-border-red: #CC181E;
           padding-bottom: 10px;
           color: $com-dir-font-color;
         }
-        .share-tab:focus{
-          border-bottom: 2px solid $com-dir-border-red;
-          color: black;
-        }
+        // .share-tab:focus{
+        //   border-bottom: 2px solid $com-dir-border-red;
+        //   color: black;
+        // }
         .share-tab-border{
           border-bottom: 2px solid $com-dir-border-red;
         }
-        .share-tab:first-child{
+        #share-button {
           border-bottom: 2px solid $com-dir-border-red;
         }
+        // .share-tab:first-child{
+        //   border-bottom: 2px solid $com-dir-border-red;
+        // }
         .share-tab:hover {
           color: black;
         }

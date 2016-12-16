@@ -13,7 +13,7 @@
       <!-- {{video.snippet.title.split(" ")[0] }} -->
 
       <!-- displays up to 10 words for each title -->
-      <h5 class="title">{{video.snippet.title.split(" ").length > 10 ? video.snippet.title.split(" ")[0] + ' ' + video.snippet.title.split(" ")[1] + ' ' +
+      <h5 ui-sref='video({videoId: video.id})' class="title">{{video.snippet.title.split(" ").length > 10 ? video.snippet.title.split(" ")[0] + ' ' + video.snippet.title.split(" ")[1] + ' ' +
       video.snippet.title.split(" ")[2] + ' ' +
       video.snippet.title.split(" ")[3] + ' ' +
       video.snippet.title.split(" ")[4] + ' ' +
@@ -23,8 +23,8 @@
       video.snippet.title.split(" ")[8] + ' ' +
       video.snippet.title.split(" ")[9] : video.snippet.title}}</h5>
 
-      <p class="small-text">{{video.snippet.channelTitle}}</p>
-      <p class="small-text">{{video.statistics.viewCount | number:0}} views</p>
+      <p ui-sref="channel({channelId: video.snippet.channelId})"class="small-text">{{video.snippet.channelTitle}}</p>
+      <p class="small-view-text">{{video.statistics.viewCount | number:0}} views</p>
 
     </div>
 
