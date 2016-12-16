@@ -84,6 +84,12 @@ angular.module('you-tube-clone')
               $('#embed-button').css('border-bottom', '0 solid #fff');
               $('#share-button').css('border-bottom', '0 solid #fff');
             });
+
+
+
+            $('.night-mode-container').on('click', function(e){
+
+            })
         });
 
     }
