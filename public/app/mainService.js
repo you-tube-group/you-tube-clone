@@ -148,8 +148,6 @@ this.broken = 'working'
 
 
   this.postComment = (comment, vidId, channelId) => {
-    console.log('COMMENT!!!!');
-    console.log('comment', comment, vidId, channelId);
     return $http({
       method: 'POST',
       url: '/api/comments',

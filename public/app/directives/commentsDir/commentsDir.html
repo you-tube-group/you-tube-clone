@@ -7,11 +7,11 @@
     <div class="add-comment">
       <div class="user-input">
         <img class="user-thumbnail" src="../../Images/user-default.png" alt="" />
-        <textarea type="text" class="comment-area" name="" placeholder="Add a public comment" ng-model="addComent" ng-click="cancel = !cancel" required></textarea>
+        <textarea type="text" class="comment-area" name="" placeholder="Add a public comment" ng-model="addComent"></textarea>
       </div>
-      <div class="comment-btn" ng-show="cancel">
-        <button class="cancel-comment" type="button" name="button" >Cancel</button>
-        <button class="submit-comment" type="button" name="button" ng-click="postComment(addComent, vidId, channelId)">Comment</button>
+      <div class="comment-btn">
+        <button class="cancel-comment" type="button">Cancel</button>
+        <button ng-disabled="isDisabled" class="submit-comment" type="button" ng-click="postComment(addComent, vidId, channelId)">Comment</button>
       </div>
 
     </div>
