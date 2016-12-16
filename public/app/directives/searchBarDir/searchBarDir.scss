@@ -231,7 +231,8 @@ $sbd-font-fam: 'Roboto', sans-serif;
   margin-bottom: 20px;
   .hb-padding-container {
     width: 230px;
-    height: 734px;
+    // height: 734px;
+    height: 100vh;
     // font-size: 100%;
     background: transparent;
     padding: 13px 22px;

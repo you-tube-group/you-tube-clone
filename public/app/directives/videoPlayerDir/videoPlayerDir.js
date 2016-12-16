@@ -88,8 +88,28 @@ angular.module('you-tube-clone')
 
 
             $('.night-mode-container').on('click', function(e){
+                $('.video-player-container').animate({backgroundColor: 'rgb(15, 15, 15)'}, 1000);
+                $('.video-title-container, .side-bar-videos-dir-container, .main-description-wrapper, .comments-dir-main-container, .side-bar-videos').animate({backgroundColor: 'rgb(30, 30, 30)'}, 1000);
+                $('.video-title').animate({color: '#898989'}, 1000);
+                $('.view-count, .main-description-wrapper, .title').animate({color: '#909090'}, 1000);
+                // $('.author-name').animate({color: 'rgb(103, 131, 171)'}, 1000);
+                $('.subscription-count').animate({backgroundColor:'rgb(85, 85, 85)', color: '#bbb'}, 1000);
+                $('.subscription-count').css('border', '1px solid rgb(85, 85, 85)');
+                $('.video-description a, .name-wrap, .name, .author-name').animate({color: '#6783ab'}, 1000);
+                $('.small-text, .small-view-text, .orig-comment, .reply, .reply-comment-wrap, .ot-anchor').animate({color: '#646464'}, 1000)
+                $('.video-description, .author-info-container').css('border-bottom', '1px solid rgb(85, 85, 85)');
+                $('.proflink').animate({color: '#128EE9'}, 1000)
+                $('.title').hover(function() {
+                  $(this).css('color', '#6783ab');
+                }, function() {
+                  $(this).css('color', '#909090');
+                });
+
+
 
             })
+
+
         });
 
     }
