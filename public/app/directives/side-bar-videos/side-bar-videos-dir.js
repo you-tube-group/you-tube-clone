@@ -94,7 +94,7 @@ angular.module('you-tube-clone')
             $(this).animate({top: '+=80.5vh'}, 1900)
               $('.side-bar-videos').animate({height: '+=80.5vh'}, 2000);
           } else if ($scope.loadCount === 4) {
-            $('.load-more-container').css('background-color', 'red');
+            $('.load-more-container').css('background', 'red');
           }
 
         })
