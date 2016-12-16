@@ -7,7 +7,7 @@
   padding-bottom: 15px;
   margin-bottom: 10px;
   float: right;
-  overflow: scroll;
+  // overflow: scroll;
   font-family: 'Roboto';
 
   .list-video-container {
@@ -45,6 +45,7 @@
         cursor: pointer;
         &:hover {
           text-decoration: underline;
+          color: #167AC6;
         }
       }
       .small-text{

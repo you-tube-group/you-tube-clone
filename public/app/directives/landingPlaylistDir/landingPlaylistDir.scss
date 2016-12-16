@@ -181,7 +181,16 @@ $primary-font-family: 'Roboto', sans-serif;
         }
       }
     .h-trending-video-title{@include video-main-title}
+    .h-trending-video-title:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
     .h-trending-channel-title{@include video-sub-title-unselected}
+    .h-trending-channel-title:hover{
+      cursor: pointer;
+      text-decoration: underline;
+      color: $video-main-title;
+    }
     .h-video-count-container{
       display: flex;
 

@@ -164,9 +164,10 @@ module.exports = {
     getChannelData: (req,res,next) => {
       var channelId = req.query.id;
       client.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,contentDetails,brandingSettings&id=${channelId}&key=${API_KEY}`, function(data, response){
-        // console.log(channelId);
+        console.log(data.items);
         client.get(`https://www.googleapis.com/youtube/v3/playlists?part=snippet,contentDetails&channelId=${channelId}&key=${API_KEY}`, function(data1, response){
           data.items[0].playlistData = data1.items;
+          console.log(data1.items);
           var videoTrailerId = data.items[0].brandingSettings.channel.unsubscribedTrailer;
           if (data.items[0].brandingSettings.channel.featuredChannelsUrls) {
             var featuredChannels = data.items[0].brandingSettings.channel.featuredChannelsUrls.join(',');
@@ -175,6 +176,7 @@ module.exports = {
             data.items[0].featuredChannelsData = data3.items;
             client.get(`https://www.googleapis.com/youtube/v3/videos?id=${videoTrailerId}&key=${API_KEY}&part=statistics,snippet,contentDetails`, function(results, response) {
               data.items[0].channelTrailer = results.items[0];
+              console.log(results.items[0]);
               res.status(200).json(data);
             })
           })
