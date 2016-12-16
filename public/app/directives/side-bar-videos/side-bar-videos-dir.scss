@@ -1,13 +1,13 @@
 .side-bar-videos-dir-container{
   width: 363px;
-  height: 2115px;
+  // height: 2115px;
   padding-top: 15px;
   padding-left: 5px;
   padding-right: 15px;
   padding-bottom: 15px;
   margin-bottom: 10px;
   float: right;
-  overflow: scroll;
+  // overflow: scroll;
   font-family: 'Roboto';
 
   .list-video-container {
@@ -45,6 +45,7 @@
         cursor: pointer;
         &:hover {
           text-decoration: underline;
+          color: #167AC6;
         }
       }
       .small-text{
@@ -54,6 +55,7 @@
         color: #76767A;
         &:hover {
           text-decoration: underline;
+          color: #167AC6;
         }
       }
       .small-view-text {
