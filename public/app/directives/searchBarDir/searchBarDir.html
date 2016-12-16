@@ -28,7 +28,22 @@
         </aside>
 
         <button class="upload-btn"type="button" name="button">Upload</button>
-        <a href='/login'><button class="signin-btn"type="button" name="button">Sign in</button></a>
+        <a><button href='/login' ng-hide="loggedIn" class="signin-btn"type="button" name="button">Sign in</button> <button ng-show="loggedIn" ng-class="showModal()" class="logged-in-btn" type="button" name="button">P</button></a>
+        <div ng-show="signOutModal" class="log-out-modal">
+          <div class="little-arrow">
+            <div class="inner-little-arrow"></div>
+          </div>
+          <div class="email-wrap">
+
+          </div>
+          <div class="profile-wrap">
+            <div class="profile-img">P</div>
+          </div>
+          <div class="sign-out-wrap">
+            <button type="button" name="button">Add account</button>
+            <button type="button" name="button">Sign out</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -190,10 +205,10 @@
 
         <!-- Sign in -->
 
-        <li class="li-sign-in">
+        <li ng-hide="loggedIn" class="li-sign-in">
           <p class="p-sign">Sign in now to see your channels and recommendations!</p>
           <div class="button-div">
-            <button class="signin-btn"type="button" name="button">Sign in</button>
+            <button  class="signin-btn"type="button" name="button">Sign in</button>
           </div>
           <hr class="signin-separator">
         </li>
