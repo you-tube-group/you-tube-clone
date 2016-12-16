@@ -7,7 +7,7 @@ angular.module('you-tube-clone')
     scope: {
       searchResults: '='
     },
-    controller: ($scope, $timeout, mainService, $stateParams) => {
+    controller: ($scope, $state, $timeout, mainService, $stateParams) => {
 
       $scope.channelHover = false;
 
@@ -20,13 +20,16 @@ angular.module('you-tube-clone')
         var newNum;
         if (displaySubs > 1000000) {
           newNum = Math.floor(displaySubs/1000000) + "M";
+          // console.log(newNum);
           return newNum;
         } else if (displaySubs > 1000 && displaySubs < 1000000) {
           newNum = Math.floor(displaySubs/1000) + "K";
+          // console.log(newNum);
           return newNum;
         } else {
           return displaySubs;
         }
+
       }
 
       $scope.showChannelHover = (id) => {
@@ -65,6 +68,19 @@ angular.module('you-tube-clone')
         $scope.hovering = false;
         $scope.channelHover = false;
       }
+
+      $scope.goToState = (video, channel) => {
+        console.log("channel Id: ", channel);
+        console.log("video Id: ",video);
+        if (channel) {
+          $state.go('channel', {channelId: channel})
+        } else {
+          $state.go('video', {videoId: video})
+        }
+      };
+
+
+
 
     //END OF CONTROLLER
     }

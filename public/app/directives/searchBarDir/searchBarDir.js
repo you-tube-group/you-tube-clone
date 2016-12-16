@@ -7,6 +7,20 @@ angular.module('you-tube-clone')
     controller: ($scope, $state, $stateParams, mainService) => {
 
       $scope.night = false;
+      $scope.loggedIn = false;
+
+      $scope.getCurrentUser = () => {
+        mainService.getCurrentUser().then((response) => {
+          console.log('User on session?');
+          console.log(response);
+          $scope.currentUser = response.data;
+          $scope.loggedIn = true;
+        }).catch((err) => {
+          $scope.currentUser = null;
+          $scope.loggedIn = false;
+        })
+      }
+      $scope.getCurrentUser();
 
       $scope.searchTerm = $stateParams.search_query;
       $scope.hamSlider = false;
@@ -33,46 +47,37 @@ angular.module('you-tube-clone')
       }, function() {
         $('.ham-icon').css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto"});
       });
-
-
-
 // NOTE: Add time feature to turn on the night mode a certain time.
 // NOTE: make the night mode button into a toggle switch
-// NOTE: create 6 color options for night mode, look at atom themes
-// NOTE: Create a function that is an "if" statment for wheather night mode is on or off.
 // NOTE: a warning in advance about when night mode will turn on.
 // NOTE: option for NEVER night mode
-// NOTE: night mode for home view: BLUE
-
       $('.night-mode-container').on('click', function(e){
         $scope.night = !$scope.night;
-
         if ($scope.night === true) {
-
-          $('.home-view-main-wrapper').css('background', '#101010');
-          $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').css('background', '#1E1E1E');
-          $('.trending-video-title, .h-trending-video-title').css('color', 'rgb(103, 131, 171)');
-          $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').css('color', '#909090');
-          $('.search-input').css('background', '#3E3E3E');
-          $('.search-btn, .night-mode-container, .upload-btn, .signin-btn').css('background', '#343434');
-          $('.night-mode-container').css('border', '1px solid #343434');
-          $('.night-mode-container').css('color', 'rgba(255, 255, 0, 0.58)');
-          $('.upload-btn, .signin-btn, .right-arrow-container, .h-right').css('color', '#B0B0B0');
-          $('.search-icon').css('color', '#767676');
-          $('.search-bar-dir-outer-container, .h-nav-container, .trending-video-wrapper, .h-trending-video-wrapper, .search-input, .search-btn, .upload-btn').css('border', '1px solid #3E3E3E');
-          $('.search-input').css('box-shadow', 'inset 0 0px 0px');
-          $('.h-home, .trending-title, .channel-title').css('color', '#979797');
-          $('.right-arrow-container, .h-right-arrow-container').css('color', '#B0B0B0');
-          $('.right-arrow-container, .left-arrow-container, .h-left-arrow-container, .h-right-arrow-container').css('background', '#1e1e1e');
+          $('.home-view-main-wrapper').animate({backgroundColor: "#101010"}, 700);
+          $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').animate({backgroundColor:'#1E1E1E'}, 700);
+          $('.trending-video-title, .h-trending-video-title').animate({color: 'rgb(103, 131, 171)'}, 700);
+          $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').animate({color: '#909090'}, 700);
+          $('.search-input').animate({backgroundColor: '#3E3E3E'}, 700);
+          $('.search-btn, .night-mode-container, .upload-btn, .signin-btn').animate({backgroundColor: '#343434'}, 700);
+          $('.night-mode-container').animate({border: '1px solid #343434'}, 700);
+          $('.night-mode-container').animate({color: 'rgba(255, 255, 0, 0.58)'}, 700);
+          $('.upload-btn, .signin-btn, .right-arrow-container, .h-right').animate({color: '#B0B0B0'}, 700);
+          $('.search-icon').animate({color: '#767676'}, 700);
+          $('.search-bar-dir-outer-container, .h-nav-container, .trending-video-wrapper, .h-trending-video-wrapper, .search-input, .search-btn, .upload-btn').css("border", "1px solid #3E3E3E").animate({}, 700);
+          $('.search-input').css("boxShadow", 'inset 0 0px 0px').animate({}, 700);
+          $('.h-home, .trending-title, .channel-title').animate({color: '#979797'}, 700);
+          $('.right-arrow-container, .h-right-arrow-container').animate({color: '#B0B0B0'}, 700);
+          $('.right-arrow-container, .left-arrow-container, .h-left-arrow-container, .h-right-arrow-container').animate({backgroundColor: '#1e1e1e'}, 700);
           $(e.currentTarget).mouseenter(function(e) {
-            $(e.currentTarget).css('color', '#ccc');
-            $(e.currentTarget).css('background', '#f8f8f8');
-            $(e.currentTarget).css('border','1px solid #ccc' );
+            $(e.currentTarget).animate({color:'#ccc'}, 500);
+            $(e.currentTarget).animate({backgroundColor: '#f8f8f8'}, 500);
+            $(e.currentTarget).animate({border:'1px solid #ccc'}, 500);
           });
           $('.night-mode-container').mouseleave(function (e) {
-            $(e.currentTarget).css('background', '#343434');
-            $(e.currentTarget).css('border', '1px solid #343434');
-            $(e.currentTarget).css('color', 'rgba(255, 255, 0, 0.58)');
+            $(e.currentTarget).animate({backgroundColor: '#343434'}, 500);
+            $(e.currentTarget).css('border', '1px solid #343434').animate({}, 500);
+            $(e.currentTarget).animate({color: 'rgba(255, 255, 0, 0.58)'}, 500);
           });
           $('.right-arrow-container').mouseenter(function(event) {
               $(this).css({
@@ -131,28 +136,28 @@ angular.module('you-tube-clone')
               });
           });
           } else if ($scope.night === false) {
-            $('.home-view-main-wrapper').css('background', '#f1f1f1');
-            $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').css('background', '#fff');
-            $('.trending-title, .channel-title').css('color', '#333333');
-            $('.trending-video-title, .h-trending-video-title').css('color', 'rgb(22, 122, 198)');
-            $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').css('color', '#767676');
-            $('.search-input').css('background', '#fff');
-            $('.search-btn, .night-mode-container, .upload-btn').css('background', '#f8f8f8');
-            $('.signin-btn').css('background', '#167AC6');
-            $('.signin-btn').css('color', '#fff');
+            $('.home-view-main-wrapper').animate({backgroundColor: '#f1f1f1'}, 700);
+            $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').animate({backgroundColor:'#fff'}, 700);
+            $('.trending-title, .channel-title').animate({color: '#333333'}, 700);
+            $('.trending-video-title, .h-trending-video-title').animate({color:'rgb(22, 122, 198)'}, 700);
+            $('.trending-channel-title, .trending-view-count, .dot-style, .trending-publish').animate({color: '#767676'}, 700);
+            $('.search-input').animate({backgroundColor: '#fff'}, 700);
+            $('.search-btn, .night-mode-container, .upload-btn').animate({backgroundColor: '#f8f8f8'}, 700);
+            $('.signin-btn').animate({backgroundColor: '#167AC6'}, 700);
+            $('.signin-btn').animate({color: '#fff'}, 700);
             $('.search-bar-dir-outer-container, .h-nav-container, .search-input, .search-btn, .upload-btn, .night-mode-container').css('border', '1px solid #C8C8C8');
             $('.trending-video-wrapper, .h-trending-video-wrapper').css({"border": "", "border-bottom": "1px solid #C8C8C8"});
-            $('.h-home').css('color', '#000');
+            $('.h-home').animate({color:'#000'}, 700);
             $('.right-arrow-container, .left-arrow-container, .h-left-arrow-container, .h-right-arrow-container').css('background', '#fff');
           $('.night-mode-container').mouseenter(function (e) {
-            $(e.currentTarget).css('background', '#343434');
+            $(e.currentTarget).animate({backgroundColor: '#343434'}, 500);
             $(e.currentTarget).css('border', '1px solid #343434');
-            $(e.currentTarget).css('color', 'rgba(255, 255, 0, 0.58)');
+            $(e.currentTarget).animate({color:'rgba(255, 255, 0, 0.58)'}, 500);
           });
 
           $(e.currentTarget).mouseleave(function(e) {
-            $(e.currentTarget).css('color', '#ccc');
-            $(e.currentTarget).css('background', '#f8f8f8');
+            $(e.currentTarget).animate({color:'#ccc'}, 500);
+            $(e.currentTarget).animate({backgroundColor:'#f8f8f8'}, 500);
             $(e.currentTarget).css('border','1px solid #ccc' );
           });
           $('.right-arrow-container').mouseenter(function(event) {
@@ -220,16 +225,3 @@ angular.module('you-tube-clone')
   }
   //END OF DIRECTIVE
 })
-
-
-// NOTE: Color scheme for nightMode
-
-// $black1: #101010; // main background
-// $black2: #1E1E1E; // secondary background
-// $black3: #2E2E2E; // carousel button
-// $black4: #3E3E3E; // search background
-// $black5: #343434; // search-button background
-// $black6: #767676; // search-placeholder color
-// $videoTitleBlue: #6783AB; // primary video title
-// $videoSubTitle: #909090: //font of video sub-description
-// $uploadSignIn: #B0B0B0; //font color for upload and sign in

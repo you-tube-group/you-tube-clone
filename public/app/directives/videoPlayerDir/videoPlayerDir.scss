@@ -61,12 +61,14 @@ $com-dir-border-red: #CC181E;
         .author-img{
           margin-right: 10px;
           img{
+            cursor: pointer;
             width: 50px;
             height: 50px;
           }
         }
         .author-channel-info{
           .author-name{
+            cursor: pointer;
             margin-bottom: 10px;
             font-size: 12px;
             font-weight: bold;

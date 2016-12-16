@@ -21,6 +21,7 @@
       min-width: 196px;
       height: 110px;
       margin-right: 10px;
+      cursor: pointer;
       .video-duration{
         color: #FFF;
         font-size: 11px;
@@ -41,8 +42,21 @@
       .title{
         font-size: 14px;
         margin-bottom: 5px;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
       }
       .small-text{
+        cursor: pointer;
+        font-size: 12px;
+        margin-bottom: 4px;
+        color: #76767A;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .small-view-text {
         font-size: 12px;
         margin-bottom: 4px;
         color: #76767A;

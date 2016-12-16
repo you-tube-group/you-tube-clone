@@ -11,11 +11,11 @@
     <div class="author-info-container">
       <div class="author-info">
         <div class="author-img">
-          <img ng-src="{{channelData.snippet.thumbnails.default.url}}">
+          <img ui-sref="channel ({channelId: videoData.snippet.channelId})" ng-src="{{channelData.snippet.thumbnails.default.url}}">
         </div>
         <div class="author-channel-info">
           <div class="author-name">
-            <p>{{videoData.snippet.channelTitle}}</p>
+            <p ui-sref="channel ({channelId: videoData.snippet.channelId})">{{videoData.snippet.channelTitle}}</p>
           </div>
           <div class="subscribe-label-main-wrap">
             <div class="subscribe-btn-wrap">
