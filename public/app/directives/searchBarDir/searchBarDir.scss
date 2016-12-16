@@ -236,6 +236,7 @@ $sbd-font-fam: 'Roboto', sans-serif;
           position: absolute;
           background-color: white;
           font-family: $sbd-font-fam;
+          z-index: 10;
           .little-arrow {
             width: 0;
             height: 0;
