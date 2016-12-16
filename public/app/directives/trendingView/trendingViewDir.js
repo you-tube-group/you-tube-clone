@@ -14,6 +14,15 @@ angular.module('you-tube-clone')
     //   })
     // },
     controller: ($scope, mainService, $timeout, authService) => {
+
+// ChannelHover material
+
+
+
+
+
+
+
       const getTrendingData = () => {
         mainService.getTrending()
         .then((response) => {
