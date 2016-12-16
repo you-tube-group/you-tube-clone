@@ -1,6 +1,7 @@
 .side-bar-videos-dir-container {
+  position: relative;
   width: 363px;
-  // height: 2115px;
+  height: 211px;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
@@ -248,4 +249,30 @@
       }
     }
   }
+}
+
+.load-more-container {
+    font-family: 'Roboto', sans-serif;
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 5vh;
+    width: 240px;
+    z-index: 100000;
+    top: 112vh;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-left: 60px;
+    border-radius: 5px;
+    &:hover {
+      color: #167AC6;
+      transform: scale(1.03);
+    }
+    #loading-dots {
+      margin-left: 7px;
+      margin-top: 6px;
+      font-size: 15px;
+    }
 }

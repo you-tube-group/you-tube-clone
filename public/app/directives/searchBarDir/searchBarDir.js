@@ -46,6 +46,9 @@ angular.module('you-tube-clone')
           $('.video-player-main-container').animate({marginLeft: '100px'}, 500)
         } else {
           $scope.hamSlider = false;
+          $('.ham-bar-slide-outer-container').fadeOut(500, function() {
+
+          });
           $('.home-view-main-wrapper, .video-player-main-container').animate({marginLeft: '0px'}, 500);
           $('.video-player-main-container').animate({left: ''}, 500);
         };
@@ -62,6 +65,7 @@ angular.module('you-tube-clone')
 
       $('.night-mode-container').on('click', function(e){
         $scope.night = !$scope.night;
+
         if ($scope.night === true) {
           $('.home-view-main-wrapper').animate({backgroundColor: "#101010"}, 1000);
           $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').animate({backgroundColor:'#1E1E1E'}, 1000);
@@ -145,6 +149,7 @@ angular.module('you-tube-clone')
               });
           });
           } else if ($scope.night === false) {
+            $('.right-arrow-container, .left-arrow-container').removeAttr('style')
             $('.home-view-main-wrapper').animate({backgroundColor: '#f1f1f1'}, 1000);
             $('.trending-video-wrapper, .h-nav-container, .search-bar-dir-outer-container, .h-trending-video-wrapper').animate({backgroundColor:'#fff'}, 1000);
             $('.trending-title, .channel-title').animate({color: '#333333'}, 1000);
