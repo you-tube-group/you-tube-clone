@@ -36,23 +36,22 @@ angular.module('you-tube-clone')
       $scope.openHamSlide = () => {
         if (!$scope.hamSlider) {
           $scope.hamSlider = true;
-          $('.ham-bar-slide-outer-container').fadeIn('slow');
-          $('.home-view-main-wrapper, video-player-container').animate({marginLeft: '68px'}, 500);
-          $('.video-player-container').animate({left: '65px'}, 500)
+
+          $('.ham-bar-slide-outer-container').fadeIn(500);
+          $('.home-view-main-wrapper, video-player-main-container').animate({marginLeft: '68px'}, 500);
+          $('.video-player-main-container').animate({marginLeft: '100px'}, 500)
         } else {
           $scope.hamSlider = false;
-          $('.home-view-main-wrapper, video-player-container').animate({marginLeft: '0px'}, 500);
-          $('.video-player-container').animate({left: ''}, 500);
-          $('.ham-bar-slide-outer-container').fadeOut('slow');
-
+          $('.home-view-main-wrapper, .video-player-main-container').animate({marginLeft: '0px'}, 500);
+          $('.video-player-main-container').animate({left: ''}, 500);
         };
       };
   $(document).ready(function(){
 
-      $('.search-bar-dir-outer-container').hover(function() {
-        $('.ham-icon').css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto"});
+      $('.ham-icon').hover(function() {
+        $(this).css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -469px -74px", "background-size": "auto"});
       }, function() {
-        $('.ham-icon').css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto"});
+        $(this).css({"height": "16px", "width": "16px", "background": "no-repeat url('../images/you-tube-icons.webp') -696px -258px", "background-size": "auto"});
       });
 
       $('.night-mode-container').on('click', function(e){
