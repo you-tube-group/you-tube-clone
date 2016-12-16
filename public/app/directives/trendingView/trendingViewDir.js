@@ -40,9 +40,25 @@ angular.module('you-tube-clone')
         return dateObj;
       }
 
+      $scope.checkmark = true;
+      $scope.check = () => {
+        if($scope.currentUser !== null) {
+          return true;
+        } else {
+          return false;
+        }
+      }
       $scope.hover = true;
       $scope.hidden = false;
       $scope.watchLaterPopup = true;
+      $scope.signInPopup = false;
+      $scope.signIn = () => {
+        if (!$scope.currentUser) {
+          return true;
+        } else {
+          return false;
+        }
+      }
 
       $scope.modal = true;
       $scope.addToPlaylist = (video) => {

@@ -17,7 +17,7 @@
     <section class="h-carousel-wrapper">
     <aside class="h-h-trending-carousel" ng-repeat='video in videoStatsArr'>
         <div class="h-thumbnail" style="background: url('{{video.snippet.thumbnails.standard.url}}') no-repeat center; background-size: 100% 138%; background-position: 0px -20px" alt='Trending thumbnail video' ng-click='passVideo(video)' ui-sref='video({videoId: video.id})'>
-        <p class="h-video-duration">{{videoInfo[0].contentDetails.duration}}</p>
+        <p class="h-video-duration">{{video.contentDetails.duration}}</p>
         </div>
         <div ui-sref='video({videoId: video.id})' class="h-trending-video-title">{{video.snippet.title}}</div>
         <div ui-sref='channel({channelId: video.snippet.channelId})' class="h-trending-channel-title">{{video.snippet.channelTitle}}</div>

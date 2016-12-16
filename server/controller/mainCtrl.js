@@ -60,6 +60,19 @@ module.exports = {
     getVideoInfo: function(req, res, next) {
         var videoId = req.query.id;
         client.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics,contentDetails&id=${videoId}&key=${API_KEY}`, function(data, response) {
+          //loops through the data and converts the duration of each item
+          //also glean out the 'live' videos and sets their duration to ''
+          //to prevent them from showing on the front end's landingPlaylistDir
+          for(var i = 0; i < data.items.length; i++)
+          {
+            if(data.items[i].contentDetails.duration === 'PT0S')
+            {
+              data.items[i].contentDetails.duration = '';
+            }
+            else{
+              data.items[i].contentDetails.duration = convertTime(data.items[i].contentDetails.duration);
+            }
+          }
             res.status(200).json(data);
         });
     },

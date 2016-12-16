@@ -3,7 +3,12 @@ angular.module('you-tube-clone')
  return {
    restrict: "E",
    templateUrl: './app/directives/playlistDir/playlistDir.html',
-   controller: ($scope, mainService) => {
+   controller: ($scope, mainService, $state) => {
+     $scope.topVidHover = false;
+     $scope.thumbnailHover = false;
+     $scope.showVideoOptions = false;
+     $scope.underlineTitle = false;
+     $scope.underlineChannel = false;
 
      $scope.getCurrentUser = () => {
        mainService.getCurrentUser().then((response) => {
@@ -21,7 +26,14 @@ angular.module('you-tube-clone')
      }
      $scope.getCurrentUser();
 
-
+     $scope.removeVideo = (id) => {
+       mainService.removeVideo(id)
+       .then((response) => {
+         if (response === 'deleted') {
+           $state.go($state.current, {}, {reload: true});
+         }
+       })
+     }
 
     // $scope.getCurrentUserPlaylist = () => {
     //   var userInfo = $scope.currentUser;
