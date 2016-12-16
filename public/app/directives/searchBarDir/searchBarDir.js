@@ -8,6 +8,10 @@ angular.module('you-tube-clone')
 
       $scope.night = false;
       $scope.loggedIn = false;
+      $scope.signOutModal = false;
+      $scope.showModal = () => {
+        $scope.signOutModal = false;
+      }
 
       $scope.getCurrentUser = () => {
         mainService.getCurrentUser().then((response) => {
@@ -40,6 +44,8 @@ angular.module('you-tube-clone')
           $scope.hamSlider = false;
         };
       };
+
+
   $(document).ready(function(){
 
       $('.search-bar-dir-outer-container').hover(function() {
