@@ -7,12 +7,14 @@ angular.module('you-tube-clone')
     controller: ($scope, $state, $stateParams, mainService) => {
 
       $scope.night = false;
-      $scope.loggedIn = false;
+      $scope.loggedIn = true;
       $scope.signOutModal = false;
       $scope.showModal = () => {
         $scope.signOutModal = false;
       }
-
+      $scope.signOut = function => {
+        
+      }
       $scope.getCurrentUser = () => {
         mainService.getCurrentUser().then((response) => {
           console.log('User on session?');

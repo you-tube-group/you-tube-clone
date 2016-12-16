@@ -28,8 +28,8 @@
         </aside>
 
         <button class="upload-btn"type="button" name="button">Upload</button>
-        <a><button href='/login' ng-hide="loggedIn" class="signin-btn"type="button" name="button">Sign in</button> <button ng-show="loggedIn" ng-class="showModal()" class="logged-in-btn" type="button" name="button">P</button></a>
-        <div ng-show="signOutModal" class="log-out-modal">
+        <a><button href='/login' ng-show="loggedIn" class="signin-btn"type="button" name="button">Sign in</button> <button ng-hide="loggedIn" ng-class="showModal()" class="logged-in-btn" type="button" name="button">P</button></a>
+        <div ng-hide="signOutModal" class="log-out-modal">
           <div class="little-arrow">
             <div class="inner-little-arrow"></div>
           </div>
@@ -41,7 +41,7 @@
           </div>
           <div class="sign-out-wrap">
             <button type="button" name="button">Add account</button>
-            <button type="button" name="button">Sign out</button>
+            <button type="button" ng-click="signOut()" name="button">Sign out</button>
           </div>
         </div>
       </div>
