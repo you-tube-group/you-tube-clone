@@ -8,7 +8,7 @@ angular.module('you-tube-clone')
         commentCount: '=',
         channelId: '='
       },
-      controller: ($scope, mainService, $sce) => {
+      controller: ($scope, mainService, $sce, $timeout) => {
         $scope.$watch('vidId', () => {
           var vidId = $scope.vidId;
 
@@ -24,23 +24,17 @@ angular.module('you-tube-clone')
 
 
           $scope.postComment = (comment, vidId, channelId) => {
-            // $scope.comments.items[snippet][topLevelComment][snippet][textDisplay].unshift(comment);
             mainService.postComment(comment, vidId, channelId).then((response) => {
               $scope.newComment = response;
-              $scope.$watch('newComment', () => {
-                var newComm = $scope.newComment;
 
-                if (newComm) {
-                  $scope.getComments = (vidId) => {
-                    mainService.getComments(vidId).then((response) => {
-                      console.log('response inside newComm watch');
-                      console.log(response);
-                      $scope.comments = response;
-                    })
-                  }
-                  $scope.getComments(newComm.vidId);
+              $timeout(function() {
+                $scope.getComments = (vidId) => {
+                  mainService.getComments(vidId).then((response) => {
+                    $scope.comments = response;
+                  })
                 }
-              })
+                $scope.getComments(vidId);
+              }, 1000)
             })
           }
         })
