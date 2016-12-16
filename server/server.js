@@ -19,6 +19,16 @@ const oauth2Client = new OAuth2(config.GOOGLE_CLIENT_ID, config.GOOGLE_CLIENT_SE
 //===INITIALIZE EXPRESS APP======
 const app = module.exports = express();
 
+//===SOCKET IO==========
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
+io.on('connection', (socket) => {
+  socket.on('chat message', (msg) => {
+    io.emit('chat message', msg);
+  })
+})
+
 //===MIDDLEWARE=======
 app.use(bodyParser.json());
 app.use(express.static(__dirname + './../public'));
@@ -236,6 +246,6 @@ app.post('/api/comments', function(req,res) {
 
 
 const port = 8040;
-app.listen(port, () => {
+http.listen(port, () => {
     console.log('Listening on port: ' + port);
 })
