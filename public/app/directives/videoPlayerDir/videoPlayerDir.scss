@@ -91,7 +91,7 @@ $com-dir-border-red: #CC181E;
               justify-content: space-around;
               align-items: center;
               .subscribe-btn{
-                background: url("../../Images/videoPlayerDir-sprite.webp") -298px -53px;
+                background: url("../../images/videoPlayerDir-sprite.webp") -298px -53px;
                 background-size: auto;
                 width: 16px;
                 height: 12px;
@@ -150,18 +150,18 @@ $com-dir-border-red: #CC181E;
       display: flex;
       align-items: center;
       .add-btn{
-        background: url("../../Images/videoPlayerDir-sprite.webp") -351px -117px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -351px -117px;
         @include btn-options;
       }
       .btn-hover:hover{
         opacity: .6;
       }
       .share-btn{
-        background: url("../../Images/videoPlayerDir-sprite.webp") -182px -42px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -182px -42px;
         @include btn-options;
       }
       .more-btn{
-        background: url("../../Images/videoPlayerDir-sprite.webp") -42px -184px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -42px -184px;
         @include btn-options;
       }
       .btn-text{
@@ -182,11 +182,11 @@ $com-dir-border-red: #CC181E;
       display: flex;
       align-items: center;
       .like-btn{
-        background: url("../../Images/videoPlayerDir-sprite.webp") -375px -54px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -375px -54px;
         @include btn-options;
       }
       .dislike-btn{
-        background: url("../../Images/videoPlayerDir-sprite.webp") -628px -294px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -628px -294px;
         @include btn-options;
       }
       .btn-text{
@@ -273,7 +273,7 @@ $com-dir-border-red: #CC181E;
         }
       }
       .close-btn {
-        background: url("../../Images/videoPlayerDir-sprite.webp") -863px -139px;
+        background: url("../../images/videoPlayerDir-sprite.webp") -863px -139px;
         background-size: auto;
         width: 10px;
         height: 10px;

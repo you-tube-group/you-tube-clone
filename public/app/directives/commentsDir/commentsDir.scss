@@ -129,13 +129,13 @@ $com-dir-bg-color: #FFFFFF;
           margin-left: 10px;
         }
         .like {
-          background: url('./../../Images/likes-dislikes-sprite.webp') -255px 0px;
+          background: url('./../../images/likes-dislikes-sprite.webp') -255px 0px;
           background-size: auto;
           margin-left: 10px;
           cursor: pointer;
         }
         .dislike {
-          background: url("./../../Images/likes-dislikes-sprite.webp") -255px -36px;
+          background: url("./../../images/likes-dislikes-sprite.webp") -255px -36px;
           background-size: auto;
           margin-left: 10px;
           cursor: pointer;
@@ -156,7 +156,7 @@ $com-dir-bg-color: #FFFFFF;
           margin-right: 3px;
         }
         .arrow-icon {
-          background: url('./../../Images/likes-dislikes-sprite.webp') -20px 0px;
+          background: url('./../../images/likes-dislikes-sprite.webp') -20px 0px;
           background-size: auto;
           width: 16px;
           height: 16px;
@@ -199,12 +199,12 @@ $com-dir-bg-color: #FFFFFF;
               }
               .total-likes {}
               .likes {
-                background: url("./../../Images/comment-reply-sprite.webp") -182px 0;
+                background: url("./../../images/comment-reply-sprite.webp") -182px 0;
                 background-size: 324px 132px;
                 margin: 0 10px 0 10px;
               }
               .dislikes {
-                background: url("./../../Images/comment-reply-sprite.webp") -34px -24px;;
+                background: url("./../../images/comment-reply-sprite.webp") -34px -24px;;
                 background-size: 324px 132px;
               }
               .l-d-size {
