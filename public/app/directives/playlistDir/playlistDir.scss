@@ -72,7 +72,7 @@ $pl-text-color: #B5B5B5;
           display: flex;
           margin-bottom: 10px;
           .lock {
-            background: no-repeat url("./../../../Images/playlistView.webp") -656px -252px;
+            background: no-repeat url("./../../../images/playlistView.webp") -656px -252px;
             background-size: auto;
             width: 20px;
             height: 20px;
@@ -130,7 +130,7 @@ $pl-text-color: #B5B5B5;
               justify-content: center;
               align-items: center;
               .settings-icon {
-                background: no-repeat url('./../../../Images/playlistView2.webp') -48px -87px;
+                background: no-repeat url('./../../../images/playlistView2.webp') -48px -87px;
                 background-size: 435px 425px;
                 width: 16px;
                 height: 16px;
@@ -246,7 +246,7 @@ $pl-text-color: #B5B5B5;
         margin: -1px 0px 0px 0px;
         cursor: move;
         .dots{
-          background: no-repeat url('./../../../Images/footer-dir-icons.webp') -217px -351px;
+          background: no-repeat url('./../../../images/footer-dir-icons.webp') -217px -351px;
           background-size: 435px 425px;
           width: 2.5px;
           height: 10.5px;
@@ -262,7 +262,7 @@ $pl-text-color: #B5B5B5;
       //   .remove-video {
       //     width: 30px;
       //     height: 30px;
-      //     background: no-repeat url('./../../../Images/playlistView.webp') -773.5px 0.5px;
+      //     background: no-repeat url('./../../../images/playlistView.webp') -773.5px 0.5px;
       //     background-size: 4776%;
       //     opacity: .7;
       //   }
