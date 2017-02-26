@@ -42,11 +42,19 @@ app.use(passport.session());
 
 //===CONNECT TO SERVER=========
 const massiveServer = massive.connectSync({
-  connectionString: 'postgress://localhost/yt-local-auth' // TODO: ELEPHANT / TINYTURTLE
+  connectionString: config.connectionStringHosted
 });
 app.set('db', massiveServer);
 const db = app.get('db');
 
+//===INIT TABLES============
+db.init.create_tables([], (err, response) => {
+    if (err) {
+      console.log('err from tables init: ', err);
+    } else {
+      console.log('Tables initialized');
+    }
+  })
 
 // //===REQUIRED CONTROLLERS====
 const controller = require('./controller/mainCtrl');
@@ -246,7 +254,7 @@ app.post('/api/comments', function(req,res) {
 
 
 
-const port = 8040;
-http.listen(port, () => {
-    console.log('Listening on port: ' + port);
+
+http.listen(config.PORT, () => {
+    console.log('Listening on port: ' + config.PORT);
 })

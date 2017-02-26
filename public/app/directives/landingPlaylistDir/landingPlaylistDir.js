@@ -30,7 +30,7 @@ angular.module('you-tube-clone')
                     // ==== call the service to get statistics for each video in the playlist ====
                     mainService.getVideoInfo(vidId).then((response) => {
 
-                      console.log('controller getVideoInfo response', response.items);
+                      // console.log('controller getVideoInfo response', response.items);
                       $scope.videoInfo = response.items[0];
                       // ==== If the id of video info matches the ID of the video in the playlist, push all info to videoStatsArr ====
                       if ($scope.videoInfo.id == vidId) {
